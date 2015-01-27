@@ -12,3 +12,11 @@ github_username:  vprusso
 
 # Build settings
 markdown: kramdown
+
+# Blog pagination and post url structure
+permalink:     '/blog/:year/:title/'
+paginate_path: '/blog/page:num/'
+
+# Pages
+include: ['_pages']
+relative_permalinks: false

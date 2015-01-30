@@ -4,4 +4,4 @@ title: CV
 permalink: /cv/
 ---
 
-({{ site.url }}/pdf/cv.pdf) 
+ you can [get the PDF]({{ site.url }}/_pdf/cv.pdf) directly.

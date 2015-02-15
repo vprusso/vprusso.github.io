@@ -26,7 +26,7 @@ UPB?
 -->
 
 <LI> 
-"Limitations on Separable Measurements from Cone Programming" [PDF]({{ site.url }}/pdf/cone_prog.pdf) [<A HREF="http://arxiv.org/abs/1408.6981">arXiv</A>] <br> 
+"Limitations on Separable Measurements from Cone Programming" [PDF]({{ site.url }}/pdf/cone_prog.pdf) [get the PDF]({{ site.url }}/pdf/cone_prog.pdf) [<A HREF="http://arxiv.org/abs/1408.6981">arXiv</A>] <br> 
 Somshubhro Bandyopadhyay, Alessandro Cosentino, Vincent Russo, John Watrous <br>
 arXiv:1408.6981, (2014).<p>
 </LI>

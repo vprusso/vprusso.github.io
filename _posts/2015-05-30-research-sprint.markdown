@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Applying the softwate sprint to a research problem"
-date:   2015-06-01 17:58:35
+date:   2015-06-01 12:58:35
 categories: jekyll update
 ---
 

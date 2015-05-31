@@ -2,7 +2,7 @@
 layout: post
 title:  "First Post"
 date:   2015-01-17 17:58:35
-categories: jekyll update
+categories: first post 
 ---
 
 <!--
@@ -32,5 +32,7 @@ print "Hello blogging world!"
 {% endhighlight %}
 
 My name is Vincent Russo, and I'm currently a PhD student the University of Waterloo studying computer science with a specialization in quantum information.
+I mainly work on applying the techniques of semidefinite programming to areas in quantum information. When I'm not doing quantum things, I'm passionate about 
+software design, open source, and applying these skills to the subjects of science and beyond. 
 
-I'm passionate about software design.....
+I decided to give this whole blogging thing a shot. 

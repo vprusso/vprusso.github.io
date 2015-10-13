@@ -22,13 +22,12 @@ permalink: /publications/
 <LI>
 UPB?
 <LI>
-you can [get the PDF]({{ site.url }}/assets/mydoc.pdf) directly.
+
 -->
 
-[get the PDF]({{ site.url }}/pdf/cv.pdf)
 
 <LI> 
-"Limitations on Separable Measurements from Cone Programming" [PDF]({{ site.url }}/pdf/cone_prog.pdf) [<A HREF="http://arxiv.org/abs/1408.6981">arXiv</A>] <br> 
+"Limitations on Separable Measurements from Cone Programming" [<A HREF="pdf/cone_prog.pdf">PDF</A>] [<A HREF="http://arxiv.org/abs/1408.6981">arXiv</A>] <br> 
 Somshubhro Bandyopadhyay, Alessandro Cosentino, Vincent Russo, John Watrous <br>
 arXiv:1408.6981, (2014).<p>
 </LI>

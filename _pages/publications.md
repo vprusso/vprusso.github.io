@@ -77,6 +77,7 @@ S. Arunachalam, A. Molina, V. Russo, "Quantum hedging in two-round prover-verifi
 arXiv preprint:1310.7954, (2013). 
 [<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
 [<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
+[<A HREF="/pdf/hedging_bets_slides.pdf">Slides</A>]
 [<A HREF="http://arxiv.org/abs/1310.7954">arXiv</A>]
 [<A HREF="https://github.com/vprusso/quantum-hedging">Software</A>]
 </LI>

@@ -116,29 +116,32 @@ Fibonacci Quarterly 49, 151-154 (2011).
 
 <OL reversed>
 
-<li>
+<LI>
 <a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC Developments: CBMC Nonpolar Molecules, Verlet Lists, and Architectural Optimizations."</a> <br>
-Jason Mick, Eyad Hailat, Vincent Russo, Kamel Rushaidat, Loren Schwiebert, Jeffrey Potoff.<br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers, (2012)<p>
-</li>
+</LI>
+<BR>
 
-<li>
+<LI>
 <a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283934">"Optimization of a Lennard-Jones Particle Monte Carlo Gpucode."</a> <br>
-Jason Mick, Eyad Hailat, Vincent Russo, Kamel Rushaidat, Loren Schwiebert, Jeffrey Potoff.<br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers, (2012)<p>
-</li>
+</LI>
+<BR>
 
-<li>
+<LI>
 <a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283711">"GPU Accelerated Configurational Bias Monte Carlo Simulations of Linear Alkanes."</a> <br>
-Jason Mick, Eyad Hailat, Vincent Russo, Kamel Rushaidat, Loren Schwiebert, Jeffrey Potoff.<br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers, (2012)<p>
-</li>
+</LI>
+<BR>
 
-<li>
+<LI>
 <a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=235324">"GPU Accelerated Monte Carlo Simulations In the Gibbs and Canonical Ensembles."</a> <br>
-Jason Mick, Eyad Hailat, Vincent Russo, Kamel Rushaidat, Loren Schwiebert, Jeffrey Potoff.<br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers, (2011)<p>
-</li>
+</LI>
 
 </OL>
 

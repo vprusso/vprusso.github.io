@@ -2,7 +2,7 @@
 title: Vincent Russo
 email: vincentrusso1@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Personal website of 
+  
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://vprusso.github.io" # the base hostname & protocol for your site
 twitter_username: captainhamptons

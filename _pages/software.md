@@ -20,7 +20,7 @@ Under construction...
 <p>Minor Contributions:</p>
 
 <ul>
-  <li>A MATLAB toolbox for exploring quantum entanglement theory – see my <a href="http://www.qetlab.com/Contributors">contributions</a>.</li>
+  <li>A MATLAB toolbox for exploring quantum entanglement theory -- see my <a href="http://www.qetlab.com/Contributors">contributions</a>.</li>
   <li>An open-source Monte Carlo simulation engine, <a href="http://gomc.eng.wayne.edu/">GOMC</a> written in C++ using the CUDA wrapper. This software is used in research found [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">here</A>] and [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">here</A>] </li> 
 </ul>
 

@@ -5,6 +5,8 @@ permalink: /software/
 ---
 <b>Under construction...</b>
 
+<h1>Projects</h1>
+
 <p>Major Contributions:</p>
 
 <ul>
@@ -23,35 +25,37 @@ permalink: /software/
 	<li>An Android application, <a href="https://play.google.com/store/apps/details?id=captainhampton.pi.trainer&hl=en">PiTrainer</a>, for memorizing sequences of the irrational number Pi:</li>
 </ul>
 
-<p> List of Computer Science Courses Taken: </p>
-	<ul>
-		<li>Fundamental Structures in Computer Science (CSC 1500)</li>
-		<li>Computer Science I (CSC 2110)</li>
-		<li>Computer Science II (CSC 2200)</li>
-		<li>Computer Architecture and Organization (CSC 3100)</li>
-		<li>Algorithm Design and Analysis (CSC 3110)</li>
-		<li>Software Engineering (CSC 4110)</li>
-		<li>Computer Operating Systems (CSC 4420)</li>
-		<li>Introduction to Theoretical Computer Science (CSC 4500)</li>
-		<li>Game Programming and Design (CSC 5430)</li>
-		<li>Principles of Web Technology (CSC 5750)</li>
-		<li>Discrete Mathematics (MAT 2860)</li>
-		<li>Parallel Computing (CSC 6220)</li>
-		<li>Theory of Languages and Automata (CSC 6500)</li>
-		<li>Artificial Intelligence (CSC 6800)</li>		
-		<li>Design and Analysis of Algorithms (CSC 6580)</li>
-		<li>Numerical Methods I (MAT 5100)</li>
-		<li>Algebra II (MAT 5430)</li>
-		<li>Semidefinite Programs in Quantum Information (CS 867)</li>
-		<li>Quantum Information Processing (CS 768)</li>
-		<li>Theory of Quantum Information (CS 766)</li>
-		<li>Implementation of Quantum Information Processing (QIC 750)</li>
-		<li>Quantum Algorithms (CS 667)</li>
-		<li>Quantum Complexity Theory (CS 867)</li>
-		<li>Recent Advances in Quantum Information (CS 867)</li>		
-		<li>Haar Measure in Quantum Information (CS 867)</li>		
-	</ul>
+<h1>Courses</h1>
 
+<p> List of Computer Science Courses Taken: </p>
+<ul>
+	<li>Fundamental Structures in Computer Science (CSC 1500)</li>
+	<li>Computer Science I (CSC 2110)</li>
+	<li>Computer Science II (CSC 2200)</li>
+	<li>Computer Architecture and Organization (CSC 3100)</li>
+	<li>Algorithm Design and Analysis (CSC 3110)</li>
+	<li>Software Engineering (CSC 4110)</li>
+	<li>Computer Operating Systems (CSC 4420)</li>
+	<li>Introduction to Theoretical Computer Science (CSC 4500)</li>
+	<li>Game Programming and Design (CSC 5430)</li>
+	<li>Principles of Web Technology (CSC 5750)</li>
+	<li>Discrete Mathematics (MAT 2860)</li>
+	<li>Parallel Computing (CSC 6220)</li>
+	<li>Theory of Languages and Automata (CSC 6500)</li>
+	<li>Artificial Intelligence (CSC 6800)</li>		
+	<li>Design and Analysis of Algorithms (CSC 6580)</li>
+	<li>Numerical Methods I (MAT 5100)</li>
+	<li>Algebra II (MAT 5430)</li>
+	<li>Semidefinite Programs in Quantum Information (CS 867)</li>
+	<li>Quantum Information Processing (CS 768)</li>
+	<li>Theory of Quantum Information (CS 766)</li>
+	<li>Implementation of Quantum Information Processing (QIC 750)</li>
+	<li>Quantum Algorithms (CS 667)</li>
+	<li>Quantum Complexity Theory (CS 867)</li>
+	<li>Recent Advances in Quantum Information (CS 867)</li>		
+	<li>Haar Measure in Quantum Information (CS 867)</li>		
+</ul>
+	
 
 
 

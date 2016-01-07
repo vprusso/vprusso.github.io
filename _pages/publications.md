@@ -26,6 +26,7 @@ permalink: /publications/
 <LI> 
 N. Johnston, R. Mittal, V. Russo, J. Watrous, "Extended nonlocal games and monogamy-of-entanglement games", arXiv preprint:1501.02083, (2015). 
 [<A HREF="/pdf/extended_nonlocal.pdf">PDF</A>]
+[<A HREF="/pdf/extended_nonlocal_poster.pdf">Poster</A>]
 [<A HREF="http://arxiv.org/abs/1510.02083">arXiv</A>]
 </LI>
 <BR>

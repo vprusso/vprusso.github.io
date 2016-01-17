@@ -7,20 +7,21 @@ permalink: /software/
 
 <h1>Projects</h1>
 
-<p>Major Contributions:</p>
+<h2>Major Contributions:</h2>
 
 <ul>
   <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the research found <a href="http://www.researchprotocols.org/2015/1/e1/">here</a> </li>
+  <li>A set of Python scripts that uses the <a href="http://cvxopt.org/">CVXOPT</a> convex optimization package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The source can be found <a href="https://bitbucket.org/acosenti/ppt-sdp-paper">here</a>, and the corresponding research paper may be found <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>.</li>
 </ul>
 
-<p>Minor Contributions:</p>
+<h2>Minor Contributions:</h2>
 
 <ul>
   <li>A MATLAB toolbox for exploring quantum entanglement theory -- see my <a href="http://www.qetlab.com/Contributors">contributions</a>.</li>
   <li>An open-source Monte Carlo simulation engine, <a href="http://gomc.eng.wayne.edu/">GOMC</a> written in C++ using the CUDA wrapper. This software is used in research found [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">here</A>] and [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">here</A>] </li> 
 </ul>
 
-<p> Just for Fun:</p>
+<h2> Just for Fun:</h2>
 <ul>
 	<li>An Android application, <a href="https://play.google.com/store/apps/details?id=captainhampton.pi.trainer&hl=en">PiTrainer</a>, for memorizing sequences of the irrational number Pi:</li>
 </ul>
@@ -56,6 +57,12 @@ permalink: /software/
 	<li>Haar Measure in Quantum Information (CS 867)</li>		
 </ul>
 	
+<h2> List of Computer Science MOOCs taken: </h2>
+
+<ul>
+	<li> <a href="https://www.udacity.com/course/intro-to-data-science--ud359">Introduction to Data Science</a></li>
+	<li> <a href="https://www.udacity.com/course/intro-to-machine-learning--ud120">Introduction to Machine Learning</a></li>
+</ul>
 
 
 

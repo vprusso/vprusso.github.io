@@ -10,9 +10,8 @@ permalink: /software/
 <h2>Major Contributions:</h2>
 
 <ul>
-  <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the research found <a href="http://www.researchprotocols.org/2015/1/e1/">here</a> </li>
-<br>
-  <li>A set of Python scripts that uses the <a href="http://cvxopt.org/">CVXOPT</a> convex optimization package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The source can be found <a href="https://bitbucket.org/acosenti/ppt-sdp-paper">here</a>, and the corresponding research paper may be found <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>.</li>
+  <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the research found <a href="http://www.researchprotocols.org/2015/1/e1/">here.</a> <br/><br/> </li>
+  <li>A set of Python scripts that uses the <a href="http://cvxopt.org/">CVXOPT</a> convex optimization package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The source can be found <a href="https://bitbucket.org/acosenti/ppt-sdp-paper">here</a>, and the corresponding research paper may be found <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>. <br/><br/> </li>
 </ul>
 
 <h2>Minor Contributions:</h2>

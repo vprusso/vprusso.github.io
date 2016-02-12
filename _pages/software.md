@@ -34,7 +34,7 @@ permalink: /software/
   <li>An open-source Monte Carlo simulation engine, <a href="http://gomc.eng.wayne.edu/">GOMC</a> written in C++ using the CUDA wrapper. This software is used in research found [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">here</A>] and [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">here</A>] <br/><br/> </li> 
 </ul>
 
-<h2> Just for Fun:</h2>
+<h1> Just for Fun:</h1>
 <ul>
 	<li>An Android application, <a href="https://play.google.com/store/apps/details?id=captainhampton.pi.trainer&hl=en">PiTrainer</a>, for memorizing sequences of the irrational number Pi:</li>
 	

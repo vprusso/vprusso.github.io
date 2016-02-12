@@ -20,7 +20,7 @@ permalink: /software/
   package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The corresponding research paper may be found 
   <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>. <br/><br/> </li>
   
-  <li> <br/><br/> </li>
+  <li>A set of <a href="https://github.com/vprusso/quantum-hedging">MATLAB</a> scripts <br/><br/> </li>
   
   <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the 
   research found <a href="http://www.researchprotocols.org/2015/1/e1/">here.</a> <br/><br/> </li>
@@ -74,6 +74,8 @@ permalink: /software/
 <ul>
 	<li> <a href="https://www.udacity.com/course/intro-to-data-science--ud359">Introduction to Data Science</a></li>
 	<li> <a href="https://www.udacity.com/course/intro-to-machine-learning--ud120">Introduction to Machine Learning</a></li>
+	<li> <a href="https://www.udacity.com/course/developing-android-apps--ud853"> Developing Android Apps (Android Fundamentals)</a></li>
+	<li> <a href="https://www.udacity.com/course/advanced-android-app-development--ud855">Andvanced Android App Development (Productionize and Publish Your Apps)</a></li>
 </ul>
 
 

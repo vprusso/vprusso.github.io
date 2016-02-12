@@ -5,18 +5,29 @@ permalink: /software/
 ---
 <b>Under construction...</b>
 
-<h1>Projects</h1>
-
-<h2>Major Contributions:</h2>
+<h2>Projects</h2>
 
 <ul>
-  <li>A set of <a href="https://github.com/vprusso/monogamy-of-entanglement-games">MATLAB</a> scripts that use the CVX library to perform upper bounds on specific classes of nonlocal games and that supplement the content of the following paper <a href="http://arxiv.org/abs/1510.02083">[Johnston, Mittal, Russo, Watrous (2015)]</a>. <br/><br/> </li>
-  <li>A set of <a href="https://github.com/vprusso/separable-from-spectrum">MATLAB</a> scripts that supplement the content of the following paper <a href="http://www.rintonpress.com/xxqic15/qic-15-78/0694-0720.pdf">[Arunachalam, Johnston, Russo (2015)]</a>. <br/><br/> </li>
-  <li>A <a href="https://bitbucket.org/acosenti/ppt-sdp-paper">Python script</a> that uses the <a href="http://cvxopt.org/">CVXOPT</a> convex optimization package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The corresponding research paper may be found <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>. <br/><br/> </li>
-  <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the research found <a href="http://www.researchprotocols.org/2015/1/e1/">here.</a> <br/><br/> </li>
-</ul>
+  <li>A set of <a href="https://github.com/vprusso/monogamy-of-entanglement-games">MATLAB</a> scripts that use the CVX library to perform upper
+  bounds on specific classes of nonlocal games and that supplement the content of the following paper
+  <a href="http://arxiv.org/abs/1510.02083">[Johnston, Mittal, Russo, Watrous (2015)]</a>. <br/><br/> </li>
+  
+  <li>A set of <a href="https://github.com/vprusso/separable-from-spectrum">MATLAB</a> scripts that implement some of the semidefinite programs
+  used in the paper <a href="http://www.rintonpress.com/xxqic15/qic-15-78/0694-0720.pdf">[Arunachalam, Johnston, Russo (2015)]</a> to provide evidence 
+  for the claim that a quantum state is absolutely separable if and only if it is absolutely PPT. <br/><br/> </li>
+  
+  <li>A <a href="https://bitbucket.org/acosenti/ppt-sdp-paper">Python script</a> that uses the <a href="http://cvxopt.org/">CVXOPT</a> convex optimization 
+  package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The corresponding research paper may be found 
+  <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>. <br/><br/> </li>
+  
+  <li> <br/><br/> </li>
+  
+  <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the 
+  research found <a href="http://www.researchprotocols.org/2015/1/e1/">here.</a> <br/><br/> </li>
 
-<h2>Minor Contributions:</h2>
+  </ul>
+
+<h1>Minor Contributions:</h1>
 
 <ul>
   <li>A MATLAB toolbox for exploring quantum entanglement theory -- see my <a href="http://www.qetlab.com/Contributors">contributions</a>. <br/><br/> </li>
@@ -26,11 +37,10 @@ permalink: /software/
 <h2> Just for Fun:</h2>
 <ul>
 	<li>An Android application, <a href="https://play.google.com/store/apps/details?id=captainhampton.pi.trainer&hl=en">PiTrainer</a>, for memorizing sequences of the irrational number Pi:</li>
+	
 </ul>
 
-<h1>Courses</h1>
-
-<p> List of Computer Science Courses Taken: </p>
+<h2> List of computer science courses taken: </h2>
 <ul>
 	<li>Fundamental Structures in Computer Science (CSC 1500)</li>
 	<li>Computer Science I (CSC 2110)</li>
@@ -59,7 +69,7 @@ permalink: /software/
 	<li>Haar Measure in Quantum Information (CS 867)</li>		
 </ul>
 	
-<h2> List of Computer Science MOOCs taken: </h2>
+<h2> List of online computer science courses taken: </h2>
 
 <ul>
 	<li> <a href="https://www.udacity.com/course/intro-to-data-science--ud359">Introduction to Data Science</a></li>

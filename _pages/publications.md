@@ -24,7 +24,8 @@ permalink: /publications/
 <h3>Refereed Journal Publications and Preprints</h3>
 
 <LI> 
-<A HREF="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</A>, N. Johnston, R. Mittal, V. Russo, J. Watrous, arXiv preprint:1501.02083, (2015). 
+<A HREF="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</A>,<br> 
+N. Johnston, R. Mittal, V. Russo, J. Watrous, arXiv preprint:1501.02083, (2015). <br> 
 [<A HREF="/pdf/extended_nonlocal.pdf">PDF</A>]
 [<A HREF="/pdf/extended_nonlocal_poster.pdf">Poster</A>]
 [<A HREF="http://arxiv.org/abs/1510.02083">arXiv</A>]
@@ -33,7 +34,8 @@ permalink: /publications/
 <BR>
 
 <LI>
-<A HREF="http://arxiv.org/pdf/1408.6981v1.pdf">"Limitations on separable measurements from cone programming"</A>, S. Bandypadhyay, A. Cosentino, N. Johnston, V. Russo, J. Watrous, 
+<A HREF="http://arxiv.org/pdf/1408.6981v1.pdf">"Limitations on separable measurements from cone programming"</A>, <br>
+S. Bandypadhyay, A. Cosentino, N. Johnston, V. Russo, J. Watrous, <br>
 IEEE Transactions on Information Theory, (Volume:61, Issue: 6), (2015). 
 [<A HREF="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7086052&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F18%2F7109216%2F07086052.pdf%3Farnumber%3D7086052">Link</A>]
 [<A HREF="/pdf/limitations_cone.pdf">PDF</A>]
@@ -44,7 +46,8 @@ IEEE Transactions on Information Theory, (Volume:61, Issue: 6), (2015).
 <BR>
 
 <LI>
-<A HREF="http://arxiv.org/pdf/1405.5853v3.pdf">"Is Absolute Separability Determined by the Partial Transpose?"</A>, S. Arunachalam, N. Johnston, V. Russo, 
+<A HREF="http://arxiv.org/pdf/1405.5853v3.pdf">"Is Absolute Separability Determined by the Partial Transpose?"</A>, <br>
+S. Arunachalam, N. Johnston, V. Russo, <br>
 Quantum Information & Computation, 15(7&8):0694-0720, (2015).
 [<A HREF="http://www.rintonpress.com/xxqic15/qic-15-78/0694-0720.pdf">Link</A>]
 [<A HREF="/pdf/absolute_separability.pdf">PDF</A>]
@@ -54,7 +57,8 @@ Quantum Information & Computation, 15(7&8):0694-0720, (2015).
 <BR>
 
 <LI>
-<A HREF="http://arxiv.org/pdf/1308.4134v1.pdf">"An algorithm for the T-count"</A>, D. Gosset, V. Kliuchnikov, M. Mosca, V. Russo, 
+<A HREF="http://arxiv.org/pdf/1308.4134v1.pdf">"An algorithm for the T-count"</A>, <br>
+D. Gosset, V. Kliuchnikov, M. Mosca, V. Russo, <br>
 Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014),
 [<A HREF="http://dl.acm.org/citation.cfm?id=2685180">Link</A>]
 [<A HREF="/pdf/t_count.pdf">PDF</A>]
@@ -64,7 +68,8 @@ Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014)
 <BR>
 
 <LI>
-<A HREF="http://arxiv.org/pdf/1307.3232v2.pdf">"Small sets of locally indistinguishable orthogonal maximally entangled states"</A>, A. Cosentino, V. Russo, 
+<A HREF="http://arxiv.org/pdf/1307.3232v2.pdf">"Small sets of locally indistinguishable orthogonal maximally entangled states"</A>, <br>
+A. Cosentino, V. Russo, <br>
 Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014).
 [<A HREF="http://dl.acm.org/citation.cfm?id=2685167">Link</A>]
 [<A HREF="/pdf/small_sets.pdf">PDF</A>]
@@ -75,7 +80,8 @@ Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014
 <BR>
 
 <LI>
-<A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, S. Arunachalam, A. Molina, V. Russo, 
+<A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 
+S. Arunachalam, A. Molina, V. Russo, <br>
 arXiv preprint:1310.7954, (2013). 
 [<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
 [<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
@@ -86,7 +92,8 @@ arXiv preprint:1310.7954, (2013).
 <BR>
 
 <LI>
-<A HREF="/pdf/lennard_jonesium.pdf">"GPU-accelerated Gibbs Ensemble Monte Carlo Simulations of Lennard-Jonesium"</A>, J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, 
+<A HREF="/pdf/lennard_jonesium.pdf">"GPU-accelerated Gibbs Ensemble Monte Carlo Simulations of Lennard-Jonesium"</A>, <br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
 Computer Physics Communications, (2013). 
 [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">Link</A>]
 [<A HREF="/pdf/lennard_jonesium.pdf">PDF</A>]
@@ -95,7 +102,8 @@ Computer Physics Communications, (2013).
 <BR>
 
 <LI>
-<A HREF="/pdf/gpu_parallel.pdf">"Parallel Monte Carlo Simulation for the Canonical Ensemble on the GPU"</A>, E. Hailat, J. Mick, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, 
+<A HREF="/pdf/gpu_parallel.pdf">"Parallel Monte Carlo Simulation for the Canonical Ensemble on the GPU"</A>,<br> 
+E. Hailat, J. Mick, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
 Journal of Parallel and Distributed Computing, (2012). 
 [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">Link</A>]
 [<A HREF="/pdf/gpu_parallel.pdf">PDF</A>]
@@ -105,7 +113,8 @@ Journal of Parallel and Distributed Computing, (2012).
 <BR>
 
 <LI>
-<A HREF="/pdf/beatty_sequences.pdf">"Beatty sequences, Fibonacci sequences, and the Golden ratio"</A>, V. Russo, L. Schwiebert, 
+<A HREF="/pdf/beatty_sequences.pdf">"Beatty sequences, Fibonacci sequences, and the Golden ratio"</A>,<br>
+V. Russo, L. Schwiebert, <br>
 Fibonacci Quarterly 49, 151-154 (2011). 
 [<A HREF="http://www.fq.math.ca/Papers/49-2/RussoSchwiebert.pdf">Link</A>]
 [<A HREF="/pdf/beatty_sequences.pdf">PDF</A>]

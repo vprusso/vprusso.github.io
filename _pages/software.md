@@ -20,7 +20,8 @@ permalink: /software/
   package to illustrate the indistinguishability of certain states by positive partial transpose measurements. The corresponding research paper may be found 
   <a href="http://dl.acm.org/citation.cfm?id=2685167">[Cosentino, Russo (2014)]</a>. <br/><br/> </li>
   
-  <li>A set of <a href="https://github.com/vprusso/quantum-hedging">MATLAB</a> scripts <br/><br/> </li>
+  <li>A set of <a href="https://github.com/vprusso/quantum-hedging">MATLAB</a> scripts that implement some of the semidefinite programs
+	  used in the paper <a href="http://arxiv.org/pdf/1310.7954v3.pdf">[Arunachalam, Molina, Russo (2013)].</a> <br/><br/> </li>
   
   <li>A PHP interface used for a hypertension study by automatically sending text messages to patients and tracking responses. This software is used in the 
   research found <a href="http://www.researchprotocols.org/2015/1/e1/">here.</a> <br/><br/> </li>

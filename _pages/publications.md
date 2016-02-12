@@ -36,7 +36,7 @@ N. Johnston, R. Mittal, V. Russo, J. Watrous, arXiv preprint:1501.02083, (2015).
 <LI>
 <A HREF="http://arxiv.org/pdf/1408.6981v1.pdf">"Limitations on separable measurements from cone programming"</A>, <br>
 S. Bandypadhyay, A. Cosentino, N. Johnston, V. Russo, J. Watrous, <br>
-IEEE Transactions on Information Theory, (Volume:61, Issue: 6), (2015). 
+IEEE Transactions on Information Theory, (Volume:61, Issue: 6), (2015). <br> 
 [<A HREF="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7086052&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F18%2F7109216%2F07086052.pdf%3Farnumber%3D7086052">Link</A>]
 [<A HREF="/pdf/limitations_cone.pdf">PDF</A>]
 [<A HREF="/pdf/limitations_cone_poster.pdf">Poster</A>]
@@ -48,7 +48,7 @@ IEEE Transactions on Information Theory, (Volume:61, Issue: 6), (2015).
 <LI>
 <A HREF="http://arxiv.org/pdf/1405.5853v3.pdf">"Is Absolute Separability Determined by the Partial Transpose?"</A>, <br>
 S. Arunachalam, N. Johnston, V. Russo, <br>
-Quantum Information & Computation, 15(7&8):0694-0720, (2015).
+Quantum Information & Computation, 15(7&8):0694-0720, (2015).<br> 
 [<A HREF="http://www.rintonpress.com/xxqic15/qic-15-78/0694-0720.pdf">Link</A>]
 [<A HREF="/pdf/absolute_separability.pdf">PDF</A>]
 [<A HREF="http://arxiv.org/abs/1405.5853">arXiv</A>]
@@ -59,7 +59,7 @@ Quantum Information & Computation, 15(7&8):0694-0720, (2015).
 <LI>
 <A HREF="http://arxiv.org/pdf/1308.4134v1.pdf">"An algorithm for the T-count"</A>, <br>
 D. Gosset, V. Kliuchnikov, M. Mosca, V. Russo, <br>
-Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014),
+Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014),<br> 
 [<A HREF="http://dl.acm.org/citation.cfm?id=2685180">Link</A>]
 [<A HREF="/pdf/t_count.pdf">PDF</A>]
 [<A HREF="/pdf/t_count_poster.pdf">Poster</A>]
@@ -70,7 +70,7 @@ Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014)
 <LI>
 <A HREF="http://arxiv.org/pdf/1307.3232v2.pdf">"Small sets of locally indistinguishable orthogonal maximally entangled states"</A>, <br>
 A. Cosentino, V. Russo, <br>
-Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014).
+Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014).<br> 
 [<A HREF="http://dl.acm.org/citation.cfm?id=2685167">Link</A>]
 [<A HREF="/pdf/small_sets.pdf">PDF</A>]
 [<A HREF="/pdf/small_sets_poster.pdf">Poster</A>]
@@ -82,7 +82,7 @@ Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014
 <LI>
 <A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 
 S. Arunachalam, A. Molina, V. Russo, <br>
-arXiv preprint:1310.7954, (2013). 
+arXiv preprint:1310.7954, (2013). <br> 
 [<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
 [<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
 [<A HREF="/pdf/hedging_bets_slides.pdf">Slides</A>]
@@ -94,7 +94,7 @@ arXiv preprint:1310.7954, (2013).
 <LI>
 <A HREF="/pdf/lennard_jonesium.pdf">"GPU-accelerated Gibbs Ensemble Monte Carlo Simulations of Lennard-Jonesium"</A>, <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
-Computer Physics Communications, (2013). 
+Computer Physics Communications, (2013). <br> 
 [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">Link</A>]
 [<A HREF="/pdf/lennard_jonesium.pdf">PDF</A>]
 [<A HREF="http://gomc.eng.wayne.edu/">Software</A>]
@@ -104,7 +104,7 @@ Computer Physics Communications, (2013).
 <LI>
 <A HREF="/pdf/gpu_parallel.pdf">"Parallel Monte Carlo Simulation for the Canonical Ensemble on the GPU"</A>,<br> 
 E. Hailat, J. Mick, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
-Journal of Parallel and Distributed Computing, (2012). 
+Journal of Parallel and Distributed Computing, (2012). <br> 
 [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">Link</A>]
 [<A HREF="/pdf/gpu_parallel.pdf">PDF</A>]
 [<A HREF="/pdf/gpu_parallel_poster.pdf">Poster</A>]
@@ -115,7 +115,7 @@ Journal of Parallel and Distributed Computing, (2012).
 <LI>
 <A HREF="/pdf/beatty_sequences.pdf">"Beatty sequences, Fibonacci sequences, and the Golden ratio"</A>,<br>
 V. Russo, L. Schwiebert, <br>
-Fibonacci Quarterly 49, 151-154 (2011). 
+Fibonacci Quarterly 49, 151-154 (2011). <br> 
 [<A HREF="http://www.fq.math.ca/Papers/49-2/RussoSchwiebert.pdf">Link</A>]
 [<A HREF="/pdf/beatty_sequences.pdf">PDF</A>]
 [<A HREF="https://github.com/vprusso/swappage_problem">Software</A>]

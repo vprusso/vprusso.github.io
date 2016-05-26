@@ -25,7 +25,8 @@ permalink: /publications/
 
 <LI> 
 <A HREF="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</A>,<br> 
-N. Johnston, R. Mittal, V. Russo, J. Watrous, Proceedings of the Royal Soceity A, Volume: 472 Issue: 2189, (2016). <br> 
+N. Johnston, R. Mittal, V. Russo, J. Watrous, <br>
+Proceedings of the Royal Soceity A, Volume: 472 Issue: 2189, (2016). <br> 
 [<A HREF="http://rspa.royalsocietypublishing.org/content/472/2189/20160003.abstract">Link</A>]
 [<A HREF="/pdf/extended_nonlocal.pdf">PDF</A>]
 [<A HREF="/pdf/extended_nonlocal_poster.pdf">Poster</A>]

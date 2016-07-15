@@ -47,13 +47,13 @@ authors:
         name: John Doe
         bio: A Man who travels the world eating noodles
         external-image: false
-        #picture: assets/images/profile.jpg
+        picture: assets/images/profile.jpg
         twitter: johndoe
     jamesfoster:
         name: James Foster
         bio: A Man who develops software with coffee
         external-image: false
-        picture: assets/images/james.jpg
+        picture: assets/images/profile.jpg
         twitter: jamesfoster
 
 # do you want a larger site? change the option below

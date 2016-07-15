@@ -10,8 +10,7 @@ description: A blog about technology and stuff related
 external-image: false
 picture: assets/images/profile.jpg
 
-url: http://koppl.in/indigo
-# your url: http://USERNAME.github.io
+url: http://vprusso.github.io/
 
 permalink: /:title/
 

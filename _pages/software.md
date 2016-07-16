@@ -5,7 +5,7 @@ permalink: /software/
 ---
 <b>Under construction...</b>
 
-<--!
+<!--
 <h2>Projects</h2>
 
 <ul>
@@ -79,7 +79,7 @@ permalink: /software/
 	<li> <a href="https://www.udacity.com/course/developing-android-apps--ud853"> Developing Android Apps (Android Fundamentals)</a></li>
 	<li> <a href="https://www.udacity.com/course/advanced-android-app-development--ud855">Andvanced Android App Development (Productionize and Publish Your Apps)</a></li>
 </ul>
-!-->
+-->
 
 
 

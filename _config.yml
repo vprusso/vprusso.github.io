@@ -22,3 +22,5 @@ paginate_path: '/blog/page:num/'
 # Pages
 include: ['_pages']
 relative_permalinks: false
+
+encoding: UTF-8

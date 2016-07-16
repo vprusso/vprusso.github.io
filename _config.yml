@@ -1,0 +1,24 @@
+# Site settings
+title: Vincent Russo
+email: vincentrusso1@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://vprusso.github.io" # the base hostname & protocol for your site
+twitter_username: captainhamptons
+github_username:  vprusso
+stackoverflow: vincent-russo
+googlescholar: vincent-russo
+linkedin: vincentrusso1@gmail.com
+soundcloud: captainhampton
+
+# Build settings
+markdown: kramdown
+
+# Blog pagination and post url structure
+permalink:     '/blog/:year/:title/'
+paginate_path: '/blog/page:num/'
+
+# Pages
+include: ['_pages']
+relative_permalinks: false

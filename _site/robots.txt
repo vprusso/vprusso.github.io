@@ -1,4 +1,0 @@
-User-agent: * 
-Disallow:
-
-Sitemap: http://vprusso.github.io/sitemap.xml

@@ -155,6 +155,5 @@ AIChE (American Institute of Chemical Engineers, (2012)<p>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers, (2011)<p>
 </LI>
-
 </OL>
 

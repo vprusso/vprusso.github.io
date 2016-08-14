@@ -29,6 +29,7 @@ N. Johnston, R. Mittal, V. Russo, J. Watrous, Proceedings of the Royal Soceity A
 [<A HREF="http://rspa.royalsocietypublishing.org/content/472/2189/20160003.abstract">Link</A>]
 [<A HREF="/pdf/extended_nonlocal.pdf">PDF</A>]
 [<A HREF="/pdf/extended_nonlocal_poster.pdf">Poster</A>]
+[<A HREF="/pdf/enlg_moe_slides.pdf">Slides</A>]
 [<A HREF="http://arxiv.org/abs/1510.02083">arXiv</A>]
 [<A HREF="https://github.com/vprusso/monogamy-of-entanglement-games">Software</A>]
 </LI>

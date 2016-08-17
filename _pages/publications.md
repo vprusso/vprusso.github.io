@@ -49,7 +49,7 @@ IEEE Transactions on Information Theory, (Volume:61, Issue: 6), (2015). <br>
 <BR>
 
 <LI>
-<A HREF="http://arxiv.org/pdf/1405.5853v3.pdf">"Is Absolute Separability Determined by the Partial Transpose?"</A>, <br>
+<A HREF="http://arxiv.org/pdf/1405.5853v3.pdf">"Is absolute separability determined by the partial transpose?"</A>, <br>
 S. Arunachalam, N. Johnston, V. Russo, <br>
 Quantum Information & Computation, 15(7&8):0694-0720, (2015).<br> 
 [<A HREF="http://www.rintonpress.com/xxqic15/qic-15-78/0694-0720.pdf">Link</A>]
@@ -95,7 +95,7 @@ arXiv preprint:1310.7954, (2013). <br>
 <BR>
 
 <LI>
-<A HREF="/pdf/lennard_jonesium.pdf">"GPU-accelerated Gibbs Ensemble Monte Carlo Simulations of Lennard-Jonesium"</A>, <br>
+<A HREF="/pdf/lennard_jonesium.pdf">"GPU-accelerated Gibbs ensemble Monte Carlo simulations of Lennard-Jonesium"</A>, <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
 Computer Physics Communications, (2013). <br> 
 [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">Link</A>]
@@ -105,7 +105,7 @@ Computer Physics Communications, (2013). <br>
 <BR>
 
 <LI>
-<A HREF="/pdf/gpu_parallel.pdf">"Parallel Monte Carlo Simulation for the Canonical Ensemble on the GPU"</A>,<br> 
+<A HREF="/pdf/gpu_parallel.pdf">"Parallel Monte Carlo simulation for the canonical ensemble on the GPU"</A>,<br> 
 E. Hailat, J. Mick, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
 Journal of Parallel and Distributed Computing, (2012). <br> 
 [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">Link</A>]
@@ -132,28 +132,28 @@ Fibonacci Quarterly 49, 151-154 (2011). <br>
 <OL reversed>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC Developments: CBMC Nonpolar Molecules, Verlet Lists, and Architectural Optimizations."</a> <br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC Developments: CBMC Nonpolar molecules, verlet lists, and architectural optimizations."</a> <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>
 <BR>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283934">"Optimization of a Lennard-Jones Particle Monte Carlo Gpucode."</a> <br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283934">"Optimization of a Lennard-Jones particle Monte Carlo GPU-code."</a> <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>
 <BR>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283711">"GPU Accelerated Configurational Bias Monte Carlo Simulations of Linear Alkanes."</a> <br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283711">"GPU accelerated configurational bias Monte Carlo simulations of linear alkanes."</a> <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>
 <BR>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=235324">"GPU Accelerated Monte Carlo Simulations In the Gibbs and Canonical Ensembles."</a> <br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=235324">"GPU accelerated Monte Carlo simulations in the Gibbs and canonical ensembles."</a> <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers), (2011).
 </LI>

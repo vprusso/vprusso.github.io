@@ -132,7 +132,7 @@ Fibonacci Quarterly 49, 151-154 (2011). <br>
 <OL reversed>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC Developments: CBMC Nonpolar molecules, verlet lists, and architectural optimizations."</a> <br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations."</a> <br>
 J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>

@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "A neural network in TensorFlow for classifying UCI breast cancer data"
+title:  "A neural network in TensorFlow for classifying UCI cancer data"
 date:   2015-01-17 12:58:35
 categories: tensorflow, machine learning, data science, neural networks
 ---

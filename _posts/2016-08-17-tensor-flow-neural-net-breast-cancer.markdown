@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "A neural network in TensorFlow for classifying UCI cancer data"
+title:  "A neural network in TensorFlow for classifying cancer data"
 date:   2016-08-19 2:58:35
 categories: tensorflow, machine learning, data science, neural networks
 ---
@@ -148,12 +148,6 @@ accuracy_score = classifier.evaluate(x = test_set.data,
                                      y = test_set.target)["accuracy"]
 print('Accuracy: {0:f}'.format(accuracy_score))
 ```
-
-    WARNING:tensorflow:Given features: Tensor("input:0", shape=(?, 9), dtype=float32), required signatures: TensorSignature(dtype=tf.float32, shape=TensorShape([Dimension(None), Dimension(9)]), is_sparse=False).
-    WARNING:tensorflow:Given targets: Tensor("output:0", shape=(?,), dtype=int64), required signatures: TensorSignature(dtype=tf.int64, shape=TensorShape([Dimension(None)]), is_sparse=False).
-    /usr/local/lib/python3.5/dist-packages/tensorflow/python/ops/array_ops.py:1811: VisibleDeprecationWarning: converting an array with ndim > 0 to an index will result in an error in the future
-      result_shape.insert(dim, 1)
-
 
     Accuracy: 1.000000
 

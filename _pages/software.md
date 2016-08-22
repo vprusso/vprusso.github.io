@@ -7,7 +7,7 @@ permalink: /software/
 
 <h2>Committer: </h2>
 
-<div class="row">
+<div style="text-align:center;">
     <div class="col-md-3">
       <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >sympy</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=star&count=true&v=2"

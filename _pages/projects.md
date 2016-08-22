@@ -42,7 +42,8 @@ permalink: /projects/
 
 <ul>
 	<li> Coursera: Machine Learning Foundations: A Case Study Approach <br>
-		[<A HREF="/pdf/certificate_coursera_mlcasestudy.pdf">Certificate</A>]
+		[<A HREF="/pdf/certificate_coursera_mlcasestudy.pdf">Certificate</A>] 
+		
 		[<A HREF="https://www.coursera.org/learn/ml-foundations">Course Page</A>]
 	</li>
 	

@@ -34,9 +34,23 @@ permalink: /projects/
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=GOMC-WSU&repo=GOMC_GPU&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> >An open-source Monte Carlo simulation engine written in C++ using the CUDA wrapper. </p>
+      <p style="font-size:80%;"> An open-source Monte Carlo simulation engine written in C++ using the CUDA wrapper. </p>
     </div>
 </div>
+
+<h2> MOOCs: </h2>
+
+<ul>
+	<li> Coursera: Machine Learning Foundations: A Case Study Approach <br>
+		[<A HREF="/pdf/certificate_coursera_mlcasestudy">Certificate</A>]
+		[<A HREF="https://www.coursera.org/learn/ml-foundations">Course Page</A>]
+	</li>
+	
+	<li> Stanford: Statistical Learning (with distinction) <br> 
+		[<A HREF="/pdf/certificate_isl_stanford">Certificate</A>]
+		[<A HREF="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about">Course Page</A>]
+	</li>	
+</ul>
 
 <!--
 <b>Under construction...</b>

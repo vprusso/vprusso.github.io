@@ -3,9 +3,8 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
-<b>Under construction...</b>
 
-<h2>Committer: </h2>
+<h3>Committer: </h3>
 
 <div class="row">
     <div class="col-md-3">
@@ -26,20 +25,21 @@ permalink: /projects/
     </div>
 </div>
 
-<h2>Contributor: </h2>
+<h3>Contributor: </h3>
 
 <div class="row">
     <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >sympy</a></h3>
+      <h3 style="font-size:130%;"><a href="https://github.com/GOMC-WSU/GOMC_GPU" >GOMC</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=GOMC-WSU&repo=GOMC_GPU&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=GOMC-WSU&repo=GOMC_GPU&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> A computer algebra system written in pure Python http://sympy.org/. </p>
+      <p style="font-size:80%;"> >An open-source Monte Carlo simulation engine written in C++ using the CUDA wrapper. </p>
     </div>
 </div>
 
 <!--
+<b>Under construction...</b>
 <h2>Projects</h2>
 
 <ul>

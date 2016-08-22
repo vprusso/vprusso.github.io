@@ -42,12 +42,12 @@ permalink: /projects/
 
 <ul>
 	<li> Coursera: Machine Learning Foundations: A Case Study Approach <br>
-		[<A HREF="/pdf/certificate_coursera_mlcasestudy">Certificate</A>]
+		[<A HREF="/pdf/certificate_coursera_mlcasestudy.pdf">Certificate</A>]
 		[<A HREF="https://www.coursera.org/learn/ml-foundations">Course Page</A>]
 	</li>
 	
 	<li> Stanford: Statistical Learning (with distinction) <br> 
-		[<A HREF="/pdf/certificate_isl_stanford">Certificate</A>]
+		[<A HREF="/pdf/certificate_isl_stanford.pdf">Certificate</A>]
 		[<A HREF="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about">Course Page</A>]
 	</li>	
 </ul>

@@ -5,26 +5,6 @@ permalink: /software/
 ---
 <b>Under construction...</b>
 
-<h2>Contributor: </h2>
-
-<div class="row">
-    <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/topepo/caret" >caret</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=topepo&repo=caret&type=star&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=topepo&repo=caret&type=fork&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> R Package to Streamline the Process for Creating Predictive Machine Learning Models </p>
-    </div>
-    <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/pydata/pandas" >pandas</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=pydata&repo=pandas&type=star&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=pydata&repo=pandas&type=fork&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> Python Package for Flexible and Powerful Data Analysis and Manipulation</p>
-    </div>
-</div>
 
 <!--
 <h2>Projects</h2>

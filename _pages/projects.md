@@ -38,7 +38,7 @@ permalink: /projects/
     </div>
 </div>
 
-<h2> MOOCs: </h2>
+<h1> MOOCs: </h1>
 
 <ul>
 	<li> Coursera: Machine Learning Foundations: A Case Study Approach <br>

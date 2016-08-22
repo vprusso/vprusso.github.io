@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Software
-permalink: /software/
+title: Projects
+permalink: /projects/
 ---
 <b>Under construction...</b>
 
@@ -22,7 +22,20 @@ permalink: /software/
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=nathanieljohnston&repo=qetlab&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> A MATLAB toolbox for quantum entanglement. </p>
+      <p style="font-size:80%;"> A MATLAB toolbox for studying quantum entanglement. </p>
+    </div>
+</div>
+
+<h2>Contributor: </h2>
+
+<div class="row">
+    <div class="col-md-3">
+      <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >sympy</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=GOMC-WSU&repo=GOMC_GPU&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=GOMC-WSU&repo=GOMC_GPU&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+      <p style="font-size:80%;"> A computer algebra system written in pure Python http://sympy.org/. </p>
     </div>
 </div>
 

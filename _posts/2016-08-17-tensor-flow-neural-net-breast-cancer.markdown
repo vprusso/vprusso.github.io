@@ -4,6 +4,11 @@ comments: true
 title:  "A neural network in TensorFlow for classifying cancer data"
 date:   2016-08-19 2:58:35
 categories: tensorflow, machine learning, data science, neural networks
+tags:
+- tensorflow
+- machine learning
+- data science
+- neural networks
 ---
 
 # A neural network in TensorFlow for classifying UCI breast cancer data

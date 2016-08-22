@@ -1,0 +1,264 @@
+---
+title: "The 2016 Michigan Presidential Primary Election"
+author: "Vincent Russo"
+date: "April 21, 2016"
+bibliography: bib_michigan_primary.bib
+output: 
+  html_document:
+    theme: yeti
+    toc: TRUE
+---
+
+<style>
+table{ font-family: Consolas; margin-left: auto; margin-right: auto;}
+</style>
+
+## Introduction
+
+On March 8th, 2016, Michigan held the presidential primary for the 2016 presidential election. Famed statistician Nate Silver of the website FiveThirtyEight [@Silver2008] predicted the outcome of the Michigan primary for democratic candidates Bernie Sanders and Hillary Clinton. Silver's predictions suggested that Hillary would win the democratic primary with a 99% chance of certainty [@Silver2016]. This prediction, coming from the same person who accurately predicted the winner of all 50 states (including the District of Columbia) for the 2012 presidential election [@Hough2012], had some significant weight to it. However, despite FiveThirtyEight's 99% chance for Hillary to win the democratic primary in Michigan, it was won instead by senator Bernie Sanders. Silver was not alone in his prediction, though, in nearly every poll, Hillary was from 10 to 20 points above Bernie Sanders [@RCP2016]. 
+
+What did FiveThirtyEight and the majority of the polls miss for Michigan? Is it possible that this event is simply a fluke and nothing but a blip in the primary polling data? I can't say that this post really provides an answer to the previous questions. This is more or less a black box analysis of the primary results for Michigan to see if anything really stands out, and is just a fun opportunity to explore some data. As we'll see, nothing really tends to stand out to answer this question, but by analyzing this data we may set ourselves up for a broader analysis. The content in this post is more exploratory and breadth based. 
+
+I'm originally from Michigan and have lived there for most of my life. I have a general sense of the demographic layout of the state, and a rough idea as to how certain counties would cast their vote. Using this and the data, let's dig in further.  
+
+## Data and R Packages
+
+For the data, we will be primarily using the data provided by Kaggle [@Kaggle2016] on the primary election. For the analysis, We will be using R, and will explicitly mention any R packages that I use inline in this post. First, we'll load the appropriate R packages and load in the data from `primary_results.csv` and `county_facts.csv`. The `primary_results.csv` file contains the information for each county in each state, and the distribution of votes that each candidate obtained. The `county_facts.csv` file gives more information on the demographic makeup of each county including race, education, etc. More information on these data sources can be found here [@Kaggle2016]. 
+
+```{r, message = FALSE, results='hide', warning = FALSE, code_folding: show}
+# Import packages
+libs <- c("dplyr","DT","GGally","ggplot2","grid","gridExtra","plotly","stargazer","randomForest",
+          "readr","rgeos","rgdal","maptools","maps","RColorBrewer","scales")
+lapply(libs, require, character.only = TRUE)
+
+# Import data
+demographics <- read.csv("../input/county_facts.csv",stringsAsFactors = F)
+demographics <- subset(demographics,state_abbreviation !="")
+primary <- read.csv("../input/primary_results.csv",stringsAsFactors = F)
+```
+
+The data cleaning process is heavily derivative of the process used by Papiu [@Papiu2016] in his Kernel Kaggle submission, which we present here for completeness. 
+
+```{r, message = FALSE, results='hide', warning = FALSE}
+
+# Place the winners and the fraction of votes won for Democrats and Republicans 
+# into respective data frames.
+dem_votes <- primary %>%  
+  filter(party == "Democrat") %>% 
+  group_by(state_abbreviation, county) %>% 
+  summarize(winner = candidate[which.max(fraction_votes)],
+            Vote = max(fraction_votes),
+            votes = max(votes))
+
+rep_votes <- primary %>%  
+  filter(party == "Republican") %>% 
+  group_by(state_abbreviation, county) %>% 
+  summarize(winner = candidate[which.max(fraction_votes)],
+            Vote = max(fraction_votes),
+            votes = max(votes))
+
+# Now, we place in the relevant demographic information.
+demographics %<>%
+  filter(state_abbreviation %in% c("MI")) %>% 
+  select(state_abbreviation = state_abbreviation, county = area_name, 
+         income = INC110213, hispanic = RHI725214,
+         black = RHI225214, female = SEX255214, foreign_born = POP645213,
+         veteran = VET605213, white = RHI825214, college = EDU685213, density = POP060210) %>% 
+  mutate(county = gsub(" County", "", county))
+
+# Join by state since some county names overlap. 
+dem_votes <- inner_join(dem_votes, demographics, by = c("state_abbreviation","county"))
+rep_votes <- inner_join(rep_votes, demographics, by = c("state_abbreviation","county"))
+total_votes <- rbind(dem_votes, rep_votes)
+```
+
+## Exploratory Data Analysis
+
+We now have the data ready to go. First, how many primary elections did each candidate win?
+
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+state_name <- "Michigan"
+
+# We'll be using the following hex codes to denote the respective colors for
+# each candidate so that we can distinguish them more easily. 
+sanders_hex <- "#83BC5E"
+clinton_hex <- "#0074D3"
+trump_hex <- "#D65454"
+kasich_hex <- "#3CA0A0"
+cruz_hex <- "#EABC3B"
+
+# Sort by total number of wins.
+total_votes <- within(total_votes,
+                      winner <- factor(winner,
+                                       levels = names(sort(table(winner),
+                                                           decreasing = TRUE))))
+# Total number of Michigan primaries won by candidate.
+total_votes %>% count(winner) %>%
+  plot_ly(x = winner, y = n, type = "bar", marker = list(color = c(sanders_hex, trump_hex, clinton_hex, kasich_hex, cruz_hex)) ) %>%
+  layout(title = "Total Number of Michigan Primaries Won by Candidate",
+         xaxis = list(title = "Presidential Candidates"), 
+         yaxis = list(title = "Total Primaries Won"))
+```
+
+Let's also take a look at a map of Michigan that highlights the counties where Bernie Sanders and Hillary Clinton obtained a victory. 
+
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+state_name <- "Michigan"
+map(database = "county", region = "Michigan", xlim=c(-91, -75))
+
+for (i in 1:nrow(dem_votes)) {
+  if (dem_votes$winner[i] == "Bernie Sanders") {
+    map("county", paste(state_name, gsub(". ", ".", dem_votes$county[i], fixed = TRUE), sep=","), col=sanders_hex, fill=T, add=T)
+  } else {
+    map("county", paste(state_name, gsub(". ", ".", dem_votes$county[i], fixed = TRUE), sep=","), col=clinton_hex, fill=T, add=T)
+  }
+}
+title("Democratic County Winner Results")
+legend(c("Hillary Clinton","Bernie Sanders"), x = -83, y = 46, horiz = FALSE, fill = c(clinton_hex, sanders_hex))
+```
+
+Despite the prediction of a 99% probability of a Clinton victory in Michigan, we're seeing a strong representation of Bernie Sanders victories across all counties in Michigan. Let's now take a look at the demographic information that we have and see if anything stands out. First, let's just lay it all out in the following table. 
+
+```{r, message = FALSE, warning = FALSE}
+total_votes %>% 
+  group_by(winner) %>% 
+  summarize(round(mean(income)), 
+            round(mean(white),1), round(mean(black),1), round(mean(hispanic),1),
+            round(mean(veteran),1), round(mean(foreign_born),1),
+            round(mean(college),1),round(mean(density)) ) %>%      
+  datatable(colnames = c(" ",  "Winner", "Income", "White (non-Hispanic)", "Black", "Hispanic", "Veteran", "Foreign Born","College", "Density (pop/sq m)"), 
+            class = 'compact', caption = "Average County Demographics by Winner")
+```
+
+At first glance, there're a few things that stand out that confirm much of what the popular consensus is on the candidates. For instance, we see Trump's claim of "loving the poorly educated"[@Hafner2016] paid off since Trump is the candidate whose voters have the poorest education (although, not by much, at least in the state of Michigan). Trump also does the worst with Hispanics among all of the other candidates, which again, isn't saying anything particularly profound, especially given Trump's comments on Hispanics[@Brand2015]. 
+
+Looking at the data in a table is nice, but producing plots will serve us better. To do some candidate by candidate analysis, let's split the vote data frames in terms of individual candidates. We will be primarily focusing on Clinton, Sanders, and Trump. 
+
+```{r, message = FALSE, warning = FALSE}
+sanders <- filter(dem_votes, winner == "Bernie Sanders")
+clinton <- filter(dem_votes, winner == "Hillary Clinton")
+trump <- filter(rep_votes, winner == "Donald Trump")
+
+clinton_sanders <- rbind(clinton,sanders)
+clinton_trump <- rbind(clinton,trump)
+sanders_trump <- rbind(sanders,trump)
+
+clinton_sanders_trump <- rbind(clinton_sanders,trump)
+```
+
+Now, just so we have a visual component to our already existing intuition on how Trump is with respect to the Hispanic community, let's plot how he fairs in each county with respect to the populations of Whites vs. Hispanics. 
+
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+plot_ly(trump, x = white, y = hispanic, mode = "markers", color = winner, colors = trump_hex,
+        size = votes, hoverinfo = "text", 
+        text = paste("State: ", state_abbreviation, "County: ", county, "College: ", college, "Income: ", income)) %>%
+  layout(title ="Counties by Percentage of Whites vs. Hispanics for Donald Trump", 
+         xaxis = list(title = "Percentage of White Population"),
+         yaxis = list(title = "Percentage of Hispanic Population"))
+```
+
+The size of the circle on the graph corresponds to how many total votes Donald Trump received in each county. Also, if you hover over any of the circles, some further information is accessible about the demographics for each county that the circle corresponds to. 
+
+Okay, so we have a visual confirmation of what we more or less already knew to be true from both the table and our intuition based on various media sources. For the heck of it, let's see how Clinton and Sanders fair on this front.
+
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+plot_ly(clinton_sanders, x = white, y = hispanic, mode = "markers", color = winner, colors = c(clinton_hex, sanders_hex),
+        size = votes, hoverinfo = "text", 
+        text = paste("State: ", state_abbreviation, "County: ", county, "College: ", college, "Income: ", income)) %>%
+  layout(title ="Counties by Percentage of Whites vs. Hispanics for Hillary Clinton and Bernie Sanders", 
+         xaxis = list(title = "Percentage of White Population"),
+         yaxis = list(title = "Percentage of Hispanic Population"))
+```
+
+Note that you can see just the points corresponding to either Bernie Sanders or Hillary Clinton by clicking either circle in the legend of the plot. One thing that stood out to me was the large circle to the far left of the graph for Hillary Clinton. This circle corresponds to Wayne county, where I used to live, and where the city of Detroit is located in as well. The city of Detroit is known to have a large Black population (at the time of this writing, 84.3% of the population[@Wiki2016] identifies as Black). Clinton is also known to poll very well in the Black community[@Foner2016]. Indeed, this intuition is slightly more solidified by the following plot between Clinton and Sanders that compares White and Black percentages of populations across the counties in Michigan. 
+
+```{r, message = FALSE, warning = FALSE, fig.align='center'}
+plot_ly(clinton_sanders, x = white, y = black, mode = "markers", color = winner, colors = c(clinton_hex, sanders_hex),
+        size = votes, hoverinfo = "text", 
+        text = paste("State: ", state_abbreviation, "County: ", county, "College: ", college, "Income: ", income)) %>%
+  layout(title ="Counties by Percentage of Whites vs. Blacks for Hillary Clinton and Bernie Sanders", 
+         xaxis = list(title = "Percentage of White Population"),
+         yaxis = list(title = "Percentage of Black Population"))
+```
+
+# Some quick and dirty analysis
+
+Based on what we've seen thus far from our plots, perhaps we can come up with a rudimentary predictive model based on the demographics. First, let's create a variable for the candidates Clinton, Sanders, and Trump, where we will be normalizing the number of votes to make our analysis easier. 
+
+```{r, message = FALSE, warning = FALSE}
+trump <- primary %>%
+  filter(candidate == "Donald Trump")
+trump <- inner_join( trump, demographics, by = c("state_abbreviation","county"))
+
+trump$income <- trump$income/1000
+trump$fraction_votes <- trump$fraction_votes * 100 
+
+clinton <- primary %>%
+  filter(candidate == "Hillary Clinton")
+clinton <- inner_join( clinton, demographics, by = c("state_abbreviation","county"))
+
+clinton$income <- clinton$income/1000
+clinton$fraction_votes <- clinton$fraction_votes * 100 
+
+sanders <- primary %>%
+  filter(candidate == "Bernie Sanders")
+sanders <- inner_join( sanders, demographics, by = c("state_abbreviation","county"))
+
+sanders$income <- sanders$income/1000
+sanders$fraction_votes <- sanders$fraction_votes * 100 
+```
+
+Let's first do some basic plotting along with a bit of linear regression to start off. The following plots consider each of the three candidates (Clinton, Sanders, and Trump). In each of the following plots, we consider the variable ``fraction_votes`` as our response and the variable ``college`` to be the predictor variable. 
+
+```{r, message = FALSE, warning = FALSE}
+g1 <- ggplot(clinton, aes(x=log(college), y=fraction_votes)) +
+  geom_point(shape=1) +      # Use hollow circles
+  geom_smooth(method=lm) +   # Add linear regression line
+  labs(list(title = "Clinton", 
+            x = "College education of voters (log-scale)", 
+            y = "Fraction of votes"))
+g2 <- ggplot(sanders, aes(x=log(college), y=fraction_votes)) +
+  geom_point(shape=1) +      # Use hollow circles
+  geom_smooth(method=lm) +   # Add linear regression line
+  labs(list(title = "Sanders", 
+            x = "College education of voters (log-scale)", 
+            y = "Fraction of votes"))
+g3 <- ggplot(trump, aes(x=log(college), y=fraction_votes)) +
+  geom_point(shape=1) +      # Use hollow circles
+  geom_smooth(method=lm) +   # Add linear regression line
+  labs(list(title = "Trump", 
+            x = "College education of voters (log-scale)", 
+            y = "Fraction of votes"))
+grid.arrange(g1, g2, g3, nrow =2, ncol = 2)
+```
+
+From the above plots, it's not really clear if there is any particularly strong relationship. It seems that the regression line for Clinton is more or less level, the line for Sanders indicates a positive relationship with level of education and voters, and the plot for Trump appears to indicate the strongest relationship indicating that Trump voters have less formal education. 
+
+Indeed, we can do a bit more 
+
+$$
+\color{orange}{\sf fraction\_votes}\color{black} = \beta_{0} + \beta_{1} \times \color{orange}{\sf college}\color{black} + \epsilon,
+$$
+where we represent the regression coefficients as $\beta_0$ and $\beta_1$ and our predictor is the ``fraction_votes`` variable. 
+
+```{r, message = FALSE, warning = FALSE}
+lm_trump.fit = lm(fraction_votes ~ college, data = trump)
+summary(lm_trump.fit)
+```
+
+$$ 
+\color{orange}{\sf fraction\_votes}\color{black} = \beta_{0} + \beta_{1} \times \color{orange}{\sf Test}\color{black} + \epsilon,
+$$
+where we represent the regression coefficients as $\beta_0, \beta_1, \cdots, \beta_p$ where $p$ is the total number of predictors.
+
+$$ y_{ij} = b_{ij} + \beta_{0} + \beta_{1} $$
+
+# Conclusion
+
+All in all, we had an opportunity to play around with some data and swiftly generate some analysis to give us a lay of the land. I think the question as to how Sanders pulled a victory when he was projected by many to not is still not really clearly answered here. What may make sense is to take a look at the data from all primary elections. Furthermore, one could also obtain data from other sources as well to enhance the data we reviewed in this post. Another possible avenue to investigate is whether it makes a difference if  
+
+# Acknowledgements
+
+Thanks are due to both Alex Papiu and Joshua Ellis who also have made some excellent assessments on this data, and which some of this code in this script is directly taken from. Thank you both.
+
+# References

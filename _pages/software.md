@@ -9,29 +9,20 @@ permalink: /software/
 
 <div class="row">
     <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/tensorflow/tensorflow" >TensorFlow</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=tensorflow&repo=tensorflow&type=star&count=true&v=2"
+      <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >sympy</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=tensorflow&repo=tensorflow&type=fork&count=true&v=2"
+        <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> Numerical Computation Library Using Data Flow Graphs for Scalable Machine Learning</p>
+      <p style="font-size:80%;"> A computer algebra system written in pure Python http://sympy.org/. </p>
     </div>
     <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/dmlc/mxnet">MXNet</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&repo=mxnet&type=star&count=true&v=2"
+      <h3 style="font-size:130%;"><a href="https://github.com/nathanieljohnston/QETLAB" >QETLAB</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=nathanieljohnston&repo=qetlab&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&repo=mxnet&type=fork&count=true&v=2"
+        <iframe src="https://ghbtns.com/github-btn.html?user=nathanieljohnston&repo=qetlab&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <br>
-      <p style="font-size:80%;"> Flexible and Efficient Deep Learning Library on Heterogeneous Distributed Systems</p>
-    </div>
-    <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/dmlc/xgboost" >XGBoost</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&repo=xgboost&type=star&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=dmlc&repo=xgboost&type=fork&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> General-purpose Gradient Boosting Library </p>
+      <p style="font-size:80%;"> A MATLAB toolbox for quantum entanglement. </p>
     </div>
 </div>
 

@@ -8,13 +8,15 @@ permalink: /software/
 <h2>Committer: </h2>
 
 <div style="text-align:center;">
-    <div style="display:inline-block; padding: 3px; width: 130px; word-break: break-all; word-wrap: break-word;">
+    <div style="display:inline-block;>
 	      <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >sympy</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+	  <div style="padding: 3px; width: 130px; word-break: break-all; word-wrap: break-word;">
       <p style="font-size:80%;"> A computer algebra system written in pure Python http://sympy.org/. </p>
+	  </div>
 	</div>
     <div style="display:inline-block; padding: 3px; width: 130px; word-break: break-all; word-wrap: break-word;">
 		<h3 style="font-size:130%;"><a href="https://github.com/nathanieljohnston/QETLAB" >QETLAB</a></h3>
@@ -22,7 +24,9 @@ permalink: /software/
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=nathanieljohnston&repo=qetlab&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+	  	  <div style="padding: 3px; width: 130px; word-break: break-all; word-wrap: break-word;">
       <p style="font-size:80%;"> A MATLAB toolbox for quantum entanglement. </p>
+	  </div>
 	</div>
 </div>    
 

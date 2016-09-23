@@ -8,7 +8,7 @@ permalink: /projects/
 
 <div class="row">
     <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >sympy</a></h3>
+      <h3 style="font-size:130%;"><a href="https://github.com/sympy/sympy" >SymPy</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=sympy&repo=sympy&type=fork&count=true&v=2"

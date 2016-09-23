@@ -4,5 +4,5 @@ title: Resume/CV
 permalink: /cv/
 ---
 
-My [Resume]({{ site.url }}/pdf/resume.pdf) and [CV]({{ site.url }}/pdf/cv.pdf)
+My [R&eacute;sum&eacute;]({{ site.url }}/pdf/resume.pdf) and [CV]({{ site.url }}/pdf/cv.pdf)
 

@@ -1,7 +1,8 @@
 ---
 layout: page
-title: CV
+title: Resume/CV
 permalink: /cv/
 ---
 
- you can [get the PDF]({{ site.url }}/pdf/cv.pdf) directly.
+My [Resume]({{ site.url }}/pdf/resume.pdf) and [CV]({{ site.url }}/pdf/cv.pdf)
+

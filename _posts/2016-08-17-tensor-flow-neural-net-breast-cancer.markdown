@@ -93,7 +93,7 @@ df.to_csv("combined_data.csv", index = False)
 
 # Preparing the data: Train / test split
 
-We now have all of our data in one large ".csv" file. From this combined data file, I have gone ahead and split the data into two separate files, one for <a href="vprusso.github.io/csv/cancer_training.csv">training our neural network</a>, and one for <a href="vprusso.github.io/csv/cancer_test.csv">testing the accurarcy of our model</a>. Go ahead and download those files to your local working directory. 
+We now have all of our data in one large ".csv" file. From this combined data file, I have gone ahead and split the data into two separate files, one for <a href="http://vprusso.github.io/csv/cancer_training.csv">training our neural network</a>, and one for <a href="http://vprusso.github.io/csv/cancer_test.csv">testing the accurarcy of our model</a>. Go ahead and download those files to your local working directory. 
 
 If you take a look in each of these files, they now have a comma-separated header that looks something like this:
 
@@ -172,7 +172,7 @@ print('Predictions: {}'.format(str(y)))
 
 # Complete software listing
 
-The complete software listing for what we covered in this post is provided below. Recall, you will require the following <a href="vprusso.github.io/csv/cancer_training.csv">training</a> and <a href="vprusso.github.io/csv/cancer_test.csv">test</a> files along with the data text file from <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data"></a> to run it.
+The complete software listing for what we covered in this post is provided below. Recall, you will require the following <a href="http://vprusso.github.io/csv/cancer_training.csv">training</a> and <a href="http://vprusso.github.io/csv/cancer_test.csv">test</a> files along with the data text file from <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data"></a> to run it. The software along with the data files are also hosted on the following <a href="https://github.com/vprusso/tf_nn_cancer">Github repository.</a>
 
 
 ```python

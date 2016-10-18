@@ -4,6 +4,26 @@ title: Projects
 permalink: /projects/
 ---
 
+<h3>Github Activity:</h3>
+
+See more at <A HREF="https://github.com/vprusso">my Github page</A> 
+<div class ='calendar'> </div>
+
+<!-- Prepare a container for your calendar. -->
+<script
+  src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"
+></script>
+
+<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+<link
+  rel="stylesheet"
+  href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"
+/>
+
+<script>
+    GitHubCalendar(".calendar", "vprusso");
+</script>
+
 <h3>Committer: </h3>
 
 <div class="row">
@@ -38,25 +58,6 @@ permalink: /projects/
     </div>
 </div>
 
-
-<h3>Github Activity:</h3>
-
-<div class ='calendar'> </div>
-
-<!-- Prepare a container for your calendar. -->
-<script
-  src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"
-></script>
-
-<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
-<link
-  rel="stylesheet"
-  href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css"
-/>
-
-<script>
-    GitHubCalendar(".calendar", "vprusso");
-</script>
 
 <h3>MOOCs:</h3>
 

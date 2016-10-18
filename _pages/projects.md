@@ -39,12 +39,9 @@ permalink: /projects/
 </div>
 
 
-<div class ='calendar'> </div>
-</body>
-</html>
-
-
 <h3>Github Activity:</h3>
+
+<div class ='calendar'> </div>
 
 <!-- Prepare a container for your calendar. -->
 <script

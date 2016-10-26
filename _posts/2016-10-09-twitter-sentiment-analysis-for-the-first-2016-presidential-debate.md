@@ -20,7 +20,7 @@ All of the code for this project can be found at the following Github repo: http
 
 ### Tools Used:
 
-1. **Twitter Streaming API and Tweepy Python library**: To stream tweets live during debate.
+1. **Twitter Streaming API and Tweepy Python library**: To stream tweets live during the debate.
 2. **Google Cloud Natural Language API**: To analyze the sentiment of the tweets in real-time.
 3. **Matplotlib and Python**: To plot sentiment as it is processed and analyzed. 
 
@@ -28,7 +28,7 @@ Let's take a brief look at each of these pieces.
 
 **Twitter Streaming API and Tweepy Python library**
 
-To use the Twitter Streaming API, head over to https://apps.twitter.com/, create an app by following the instructions here https://dev.twitter.com/streaming/overview. Once your app is created, you should have ``Access Token``, ``Access Token Secret Key``, ``Consumer Key``, and ``Consumer Secret``. I've went ahead and stored these as variables in ``config.py`` (which I won't post here, since the keys are meant to be kept secret). Now, let's take a look at the code:
+To use the Twitter Streaming API, head over to https://apps.twitter.com/, create an app by following the instructions here https://dev.twitter.com/streaming/overview. Once your app is created, you should have ``Access Token``, ``Access Token Secret Key``, ``Consumer Key``, and ``Consumer Secret``. I've gone ahead and stored these as variables in ``config.py`` (which I won't post here since the keys are meant to be kept secret). Now, let's take a look at the code:
 
 
 ```python
@@ -150,11 +150,11 @@ class SentimentAnalyzer():
 
 ```
 
-The outcome of running this on each tweet will give a ``polarity`` (a value between [-1,1] that represents either how negative or positive the tweet is) and a ``magnitude``, basically how confident the NLP engine is at the tweet being thatn negative or positive. 
+The outcome of running this on each tweet will give a ``polarity`` (a value between [-1,1] that represents either how negative or positive the tweet is) and a ``magnitude``, basically how confident the NLP engine is at the tweet being that negative or positive. 
 
 **Matplotlib and Python**
 
-For this section, I have to give a shout out to Sentdex over on YouTube who has some fabulous videos on everything Python with a focus on machine learning, NLP, data viz, and much more (https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ). Specifically the inspiration for this part comes from the following video: https://www.youtube.com/watch?v=ojDHK1SmCHA. The following code is lifted quite heavily from the previous video and is responsible for actually plotting the sentiment.
+For this section, I have to give a shout out to Sentdex over on YouTube who has some fabulous videos on everything Python with a focus on machine learning, NLP, data viz, and much more (https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ). Specifically, the inspiration for this part comes from the following video: https://www.youtube.com/watch?v=ojDHK1SmCHA. The following code is lifted quite heavily from the previous video and is responsible for actually plotting the sentiment.
 
 
 ```python
@@ -211,7 +211,7 @@ ani = animation.FuncAnimation(fig, animate, interval = 1000)
 plt.show()
 ```
 
-And that's pretty much the extent of it. Leveraging the power of Google's NLP API and the Tweepy API really makes this all quite easy to do. As mentioned before, all of the code is provided on the following repo: https://github.com/vprusso/twitter_sentiment_debate. Make sure that you put in your own access tokens for both the Google and Twitter APIs in the ``config.py`` file, and you should be ready to go! 
+And that's pretty much the extent of it. Leveraging the power of Google's NLP API and the Tweepy API really makes this all quite easy to do. As mentioned before, all of the code is provided on the following repo: https://github.com/vprusso/twitter_sentiment_debate. Make sure that you put in your own access tokens for both the Google and Twitter APIs in the ``config.py`` file and you should be ready to go! 
 
 {% if page.comments %}
 <div id="disqus_thread"></div>

@@ -44,12 +44,6 @@ The overall goal of this is to provide a tool to climate scientists to study to 
 
 The solution to this problem was a team effort as part of the [NASA SpaceApps Challenge](https://2016.spaceappschallenge.org/ "NASA SpaceApps Challenge") hosted by [SkyWatch](http://www.skywatch.co/ "SkyWatch"). Our solution and team are listed [here](https://2016.spaceappschallenge.org/challenges/aero/clouds-or-contrails/projects/hot-on-the-contrail "Hot on the Contrail"). 
 
-Here is a video showing how one can use the app. In the video, we take a snapshot of the sky, upload our image that we took, and get a score that determines how likely the image is a contrail. In this case, we took a picture of a cloud, and the app returns the expected response of 0% for probability of contrail. The last seconds of the video show the flights in the area that have recently passed overhead. 
-
-<div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ziAC2fSxHjE" frameborder="0" allowfullscreen></iframe>
-</div>
-
 Here's a breakdown of our approach:
 
 <div style="text-align:center">
@@ -60,6 +54,12 @@ Here's a breakdown of our approach:
 2. **Upload:** This image and location of the user is uploaded to a server.
 3. **Process:** The image is processed against our machine learning model to determine the probability of it being either a cloud or a contrail. 
 4. **Determine:** The probability is sent back to the user, and if it is a contrail, a list of flights potentially responsible for the contrail are provided. 
+
+Here is a video showing how one can use the app. In the video, we take a snapshot of the sky, upload our image that we took, and get a score that determines how likely the image is a contrail. In this case, we took a picture of a cloud, and the app returns the expected response of 0% for probability of contrail. The last seconds of the video show the flights in the area that have recently passed overhead. 
+
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ziAC2fSxHjE" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Gathering data to train our model
 

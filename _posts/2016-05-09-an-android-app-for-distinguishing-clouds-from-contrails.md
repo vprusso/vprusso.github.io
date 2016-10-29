@@ -10,7 +10,7 @@ tags:
 - Java
 ---
 
-# The problem: Cloud or contrail?
+## The problem: Cloud or contrail?
 
 Consider these two pictures:
 <div style="text-align:center">
@@ -28,7 +28,7 @@ Can we build an application that will be able to distinguish between these two t
 
 Are there contrails in this figure? Furthermore, when were they created and by what aircraft?
 
-# The motivation: Climate change
+## The motivation: Climate change
 
 Every day, more than **three million** people take part in commercial air travel. 
 
@@ -40,7 +40,7 @@ Given the right environmental conditions, these aircraft can produce stark featu
 
 The overall goal of this is to provide a tool to climate scientists to study to what degree contrails negatively impact the environment. 
 
-# The solution:
+## The solution:
 
 The solution to this problem was a team effort as part of the [NASA SpaceApps Challenge](https://2016.spaceappschallenge.org/ "NASA SpaceApps Challenge") hosted by [SkyWatch](http://www.skywatch.co/ "SkyWatch"). Our solution and team are listed [here](https://2016.spaceappschallenge.org/challenges/aero/clouds-or-contrails/projects/hot-on-the-contrail "Hot on the Contrail"). 
 
@@ -162,7 +162,7 @@ For tracking the flights that have passed overhead based on the user's coordinat
 If you do use this service, you'll have to sign up, but it is free. Our script for querying this API service is found on my Github repo [here](https://github.com/vprusso/spaceapps_clouds_or_contrails/tree/master/flight_data)
 
 
-# Wrapping up:
+## Wrapping up:
 
 Here's a screenshot of our app. On the left, we have an image of a cloud, which the app correctly determines to not be a contrail. On the right, the app is able to determine that the image does contain a contrail with a probability of 98%. What's quite impressive about this is that not only is the quality of the image poor, but there's part of a tree in the image as well. Thankfully the machine learning poriton is able to suss that out and determine the presence of the contrail!
 
@@ -170,6 +170,6 @@ Here's a screenshot of our app. On the left, we have an image of a cloud, which 
 <img src="http://vprusso.github.io/images/clouds_contrails_output.JPG" width="700">
 </div>
 
-Working on this project was a lot of fun, and a great deal of thanks is due to [SkyWatch](http://www.skywatch.co/ "SkyWatch") for hosting this event and providing an excellent team of support throughout.
+Working on this project was a lot of fun, and a great deal of thanks is due to [SkyWatch](http://www.skywatch.co/ "SkyWatch") for hosting this event and providing an excellent team of support throughout. I also want to give a great deal of thanks to [Ersin Ertan](https://github.com/ersin-ertan) for enhancing this project and adding his Android expertise!
 
 

@@ -23,6 +23,28 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
+<!--
+<LI>
+<A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 
+S. Arunachalam, A. Molina, V. Russo, <br>
+???, (2017). <br> 
+[<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
+[<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
+[<A HREF="/pdf/hedging_bets_slides.pdf">Slides</A>]
+[<A HREF="http://arxiv.org/abs/1310.7954">arXiv</A>]
+[<A HREF="https://github.com/vprusso/quantum-hedging">Software</A>]
+</LI>
+
+<LI>
+<A HREF="#">"Extended nonlocal games from quantum-classical games"</A>, <br> 
+V. Russo, J. Watrous <br>
+arXiv preprint:, (2016). <br> 
+[<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
+[<A HREF="/pdf/infinite_entanglement_slides.pdf">Slides</A>]
+[<A HREF="#">arXiv</A>]
+</LI>
+-->
+
 <LI> 
 <A HREF="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</A>,<br> 
 N. Johnston, R. Mittal, V. Russo, J. Watrous, <br>
@@ -160,3 +182,18 @@ AIChE (American Institute of Chemical Engineers), (2011).
 
 </OL>
 
+<!--
+<h3>Theses</h3>
+
+<OL reversed>
+
+<LI>
+<A HREF="/pdf/thesis.pdf">"Extended nonlocal games" (Ph.D. Thesis)</A>,<br>
+V. Russo <br>
+[<A HREF="http://www.fq.math.ca/Papers/49-2/RussoSchwiebert.pdf">arXiv</A>]
+[<A HREF="/pdf/thesis.pdf">PDF</A>]
+[<A HREF="https://github.com/vprusso/phd_thesis">Software</A>]
+</LI>
+
+</OL>
+-->

@@ -6,6 +6,17 @@ date:   2015-01-17 17:58:35
 categories: first post 
 ---
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- personal_blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <!--
 You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

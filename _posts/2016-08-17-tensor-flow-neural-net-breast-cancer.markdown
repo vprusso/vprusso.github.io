@@ -11,6 +11,17 @@ tags:
 - neural networks
 ---
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- personal_blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 # A neural network in TensorFlow for classifying UCI breast cancer data
 
 I've recently been trying my hand at Google's <a href="https://www.tensorflow.org/">TensorFlow</a> library. So far, I think it's really slick, and I've only just started sinking my teeth into what it can do. 

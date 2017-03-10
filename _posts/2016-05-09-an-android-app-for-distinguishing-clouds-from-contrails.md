@@ -10,6 +10,17 @@ tags:
 - Java
 ---
 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- personal_blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ## The problem: Cloud or contrail?
 
 Consider these two pictures:

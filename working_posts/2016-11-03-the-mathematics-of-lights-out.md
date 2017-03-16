@@ -181,18 +181,7 @@ Now that we know the rules of the game and the winning condition, feel free to p
 
 
 <center>
-    <form name=lightsform>
-        <script>
-            document.write(makeTableHTML());
-        </script>
-        <table border=1>
-            <tr>
-                <td><a href="javascript:level1()">level 1</a></td>
-                <td><a href="javascript:clearBoard()">Clear Board</a><td>
-                <td><a href="javascript:fillBoard()">Fill Board</a><td>                
-            </tr>
-                <td><input type="reset" value="clear"></td>
-        </table>            
+    <form name=lightsform>           
     </form>
 </center>
 

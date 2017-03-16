@@ -189,8 +189,7 @@ Now that we know the rules of the game and the winning condition, feel free to p
             <tr>
                 <td><a href="javascript:level1()">level 1</a></td>
                 <td><a href="javascript:clearBoard()">Clear Board</a><td>
-                <td><a href="javascript:fillBoard()">Fill Board</a><td>
-                <td><a href="javascript:isLightOn('0_0')">TEST</a><td>
+                <td><a href="javascript:fillBoard()">Fill Board</a><td>                
             </tr>
                 <td><input type="reset" value="clear"></td>
         </table>            

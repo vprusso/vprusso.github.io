@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "My top books read in 2016"
+title:  "100 books read in 2016"
 date:   2017-01-20 1:58:35
 categories: Books, Reading, Philosophy
 tags:
@@ -21,15 +21,15 @@ tags:
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-## My favorites for 2016
-
 Each year I try to set a goal to read a certain number of books. In 2016, I read 100 books for the year. You can see the full list of books I read [here.](https://www.goodreads.com/user_challenges/3739547 "goodreads_challenge"), on Goodreads. In this post, I'll be giving a one sentence description of the books that I've read and a symbol after the sentence to give an indication as to what I thought of the book. Namely:
 
 * Good : :+1:
 * Okay : :ok_hand:
 * Meh : :shit:
 
-These books are in no particular order, so without further ado:
+These books are in no particular order and the release dates of the books are not restricted to 2016. So without further ado:
+
+## The books:
 
 #### 1) <a target="_blank" href="https://www.amazon.com/gp/product/1594482918/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1594482918&linkCode=as2&tag=vprusso-20&linkId=2684def5ad4102adad063fb71b8dd7c1">The Adventures of Johnny Bunko: The Last Career Guide You'll Ever Need</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=vprusso-20&l=am2&o=1&a=1594482918" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 Good gift to give a graduating student, most likely someone who is graduating from either high school or undergrad. :ok_hand:

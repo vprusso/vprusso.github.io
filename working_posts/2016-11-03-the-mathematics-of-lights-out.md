@@ -179,24 +179,24 @@ Note that since there is no top or left square the only squares that are toggled
 
 Now that we know the rules of the game and the winning condition, feel free to play through some of the levels in the following Javascript demo I coded up. The Javascript source for this implementation may be found on my GitHub page <a href="">here</a>.
 
-<body>
-    <center>
-        <form name=lightsform>
-            <script>
-                document.write(makeTableHTML());
-            </script>
-            <table border=1>
-                <tr>
-                    <td><a href="javascript:level1()">level 1</a></td>
-                    <td><a href="javascript:clearBoard()">Clear Board</a><td>
-                    <td><a href="javascript:fillBoard()">Fill Board</a><td>
-                    <td><a href="javascript:isLightOn('0_0')">TEST</a><td>
-                </tr>
-                    <td><input type="reset" value="clear"></td>
-            </table>            
-        </form>
-    </center>
-</body>
+
+<center>
+    <form name=lightsform>
+        <script>
+            document.write(makeTableHTML());
+        </script>
+        <table border=1>
+            <tr>
+                <td><a href="javascript:level1()">level 1</a></td>
+                <td><a href="javascript:clearBoard()">Clear Board</a><td>
+                <td><a href="javascript:fillBoard()">Fill Board</a><td>
+                <td><a href="javascript:isLightOn('0_0')">TEST</a><td>
+            </tr>
+                <td><input type="reset" value="clear"></td>
+        </table>            
+    </form>
+</center>
+
 
 ## An unbeatable configuration
 

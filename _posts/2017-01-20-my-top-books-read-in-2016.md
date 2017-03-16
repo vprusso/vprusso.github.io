@@ -21,6 +21,18 @@ tags:
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59145213-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
 Each year I try to set a goal to read a certain number of books. In 2016, I read 100 books for the year. You can see the full list of books I read [here.](https://www.goodreads.com/user_challenges/3739547 "goodreads_challenge"), on Goodreads. In this post, I'll be giving a one sentence description of the books that I've read and a symbol after the sentence to give an indication as to what I thought of the book. Namely:
 
 * Good : :+1:

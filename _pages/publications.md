@@ -182,7 +182,7 @@ AIChE (American Institute of Chemical Engineers), (2011).
 
 </OL>
 
-<!--
+
 <h3>Theses</h3>
 
 <OL reversed>
@@ -190,10 +190,8 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <LI>
 <A HREF="/pdf/thesis.pdf">"Extended nonlocal games" (Ph.D. Thesis)</A>,<br>
 V. Russo <br>
-[<A HREF="http://www.fq.math.ca/Papers/49-2/RussoSchwiebert.pdf">arXiv</A>]
 [<A HREF="/pdf/thesis.pdf">PDF</A>]
 [<A HREF="https://github.com/vprusso/phd_thesis">Software</A>]
 </LI>
 
 </OL>
--->

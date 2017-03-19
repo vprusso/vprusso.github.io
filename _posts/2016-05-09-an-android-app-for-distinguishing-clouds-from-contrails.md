@@ -36,8 +36,8 @@ tags:
 
 Consider these two pictures:
 <div style="text-align:center">
-	<img src="http://vprusso.github.io/images/cloud.jpg" width="300">
-	<img src="http://vprusso.github.io/images/contrail.jpg" width="300">
+	<img src="http://vprusso.github.io/images/bp_clouds/cloud.jpg" width="300">
+	<img src="http://vprusso.github.io/images/bp_clouds/contrail.jpg" width="300">
 </div>
 
 The one on the left is a cloud, and the other is a contrail. Contrails are clouds formed when water vapor condenses and freezes around small particles that exist in aircraft exhaust. 
@@ -45,7 +45,7 @@ The one on the left is a cloud, and the other is a contrail. Contrails are cloud
 Can we build an application that will be able to distinguish between these two things? Furthermore, can we determine the aircraft that was most likely responsible for creating the contrail in question? The images above are ideal cases (the skies are clear and the differences are stark), but just take a less clear example like this:
 
 <div style="text-align:center">
-<img src="http://vprusso.github.io/images/contrail2.jpg" width="300">
+<img src="http://vprusso.github.io/images/bp_clouds/contrail2.jpg" width="300">
 </div>
 
 Are there contrails in this figure? Furthermore, when were they created and by what aircraft?
@@ -55,7 +55,7 @@ Are there contrails in this figure? Furthermore, when were they created and by w
 Every day, more than **three million** people take part in commercial air travel. 
 
 <div style="text-align:center">
-<img src="http://vprusso.github.io/images/airline_traffic.JPG" width="450">
+<img src="http://vprusso.github.io/images/bp_clouds/airline_traffic.JPG" width="450">
 </div>
 
 Given the right environmental conditions, these aircraft can produce stark features against the background sky. These contrails are comprised of different constituents than ordinary cirrus clouds, but may eventually disperse and contribute to the atmospheric amalgam. It is important to know if and where this occurs as the affect on weather patterns as well as climate change cannot be neglected.
@@ -69,7 +69,7 @@ The solution to this problem was a team effort as part of the [NASA SpaceApps Ch
 Here's a breakdown of our approach:
 
 <div style="text-align:center">
-<img src="http://vprusso.github.io/images/clouds_contrails_lifecycle.JPG" width="700">
+<img src="http://vprusso.github.io/images/bp_clouds/clouds_contrails_lifecycle.JPG" width="700">
 </div>
 
 1. **Capture:** User takes a picture from their smart phone of the sky.
@@ -189,7 +189,7 @@ If you do use this service, you'll have to sign up, but it is free. Our script f
 Here's a screenshot of our app. On the left, we have an image of a cloud, which the app correctly determines to not be a contrail. On the right, the app is able to determine that the image does contain a contrail with a probability of 98%. What's quite impressive about this is that not only is the quality of the image poor, but there's part of a tree in the image as well. Thankfully the machine learning poriton is able to suss that out and determine the presence of the contrail!
 
 <div style="text-align:center">
-<img src="http://vprusso.github.io/images/clouds_contrails_output.JPG" width="700">
+<img src="http://vprusso.github.io/images/bp_clouds/clouds_contrails_output.JPG" width="700">
 </div>
 
 Working on this project was a lot of fun, and a great deal of thanks is due to [SkyWatch](http://www.skywatch.co/ "SkyWatch") for hosting this event and providing an excellent team of support throughout. I also want to give a great deal of thanks to [Ersin Ertan](https://github.com/ersin-ertan) for enhancing this project and adding his Android expertise!

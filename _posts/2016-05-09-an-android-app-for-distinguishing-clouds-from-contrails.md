@@ -35,18 +35,14 @@ tags:
 ## The problem: Cloud or contrail?
 
 Consider these two pictures:
-<div style="text-align:center">
-	<img src="http://vprusso.github.io/images/bp_clouds/cloud.jpg" width="300">
-	<img src="http://vprusso.github.io/images/bp_clouds/contrail.jpg" width="300">
-</div>
+![Cloud](http://imgur.com/1IOVTQD.jpg)
+![Contrail](http://imgur.com/dnEbOGH.jpg)
 
 The one on the left is a cloud, and the other is a contrail. Contrails are clouds formed when water vapor condenses and freezes around small particles that exist in aircraft exhaust. 
 
 Can we build an application that will be able to distinguish between these two things? Furthermore, can we determine the aircraft that was most likely responsible for creating the contrail in question? The images above are ideal cases (the skies are clear and the differences are stark), but just take a less clear example like this:
 
-<div style="text-align:center">
-<img src="http://vprusso.github.io/images/bp_clouds/contrail2.jpg" width="300">
-</div>
+![Cloud or Contrail?](http://imgur.com/3YR162z.jpg)
 
 Are there contrails in this figure? Furthermore, when were they created and by what aircraft?
 
@@ -54,9 +50,7 @@ Are there contrails in this figure? Furthermore, when were they created and by w
 
 Every day, more than **three million** people take part in commercial air travel. 
 
-<div style="text-align:center">
-<img src="http://vprusso.github.io/images/bp_clouds/airline_traffic.JPG" width="450">
-</div>
+![Airline Traffic](http://imgur.com/d4sxjGC.jpg)
 
 Given the right environmental conditions, these aircraft can produce stark features against the background sky. These contrails are comprised of different constituents than ordinary cirrus clouds, but may eventually disperse and contribute to the atmospheric amalgam. It is important to know if and where this occurs as the affect on weather patterns as well as climate change cannot be neglected.
 
@@ -68,9 +62,7 @@ The solution to this problem was a team effort as part of the [NASA SpaceApps Ch
 
 Here's a breakdown of our approach:
 
-<div style="text-align:center">
-<img src="http://vprusso.github.io/images/bp_clouds/clouds_contrails_lifecycle.JPG" width="700">
-</div>
+![Software Lifecycle](http://imgur.com/4U1SgvQ.jpg)
 
 1. **Capture:** User takes a picture from their smart phone of the sky.
 2. **Upload:** This image and location of the user is uploaded to a server.
@@ -80,7 +72,7 @@ Here's a breakdown of our approach:
 Here is a video showing how one can use the app. In the video, we take a snapshot of the sky, upload our image that we took, and get a score that determines how likely the image is a contrail. In this case, we took a picture of a cloud, and the app returns the expected response of 0% for probability of contrail. The last seconds of the video show the flights in the area that have recently passed overhead. 
 
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ziAC2fSxHjE" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ziAC2fSxHjE" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Gathering data to train our model
@@ -188,9 +180,7 @@ If you do use this service, you'll have to sign up, but it is free. Our script f
 
 Here's a screenshot of our app. On the left, we have an image of a cloud, which the app correctly determines to not be a contrail. On the right, the app is able to determine that the image does contain a contrail with a probability of 98%. What's quite impressive about this is that not only is the quality of the image poor, but there's part of a tree in the image as well. Thankfully the machine learning poriton is able to suss that out and determine the presence of the contrail!
 
-<div style="text-align:center">
-<img src="http://vprusso.github.io/images/bp_clouds/clouds_contrails_output.JPG" width="700">
-</div>
+![End Result](http://imgur.com/FofszZq.jpg)
 
 Working on this project was a lot of fun, and a great deal of thanks is due to [SkyWatch](http://www.skywatch.co/ "SkyWatch") for hosting this event and providing an excellent team of support throughout. I also want to give a great deal of thanks to [Ersin Ertan](https://github.com/ersin-ertan) for enhancing this project and adding his Android expertise!
 

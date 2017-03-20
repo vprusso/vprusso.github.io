@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "100 books read in 2016"
+title:  "100 Books Read in 2016"
 date:   2017-01-20 1:58:35
 categories: Books, Reading, Philosophy
 tags:

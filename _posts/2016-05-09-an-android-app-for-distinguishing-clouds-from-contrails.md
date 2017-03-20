@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "An Android app for distinguishing clouds from contrails using machine learning"
+title:  "An Android App for Distinguishing Clouds from Contrails Using Machine Learning"
 date:   2016-10-20 1:58:35
 categories: Android, machine learning, Java
 tags:

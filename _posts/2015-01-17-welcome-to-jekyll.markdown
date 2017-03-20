@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "First post"
+title:  "First Post"
 date:   2015-01-17 17:58:35
 categories: first post 
 ---

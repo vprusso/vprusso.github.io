@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "Twitter sentiment analysis for the first 2016 presidential debate"
+title:  "Twitter Sentiment Analysis for the First 2016 Presidential Debate"
 date:   2016-10-09 2:58:35
 categories: python, machine learning, natural language processing
 tags:

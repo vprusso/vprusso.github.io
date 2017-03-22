@@ -20,7 +20,7 @@ Today we'll be answering the age-old question: **"What is the most metal guitar 
     <center>
         <figure>
             <img src="http://i.imgur.com/1YZ69YS.jpg?2" alt="Immortal meme eating invisible sandwich."/>
-            <figcaption>Credit: <a href="http://loudwire.com/funniest-black-metal-versions-of-famous-memes/">Loudwire</a>.</figcaption>
+            <figcaption>Immortal in their natural habitat. Credit: <a href="http://loudwire.com/funniest-black-metal-versions-of-famous-memes/">Loudwire</a>.</figcaption>
         </figure>
     </center>
 </p>

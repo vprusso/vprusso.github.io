@@ -19,7 +19,7 @@ Today we'll be answering the age-old question: **"What is the most metal guitar 
 <p align="center">
     <center>
         <figure>
-            <img src="http://i.imgur.com/1YZ69YS.jpg?2" alt="Invisible Sandwich"/>
+            <img src="http://i.imgur.com/1YZ69YS.jpg?2" alt="Immortal meme eating invisible sandwich."/>
             <figcaption>Credit: <a href="http://loudwire.com/funniest-black-metal-versions-of-famous-memes/">Loudwire</a>.</figcaption>
         </figure>
     </center>
@@ -137,7 +137,7 @@ I decided to get my data from <a href="http://metaltabs.com/index.html">metaltab
 <p align="center">
     <center>
         <figure>
-            <img src="http://imgur.com/UcF1mUt.png" alt="This song is amazing."/>
+            <img src="http://imgur.com/UcF1mUt.png" alt="A snippet of tablature for the song Into the Dead Sky by At the Gates."/>
             <figcaption>Excerpt of "Into the Dead Sky" by At the Gates.</figcaption>
         </figure>
     </center>
@@ -160,17 +160,36 @@ Each of these means the same thing, but are stated in a relatively different man
 
 First, let's take a look at how standard tuning compares with other lower tunings where all of the strings on the guitar are tuned down. 
 
-![](http://i.imgur.com/T2fn5Za.png)
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/T2fn5Za.png" alt="Histogram for metal guitar tunings."/>
+        </figure>
+    </center>
+</p>
 
 Surprisingly, the most common tuning here is standard. As we follow the X-axis to the right, the guitar tunings get progressively lower. The bands on the far right of the graph have such low string tension that the strings become a tripping hazard on stage.   
 
 In the above graph, I haven't included the "drop tunings", that is, the tunings where the top or lowest string is tuned one full step below the remaining five. For instance drop D is the typical (E A D G B E) tuning where now the E-string is lowered to a D, giving (D A D G B E). I expected these to be much more popular than they were, especially since dropping just one string instead of all six seems like less hassle. Here is a graph of just the tunings where the lowest string is dropped.
 
-![](http://i.imgur.com/WIlvhiQ.png)
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/WIlvhiQ.png" alt="Histogram for metal guitar tunings."/>
+        </figure>
+    </center>
+</p>
+
 
 Again, as we travel to the right on the X-axis, the tuning gets progressively lower. While standard tuning seems to be the most used tuning in comparison to any other, if we compare standard against all alternate lower tunings, we have the following graph. 
 
-![](http://i.imgur.com/zsp4HYq.png)
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/zsp4HYq.png" alt="Histogram for metal guitar tunings."/>
+        </figure>
+    </center>
+</p>
 
 So lower tunings overall are more popular than standard, but standard tuning is still used frequently enough. 
 

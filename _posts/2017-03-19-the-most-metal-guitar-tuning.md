@@ -175,7 +175,7 @@ In the above graph, I haven't included the "drop tunings", that is, the tunings 
 <p align="center">
     <center>
         <figure>
-            <img src="http://i.imgur.com/WIlvhiQ.png" alt="Histogram for metal guitar tunings."/>
+            <img src="http://i.imgur.com/WIlvhiQ.png" alt="Histogram for drop tunings."/>
         </figure>
     </center>
 </p>
@@ -186,7 +186,7 @@ Again, as we travel to the right on the X-axis, the tuning gets progressively lo
 <p align="center">
     <center>
         <figure>
-            <img src="http://i.imgur.com/zsp4HYq.png" alt="Histogram for metal guitar tunings."/>
+            <img src="http://i.imgur.com/zsp4HYq.png" alt="Histogram comparing standard tuning versus alternate tunings."/>
         </figure>
     </center>
 </p>

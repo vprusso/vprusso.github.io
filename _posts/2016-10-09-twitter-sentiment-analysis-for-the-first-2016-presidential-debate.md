@@ -11,29 +11,6 @@ tags:
 - natural language processing
 ---
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- personal_blog -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7213376997288299"
-     data-ad-slot="4540332365"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-59145213-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
 # Twitter sentiment analysis for the first 2016 presidential debate
 
 The first presidential debate between Hillary Clinton and Donald Trump has recently concluded. As a political junkie, I was curious to know what the general consensus was among the community of Twitter. In this post, I'll briefly describe my method for capturing live tweets during the debate, processing the sentiment of each tweet, and plotting the corresponding sentiment in real time. The result looks something like this: 

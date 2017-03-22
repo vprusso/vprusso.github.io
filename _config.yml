@@ -23,8 +23,7 @@ comments: true
 # Pages
 include: ['_pages']
 relative_permalinks: false
-gems:
-  - jemoji
+gems: [jemoji, jekyll-seo-tag]
 
 encoding: UTF-8
 

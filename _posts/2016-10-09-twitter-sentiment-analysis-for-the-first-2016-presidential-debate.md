@@ -4,6 +4,7 @@ comments: true
 title:  "Twitter Sentiment Analysis for the First 2016 Presidential Debate"
 date:   2016-10-09 2:58:35
 categories: python, machine learning, natural language processing
+excerpt: After the first presidential debate between Hillary Clinton and Donald Trump, what is the mood on Twitter?
 tags:
 - python
 - machine learning

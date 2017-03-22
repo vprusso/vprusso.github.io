@@ -4,6 +4,7 @@ comments: true
 title:  "An Android App for Distinguishing Clouds from Contrails Using Machine Learning"
 date:   2016-10-20 1:58:35
 categories: Android, machine learning, Java
+excerpt: Adventures in training an image classifier to determine clouds from contrails.
 tags:
 - Android
 - machine learning

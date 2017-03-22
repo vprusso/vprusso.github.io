@@ -5,6 +5,7 @@ cover_image: http://i.imgur.com/1YZ69YS.jpg?2
 title:  "The Most Metal Guitar Tuning"
 date:   2017-03-19 1:58:35
 categories: Data Science, Math, Metal, Guitar, R
+excerpt: We investigate the age-old question What is the most metal guitar tuning.
 tags:
 - data science
 - math
@@ -35,7 +36,7 @@ tags:
 
 </script>
 
-Today we'll be answering the age-old question: **"What is the most metal guitar tuning?"** 
+Today we'll be answering the age-old question: **"What is the most metal guitar tuning?"**
 
 <p align="center">
     <center>

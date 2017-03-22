@@ -4,6 +4,7 @@ comments: true
 title:  "100 Books Read in 2016"
 date:   2017-01-20 1:58:35
 categories: Books, Reading, Philosophy
+excerpt: A listing and one sentence summary of the books I read in 2016. 
 tags:
 - books
 - reading

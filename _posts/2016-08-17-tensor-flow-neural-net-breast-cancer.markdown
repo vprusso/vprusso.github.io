@@ -4,34 +4,13 @@ comments: true
 title:  "A Neural Network in TensorFlow for Classifying Cancer Data"
 date:   2016-08-19 2:58:35
 categories: tensorflow, machine learning, data science, neural networks
+excerpt: Using UCI breast cancer data, we build a simple neural network classifier in TensorFlow to determine is a tumor is benign or malignant. 
 tags:
 - tensorflow
 - machine learning
 - data science
 - neural networks
 ---
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- personal_blog -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7213376997288299"
-     data-ad-slot="4540332365"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-59145213-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 # A neural network in TensorFlow for classifying UCI breast cancer data
 
@@ -257,29 +236,3 @@ new_samples = np.array(
 y = classifier.predict(new_samples)
 print('Predictions: {}'.format(str(y)))
 ```
-
-
-{% if page.comments %}
-<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-     */
-    /*
-    var disqus_config = function () {
-        this.page.url = http://vprusso.github.io/blog/2015/welcome-to-jekyll/;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() {  // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        
-        s.src = '//vprusso.disqus.com/embed.js';
-        
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-{% endif %}

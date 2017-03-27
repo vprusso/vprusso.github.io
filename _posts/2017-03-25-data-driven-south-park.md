@@ -111,7 +111,7 @@ Here are a few examples of questions you can ask using the "*South Park*" data a
 
 *Question:* How many times is the word "dude" said in all of the seasons 1 to 18:
 
-    print (word_count_by_season_and_episode(df, word="dude"))
+    print(word_count_by_season_and_episode(df, word="dude"))
     2087
 
 *Question:* How many times is the word "dude" said in all of season 1:

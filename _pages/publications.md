@@ -190,6 +190,7 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <LI>
 <A HREF="/pdf/thesis.pdf">"Extended nonlocal games" (Ph.D. Thesis)</A>,<br>
 V. Russo <br>
+[<A HREF="https://uwspace.uwaterloo.ca/handle/10012/11620">Link</A>]
 [<A HREF="/pdf/thesis.pdf">PDF</A>]
 [<A HREF="/pdf/defense_slides.pdf">Slides</A>]
 [<A HREF="https://github.com/vprusso/phd_thesis">Software</A>]

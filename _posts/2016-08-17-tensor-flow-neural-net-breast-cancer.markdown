@@ -118,17 +118,27 @@ Okay. Let's go ahead and read in our data:
 CANCER_TRAINING = "cancer_training.csv"
 CANCER_TEST = "cancer_test.csv"
 
-training_set = tf.contrib.learn.datasets.base.load_csv(filename = CANCER_TRAINING,
-                                                       target_dtype = np.int)
-test_set = tf.contrib.learn.datasets.base.load_csv(filename=CANCER_TEST,
-                                                   target_dtype = np.int)
+# Load datasets.
+training_set = tf.contrib.learn.datasets.base.load_csv_with_header(filename=CANCER_TRAINING,
+                                                       target_dtype=np.int,
+                                                       features_dtype=np.float32,
+                                                       target_column=-1)
+test_set = tf.contrib.learn.datasets.base.load_csv_with_header(filename=CANCER_TEST,
+                                                   target_dtype=np.int,
+                                                   features_dtype=np.float32,
+                                                   target_column=-1)
+
+# Specify that all features have real-value data
+feature_columns = [tf.contrib.layers.real_valued_column("", dimension=2)]
 ```
 
-Note that the ``target_dtype = np.in`` signals to TensorFlow that the predictive element that our neural network wants to compute is an integer--either 0 or 1 to denote either benign or malignant. 
+Note that the ``target_dtype = np.int`` signals to TensorFlow that the predictive element that our neural network wants to compute is an integer--either 0 or 1 to denote either benign or malignant. 
 
 
 ```python
-classifier = tf.contrib.learn.DNNClassifier(hidden_units=[10,20,10],
+# Build 3 layer DNN with 10, 20, 10 units respectively.
+classifier = tf.contrib.learn.DNNClassifier(feature_columns=feature_columns,
+                                            hidden_units=[10, 20, 10],
                                             n_classes=2,
                                             model_dir="/tmp/cancer_model")
 ```
@@ -162,10 +172,16 @@ Looks like our neural network was able to perfectly classify all 6 examples foun
 
 
 ```python
-new_samples = np.array(
-    [[5,10,8,4,7,4,8,11,2], [5,1,1,1,1,1,1,1,2]], dtype=float)
-y = classifier.predict(new_samples)
-print('Predictions: {}'.format(str(y)))
+# Classify two new cancer tumor samples.
+def new_samples():
+  return np.array([[5, 10, 8, 4, 7, 4, 8, 11, 2],
+                   [5, 1, 1, 1, 1, 1, 1, 1, 2]], dtype=np.float32)
+
+predictions = list(classifier.predict(input_fn=new_samples))
+
+print(
+      "New Samples, Class Predictions:    {}\n"
+      .format(predictions))
 ```
 
     Predictions: [1 0]
@@ -188,11 +204,14 @@ import pandas as pd
 # Preparing the data:
 data_file_name = 'breast-cancer-wisconsin.data.txt'
 
+# Preparing the data:
+data_file_name = 'breast-cancer-wisconsin.data'
+
 first_line = "id,clump_thickness,unif_cell_size,unif_cell_shape,marg_adhesion,single_epith_cell_size,bare_nuclei,bland_chrom,norm_nucleoli,mitoses,class"
 with open(data_file_name, "r+") as f:
-	content = f.read()
-	f.seek(0, 0)
-	f.write(first_line.rstrip('\r\n') + '\n' + content)
+  content = f.read()
+  f.seek(0, 0)
+  f.write(first_line.rstrip('\r\n') + '\n' + content)
 
 df = pd.read_csv(data_file_name)
 
@@ -210,13 +229,21 @@ CANCER_TRAINING = "cancer_training.csv"
 CANCER_TEST = "cancer_test.csv"
 
 # Load datasets.
-training_set = tf.contrib.learn.datasets.base.load_csv(filename=CANCER_TRAINING,
-                                                       target_dtype=np.int)
-test_set = tf.contrib.learn.datasets.base.load_csv(filename=CANCER_TEST,
-                                                   target_dtype=np.int)
+training_set = tf.contrib.learn.datasets.base.load_csv_with_header(filename=CANCER_TRAINING,
+                                                       target_dtype=np.int,
+                                                       features_dtype=np.float32,
+                                                       target_column=-1)
+test_set = tf.contrib.learn.datasets.base.load_csv_with_header(filename=CANCER_TEST,
+                                                   target_dtype=np.int,
+                                                   features_dtype=np.float32,
+                                                   target_column=-1)
+
+# Specify that all features have real-value data
+feature_columns = [tf.contrib.layers.real_valued_column("", dimension=2)]
 
 # Build 3 layer DNN with 10, 20, 10 units respectively.
-classifier = tf.contrib.learn.DNNClassifier(hidden_units=[10, 20, 10],
+classifier = tf.contrib.learn.DNNClassifier(feature_columns=feature_columns,
+                                            hidden_units=[10, 20, 10],
                                             n_classes=2,
                                             model_dir="/tmp/cancer_model")
 
@@ -231,8 +258,13 @@ accuracy_score = classifier.evaluate(x=test_set.data,
 print('Accuracy: {0:f}'.format(accuracy_score))
 
 # Classify two new cancer tumor samples.
-new_samples = np.array(
-    [[5,10,8,4,7,4,8,11,2], [5,1,1,1,1,1,1,1,2]], dtype=float)
-y = classifier.predict(new_samples)
-print('Predictions: {}'.format(str(y)))
+def new_samples():
+  return np.array([[5, 10, 8, 4, 7, 4, 8, 11, 2],
+                   [5, 1, 1, 1, 1, 1, 1, 1, 2]], dtype=np.float32)
+
+predictions = list(classifier.predict(input_fn=new_samples))
+
+print(
+      "New Samples, Class Predictions:    {}\n"
+      .format(predictions))
 ```

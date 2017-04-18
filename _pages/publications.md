@@ -24,16 +24,7 @@ permalink: /publications/
 <h3>Refereed Journal Publications and Preprints</h3>
 
 <!--
-<LI>
-<A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 
-S. Arunachalam, A. Molina, V. Russo, <br>
-???, (2017). <br> 
-[<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
-[<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
-[<A HREF="/pdf/hedging_bets_slides.pdf">Slides</A>]
-[<A HREF="http://arxiv.org/abs/1310.7954">arXiv</A>]
-[<A HREF="https://github.com/vprusso/quantum-hedging">Software</A>]
-</LI>
+
 
 <LI>
 <A HREF="#">"Extended nonlocal games from quantum-classical games"</A>, <br> 
@@ -44,6 +35,19 @@ arXiv preprint:, (2016). <br>
 [<A HREF="#">arXiv</A>]
 </LI>
 -->
+
+<LI>
+<A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 
+S. Arunachalam, A. Molina, V. Russo, <br>
+Theory of Quantum Computation, Communication, and Cryptography (TQC), (2017). <br> 
+[<A HREF="http://tqc2017.lip6.fr/program.html">Link</A>]
+[<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
+[<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
+[<A HREF="/pdf/hedging_bets_slides.pdf">Slides</A>]
+[<A HREF="http://arxiv.org/abs/1310.7954">arXiv</A>]
+[<A HREF="https://github.com/vprusso/quantum-hedging">Software</A>]
+</LI>
+<BR>
 
 <LI> 
 <A HREF="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</A>,<br> 
@@ -101,18 +105,6 @@ Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014
 [<A HREF="/pdf/small_sets_poster.pdf">Poster</A>]
 [<A HREF="http://arxiv.org/abs/1307.3232">arXiv</A>]
 [<A HREF="https://bitbucket.org/acosenti/ppt-sdp-paper">Software</A>]
-</LI>
-<BR>
-
-<LI>
-<A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 
-S. Arunachalam, A. Molina, V. Russo, <br>
-arXiv preprint:1310.7954, (2013). <br> 
-[<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
-[<A HREF="/pdf/hedging_bets_poster.pdf">Poster</A>]
-[<A HREF="/pdf/hedging_bets_slides.pdf">Slides</A>]
-[<A HREF="http://arxiv.org/abs/1310.7954">arXiv</A>]
-[<A HREF="https://github.com/vprusso/quantum-hedging">Software</A>]
 </LI>
 <BR>
 

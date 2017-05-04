@@ -185,6 +185,7 @@ V. Russo <br>
 [<A HREF="https://uwspace.uwaterloo.ca/handle/10012/11620">Link</A>]
 [<A HREF="/pdf/thesis.pdf">PDF</A>]
 [<A HREF="/pdf/defense_slides.pdf">Slides</A>]
+[<A HREF="https://arxiv.org/abs/1704.07375">arXiv</A>]
 [<A HREF="https://github.com/vprusso/phd_thesis">Software</A>]
 </LI>
 

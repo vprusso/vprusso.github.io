@@ -28,7 +28,7 @@ tags:
 
 <meta name="date" content="2016-04-21" />
 
-<title>The 2016 Michigan Presidential Primary Election</title>
+<title>The Mathematics of Lights Out</title>
 
 
 <style type="text/css">
@@ -316,36 +316,36 @@ table{ font-family: Consolas; margin-left: auto; margin-right: auto;}
 
 <p><a target="_blank" href="https://www.amazon.com/gp/product/B000UHABZC/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B000UHABZC&linkCode=as2&tag=vprusso-20&linkId=d0ff8f519565f85c341a3fb7aa645226">Lights Out </a><img src="//ir-na.amazon-adsystem.com/e/ir?t=vprusso-20&l=am2&o=1&a=B000UHABZC" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> is a puzzle game that was originally produced by Tiger Electronics in 1995. The game consists of a 5-by-5 grid of squares. Each level in the game consists of some collection of squares in the grid that are either in the "on" or "off" state. For instance, we may consider the following level</p>
 
-<div style="text-align:center">
-<figure>
-  <center>
-  <img src="http://vprusso.github.io/images/bp_lights_out/lights_out_fig_1.png">
-  <figcaption>Figure-1 : Example configuration.</figcaption>
-  </center>
-</figure>
-</div>
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/Bman79i.png" alt="Example level one Lights Out configuration."/>
+        </figure>
+<figcaption>Figure-1 : Example configuration.</figcaption>
+    </center>
+</p>
 
 <p>where the red colored squares represent an "on" state and the white colored squares represent an "off" state. When one presses a square, this toggles the pressed square as well as the neighboring squares to flip to their opposite state. For instance, if we press the center square in the above example this toggles the square itself as well as the top, bottom, left, and right squares to toggle off.</p>
 
-<div style="text-align:center">
-<figure>
-  <center>
-  <img src="http://vprusso.github.io/images/bp_lights_out/lights_out_fig_2.png">
-  <figcaption>Figure-2 : Empty board.</figcaption>
-  </center>
-</figure>
-</div>
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/g3S3vTy.png" alt="Empty Lights Out board."/>
+        </figure>
+<figcaption>Figure-2 : Empty board.</figcaption>
+    </center>
+</p>
 
 <p>In this case, all squares are toggled in the "off" position. When all squares are in the "off" state, we refer to this as the winning condition of the game. Let's consider board setup from Figure-1 again. If instead of pressing the center square we press the top left square, what we end up with is a configuration that looks like the following.</p>
 
-<div style="text-align:center">
-<figure>
-  <center>
-  <img src="http://vprusso.github.io/images/bp_lights_out/lights_out_fig_3.png">
-  <figcaption>Figure-3 : Example configuration 2.</figcaption>
-  </center>
-</figure>
-</div>
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/SPVngdc.png" alt="Example Lights Out configuration."/>
+        </figure>
+<figcaption>Figure-3 : Example configuration 2.</figcaption>
+    </center>
+</p>
 
 <p>Note that since there is no top or left square with respect to the square that we pressed, the only squares that are toggled are the square that was pressed along with the bottom and right squares. That is to say, the toggling behavior does not wrap around the board.</p>
 
@@ -402,14 +402,14 @@ table{ font-family: Consolas; margin-left: auto; margin-right: auto;}
 
 <p>First, let's right out of the gate observe that the board can be thought of as a matrix with entries that correspond to whether or not the particular square on the board is toggled "on" or "off". For instance, consider the following configuration that correspond to Level 3 in the interactive Javascript example.</p>
 
-<div style="text-align:center">
-<figure>
-  <center>
-  <img src="http://vprusso.github.io/images/bp_lights_out/lights_out_fig_4.png">
-  <figcaption>Figure-4 : Level 3 configuration.</figcaption>
-  </center>
-</figure>
-</div>
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/v9T5AKi.png" alt="Level 3 Lights Out configuration."/>
+        </figure>
+<figcaption>Figure-4 : Level 3 configuration.</figcaption>
+    </center>
+</p>
 
 <p>The configuration from Figure-4 corresponds directly to the following matrix</p>
 

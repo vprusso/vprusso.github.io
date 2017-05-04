@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="msvalidate.01" content="5E7827CBC3E6F12865C285B3020A9C95" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2016/tensor-flow-neural-net-breast-cancer/">
+  <link rel="alternate" type="application/rss+xml" title="Vincent Russo" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Vincent Russo</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">Blog</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/cv/">Resume/CV</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/">Home</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/projects/">Projects</a>
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+    <header class="post-header">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59145213-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <h1 class="post-title">A Neural Network in TensorFlow for Classifying Cancer Data</h1>
+        <p class="post-meta">Aug 18, 2016</p>
+    </header>
+
+    <article class="post-content">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <h1 id="a-neural-network-in-tensorflow-for-classifying-uci-breast-cancer-data">A neural network in TensorFlow for classifying UCI breast cancer data</h1>
+
+<p>I’ve recently been trying my hand at Google’s <a href="https://www.tensorflow.org/">TensorFlow</a> library. So far, I think it’s really slick, and I’ve only just started sinking my teeth into what it can do.</p>
+
+<p>In this post, we’ll be using TensorFlow to build a neural network that will be used to classify cancerous breast tumors based on the data provided by the <a href="http://archive.ics.uci.edu/ml/">UCI Machine Learning Repository</a>. If you’ve looked around at all for neural network tutorials, you’ve no doubt stumbled on examples explaining how to use a neural network to classify digits from the MNIST data set. Indeed, this is the “Hello world!” application for neural networks. The purpose of this post is to show another less conventional example of how to build and train a neural network using TensorFlow, and will optimistically be of use to someone getting started with using the TensorFlow library.</p>
+
+<h1 id="obtaining-and-cleaning-the-data">Obtaining and cleaning the data</h1>
+
+<p>As mentioned, we will be obtaing the data from the <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)">UCI repository .</a> The actual data text file we will be using is hosted <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data">here</a>, and a corresponding description of what each column in the text file represents is found <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.names">here</a>. For our purposes, we will be slightly modifying the data file with some appropriate header information to allow us to process it in TensorFlow.</p>
+
+<p>For this tutorial, I will be assuming you have TensorFlow and the SciPy stack already installed and are using Python version 3. Let’s start by importing what we will need:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</code></pre>
+</div>
+
+<p>For our imports, we have <code class="highlighter-rouge">tensorflow</code> to build our neural network and <code class="highlighter-rouge">numpy</code> and <code class="highlighter-rouge">pandas</code> for some useful data manipulations.</p>
+
+<p>Now, if we look at our data text file, we notice that each column corresponds to some quantity for each patient. For instance, the first column is the “sample code number”, the second column is the “clump thickness” of the tumor, and the last column is a value that corresponds to whether the tumor found was determined to be “benign” (a value of 2) or “malignant”, (a value of 4).</p>
+
+<p>Let’s first modify the data text file so that we have a header at the beginning of the file so that when we store our data into a data frame, we can refer to any element by name.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">data_file_name</span> <span class="o">=</span> <span class="s">"breast-cancer-wisconsin.data.txt"</span>
+<span class="n">first_line</span> <span class="o">=</span> <span class="s">"id,clump_thickness,unif_cell_size,unif_cell_shape,marg_adhesion,single_epith_cell_size,bare_nuclei,bland_chrom,norm_nucleoli,mitoses,class"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">,</span> <span class="s">"r+"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'</span><span class="se">\r\n</span><span class="s">'</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span> <span class="n">content</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>The variable <code class="highlighter-rouge">first_line</code> is a string that has a list of names that correspond to the data in each column. Now, let’s read in the recently modified text file into a <code class="highlighter-rouge">pandas</code> data frame.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>If you have consulted the corresponding description of our data (again, provided <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.names">here</a>), you will have noticed that certain data points are marked with a ‘?’. This question mark indicates that the particular data point in question is missing. Whether this was the result of an overworked scientist or just some other anomaly, we can’t be sure. So in our case, we’re going to simply drop these from our dataset.</p>
+
+<p>In “the wild”, datasets including missing values are a common thorn in the side of the machine learning practitioner. Simply dumping the data is less than ideal, especially since more data generally aids in building a model with superior predictive power. There are many less naive ways of dealing with missing data points, such as <a href="https://en.wikipedia.org/wiki/Imputation_(statistics)">imputation</a>, but for our purposes, we will take the naive approach for now.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'?'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>There is another slight modification we need to apply to our data, and that is to drop the column in our data that corresponds to the patient’s ID. This piece of information has absolutely no predictive power when it comes to determining whether a tumor is cancerous or not, and will only confuse our model if we keep it in when training our neural network.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'id'</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Before making the next change, let’s briefly remind ourselves what we are trying to predict from this data. In short, we want to know based on the information for each patient whether or not the tumor they have is benign or malignant. The way in which this data is encoded in our text file is “2” for benign and “4” for malignant. That is when we build our neural network we can expect one of two outcomes for the prediction.</p>
+
+<p>For TensorFlow, we’re going to want to encode these two cases not as “2” and “4”, but as “0” and “1”, to explicitly tell TensorFlow that there are two possible classes of output.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'2'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'4'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Finally, let’s now write our combined data to a “.csv” file.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"combined_data.csv"</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h1 id="preparing-the-data-train--test-split">Preparing the data: Train / test split</h1>
+
+<p>We now have all of our data in one large “.csv” file. From this combined data file, I have gone ahead and split the data into two separate files, one for <a href="http://vprusso.github.io/csv/cancer_training.csv">training our neural network</a>, and one for <a href="http://vprusso.github.io/csv/cancer_test.csv">testing the accurarcy of our model</a>. Go ahead and download those files to your local working directory.</p>
+
+<p>If you take a look in each of these files, they now have a comma-separated header that looks something like this:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Number of rows, Number of columns (excluding the class), benign, malignent</span>
+</code></pre>
+</div>
+
+<p>That is, we have a comma-separated list of elements prepended to the beginning of the file for our train and test data sets that let TensorFlow know how many rows, columns (excluding the column we are trying to predict), and list of potential outcomes for our model (in our case; benign or malignant).</p>
+
+<p>You may be curious as to how I split the train and test data. My method was to simply pick 6 random examples from the combined data set, and place them into the <code class="highlighter-rouge">cancer_test.csv</code> file. The remaining elements from the combined data set comprise the <code class="highlighter-rouge">cancer_training.csv</code> file.</p>
+
+<p>Now that we have our data pruned, we can get on to building our neural network.</p>
+
+<h1 id="building-the-neural-network">Building the neural network</h1>
+
+<p>Okay. Let’s go ahead and read in our data:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">CANCER_TRAINING</span> <span class="o">=</span> <span class="s">"cancer_training.csv"</span>
+<span class="n">CANCER_TEST</span> <span class="o">=</span> <span class="s">"cancer_test.csv"</span>
+
+<span class="c"># Load datasets.</span>
+<span class="n">training_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">CANCER_TRAINING</span><span class="p">,</span>
+                                                       <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+                                                       <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+                                                       <span class="n">target_column</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">CANCER_TEST</span><span class="p">,</span>
+                                                   <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+                                                   <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+                                                   <span class="n">target_column</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Specify that all features have real-value data</span>
+<span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">real_valued_column</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
+</code></pre>
+</div>
+
+<p>Note that the <code class="highlighter-rouge">target_dtype = np.int</code> signals to TensorFlow that the predictive element that our neural network wants to compute is an integer–either 0 or 1 to denote either benign or malignant.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Build 3 layer DNN with 10, 20, 10 units respectively.</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">DNNClassifier</span><span class="p">(</span><span class="n">feature_columns</span><span class="o">=</span><span class="n">feature_columns</span><span class="p">,</span>
+                                            <span class="n">hidden_units</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                                            <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                            <span class="n">model_dir</span><span class="o">=</span><span class="s">"/tmp/cancer_model"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>For our classifier, we are signaling to TensorFlow to build a deep neural network consisting of 3 hidden layers, where the first and third layers have 10 neurons and the second consists of 20 neurons. The <code class="highlighter-rouge">n_classes</code> argument lets TensorFlow known that there are two possible classes to select between; namely benign (0) or malignant (1).</p>
+
+<p>Now we are going to train our neural network. TensorFlow makes this very easy, as wejust have to send our training data through a fit function.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">training_set</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+               <span class="n">y</span> <span class="o">=</span> <span class="n">training_set</span><span class="o">.</span><span class="n">target</span><span class="p">,</span>
+               <span class="n">steps</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Using the <code class="highlighter-rouge">steps</code> argument, we specify that we want to train our network for a total of 2000 steps.</p>
+
+<p>And that’s that! We now have our trained neural network. We can now apply it to some test data to see how it fairs. Let’s apply our neural network to the 6 examples found in the <code class="highlighter-rouge">cancer_test.csv</code> file. In doing so, this will allow us to calculate the accuracy of our model.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                                     <span class="n">y</span> <span class="o">=</span> <span class="n">test_set</span><span class="o">.</span><span class="n">target</span><span class="p">)[</span><span class="s">"accuracy"</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Accuracy: {0:f}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Accuracy: 1.000000
+</code></pre>
+</div>
+
+<p>Looks like our neural network was able to perfectly classify all 6 examples found in the test set! What’s more, let’s say we obtain a new source of data entirely outside of our training or test sets.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Classify two new cancer tumor samples.</span>
+<span class="k">def</span> <span class="nf">new_samples</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">new_samples</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span>
+      <span class="s">"New Samples, Class Predictions:    {}</span><span class="se">\n</span><span class="s">"</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Predictions: [1 0]
+</code></pre>
+</div>
+
+<h1 id="complete-software-listing">Complete software listing</h1>
+
+<p>The complete software listing for what we covered in this post is provided below. Recall, you will require the following <a href="http://vprusso.github.io/csv/cancer_training.csv">training</a> and <a href="http://vprusso.github.io/csv/cancer_test.csv">test</a> files along with the data text file from <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data"></a> to run it. The software along with the data files are also hosted on the following <a href="https://github.com/vprusso/tf_nn_cancer">Github repository.</a></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c"># Preparing the data:</span>
+<span class="n">data_file_name</span> <span class="o">=</span> <span class="s">'breast-cancer-wisconsin.data.txt'</span>
+
+<span class="c"># Preparing the data:</span>
+<span class="n">data_file_name</span> <span class="o">=</span> <span class="s">'breast-cancer-wisconsin.data'</span>
+
+<span class="n">first_line</span> <span class="o">=</span> <span class="s">"id,clump_thickness,unif_cell_size,unif_cell_shape,marg_adhesion,single_epith_cell_size,bare_nuclei,bland_chrom,norm_nucleoli,mitoses,class"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">,</span> <span class="s">"r+"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">first_line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s">'</span><span class="se">\r\n</span><span class="s">'</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span> <span class="n">content</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'?'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'id'</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'2'</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'4'</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">"combined_data.csv"</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+
+<span class="c"># Data sets</span>
+<span class="n">CANCER_TRAINING</span> <span class="o">=</span> <span class="s">"cancer_training.csv"</span>
+<span class="n">CANCER_TEST</span> <span class="o">=</span> <span class="s">"cancer_test.csv"</span>
+
+<span class="c"># Load datasets.</span>
+<span class="n">training_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">CANCER_TRAINING</span><span class="p">,</span>
+                                                       <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+                                                       <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+                                                       <span class="n">target_column</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">CANCER_TEST</span><span class="p">,</span>
+                                                   <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+                                                   <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+                                                   <span class="n">target_column</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c"># Specify that all features have real-value data</span>
+<span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">real_valued_column</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
+
+<span class="c"># Build 3 layer DNN with 10, 20, 10 units respectively.</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">DNNClassifier</span><span class="p">(</span><span class="n">feature_columns</span><span class="o">=</span><span class="n">feature_columns</span><span class="p">,</span>
+                                            <span class="n">hidden_units</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                                            <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                            <span class="n">model_dir</span><span class="o">=</span><span class="s">"/tmp/cancer_model"</span><span class="p">)</span>
+
+<span class="c"># Fit model.</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">training_set</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> 
+               <span class="n">y</span><span class="o">=</span><span class="n">training_set</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> 
+               <span class="n">steps</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+
+<span class="c"># Evaluate accuracy.</span>
+<span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">test_set</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                                     <span class="n">y</span><span class="o">=</span><span class="n">test_set</span><span class="o">.</span><span class="n">target</span><span class="p">)[</span><span class="s">"accuracy"</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Accuracy: {0:f}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">))</span>
+
+<span class="c"># Classify two new cancer tumor samples.</span>
+<span class="k">def</span> <span class="nf">new_samples</span><span class="p">():</span>
+  <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                   <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">new_samples</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span>
+      <span class="s">"New Samples, Class Predictions:    {}</span><span class="se">\n</span><span class="s">"</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+</code></pre>
+</div>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </article>
+  
+    
+        <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'vprusso'; // required: replace example with your forum shortname
+                // var disqus_developer = 1; // Comment out when the site is live
+                var disqus_identifier = "/blog/2016/tensor-flow-neural-net-breast-cancer/";
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+    
+    <h2>Related Posts:</h2>
+    <ul>
+      
+      
+        
+        
+          
+            <li>
+              <h3>
+                <a href="/blog/2017/data-driven-south-park/">
+                  Data Driven South Park
+                  <small>24 Mar 2017</small>
+                </a>
+              </h3>
+            </li>
+            
+            
+      
+        
+        
+          
+            <li>
+              <h3>
+                <a href="/blog/2017/the-most-metal-guitar-tuning/">
+                  The Most Metal Guitar Tuning
+                  <small>18 Mar 2017</small>
+                </a>
+              </h3>
+            </li>
+            
+            
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+            <li>
+              <h3>
+                <a href="/blog/2016/an-android-app-for-distinguishing-clouds-from-contrails/">
+                  An Android App for Distinguishing Clouds from Contrails Using Machine Learning
+                  <small>19 Oct 2016</small>
+                </a>
+              </h3>
+            </li>
+            
+            
+      
+        
+          
+
+      
+      
+    </ul>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Vincent Russo</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Vincent Russo</li>
+          <li><a href="mailto:vincentrusso1@gmail.com">vincentrusso1@gmail.com</a></li>
+        </ul>
+      </div>
+
+	  <div class="footer-col  footer-col-2">
+	   <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/vprusso">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">Github</span>
+            </a>
+          </li>
+          
+		  
+	  
+		  <li>
+		    <a href="https://ca.linkedin.com/in/vrusso11" class="icon-17 linkedin" title="LinkedIn">
+		      <span class="icon  icon--linkedin">
+		       <svg viewBox="0 0 512 512">
+			<path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"
+			/>
+		      </svg>
+		      </span>
+		      <span class="username">Linkedin</span>
+		      <!--[if lt IE 9]><em>LinkedIn</em><![endif]--></a>
+		  </li>
+	  
+	  
+	  
+		<li>
+			<a href="https://scholar.google.ca/citations?user=dJEXPiQAAAAJ&hl=en" class="icon  icon--googlescholar" title="GoogleScholar">
+			<span class="icon icon--googlescholar">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+			<path fill="#000000" d="M14.942 12.57l-4.942-8.235v-3.335h0.5c0.275 0 0.5-0.225 0.5-0.5s-0.225-0.5-0.5-0.5h-5c-0.275 0-0.5 0.225-0.5 0.5s0.225 0.5 0.5 0.5h0.5v3.335l-4.942 8.235c-1.132 1.886-0.258 3.43 1.942 3.43h10c2.2 0 3.074-1.543 1.942-3.43zM3.766 10l3.234-5.39v-3.61h2v3.61l3.234 5.39h-8.468z"></path>
+			</svg>
+			</span>
+			<span class="username">Google Scholar</span>
+			<!--[if lt IE 9]><em>GoogleScholar</em><![endif]--></a>
+		</li>
+	  
+	  
+        </ul>
+      </div>
+	  
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+      
+	  	  
+			<li><a href="http://stackexchange.com/users/412832/vincent-russo" class="icon-23 stackoverflow" title="StackOverflow">
+			<span class="icon  icon--stackoverflow">
+			<svg viewBox="0 0 512 512">
+			<path d="M294.8 361.2l-122 0.1 0-26 122-0.1L294.8 361.2zM377.2 213.7L356.4 93.5l-25.7 4.5 20.9 120.2L377.2 213.7zM297.8 301.8l-121.4-11.2 -2.4 25.9 121.4 11.2L297.8 301.8zM305.8 267.8l-117.8-31.7 -6.8 25.2 117.8 31.7L305.8 267.8zM321.2 238l-105-62 -13.2 22.4 105 62L321.2 238zM346.9 219.7l-68.7-100.8 -21.5 14.7 68.7 100.8L346.9 219.7zM315.5 275.5v106.5H155.6V275.5h-20.8v126.9h201.5V275.5H315.5z"/>
+			</svg>
+			</span>
+			<span class="username">StackOverflow</span>
+			<!--[if lt IE 9]><em>StackOverflow</em><![endif]--></a></li>
+		 
+
+          
+          <li>
+            <a href="https://twitter.com/captainhamptons">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">Twitter</span>
+            </a>
+          </li>
+          
+		  
+		  
+          <li>
+            <a href="https://soundcloud.com/captainhampton">
+              <span class="icon  icon--soundcloud">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+					<path fill="#000000" d="M13.937 8.034c-0.283 0-0.552 0.055-0.798 0.154-0.164-1.787-1.723-3.188-3.625-3.188-0.465 0-0.917 0.088-1.317 0.237-0.156 0.058-0.197 0.117-0.197 0.233v6.292c0 0.121 0.098 0.222 0.221 0.234 0.005 0.001 5.68 0.003 5.717 0.003 1.139 0 2.062-0.888 2.062-1.983s-0.924-1.983-2.063-1.983zM6.25 12h0.5l0.25-3.503-0.25-3.497h-0.5l-0.25 3.497zM4.75 12h-0.5l-0.25-2.543 0.25-2.457h0.5l0.25 2.5zM2.25 12h0.5l0.25-2-0.25-2h-0.5l-0.25 2zM0.25 11h0.5l0.25-1-0.25-1h-0.5l-0.25 1z"></path>
+				</svg>
+              </span>
+
+              <span class="username">Soundcloud</span>
+            </a>
+          </li>
+          
+		  
+		  
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text"></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

@@ -146,29 +146,29 @@ Fibonacci Quarterly 49, 151-154 (2011). <br>
 <OL reversed>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations."</a> <br>
-J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448">"GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations",</a> <br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff,<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>
 <BR>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283934">"Optimization of a Lennard-Jones particle Monte Carlo GPU-code."</a> <br>
-J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283934">"Optimization of a Lennard-Jones particle Monte Carlo GPU-code",</a> <br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff,<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>
 <BR>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283711">"GPU accelerated configurational bias Monte Carlo simulations of linear alkanes."</a> <br>
-J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283711">"GPU accelerated configurational bias Monte Carlo simulations of linear alkanes",</a> <br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff,<br>
 AIChE (American Institute of Chemical Engineers), (2012).
 </LI>
 <BR>
 
 <LI>
-<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=235324">"GPU accelerated Monte Carlo simulations in the Gibbs and canonical ensembles."</a> <br>
-J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff.<br>
+<a href="http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=235324">"GPU accelerated Monte Carlo simulations in the Gibbs and canonical ensembles",</a> <br>
+J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff,<br>
 AIChE (American Institute of Chemical Engineers), (2011).
 </LI>
 

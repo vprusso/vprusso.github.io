@@ -26,7 +26,7 @@ Here are a couple screen shots of Ukulele Trainer and a video to show off a bit 
 	<td> 
 		<center>
 			<figure>
-				<img src="http://i.imgur.com/kCP75D7.png" alt="Drawing" style="width: 250px;"/> 
+				<img src="http://i.imgur.com/kCP75D7.png" alt="Ukulele Trainer main screen." style="width: 250px;"/> 
 				<figcaption>Title screen of application.</figcaption>
 			</figure>
 		</center>
@@ -36,20 +36,23 @@ Here are a couple screen shots of Ukulele Trainer and a video to show off a bit 
 Here are a few screen shots showcasing the functionality of the app that allows a user to find and hear a ukulele chord. Chords are the building blocks of most songs, so having a quick way to access chord diagrams is key to learning to play. 
 <tr>
 	<td> 
-		<img src="http://i.imgur.com/bsVYzCu.png" alt="Drawing" style="width: 225px;"/> 
-		<img src="http://i.imgur.com/EvIY9Zs.png" alt="Drawing" style="width: 225px;"/> 
-		<img src="http://i.imgur.com/KBqp5HS.png" alt="Drawing" style="width: 225px;"/> 
+		<img src="http://i.imgur.com/bsVYzCu.png" alt="Ukulele Trainer note list." style="width: 225px;"/> 
+		<img src="http://i.imgur.com/EvIY9Zs.png" alt="Ukulele Trainer list of chords." style="width: 225px;"/> 
+		<img src="http://i.imgur.com/KBqp5HS.png" alt="Ukulele Trainer play chord." style="width: 225px;"/> 
 	</td>
 </tr>
 
 Of course, in order to play the ukulele it must be tuned properly. There is a simple tuner functionality that plays a note for each string, and also provides a couple alternate tunings as well. 
-<tr>
-	<td> 
-		<img src="http://i.imgur.com/bsVYzCu.png" alt="Drawing" style="width: 225px;"/> 
-		<img src="http://i.imgur.com/EvIY9Zs.png" alt="Drawing" style="width: 225px;"/> 
-		<img src="http://i.imgur.com/KBqp5HS.png" alt="Drawing" style="width: 225px;"/> 
-	</td>
-</tr>
+<center>
+	<figure>
+		<tr>
+			<td> 
+				<img src="http://i.imgur.com/i3FPpME.png" alt="Ukulele Trainer tuner." style="width: 250px;"/> 
+				<figcaption>Chord sequencer.</figcaption>
+			</td>
+		</tr>
+	</figure>
+</center>
 
 There is also something called a "chord sequencer". Basically, when you're playing a song, it usually consists of more than just a single chord. It's nice to have chord diagrams for all of the chords you need in the song on the same screen instead of looking up each chord as you need it. 
 
@@ -57,7 +60,7 @@ There is also something called a "chord sequencer". Basically, when you're playi
 	<figure>
 		<tr>
 			<td> 
-				<img src="http://i.imgur.com/E3sR4NK.png" alt="Drawing" style="width: 250px;"/> 
+				<img src="http://i.imgur.com/E3sR4NK.png" alt="Ukulele Trainer chord sequencer." style="width: 250px;"/> 
 				<figcaption>Chord sequencer.</figcaption>
 			</td>
 		</tr>

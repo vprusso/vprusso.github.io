@@ -73,4 +73,6 @@ And to top it off, here's a quick video showcasing the functionality of the app:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OaVrRES2o0g" frameborder="0" allowfullscreen></iframe>
 </div>
 
-If you have an Android device, feel free to download the application and give it a try! If you have any improvements, suggestions, or crash reports, please let me know in the comments section or via email. Thanks again, and happy strumming!
+If you have an Android device, feel free to download the application and give it a try! If you have any improvements, suggestions, or crash reports, please let me know in the comments section or via email. Furthermore, if you're an Android developer and want to check out the project, I've open sourced the whole thing, and it can be cloned at the <a href="https://github.com/vprusso/android_ukulele">android_ukulele Github repository</a>. 
+
+Thanks again, and happy strumming!

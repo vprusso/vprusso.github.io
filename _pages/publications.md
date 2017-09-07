@@ -23,18 +23,18 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
-<!--
+
 
 
 <LI>
-<A HREF="#">"Extended nonlocal games from quantum-classical games"</A>, <br> 
+<A HREF="https://arxiv.org/pdf/1709.01837.pdf">"Extended nonlocal games from quantum-classical games"</A>, <br> 
 V. Russo, J. Watrous <br>
-arXiv preprint:, (2016). <br> 
-[<A HREF="/pdf/hedging_bets.pdf">PDF</A>]
-[<A HREF="/pdf/infinite_entanglement_slides.pdf">Slides</A>]
-[<A HREF="#">arXiv</A>]
+arXiv preprint:1709.01837, (2017). <br> 
+[<A HREF="/pdf/extended_qc.pdf">PDF</A>]
+[<A HREF="/pdf/extended_qc_slides.pdf">Slides</A>]
+[<A HREF="https://arxiv.org/abs/1709.01837">arXiv</A>]
 </LI>
--->
+
 
 <LI>
 <A HREF="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</A>, <br> 

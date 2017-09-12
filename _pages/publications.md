@@ -28,7 +28,7 @@ permalink: /publications/
 V. Russo, J. Watrous <br>
 arXiv preprint:1709.01837, (2017). <br> 
 [<A HREF="/pdf/extended_qc.pdf">PDF</A>]
-[<A HREF="/pdf/extended_qc_slides.pdf">Slides</A>]
+[<A HREF="/pdf/infinite_entanglement_slides.pdf">Slides</A>]
 [<A HREF="https://arxiv.org/abs/1709.01837">arXiv</A>]
 </LI>
 <BR>

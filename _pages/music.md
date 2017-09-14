@@ -18,9 +18,9 @@ In my free time, I enjoy playing the guitar. When I can, I upload guitar videos 
 These videos are typically an acoustic take on music from a video game or a classical piece. The links to these videos are found here, as well as the corresponding guitar tablature, MP3/WAV, etc. <br><br>
 
 <LI>
-<A HREF="">The Legend of Zelda - Twilight Princess: Link will Save Us</A><BR>
+<A HREF="https://www.youtube.com/watch?v=fZ4ZD9zYKpE">The Legend of Zelda - Twilight Princess: Link will Save Us</A><BR>
 Credits: <A HREF="https://www.youtube.com/watch?v=ovNtENdVP70">Isac Saleh</A> for providing the guitar tablature.<BR>
-[<A HREF="">YouTube</A>]
+[<A HREF="https://www.youtube.com/watch?v=fZ4ZD9zYKpE">YouTube</A>]
 [<A HREF="/tab/link_will_save_us_tab.pdf">Tab: PDF</A>]
 [<A HREF="/tab/link_will_save_us_tab.gp5">Tab: GP5</A>]
 [<A HREF="/tab/link_will_save_us_tab.txt">Tab: TXT</A>]

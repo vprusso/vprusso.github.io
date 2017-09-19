@@ -12,6 +12,8 @@ tags:
 - classical guitar
 - video game music
 ---
+<script src="https://apis.google.com/js/platform.js"></script>
+
 
 I have played the guitar for around 15 years, and have recently started getting more into playing finger-style and classical guitar. For my own benefit, I’ve been more frequently recording and uploading guitar videos to YouTube. This allows me to post tangible milestones that I can refer back to and (hopefully) observe progress in my playing. It is also quite a bit of fun to learn, play, and record these pieces, and the modest amount positive feedback on my channel has been encouraging me to continue. 
 

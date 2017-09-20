@@ -18,6 +18,13 @@ In my free time, I enjoy playing the guitar. When I can, I upload guitar videos 
 These videos are typically an acoustic take on music from a video game or a classical piece. The links to these videos are found here, as well as the corresponding guitar tablature, MP3/WAV, etc. <br><br>
 
 <LI>
+<A HREF="https://youtu.be/qwEjpKY37RA">Diego Gilgado: Milonga Para José</A><BR>
+[<A HREF="https://youtu.be/qwEjpKY37RA">YouTube</A>]
+[<A HREF="/tab/milonga_para_jose_tab.pdf">Tab: PDF</A>]
+</LI>
+<BR>
+
+<LI>
 <A HREF="https://www.youtube.com/watch?v=fZ4ZD9zYKpE">The Legend of Zelda - Twilight Princess: Link will Save Us</A><BR>
 Credits: <A HREF="https://www.youtube.com/watch?v=ovNtENdVP70">Isac Saleh</A> for providing the guitar tablature.<BR>
 [<A HREF="https://www.youtube.com/watch?v=fZ4ZD9zYKpE">YouTube</A>]
@@ -30,7 +37,6 @@ Credits: <A HREF="https://www.youtube.com/watch?v=ovNtENdVP70">Isac Saleh</A> fo
 <LI>
 <A HREF="https://youtu.be/t5vbn0t07OU">Animal Crossing - New Leaf: 11 PM</A><BR>
 [<A HREF="https://youtu.be/t5vbn0t07OU">YouTube</A>]
-[<A HREF="/music/animal_crossing_new_leaf_11pm.wav">WAV</A>]
 [<A HREF="/tab/animal_crossing_new_leaf_11pm_tab.txt">Tab: TXT</A>]
 </LI>
 <BR>
@@ -39,8 +45,6 @@ Credits: <A HREF="https://www.youtube.com/watch?v=ovNtENdVP70">Isac Saleh</A> fo
 <A HREF="https://www.youtube.com/watch?v=6dtQJvAG-Bo">Animal Crossing - New Leaf: 1 AM</A><BR>
 [<A HREF="https://www.youtube.com/watch?v=6dtQJvAG-Bo">YouTube</A>]
 [<A HREF="/music/animal_crossing_new_leaf_1am.wav">WAV</A>]
-[<A HREF="/tab/animal_crossing_new_leaf_1am_tab.pdf">Tab: PDF</A>]
-[<A HREF="/tab/animal_crossing_new_leaf_1am_tab.gp5">Tab: GP5</A>]
 [<A HREF="/tab/animal_crossing_new_leaf_1am_tab.txt">Tab: TXT</A>]
 </LI>
 <BR>

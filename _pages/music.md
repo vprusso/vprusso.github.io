@@ -26,6 +26,16 @@ Credits: <A HREF="http://www.classclef.com">ClassClef</A> for providing the guit
 <BR>
 
 <LI>
+<A HREF="https://youtu.be/MnoSTSTpPxI">The Elder Scrolls V - Skyrim: Awake</A><BR>
+Credits: <A HREF="http://isacsaleh.com/tabs/the%20elder%20scrolls%20series/skyrim.html">Isac Saleh</A> for providing the guitar tablature.<BR>
+[<A HREF="https://youtu.be/MnoSTSTpPxI">YouTube</A>]
+[<A HREF="/tab/elder_scrolls_awake.pdf">Tab: PDF</A>]
+[<A HREF="/tab/elder_scrolls_awake.gp5">Tab: GP5</A>]
+[<A HREF="/tab/elder_scrolls_awake.txt">Tab: TXT</A>]
+</LI>
+<BR>
+
+<LI>
 <A HREF="https://www.youtube.com/watch?v=_r9WMLXWSaw">Pokemon: Pokemon Center</A><BR>
 Credits: <A HREF="https://www.youtube.com/watch?v=7udub67jPnA">Julien Paarmann</A> for providing the guitar tablature.<BR>
 [<A HREF="https://www.youtube.com/watch?v=_r9WMLXWSaw">YouTube</A>]

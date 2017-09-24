@@ -18,6 +18,20 @@ In my free time, I enjoy playing the guitar. When I can, I upload guitar videos 
 These videos are typically an acoustic take on music from a video game or a classical piece. The links to these videos are found here, as well as the corresponding guitar tablature, MP3/WAV, etc. <br><br>
 
 <LI>
+<A HREF="">Fernando Sor: Opus 35, No. 2</A><BR>
+[<A HREF="">YouTube</A>]
+[<A HREF="/tab/fernando_sor_opus_35_no_2_tab.pdf">Tab: PDF</A>]
+</LI>
+<BR>
+
+<LI>
+<A HREF="https://www.youtube.com/watch?v=_r9WMLXWSaw">Pokemon: Pokemon Center</A><BR>
+[<A HREF="https://www.youtube.com/watch?v=_r9WMLXWSaw">YouTube</A>]
+[<A HREF="/tab/pokemon_center_tab.pdf">Tab: PDF</A>]
+</LI>
+<BR>
+
+<LI>
 <A HREF="https://youtu.be/qwEjpKY37RA">Diego Gilgado: Milonga Para José</A><BR>
 [<A HREF="https://youtu.be/qwEjpKY37RA">YouTube</A>]
 [<A HREF="/tab/milonga_para_jose_tab.pdf">Tab: PDF</A>]

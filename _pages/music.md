@@ -19,6 +19,7 @@ These videos are typically an acoustic take on music from a video game or a clas
 
 <LI>
 <A HREF="">Fernando Sor: Opus 35, No. 2</A><BR>
+Credits: <A HREF="http://www.classclef.com">ClassClef</A> for providing the guitar tablature.<BR>
 [<A HREF="">YouTube</A>]
 [<A HREF="/tab/fernando_sor_opus_35_no_2_tab.pdf">Tab: PDF</A>]
 </LI>
@@ -26,6 +27,7 @@ These videos are typically an acoustic take on music from a video game or a clas
 
 <LI>
 <A HREF="https://www.youtube.com/watch?v=_r9WMLXWSaw">Pokemon: Pokemon Center</A><BR>
+Credits: <A HREF="https://www.youtube.com/watch?v=7udub67jPnA">Julien Paarmann</A> for providing the guitar tablature.<BR>
 [<A HREF="https://www.youtube.com/watch?v=_r9WMLXWSaw">YouTube</A>]
 [<A HREF="/tab/pokemon_center_tab.pdf">Tab: PDF</A>]
 </LI>
@@ -33,6 +35,7 @@ These videos are typically an acoustic take on music from a video game or a clas
 
 <LI>
 <A HREF="https://youtu.be/qwEjpKY37RA">Diego Gilgado: Milonga Para José</A><BR>
+Credits: <A HREF="https://www.youtube.com/user/oldwhtman">oldwhtman</A> for providing the guitar tablature.<BR>
 [<A HREF="https://youtu.be/qwEjpKY37RA">YouTube</A>]
 [<A HREF="/tab/milonga_para_jose_tab.pdf">Tab: PDF</A>]
 </LI>

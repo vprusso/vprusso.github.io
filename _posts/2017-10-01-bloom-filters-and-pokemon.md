@@ -27,6 +27,11 @@ In this post, we will briefly go over the probabilistic data structure referred 
 
 [1]: https://github.com/vprusso/youtube_tutorials/blob/master/data_structures/Bloom%20Filters%20and%20Pokemon.ipynb 
 
+If you prefer, there is also an accompanying video that goes along with this post here:
+<div style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/U8Ni1yJ8ZS4" frameborder="0" allowfullscreen></iframe>
+</div>
+
 # TL;DR
 
 >Bloom filters: "Lightweight" version of a hash table. Both hash tables and Bloom filters support efficient insertions and lookups. Bloom filters are more space efficient than hash tables, but this comes at the cost of having "false positives" for entry lookup. That is, Bloom filters can say with certainty that an element has not been inserted (no possibility of false negatives), but may indicate an element has been inserted when it has in fact not been (false positive). 

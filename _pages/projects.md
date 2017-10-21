@@ -35,6 +35,51 @@ See more at <A HREF="https://github.com/vprusso">my Github page</A>
     GitHubCalendar(".calendar", "vprusso");
 </script>
 
+<br>
+<h3>Creator: </h3>
+    	
+<div class="row">
+    <div class="col-md-3">
+
+      <h3 style="font-size:130%;"><a href="https://play.google.com/store/apps/details?id=com.lightsout.captainhampton.lightsout" >Lights Out!</a></h3>
+
+      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=lights_out&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=lights_out&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+            <a href='https://play.google.com/store/apps/details?id=com.lightsout.captainhampton.lightsout&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="50" width="100"/></a>
+      <p style="font-size:80%;"> Lights Out is an electronic game released by Tiger Electronics in 1995. The game consists of a 5 by 5 grid of lights. When the game starts, a random number or a stored pattern of these lights is switched on. Pressing any of the lights will toggle it and the adjacent lights. The goal of the puzzle is to switch all the lights off, preferably in as few button presses as possible. </p>
+
+    </div>
+
+    <div class="col-md-3">
+
+      <h3 style="font-size:130%;"><a href="https://play.google.com/store/apps/details?id=com.ukulele.captainhampton.ukulelechords" >Ukulele Trainer</a></h3>
+
+      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=android_ukulele&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=android_ukulele&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+            <a href='https://play.google.com/store/apps/details?id=com.ukulele.captainhampton.ukulelechords&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="50" width="100"/></a>
+      <p style="font-size:80%;"> Chords are the building blocks of most songs, so having a quick way to access chord diagrams is key to learning to play. Clicking on "Ukulele Chords" will give you a complete list of all ukulele chords. Of course, in order to play the ukulele, it must be tuned properly. There is a simple tuner functionality that plays a note for each string, and also provides a couple alternate tunings as well. </p>
+    
+    </div>
+
+    <div class="col-md-3">
+
+      <h3 style="font-size:130%;"><a href="https://play.google.com/store/apps/details?id=captainhampton.pi.trainer" >Pi Trainer</a></h3>
+
+      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=android_pi_trainer&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=android_pi_trainer&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+            <a href='https://play.google.com/store/apps/details?id=captainhampton.pi.trainer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="50" width="100"/></a>
+      <p style="font-size:80%;"> Train yourself to memorize the digits of Pi! </p>
+    
+    </div>
+
+</div>
+
 <h3>Committer: </h3>
 
 <div class="row">
@@ -69,8 +114,16 @@ See more at <A HREF="https://github.com/vprusso">my Github page</A>
     </div>
 </div>
 
+  <div class="col-md-3">
 
-<h3>MOOCs:</h3>
+      <h3 style="font-size:130%;"><a href="https://2016.spaceappschallenge.org/challenges/aero/clouds-or-contrails/projects/hot-on-the-contrail" >Hot on the Contrail</a></h3>
+
+      <p style="font-size:80%;"> Android application which uses image recognition to distinguish between pictures of "clouds" and "contrails". </p>
+    
+    </div>
+
+
+<!-- <h3>MOOCs:</h3>
 
 <ul>
 	<li> Coursera: Machine Learning Foundations: A Case Study Approach <br>
@@ -83,7 +136,7 @@ See more at <A HREF="https://github.com/vprusso">my Github page</A>
 		[<A HREF="/pdf/certificate_isl_stanford.pdf">Certificate</A>]
 		[<A HREF="https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about">Course Page</A>]
 	</li>	
-</ul>
+</ul> -->
 
 <!--
 <b>Under construction...</b>

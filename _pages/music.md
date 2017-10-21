@@ -17,6 +17,7 @@ In my free time, I enjoy playing the guitar. When I can, I upload guitar videos 
 
 These videos are typically an acoustic take on music from a video game or a classical piece. The links to these videos are found here, as well as the corresponding guitar tablature, MP3/WAV, etc. <br><br>
 
+<!--
 <LI>
 <A HREF="">Fernando Sor: Opus 35, No. 2</A><BR>
 Credits: <A HREF="http://www.classclef.com">ClassClef</A> for providing the guitar tablature.<BR>
@@ -24,6 +25,7 @@ Credits: <A HREF="http://www.classclef.com">ClassClef</A> for providing the guit
 [<A HREF="/tab/fernando_sor_opus_35_no_2_tab.pdf">Tab: PDF</A>]
 </LI>
 <BR>
+-->
 
 <LI>
 <A HREF="https://youtu.be/MnoSTSTpPxI">The Elder Scrolls V - Skyrim: Awake</A><BR>

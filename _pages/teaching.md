@@ -58,5 +58,10 @@ At the moment, these video are separated into the following categories. Each lin
 </LI>
 <BR>
 
+<LI>
+<A HREF="https://www.youtube.com/playlist?list=PL5tcWHG-UPH1fnJw-BvBiiiPUPm1LUKsm">Web Scraping and Automation</A><BR>
+</LI>
+<BR>
+
 </OL>
 {% include advertisements.html %}

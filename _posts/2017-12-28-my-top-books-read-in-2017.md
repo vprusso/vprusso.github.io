@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "60 Books Read in 2017"
-date:   2017-012-28 1:58:35
+date:   2017-12-28 1:58:35
 cover_image:
 categories: Books, Reading, Philosophy
 excerpt: A listing and one sentence summary of the books I read in 2017. 

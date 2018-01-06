@@ -18,8 +18,9 @@ tags:
 
 This is the first in a series of tutorial posts on natural language processing (NLP). Each post will correspond directly to a YouTube video that covers the respective content. The YouTube link for this post is embedded below:
 
+
 <div style="text-align:center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2o_8IAQPyTY" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tP783g97C5o" frameborder="0" allowfullscreen></iframe>
 </div>
 
 The intended audience for this series of posts on NLP is expected to have some rudimentary programming experience and to also be fairly comfortable in a command line environemnt. Exposure to NLP is not assumed, and we'll be covering some of the salient points of this field with plenty of example programs. If you would like further resources on NLP beyond what is found in the scope of this series, I would recommend the following resources:

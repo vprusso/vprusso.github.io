@@ -13,7 +13,9 @@ permalink: /teaching/
 
 Over the years, I've had some outstanding teachers. When I can, I try to do my best to "pay it forward" and produce instructional videos on programming, computer science, and related topics. I find this to be a very fun and rewarding process. If you're so inclined, feel free to give my YouTube channel look:<br>
 
+<center>
 <div class="g-ytsubscribe" data-channelid="UCFxcvyt2Ucq5IL0_1Njzqlg" data-layout="full" data-count="default"></div><br> 
+</center>
 
 At the moment, these video are separated into the following categories. Each link navigates to a playlist on my channel that covers the relevant subject matter:<br><br>
 

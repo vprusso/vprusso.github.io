@@ -13,7 +13,9 @@ permalink: /music/
 
 In my free time, I enjoy playing the guitar. When I can, I upload guitar videos to YouTube under captainhampton:<br>
 
+<center>
 <div class="g-ytsubscribe" data-channel="captainhampton" data-layout="full" data-count="default"></div><br>
+</center>
 
 These videos are typically an acoustic take on music from a video game or a classical piece. The links to these videos are found here, as well as the corresponding guitar tablature, MP3/WAV, etc. <br><br>
 

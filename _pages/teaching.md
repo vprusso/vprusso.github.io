@@ -41,6 +41,11 @@ At the moment, these video are separated into the following categories. Each lin
 <BR>
 
 <LI>
+<A HREF="https://www.youtube.com/watch?v=tP783g97C5o&list=PL5tcWHG-UPH0vSrpSUowSfcVjh1noEJtX">Natural Language Processing</A><BR>
+</LI>
+<BR>
+
+<LI>
 <A HREF="https://www.youtube.com/watch?v=OiDQu-0-DIA&list=PL5tcWHG-UPH1NHku02OGJDCsdNPr-F_bu">Python imgur API</A><BR>
 </LI>
 <BR>

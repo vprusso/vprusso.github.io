@@ -1,10 +1,10 @@
 ---
 layout: post
 comments: true
-title:  "Natural Language Processing in Python: Part 1"
+title:  "Natural Language Processing in Python: Part 1 -- Introduction"
 date:   2018-01-04 1:58:35
-cover_image: https://i.imgur.com/a/f0907.png
-excerpt: Write-up for Part 1 of YouTube NLP in Python series. 
+cover_image: https://i.imgur.com/4FIP5uG.png
+excerpt: Write-up for Part 1 of YouTube NLP in Python series. We provide instructions for installing the natural language toolkit (NLTK) in Python. We then use this to explore rudimentary natural language processing on the text "Alice in Wonderland" 
 categories: python, nlp, natural language processing 
 tags:
 - python
@@ -231,12 +231,12 @@ By excluding both punctuation and stopwords, this plot gives us a more informati
 
 ## Conclusion
 
-That wraps up this introduction tutorial on natural language processing in Python. 
+That wraps up this introduction tutorial on natural language processing in Python. In the next tutorial, we will go over further ways in which you can access the text resources that are provided to you by NLTK.
 
-<a href="http://vprusso.github.io/blog/2018/natural-language-processing-python-2/">Part 2 of Natural Language Processing Python.</a>
-
+[Part 2 of Natural Language Processing in Python][5]
 
 [1]: http://www.nltk.org/book/
 [2]: https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ 
 [3]: https://www.youtube.com/channel/UCFxcvyt2Ucq5IL0_1Njzqlg
 [4]: http://www.nltk.org/ 
+[5]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/

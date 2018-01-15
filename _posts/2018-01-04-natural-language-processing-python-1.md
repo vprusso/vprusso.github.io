@@ -39,6 +39,19 @@ Indeed, inspiration from the above two resources has been an influence in this s
 <div class="g-ytsubscribe" data-channelid="UCFxcvyt2Ucq5IL0_1Njzqlg" data-layout="full" data-count="default"></div><br> 
 </center>
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][6]
+
+* [Part 2: Accessing Text Resources][7]
+
+* [Part 3: Generating Word Clouds][8]
+
+* [Part 4: WordNet][9]
+
+* [Part 5: Stemming and Lemmatization][10]
+
+
 With that out of the way, let us proceed to setting up what we require in order to do some natural language processing in Python.
 
 ## Installing the Natural Language Toolkit
@@ -235,8 +248,31 @@ That wraps up this introduction tutorial on natural language processing in Pytho
 
 [Part 2 of Natural Language Processing in Python][5]
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][6]
+
+* [Part 2: Accessing Text Resources][7]
+
+* [Part 3: Generating Word Clouds][8]
+
+* [Part 4: WordNet][9]
+
+* [Part 5: Stemming and Lemmatization][10]
+
+
 [1]: http://www.nltk.org/book/
 [2]: https://www.youtube.com/channel/UCfzlCWGWYyIQ0aLC5w48gBQ 
 [3]: https://www.youtube.com/channel/UCFxcvyt2Ucq5IL0_1Njzqlg
 [4]: http://www.nltk.org/ 
 [5]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
+[6]: http://vprusso.github.io/blog/2018/natural-language-processing-python-1/
+[7]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
+[8]: http://vprusso.github.io/blog/2018/natural-language-processing-python-3/
+[9]: http://vprusso.github.io/blog/2018/natural-language-processing-python-4/
+[10]: http://vprusso.github.io/blog/2018/natural-language-processing-python-5/
+[11]: http://vprusso.github.io/blog/2018/natural-language-processing-python-6/
+[12]: http://vprusso.github.io/blog/2018/natural-language-processing-python-7/
+[13]: http://vprusso.github.io/blog/2018/natural-language-processing-python-8/
+[14]: http://vprusso.github.io/blog/2018/natural-language-processing-python-9/
+[15]: http://vprusso.github.io/blog/2018/natural-language-processing-python-10/

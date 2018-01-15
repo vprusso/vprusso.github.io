@@ -38,6 +38,18 @@ The primary goal of this post will be to:
 <div class="g-ytsubscribe" data-channelid="UCFxcvyt2Ucq5IL0_1Njzqlg" data-layout="full" data-count="default"></div><br> 
 </center>
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][8]
+
+* [Part 2: Accessing Text Resources][9]
+
+* [Part 3: Generating Word Clouds][10]
+
+* [Part 4: WordNet][11]
+
+* [Part 5: Stemming and Lemmatization][12]
+
 ## Stemming
 
 Let us first focus on the notion of [**stemming** according
@@ -265,6 +277,17 @@ That wraps up this tutorial on natural language processing in Python.
 
 [Part 6 of Natural Language Processing in Python][3]
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][8]
+
+* [Part 2: Accessing Text Resources][9]
+
+* [Part 3: Generating Word Clouds][10]
+
+* [Part 4: WordNet][11]
+
+* [Part 5: Stemming and Lemmatization][12]
 
 [1]: http://vprusso.github.io/blog/2018/natural-language-processing-python-4/
 [2]: XXX
@@ -273,3 +296,13 @@ That wraps up this tutorial on natural language processing in Python.
 [5]: http://www.cs.odu.edu/~jbollen/IR04/readings/readings5.pdf
 [6]: https://stackoverflow.com/questions/10554052/what-are-the-major-differences-and-benefits-of-porter-and-lancaster-stemming-alg/11210358
 [7]: https://en.wikipedia.org/wiki/Lemmatisation
+[8]: http://vprusso.github.io/blog/2018/natural-language-processing-python-1/
+[9]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
+[10]: http://vprusso.github.io/blog/2018/natural-language-processing-python-3/
+[11]: http://vprusso.github.io/blog/2018/natural-language-processing-python-4/
+[12]: http://vprusso.github.io/blog/2018/natural-language-processing-python-5/
+[13]: http://vprusso.github.io/blog/2018/natural-language-processing-python-6/
+[14]: http://vprusso.github.io/blog/2018/natural-language-processing-python-7/
+[15]: http://vprusso.github.io/blog/2018/natural-language-processing-python-8/
+[16]: http://vprusso.github.io/blog/2018/natural-language-processing-python-9/
+[17]: http://vprusso.github.io/blog/2018/natural-language-processing-python-10/

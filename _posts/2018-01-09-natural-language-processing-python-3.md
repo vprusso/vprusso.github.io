@@ -36,6 +36,18 @@ The primary goal of this post will be to:
 <div class="g-ytsubscribe" data-channelid="UCFxcvyt2Ucq5IL0_1Njzqlg" data-layout="full" data-count="default"></div><br> 
 </center>
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][10]
+
+* [Part 2: Accessing Text Resources][11]
+
+* [Part 3: Generating Word Clouds][12]
+
+* [Part 4: WordNet][13]
+
+* [Part 5: Stemming and Lemmatization][14]
+
 ## The wordcloud Module
 
 Let us start off by importing the NLTK module.
@@ -324,6 +336,17 @@ That wraps up this tutorial on natural language processing in Python. In the nex
 
 [Part 4 of Natural Language Processing in Python][3]
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][10]
+
+* [Part 2: Accessing Text Resources][11]
+
+* [Part 3: Generating Word Clouds][12]
+
+* [Part 4: WordNet][13]
+
+* [Part 5: Stemming and Lemmatization][14]
 
 [1]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
 [2]: https://www.youtube.com/watch?v=n3_mZ47ZVxA
@@ -334,3 +357,14 @@ That wraps up this tutorial on natural language processing in Python. In the nex
 [7]: http://vprusso.github.io/blog/2018/natural-language-processing-python-1/
 [8]: https://amueller.github.io/word_cloud/auto_examples/a_new_hope.html#sphx-glr-auto-examples-a-new-hope-py)
 [9]: http://weclipart.com/george+washington+silhouette+clip+art/d/6952286
+[10]: http://vprusso.github.io/blog/2018/natural-language-processing-python-1/
+[11]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
+[12]: http://vprusso.github.io/blog/2018/natural-language-processing-python-3/
+[13]: http://vprusso.github.io/blog/2018/natural-language-processing-python-4/
+[14]: http://vprusso.github.io/blog/2018/natural-language-processing-python-5/
+[15]: http://vprusso.github.io/blog/2018/natural-language-processing-python-6/
+[16]: http://vprusso.github.io/blog/2018/natural-language-processing-python-7/
+[17]: http://vprusso.github.io/blog/2018/natural-language-processing-python-8/
+[18]: http://vprusso.github.io/blog/2018/natural-language-processing-python-9/
+[19]: http://vprusso.github.io/blog/2018/natural-language-processing-python-10/
+

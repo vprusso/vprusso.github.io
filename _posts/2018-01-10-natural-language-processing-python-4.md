@@ -38,6 +38,18 @@ The primary goal of this post will be to:
 <div class="g-ytsubscribe" data-channelid="UCFxcvyt2Ucq5IL0_1Njzqlg" data-layout="full" data-count="default"></div><br> 
 </center>
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][7]
+
+* [Part 2: Accessing Text Resources][8]
+
+* [Part 3: Generating Word Clouds][9]
+
+* [Part 4: WordNet][10]
+
+* [Part 5: Stemming and Lemmatization][11]
+
 
 ## NLTK and WordNet
 
@@ -344,6 +356,17 @@ That wraps up this tutorial on natural language processing in Python.
 
 [Part 5 of Natural Language Processing in Python][3]
 
+Table of Contents of this tutorial:
+
+* [Part 1: Introduction][7]
+
+* [Part 2: Accessing Text Resources][8]
+
+* [Part 3: Generating Word Clouds][9]
+
+* [Part 4: WordNet][10]
+
+* [Part 5: Stemming and Lemmatization][11]
 
 [1]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
 [2]: https://www.youtube.com/watch?v=0Rc3452U6b8
@@ -351,3 +374,13 @@ That wraps up this tutorial on natural language processing in Python.
 [4]: https://en.wikipedia.org/wiki/WordNet
 [5]: https://wordnet.princeton.edu
 [6]: https://arxiv.org/pdf/cmp-lg/9406033.pdf
+[7]: http://vprusso.github.io/blog/2018/natural-language-processing-python-1/
+[8]: http://vprusso.github.io/blog/2018/natural-language-processing-python-2/
+[9]: http://vprusso.github.io/blog/2018/natural-language-processing-python-3/
+[10]: http://vprusso.github.io/blog/2018/natural-language-processing-python-4/
+[11]: http://vprusso.github.io/blog/2018/natural-language-processing-python-5/
+[12]: http://vprusso.github.io/blog/2018/natural-language-processing-python-6/
+[13]: http://vprusso.github.io/blog/2018/natural-language-processing-python-7/
+[14]: http://vprusso.github.io/blog/2018/natural-language-processing-python-8/
+[15]: http://vprusso.github.io/blog/2018/natural-language-processing-python-9/
+[16]: http://vprusso.github.io/blog/2018/natural-language-processing-python-10/

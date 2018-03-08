@@ -46,6 +46,11 @@ At the moment, these video are separated into the following categories. Each lin
 <BR>
 
 <LI>
+<A HREF="https://www.youtube.com/playlist?list=PL5tcWHG-UPH0jOCtEIpDNpbwOnhc6h9Om">Golang</A><BR>
+</LI>
+<BR>
+
+<LI>
 <A HREF="https://www.youtube.com/watch?v=OiDQu-0-DIA&list=PL5tcWHG-UPH1NHku02OGJDCsdNPr-F_bu">Python imgur API</A><BR>
 </LI>
 <BR>

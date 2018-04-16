@@ -40,6 +40,17 @@ See more at <A HREF="https://github.com/vprusso">my Github page</A>
     	
 <div class="row">
     <div class="col-md-3">
+      <h3 style="font-size:130%;"><a href="https://github.com/vprusso/scirate">scirate</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=scirate&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprussoN&repo=scirate&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+      <p style="font-size:80%;"> A Python wrapper for extracting information from <a href="https://scirate.com/">Scirate</a> </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
 
       <h3 style="font-size:130%;"><a href="https://play.google.com/store/apps/details?id=com.lightsout.captainhampton.lightsout" >Lights Out!</a></h3>
 

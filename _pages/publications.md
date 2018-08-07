@@ -26,7 +26,8 @@ permalink: /publications/
 <LI>
 <A HREF="https://arxiv.org/pdf/1709.01837.pdf">"Extended nonlocal games from quantum-classical games"</A>, <br> 
 V. Russo, J. Watrous <br>
-arXiv preprint:1709.01837, (2017). <br> 
+Chicago Journal of Theoretical Computer Science, Volume: 2018, Article: 4, (2018). <br> 
+[<A HREF="http://cjtcs.cs.uchicago.edu/articles/2018/4/contents.html">Link</A>]
 [<A HREF="/pdf/extended_qc.pdf">PDF</A>]
 [<A HREF="/pdf/infinite_entanglement_slides.pdf">Slides</A>]
 [<A HREF="https://arxiv.org/abs/1709.01837">arXiv</A>]

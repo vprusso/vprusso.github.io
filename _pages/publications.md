@@ -112,7 +112,7 @@ J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff, <br>
 Computer Physics Communications, (2013). <br> 
 [<A HREF="http://www.sciencedirect.com/science/article/pii/S0010465513002270#">Link</A>]
 [<A HREF="/pdf/lennard_jonesium.pdf">PDF</A>]
-[<A HREF="http://gomc.eng.wayne.edu/">Software</A>]
+[<A HREF="https://github.com/GOMC-WSU">Software</A>]
 </LI>
 <BR>
 
@@ -123,7 +123,7 @@ Journal of Parallel and Distributed Computing, (2012). <br>
 [<A HREF="http://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617#.ViTy5n6rRQI">Link</A>]
 [<A HREF="/pdf/gpu_parallel.pdf">PDF</A>]
 [<A HREF="/pdf/gpu_parallel_poster.pdf">Poster</A>]
-[<A HREF="http://gomc.eng.wayne.edu/">Software</A>]
+[<A HREF="https://github.com/GOMC-WSU">Software</A>]
 </LI>
 <BR>
 

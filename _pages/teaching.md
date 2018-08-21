@@ -21,27 +21,22 @@ At the moment, these video are separated into the following categories. Each lin
 
 <OL>
 <LI>
-<A HREF="https://www.youtube.com/watch?v=zeULw-a7Mw8&list=PL5tcWHG-UPH1K7oTJgIbWy6rCMc8-8Lfm">Algorithms</A><BR>
+<A HREF="http://bit.ly/lp_algos">Algorithms</A><BR>
 </LI>
 <BR>
 
 <LI>
-<A HREF="https://www.youtube.com/watch?v=OaVrRES2o0g&list=PL5tcWHG-UPH3aop31PhBjnzRYJu6g2UNc">Android App Showcase</A><BR>
+<A HREF="http://bit.ly/lp_bitmanip">Bit Manipulation</A><BR>
 </LI>
 <BR>
 
 <LI>
-<A HREF="https://www.youtube.com/watch?v=lVFnq4zbs-g&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV">Data Structures</A><BR>
+<A HREF="http://bit.ly/lp_android">Android App Showcase</A><BR>
 </LI>
 <BR>
 
 <LI>
-<A HREF="https://www.youtube.com/watch?v=UqEU-obRUnI&list=PL5tcWHG-UPH1D-JVSiZI_8I8LPUJtoHdg">Technical Interview Problems</A><BR>
-</LI>
-<BR>
-
-<LI>
-<A HREF="https://www.youtube.com/watch?v=tP783g97C5o&list=PL5tcWHG-UPH0vSrpSUowSfcVjh1noEJtX">Natural Language Processing</A><BR>
+<A HREF="http://bit.ly/lp_data_structures">Data Structures</A><BR>
 </LI>
 <BR>
 
@@ -50,8 +45,24 @@ At the moment, these video are separated into the following categories. Each lin
 </LI>
 <BR>
 
+
 <LI>
-<A HREF="https://www.youtube.com/watch?v=OiDQu-0-DIA&list=PL5tcWHG-UPH1NHku02OGJDCsdNPr-F_bu">Python imgur API</A><BR>
+<A HREF="https://www.youtube.com/watch?v=UqEU-obRUnI&list=PL5tcWHG-UPH1D-JVSiZI_8I8LPUJtoHdg">Technical Interview Problems</A><BR>
+</LI>
+<BR>
+
+<LI>
+<A HREF="http://bit.ly/lp_nlp">Natural Language Processing</A><BR>
+</LI>
+<BR>
+
+<LI>
+<A HREF="http://bit.ly/lp_imgur">Python imgur API</A><BR>
+</LI>
+<BR>
+
+<LI>
+<A HREF="http://bit.ly/lp_twitter">Python Twitter API</A><BR>
 </LI>
 <BR>
 
@@ -66,12 +77,12 @@ At the moment, these video are separated into the following categories. Each lin
 <BR>
 
 <LI>
-<A HREF="https://www.youtube.com/watch?v=vlb3qUiS2ZY&list=PL5tcWHG-UPH2HrF5M7-IIXK6JSRG0obYo">Vim</A><BR>
+<A HREF="http://bit.ly/lp_vim">Vim</A><BR>
 </LI>
 <BR>
 
 <LI>
-<A HREF="https://www.youtube.com/playlist?list=PL5tcWHG-UPH1fnJw-BvBiiiPUPm1LUKsm">Web Scraping and Automation</A><BR>
+<A HREF="http://bit.ly/web_automation">Web Scraping and Automation</A><BR>
 </LI>
 <BR>
 

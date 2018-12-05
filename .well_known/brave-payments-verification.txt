@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: vprusso.github.io
+Token: 182f8dae2cdf80bbf5aaa07a6b79430fc897a2faf74e2695c44a902521256d8f

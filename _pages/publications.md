@@ -17,11 +17,21 @@ permalink: /publications/
 
 <OL reversed>
 
-<!--
 
--->
 
 <h3>Refereed Journal Publications and Preprints</h3>
+
+<!--
+<LI>
+<A HREF="">""</A>, <br> 
+C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
+XXX, (2019). <br> 
+[<A HREF="/pdf/XXX.pdf">PDF</A>]
+[<A HREF="/pdf/solution_groups_slides.pdf">Slides</A>]
+[<A HREF="">arXiv</A>]
+</LI>
+<BR>
+-->
 
 <LI>
 <A HREF="https://arxiv.org/pdf/1709.01837.pdf">"Extended nonlocal games from quantum-classical games"</A>, <br> 

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="msvalidate.01" content="5E7827CBC3E6F12865C285B3020A9C95" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2017/tensor-flow-categorical-data/">
+  <link rel="alternate" type="application/rss+xml" title="Vincent Russo" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Vincent Russo</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">Blog</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/cv/">Resume/CV</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/">Home</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/music/">Music</a>
+          
+        
+          
+          <a class="page-link" href="/projects/">Projects</a>
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/teaching/">Teaching</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+    <header class="post-header">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59145213-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <h1 class="post-title">Using TensorFlow on Categorical Data</h1>
+        <p class="post-meta">Apr 14, 2017</p>
+    </header>
+
+    <article class="post-content">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+        <h3 id="introduction">Introduction</h3>
+
+<p>In this post, we will be using the UCI mushroom database as training data for us to determine if a given mushroom with specific attributes is either edible or poisonous. This data set serves as a nice example of one where the attributes are categorical, which is something you may run across yourself, and optimistically this article can serve as a guide post for how to deal with such situations. We will use TensorFlow to determine the edibility of a given mushroom, and the approach will follow in a very similar manner to <a href="https://www.tensorflow.org/get_started/tflearn">the excellent tutorial on the TensorFlow page where Iris flower data is considered</a> instead.</p>
+
+<p>For anyone who has dipped their toes into machine learning, and specifically neural networks, two of the primary examples that come up as a typical “Hello World” application is the Iris classification and the hand-written digit classification. These are abundant examples with good reason, as they illustrate a useful and nontrivial property of neural networks. However, these examples tend to dominate the landscape of introductory neural network applications. The primary goal of this post then is to show a very similar type of example, but have a focus on data that is generally not used in the prototypical neural network introductions. One reason for this is that, at least for me, it was initially unclear what else neural networks could be applied to. Indeed, if you’re inclined, the approach in this post is broadly applicable to just about any of the <a href="http://archive.ics.uci.edu/ml/datasets.html?format=&amp;task=cla&amp;att=&amp;area=&amp;numAtt=&amp;numIns=&amp;type=&amp;sort=nameUp&amp;view=table">“classification” data sets from the UCI machine learning repository</a>. If you want another example of using TensorFlow to construct a neural network on non-categorical data, I have <a href="http://vprusso.github.io/blog/2016/tensor-flow-neural-net-breast-cancer/">blog post that gives a quick example for how to classify breast cancer tumors</a>.</p>
+
+<p>I encourage you to find an interesting dataset there and construct your own neural network. If you do so, please let me know!</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>In a similar manner to the <a href="https://www.tensorflow.org/get_started/tflearn">TensorFlow tutorial</a>, we will be breaking this task down into the following bites:</p>
+
+<ol>
+  <li>
+    <p><a href="#download-and-clean-the-mushroom-data-from-the-uci-repository">Download and Clean the Mushroom Data from the UCI Repository</a>.</p>
+  </li>
+  <li>
+    <p><a href="#load-mushroom-csv-data-into-tensorflow">Load Mushroom CSV Data into TensorFlow</a>.</p>
+  </li>
+  <li>
+    <p><a href="#use-tensorflow-to-construct-a-neural-network-classifier">Use TensorFlow to Construct a Neural Network Classifier</a>.</p>
+  </li>
+  <li>
+    <p><a href="#use-the-uci-data-to-train-the-neural-network">Use the UCI Data to Train the Neural Network</a>.</p>
+  </li>
+  <li>
+    <p><a href="#determine-the-accuracy-of-our-neural-network-model">Determine the Accuracy of our Neural Network Model</a>.</p>
+  </li>
+  <li>
+    <p><a href="#test-the-neural-network-on-a-sample-not-seen">Test the Neural Network on a Sample Not Seen</a>.</p>
+  </li>
+</ol>
+
+<p>The TensorFlow library is an evolving one, and as a result, some of the functions called in this post may be deprecated at some point in the future. I will do my best to update the code in this post as the updates come out. If you encounter any problems or errors, please feel free to contact me.</p>
+
+<p>I’m also going to assume that you have a machine with TensorFlow on it. For more information on that, you can consult the <a href="https://www.tensorflow.org/install/">documentation on how to install TensorFlow</a> for your particular setup.</p>
+
+<h3 id="complete-source-code-listing">Complete Source Code Listing</h3>
+
+<p>If you simply want some code to grab and try it out for yourself, I’ll provide the complete listing below. You can just clone my repository to obtain all of the code and supplementary data files required. If you’d like a bit more explanation as to what is happening, the rest of the post will elaborate on that in greater detail.</p>
+
+<p><strong>Git repository link</strong>: <a href="https://github.com/vprusso/tf_mushroom">https://github.com/vprusso/tf_mushroom</a></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<span class="k">def</span> <span class="nf">prepare_data</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">):</span>
+    <span class="s">"""
+    Responsible for cleaning the data file provided from the UCI machine
+    learning repository here: http://archive.ics.uci.edu/ml/datasets/Mushroom.
+    The function then produces two CSV files appropriately formatted to be
+    used in TensorFlow where the CSV files split with respect to
+    training and testing data.
+    """</span>
+
+    <span class="c"># The header is formed from the 'agaricus-lepiota.name' file found on</span>
+    <span class="c"># http://archive.ics.uci.edu/ml/datasets/Mushroom</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">'class'</span><span class="p">,</span> <span class="s">'cap_shape'</span><span class="p">,</span> <span class="s">'cap_surface'</span><span class="p">,</span>
+              <span class="s">'cap_color'</span><span class="p">,</span> <span class="s">'bruises'</span><span class="p">,</span> <span class="s">'odor'</span><span class="p">,</span> <span class="s">'gill_attachment'</span><span class="p">,</span>
+              <span class="s">'gill_spacing'</span><span class="p">,</span> <span class="s">'gill_size'</span><span class="p">,</span> <span class="s">'gill_color'</span><span class="p">,</span> <span class="s">'stalk_shape'</span><span class="p">,</span>
+              <span class="s">'stalk_root'</span><span class="p">,</span> <span class="s">'stalk_surface_above_ring'</span><span class="p">,</span>
+              <span class="s">'stalk_surface_below_ring'</span><span class="p">,</span> <span class="s">'stalk_color_above_ring'</span><span class="p">,</span>
+              <span class="s">'stalk_color_below_ring'</span><span class="p">,</span> <span class="s">'veil_type'</span><span class="p">,</span> <span class="s">'veil_color'</span><span class="p">,</span>
+              <span class="s">'ring_number'</span><span class="p">,</span> <span class="s">'ring_type'</span><span class="p">,</span> <span class="s">'spore_print_color'</span><span class="p">,</span>
+              <span class="s">'population'</span><span class="p">,</span> <span class="s">'habitat'</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+
+    <span class="c"># Entries with a '?' indicate a missing piece of data, and</span>
+    <span class="c"># these entries are dropped from our dataset.</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'?'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c"># The class of poisonous or edible is indicated in the data as</span>
+    <span class="c"># either 'p' or 'e' respectively. We require that this is numeric,</span>
+    <span class="c"># and therefore use '0' to indicate poisonous (or not edible) and</span>
+    <span class="c"># '1' to indicate edible.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'p'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'e'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c"># Since we are dealing with non-numeric feature data, or in other</span>
+    <span class="c"># words, categorical data, we need to replace these with numerical</span>
+    <span class="c"># equivalents. Pandas has a nice function called "get_dummies" that</span>
+    <span class="c"># performs this task.</span>
+    <span class="n">cols_to_transform</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols_to_transform</span><span class="p">)</span>
+
+    <span class="c"># We can now split the data into two separate data frames,</span>
+    <span class="c"># one for training, which will constitute the bulk of the</span>
+    <span class="c"># data, and one for testing.</span>
+    <span class="n">df_train</span><span class="p">,</span> <span class="n">df_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+    <span class="c"># Determine the number of rows and columns in each of the</span>
+    <span class="c"># data frames.</span>
+    <span class="n">num_train_entries</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_train_features</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="n">num_test_entries</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">num_test_features</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="c"># The data frames are written as a temporary CSV file, as we still</span>
+    <span class="c"># need to modify the header row to include the number of rows and</span>
+    <span class="c"># columns present in the training and testing CSV files.</span>
+    <span class="n">df_train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'train_temp.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">df_test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'test_temp.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="c"># Append onto the header row the information about how many</span>
+    <span class="c"># columns and rows are in each file as TensorFlow requires.</span>
+    <span class="nb">open</span><span class="p">(</span><span class="s">"mushroom_train.csv"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_train_entries</span><span class="p">)</span> <span class="o">+</span>
+                                          <span class="s">","</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_train_features</span><span class="p">)</span> <span class="o">+</span>
+                                          <span class="s">","</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s">"train_temp.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="nb">open</span><span class="p">(</span><span class="s">"mushroom_test.csv"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_test_entries</span><span class="p">)</span> <span class="o">+</span>
+                                         <span class="s">","</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_test_features</span><span class="p">)</span> <span class="o">+</span>
+                                         <span class="s">","</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s">"test_temp.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="c"># Finally, remove the temporary CSV files that were generated above.</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">"train_temp.csv"</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">"test_temp.csv"</span><span class="p">)</span>
+
+
+<span class="c"># Define the test inputs</span>
+<span class="k">def</span> <span class="nf">get_test_inputs</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">test_set</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">test_set</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+
+<span class="c"># Define the training inputs</span>
+<span class="k">def</span> <span class="nf">get_train_inputs</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">training_set</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">training_set</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+
+<span class="c"># Classify two new mushroom samples. (expect output: [0,1]),</span>
+<span class="c"># i.e. poisonous, edible.</span>
+<span class="k">def</span> <span class="nf">new_samples</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+
+    <span class="n">MUSHROOM_DATA_FILE</span> <span class="o">=</span> <span class="s">"agaricus-lepiota.data"</span>
+
+    <span class="c"># Prepare the mushroom data for TensorFlow by</span>
+    <span class="c"># creating two train / test CSV files.</span>
+    <span class="n">prepare_data</span><span class="p">(</span><span class="n">MUSHROOM_DATA_FILE</span><span class="p">)</span>
+
+    <span class="c"># Load datasets.</span>
+    <span class="n">training_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s">'mushroom_train.csv'</span><span class="p">,</span>
+        <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">target_column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="s">'mushroom_test.csv'</span><span class="p">,</span>
+        <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">target_column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c"># Specify that all features have real-value data</span>
+    <span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">real_valued_column</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">98</span><span class="p">)]</span>
+
+    <span class="c"># Build 3 layer DNN with 10, 20, 10 units respectively.</span>
+    <span class="n">classifier</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">DNNClassifier</span><span class="p">(</span>
+        <span class="n">feature_columns</span><span class="o">=</span><span class="n">feature_columns</span><span class="p">,</span>
+        <span class="n">hidden_units</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">model_dir</span><span class="o">=</span><span class="s">"/tmp/mushroom_model"</span><span class="p">)</span>
+
+    <span class="c"># Fit model.</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">get_train_inputs</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+
+    <span class="c"># Evaluate accuracy.</span>
+    <span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">get_test_inputs</span><span class="p">,</span>
+                                         <span class="n">steps</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="s">"accuracy"</span><span class="p">]</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Test Accuracy: {0:f}</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">))</span>
+
+    <span class="c"># Test on two mushroom samples.</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">new_samples</span><span class="p">))</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">"New Samples, Class Predictions:    {}</span><span class="se">\n</span><span class="s">"</span>
+          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+
+</code></pre>
+</div>
+
+<h3 id="download-and-clean-the-mushroom-data-from-the-uci-repository">Download and Clean the Mushroom Data from the UCI Repository</h3>
+
+<p>We will be obtaining our data from the <a href="http://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/">UCI machine learning mushroom data set page</a>. On this page, there are two primary files that we will be making using of, <code class="highlighter-rouge">agaricus-lepiota.data</code> and <code class="highlighter-rouge">agaricus-lepiota.names</code>. The <code class="highlighter-rouge">agaricus-lepiota.data</code> file is a comma separated file with 8124 rows and 22 columns. Each row corresponds to a mushroom, and each of the 22 columns correspond to respective attributes of each mushroom. Each entry consists of a single character, where the character legend is found in the <code class="highlighter-rouge">agaricus-lepiota.names</code> file. This tells us precisely what each of these letters in a given column means for the particular mushroom we are considering.</p>
+
+<p>The UCI mushroom data is almost ready to go directly from the UCI link, but we’re going to tweak a couple things. Before proceeding, we’ll require the following imports.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+</code></pre>
+</div>
+
+<p>The first thing we’re going to do is add a header row so that TensorFlow knows what each column in our data file corresponds to. The header row will be a comma separated row that we will place in the first row of the file, where each of the columns in this row will correspond to the attributes listed in the <code class="highlighter-rouge">agaricus-lepiota.names</code> file.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># The header is formed from the 'agaricus-lepiota.name' file found on</span>
+<span class="c"># http://archive.ics.uci.edu/ml/datasets/Mushroom</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s">'class'</span><span class="p">,</span> <span class="s">'cap_shape'</span><span class="p">,</span> <span class="s">'cap_surface'</span><span class="p">,</span>
+          <span class="s">'cap_color'</span><span class="p">,</span> <span class="s">'bruises'</span><span class="p">,</span> <span class="s">'odor'</span><span class="p">,</span> <span class="s">'gill_attachment'</span><span class="p">,</span>
+          <span class="s">'gill_spacing'</span><span class="p">,</span> <span class="s">'gill_size'</span><span class="p">,</span> <span class="s">'gill_color'</span><span class="p">,</span> <span class="s">'stalk_shape'</span><span class="p">,</span>
+          <span class="s">'stalk_root'</span><span class="p">,</span> <span class="s">'stalk_surface_above_ring'</span><span class="p">,</span>
+          <span class="s">'stalk_surface_below_ring'</span><span class="p">,</span> <span class="s">'stalk_color_above_ring'</span><span class="p">,</span>
+          <span class="s">'stalk_color_below_ring'</span><span class="p">,</span> <span class="s">'veil_type'</span><span class="p">,</span> <span class="s">'veil_color'</span><span class="p">,</span>
+          <span class="s">'ring_number'</span><span class="p">,</span> <span class="s">'ring_type'</span><span class="p">,</span> <span class="s">'spore_print_color'</span><span class="p">,</span>
+          <span class="s">'population'</span><span class="p">,</span> <span class="s">'habitat'</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_file_name</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Second, we are now going to eliminate any row with a “?” entry in the column. It is arguably a bit overkill to just eliminate these rows entirely, as most times the rest of the columns are populated with non-“?” entries. There are many techniques for dealing with such data points in a machine learning context, but for the purposes of brevity, we’ll be doing the relatively unsophisticated approach of just removing the rows with offending “?” entries.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Entries with a '?' indicate a missing piece of data, and</span>
+<span class="c"># these entries are dropped from our dataset.</span>
+<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'?'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Third, we’re going to replace the “p” or “e” in the class column of the data frame, where “p” denotes a poisonous mushroom and “e” denotes an edible one. For our purposes, it will be much more straight forward to replace the “p” and “e” with “0” and “1” respectively.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># The class of poisonous or edible is indicated in the data as</span>
+<span class="c"># either 'p' or 'e' respectively. We require that this is numeric,</span>
+<span class="c"># and therefore use '0' to indicate poisonous (or not edible) and</span>
+<span class="c"># '1' to indicate edible.</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'p'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s">'class'</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'e'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Fourth, we are going to convert the categorical attributes of the mushroom dataset to numerical information that TensorFlow can use. In order to do this, we will be using the <code class="highlighter-rouge">get_dummies</code> function provided by the <code class="highlighter-rouge">pandas</code> library for precisely this purpose. For more information on how this function is used in machine learning for categorical feature data, you can refer to <a href="http://fastml.com/converting-categorical-data-into-numbers-with-pandas-and-scikit-learn/">the excellent blog post at fastml</a>.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Since we are dealing with non-numeric feature data, or in other</span>
+<span class="c"># words, categorical data, we need to replace these with numerical</span>
+<span class="c"># equivalents. Pandas has a nice function called "get_dummies" that</span>
+<span class="c"># performs this task.</span>
+<span class="n">cols_to_transform</span> <span class="o">=</span> <span class="n">header</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols_to_transform</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Fifth, we’re going to split the mushroom data into two different files: one for training and the other for testing. The training data will constitute the bulk of the mushroom data, and for the purposes of creating the testing data, I’ll remove 10 random entries from our training data and place those in the testing data set.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># We can now split the data into two separate data frames,</span>
+<span class="c"># one for training, which will constitute the bulk of the</span>
+<span class="c"># data, and one for testing.</span>
+<span class="n">df_train</span><span class="p">,</span> <span class="n">df_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Finally, TensorFlow requires that we add two pieces of information to our CSV files that are not currently there. The data that we need to add is the number of rows and columns present in each of the training and testing CSV files. We first extract that information from our data frames created above, and then we modify the header in each file to reflect this information.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Determine the number of rows and columns in each of the</span>
+<span class="c"># data frames.</span>
+<span class="n">num_train_entries</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_train_features</span> <span class="o">=</span> <span class="n">df_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">num_test_entries</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">num_test_features</span> <span class="o">=</span> <span class="n">df_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c"># The data frames are written as a temporary CSV file, as we still</span>
+<span class="c"># need to modify the header row to include the number of rows and</span>
+<span class="c"># columns present in the training and testing CSV files.</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'train_temp.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">df_test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s">'test_temp.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c"># Append onto the header row the information about how many</span>
+<span class="c"># columns and rows are in each file as TensorFlow requires.</span>
+<span class="nb">open</span><span class="p">(</span><span class="s">"mushroom_train.csv"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_train_entries</span><span class="p">)</span> <span class="o">+</span>
+                                      <span class="s">","</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_train_features</span><span class="p">)</span> <span class="o">+</span>
+                                      <span class="s">","</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s">"train_temp.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="nb">open</span><span class="p">(</span><span class="s">"mushroom_test.csv"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num_test_entries</span><span class="p">)</span> <span class="o">+</span>
+                                     <span class="s">","</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_test_features</span><span class="p">)</span> <span class="o">+</span>
+                                     <span class="s">","</span> <span class="o">+</span> <span class="nb">open</span><span class="p">(</span><span class="s">"test_temp.csv"</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</code></pre>
+</div>
+
+<p>I’ve gone ahead and set each of the training and testing files up for download here:</p>
+
+<ul>
+  <li><strong>A training set of mushroom data</strong> (<a href="http://vprusso.github.io/csv/mushroom_train.csv">mushroom_train.csv</a>).</li>
+  <li><strong>A test set of mushroom data</strong> (<a href="http://vprusso.github.io/csv/mushroom_test.csv">mushroom_test.csv</a>).</li>
+</ul>
+
+<h3 id="load-mushroom-csv-data-into-tensorflow">Load Mushroom CSV Data into TensorFlow</h3>
+
+<p>Now that we’ve appropriately created the CSV files above, we can now load the CSV files into TensorFlow. To do so, we shall make use the <code class="highlighter-rouge">load_csv_with_header()</code> function provided from TensorFlow.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Load datasets.</span>
+<span class="n">training_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s">'mushroom_train.csv'</span><span class="p">,</span>
+    <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">target_column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">load_csv_with_header</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s">'mushroom_test.csv'</span><span class="p">,</span>
+    <span class="n">target_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">features_dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">target_column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>We use this function to construct both the training and testing sets. The <code class="highlighter-rouge">load_csv_with_header()</code> function takes a filename, which corresponds to the respective CSV files we constructed in the previous section. It also takes an argument <code class="highlighter-rouge">target_dtype</code> that tells TensorFlow what numeric type it is trying to predict. In our case, it’s trying to determine whether the mushroom is poisonous or edible. We encoded that information as either “0” or “1”, so the target type is an integer. The <code class="highlighter-rouge">features_dtype</code> is similar, only now we’re telling TensorFlow what the type of the features are.</p>
+
+<p>Initially, the features were categorical, but recall we made use of the <code class="highlighter-rouge">get_dummies()</code> function to convert the categorical data into numerical data. If you take a peek at either the <code class="highlighter-rouge">mushroom_train.csv</code> file or the <code class="highlighter-rouge">mushroom_test.csv</code> file, you’ll notice the features are composed of “0”s and “1”s. So again, the data type for our features are integer. Finally, the <code class="highlighter-rouge">target_column</code> tells TensorFlow what column in our file corresponds to the thing it is trying to predict. In our case, this is the first column, the one that corresponds to the <code class="highlighter-rouge">class</code> heading. Again, this <code class="highlighter-rouge">class</code> column is the one that consists of the information in terms of “0” or “1” whether the mushroom is poisonous or edible.</p>
+
+<h3 id="use-tensorflow-to-construct-a-neural-network-classifier">Use TensorFlow to Construct a Neural Network Classifier</h3>
+
+<p>We are now going to create a classifier using TensorFlow based on our data set.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Specify that all features have real-value data</span>
+<span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">real_valued_column</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">98</span><span class="p">)]</span>
+
+<span class="c"># Build 3 layer DNN with 10, 20, 10 units respectively.</span>
+<span class="n">classifier</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">DNNClassifier</span><span class="p">(</span>
+    <span class="n">feature_columns</span><span class="o">=</span><span class="n">feature_columns</span><span class="p">,</span>
+    <span class="n">hidden_units</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="n">n_classes</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">model_dir</span><span class="o">=</span><span class="s">"/tmp/mushroom_model"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Let’s look at the arguments being fed into the <code class="highlighter-rouge">classifier</code> variable.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">feature_columns=feature_columns</code>. The features of our mushroom data. Notice that in the way in which we define the <code class="highlighter-rouge">feature_columns</code> variable, we pass it an argument of <code class="highlighter-rouge">dimension=98</code>, since there are 98 different features for each mushroom in the training and test data (not including the class column, since that is the column we are attempting to predict).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">hidden_units=[10, 20, 10]</code>. This tells TensorFlow that we want to construct a neural network with 3 layers where the first layer consists of 10 neurons, the second of 20, and the third of 10 neurons. Why we chose 3 layers and to have a specific amount of neurons on each layer is somewhat more of an art than a science in some ways. In any case, tweaking these types of parameters is a large field of study, and we selected these particular parameters because these are precisely the same ones used in the TensorFlow quick start guide.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">n_classes = 2</code>. This tells TensorFlow that we have two possible classes to predict. Again, in our case, these classes correspond to either poisonous or edible.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">model_dir="/tmp/mushroom_model</code>. Training this model is quick since the amount of data we are providing to TensorFlow is quite small. However, it is usually good practice to checkpoint as the model is trained so that if the computation halts at some point, there’s a point to go back to instead of training the entire network all over again. This stores the checkpoint in the Linux /tmp/mushroom_model directory.</p>
+  </li>
+</ul>
+
+<h3 id="use-the-uci-data-to-train-the-neural-network">Use the UCI Data to Train the Neural Network</h3>
+
+<p>For ease of use later, we’re going to define two functions, <code class="highlighter-rouge">get_test_inputs()</code> and <code class="highlighter-rouge">get_train_inputs()</code>.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Define the test inputs</span>
+<span class="k">def</span> <span class="nf">get_test_inputs</span><span class="p">():</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">test_set</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">test_set</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="c"># Define the training inputs</span>
+<span class="k">def</span> <span class="nf">get_train_inputs</span><span class="p">():</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">training_set</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="n">training_set</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</code></pre>
+</div>
+
+<p>Each function performs the same task, where the only difference has to do with whether we are returning parameters based on either the training or testing data. In each function, we define variables <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> that are TensorFlow constant variables. We’ll be using the <code class="highlighter-rouge">get_train_inputs()</code> function to fit the classifier, and the <code class="highlighter-rouge">get_test_inputs()</code> later.</p>
+
+<p>We now fit the classifier to the mushroom training data set.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Fit model.</span>
+<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">get_train_inputs</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+</code></pre>
+</div>
+<p>The <code class="highlighter-rouge">input_fn</code> argument in the <code class="highlighter-rouge">fit</code> function corresponds to the <code class="highlighter-rouge">get_train_inputs()</code> function defined above, and the <code class="highlighter-rouge">steps</code> argument is set relatively arbitrarily to 2000. Again, this number is also used in the TensorFlow quick start guide, and it seems to be a sufficient number of steps to run on such a small data set.</p>
+
+<h3 id="determine-the-accuracy-of-our-neural-network-model">Determine the Accuracy of our Neural Network Model</h3>
+
+<p>Now that we’ve trained our classifier, we’re going to determine its accuracy.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Evaluate accuracy.</span>
+<span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">get_test_inputs</span><span class="p">,</span>
+                                     <span class="n">steps</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="s">"accuracy"</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Test Accuracy: {0:f}</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>If you run the above, the accuracy of the classifier will print something like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Test Accuracy: 1.000000
+</code></pre>
+</div>
+
+<h3 id="test-the-neural-network-on-a-sample-not-seen">Test the Neural Network on a Sample Not Seen</h3>
+
+<p>Let’s now create two samples that are not in the training data and see what class of mushroom TensorFlow predicts for these two samples. I’m just going to pull two samples out of the test data set that we already have, but perhaps you can imagine a scenario where, let’s say, more mushroom data is selected, and we want to see what our classifier says about this new mushroom we’ve acquired as to whether it is poisonous or not.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Classify two new mushroom samples. (expect output: [0,1]),</span>
+<span class="c"># i.e. poisonous, edible.</span>
+<span class="k">def</span> <span class="nf">new_samples</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>The two samples above in the function are two that were extracted from the test dataset. I made sure to take out the first column of each of these rows, as this piece of data corresponds to whether or not the mushroom is edible or not, precisely the piece of information we want to predict.</p>
+
+<p>Since I took these two rows out, I know that the first mushroom is poisonous and the second one is edible. Therefore, we should expect to see a “0” output for the first and “1” output for the second. The following lines test these samples on our classifier.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Test on two mushroom samples.</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_fn</span><span class="o">=</span><span class="n">new_samples</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"New Samples, Class Predictions:    {}</span><span class="se">\n</span><span class="s">"</span>
+      <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">predictions</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>Running the above, we indeed see that the output from our classifier agrees with what we already knew to be true, that is the first mushroom is poisonous and the second is edible.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>New Samples, Class Predictions:    [0, 1]
+</code></pre>
+</div>
+
+<h3 id="additional-resources">Additional Resources</h3>
+
+<p>There are a number of excellent TensorFlow resources.</p>
+
+<ul>
+  <li>
+    <p>The <a href="https://www.tensorflow.org/tutorials/">official TensorFlow tutorials</a> are very well-written.</p>
+  </li>
+  <li>
+    <p>This blog post covered many of the same concepts found in the <a href="https://www.tensorflow.org/get_started/tflearn"> tf.contrib.learn Quick Start guide</a> on the TensorFlow website.</p>
+  </li>
+</ul>
+
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </article>
+  
+    
+        <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'vprusso'; // required: replace example with your forum shortname
+                // var disqus_developer = 1; // Comment out when the site is live
+                var disqus_identifier = "/blog/2017/tensor-flow-categorical-data/";
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+    
+    <h2>Related Posts:</h2>
+    <ul>
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+      
+        
+          
+
+          
+          
+            
+          
+            
+          
+            
+          
+          
+            
+            <li>
+              <h3>
+                <a href="/blog/2018/natural-language-processing-python-5/">
+                  Natural Language Processing in Python: Part 5 -- Stemming and Lemmatization
+                  <small>10 Jan 2018</small>
+                </a>
+              </h3>
+            </li>
+          
+        
+          
+
+          
+          
+            
+          
+            
+          
+            
+          
+          
+            
+            <li>
+              <h3>
+                <a href="/blog/2018/natural-language-processing-python-4/">
+                  Natural Language Processing in Python: Part 4 -- WordNet
+                  <small>09 Jan 2018</small>
+                </a>
+              </h3>
+            </li>
+          
+        
+          
+
+          
+          
+            
+          
+            
+          
+            
+          
+          
+            
+            <li>
+              <h3>
+                <a href="/blog/2018/natural-language-processing-python-3/">
+                  Natural Language Processing in Python: Part 3 -- Generating Word Clouds
+                  <small>08 Jan 2018</small>
+                </a>
+              </h3>
+            </li>
+          
+        
+          
+            
+      
+    </ul>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Vincent Russo</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Vincent Russo</li>
+          <li><a href="mailto:vincentrusso1@gmail.com">vincentrusso1@gmail.com</a></li>
+        </ul>
+      </div>
+
+	  <div class="footer-col  footer-col-2">
+	   <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/vprusso">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">Github</span>
+            </a>
+          </li>
+          
+		  
+	  
+		  <li>
+		    <a href="https://ca.linkedin.com/in/vrusso11" class="icon-17 linkedin" title="LinkedIn">
+		      <span class="icon  icon--linkedin">
+		       <svg viewBox="0 0 512 512">
+			<path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"
+			/>
+		      </svg>
+		      </span>
+		      <span class="username">Linkedin</span>
+		      <!--[if lt IE 9]><em>LinkedIn</em><![endif]--></a>
+		  </li>
+	  
+	  
+	  
+		<li>
+			<a href="https://scholar.google.ca/citations?user=dJEXPiQAAAAJ&hl=en" class="icon  icon--googlescholar" title="GoogleScholar">
+			<span class="icon icon--googlescholar">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+			<path fill="#000000" d="M14.942 12.57l-4.942-8.235v-3.335h0.5c0.275 0 0.5-0.225 0.5-0.5s-0.225-0.5-0.5-0.5h-5c-0.275 0-0.5 0.225-0.5 0.5s0.225 0.5 0.5 0.5h0.5v3.335l-4.942 8.235c-1.132 1.886-0.258 3.43 1.942 3.43h10c2.2 0 3.074-1.543 1.942-3.43zM3.766 10l3.234-5.39v-3.61h2v3.61l3.234 5.39h-8.468z"></path>
+			</svg>
+			</span>
+			<span class="username">Google Scholar</span>
+			<!--[if lt IE 9]><em>GoogleScholar</em><![endif]--></a>
+		</li>
+	  
+	  
+        </ul>
+      </div>
+	  
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+      
+	  	  
+			<li><a href="http://stackexchange.com/users/412832/vincent-russo" class="icon-23 stackoverflow" title="StackOverflow">
+			<span class="icon  icon--stackoverflow">
+			<svg viewBox="0 0 512 512">
+			<path d="M294.8 361.2l-122 0.1 0-26 122-0.1L294.8 361.2zM377.2 213.7L356.4 93.5l-25.7 4.5 20.9 120.2L377.2 213.7zM297.8 301.8l-121.4-11.2 -2.4 25.9 121.4 11.2L297.8 301.8zM305.8 267.8l-117.8-31.7 -6.8 25.2 117.8 31.7L305.8 267.8zM321.2 238l-105-62 -13.2 22.4 105 62L321.2 238zM346.9 219.7l-68.7-100.8 -21.5 14.7 68.7 100.8L346.9 219.7zM315.5 275.5v106.5H155.6V275.5h-20.8v126.9h201.5V275.5H315.5z"/>
+			</svg>
+			</span>
+			<span class="username">StackOverflow</span>
+			<!--[if lt IE 9]><em>StackOverflow</em><![endif]--></a></li>
+		 
+
+          
+          <li>
+            <a href="https://twitter.com/captainhamptons">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">Twitter</span>
+            </a>
+          </li>
+          
+		  
+		  
+          <li>
+            <a href="https://soundcloud.com/captainhampton">
+              <span class="icon  icon--soundcloud">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+					<path fill="#000000" d="M13.937 8.034c-0.283 0-0.552 0.055-0.798 0.154-0.164-1.787-1.723-3.188-3.625-3.188-0.465 0-0.917 0.088-1.317 0.237-0.156 0.058-0.197 0.117-0.197 0.233v6.292c0 0.121 0.098 0.222 0.221 0.234 0.005 0.001 5.68 0.003 5.717 0.003 1.139 0 2.062-0.888 2.062-1.983s-0.924-1.983-2.063-1.983zM6.25 12h0.5l0.25-3.503-0.25-3.497h-0.5l-0.25 3.497zM4.75 12h-0.5l-0.25-2.543 0.25-2.457h0.5l0.25 2.5zM2.25 12h0.5l0.25-2-0.25-2h-0.5l-0.25 2zM0.25 11h0.5l0.25-1-0.25-1h-0.5l-0.25 1z"></path>
+				</svg>
+              </span>
+
+              <span class="username">Soundcloud</span>
+            </a>
+          </li>
+          
+		  
+		  
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text"></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

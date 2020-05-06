@@ -16,7 +16,3 @@ permalink: /cv/
 </script>
 
 Download links for [Resume]({{ site.url }}/pdf/resume.pdf) and [CV]({{ site.url }}/pdf/cv.pdf).
-
-<b>Embedded Resume</b>:
-<iframe src="http://vprusso.github.io/pdf/resume.pdf" width="100%" height="800em"></iframe>
-

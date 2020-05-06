@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="msvalidate.01" content="5E7827CBC3E6F12865C285B3020A9C95" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/2017/an-overview-of-my-thesis/">
+  <link rel="alternate" type="application/rss+xml" title="Vincent Russo" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Vincent Russo</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">Blog</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/cv/">Resume/CV</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/">Home</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/music/">Music</a>
+          
+        
+          
+          <a class="page-link" href="/projects/">Projects</a>
+          
+        
+          
+          <a class="page-link" href="/publications/">Publications</a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/teaching/">Teaching</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+    <header class="post-header">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59145213-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        <h1 class="post-title">An Brief Overview of my Thesis</h1>
+        <p class="post-meta">May 31, 2017</p>
+    </header>
+
+    <article class="post-content">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+        <h3 id="introduction">Introduction</h3>
+
+<p>In early 2017, I completed my Ph.D. in computer science at the <a href="https://uwaterloo.ca/">University of Waterloo</a> and <a href="https://uwaterloo.ca/institute-for-quantum-computing/">Institute for Quantum Computing</a> under my advisors <a href="https://cs.uwaterloo.ca/~watrous">John Watrous</a> and <a href="http://faculty.iqc.uwaterloo.ca/mmosca/">Michele Mosca</a>. I cannot overstate how lucky I was in having both John and Mike as my supervisors. None of this would have been possible without them, and I greatly thank them for all of their time, effort, and help during my Ph.D.</p>
+
+<p>In this post I’ll be giving a “readers digest” version of my thesis that is targeted towards a non-specialist in the field of quantum computing. I will however assume a bit of mathematical background, but nothing beyond what would be generally be taught in an undergraduate mathematics course. I’ll do my best to be as inclusive as possible and provide links where necessary to fill in any gaps that various readers may have.</p>
+
+<p>More information beyond this post may be found in the <a href="https://arxiv.org/abs/1704.07375">“Extended Nonlocal Game”</a> thesis document.</p>
+
+<h3 id="lets-play-a-game">Let’s Play a Game</h3>
+
+<p>In this game, we have two players that we give the names <em>Alice</em> and <em>Bob</em>:</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/VYukcM5.png" alt="The players: Alice and Bob." />
+        </figure>
+    </center>
+</p>
+
+<p>Alice and Bob are in separate locations and may not communicate once the game begins. Prior to the game however, Alice and Bob are free to communicate with each other. In addition to the players, there is also another party in this game that is referred to as the <em>referee</em>:</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/WxilsYS.png" alt="The referee." />
+        </figure>
+    </center>
+</p>
+
+<p>Alice and Bob want to play in a cooperative fashion against the referee.</p>
+
+<p>Now that we have set the stage with respect to the actors and actresses we will encounter in this game, let us see how it is actually played.</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/H4QdgfK.png" alt="A nonlocal game." />
+        </figure>
+    </center>
+</p>
+
+<p>The above figure shows how the game unfolds.</p>
+
+<ol>
+  <li>
+    <p>The referee randomly generates questions denoted as $x$ and $y$. The referee sends the question $x$ to Alice and the question $y$ to Bob. The referee also keeps a copy of $x$ and $y$ for reference.</p>
+  </li>
+  <li>
+    <p>Alice and Bob each receive their respective questions. They are then each expected to respond to their questions with answers that we denote as $a$ and $b$. Alice sends $a$ to the referee, and Bob sends $b$.</p>
+  </li>
+  <li>
+    <p>When the referee receives $a$ and $b$ from Alice and Bob, it evaluates a particular function that is predicated on the questions ($x$ and $y$) as well as the answers ($a$ and $b$). The outcome of this function is either $0$ or $1$, where an outcome of $0$ indicates a loss for Alice and Bob and an outcome of $1$ indicates a win for Alice and Bob.</p>
+  </li>
+</ol>
+
+<p>Alice and Bob’s goal in the above game is to get the function in Step 3 to output a $1$, or equivalently, indicate a winning outcome. This type of game is referred to as a <em>nonlocal game</em>. A few additional notes on the above are in order.</p>
+
+<h4 id="public-information">Public Information</h4>
+
+<p>First, let’s be more precise about Step 1 where the referee “randomly” generates questions. More precisely, there is a predefined probability distribution, called $\pi$, that is an artifact of the game being played. Furthermore, Alice, Bob, and the referee are all aware of $\pi$, that is, it is a publicly accessible piece of information. The other piece of publicly accessible information to Alice, Bob, and the referee is the set of questions that the referee is selecting from. A particular game may be defined where</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    \pi(x,y) = 1/4, \qquad \text{and} \qquad (x,y) \in \{ (0,0), (0,1), (1,0), (1,1) \}.
+\end{equation}</script>
+
+<p>The above specifications define a game that has four possible question pairs</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    \{ (0,0), (0,1), (1,0), (1,1) \}, 
+\end{equation}</script>
+
+<p>each that are chosen according to a uniform distribution (the probability of selecting any of the four questions is one out of four). Alice and Bob of course will not know which of the question pairs were sent to them, but they are aware of the possible set of questions and the distribution with the questions are selected.</p>
+
+<p>So we know that the set of questions as well as the distribution with which they are selected is publicly accessible information. It’s also true that the set of answers that Alice and Bob pick from are publicly known as well. In addition to that, the function that the referee uses to determine if Alice and Bob win is known to Alice and Bob as well. In other words, the players know what values of $x$, $y$, $a$, and $b$ will generate winning outcome, but the trick is that they don’t know what question the other player received.</p>
+
+<h4 id="private-information">Private Information</h4>
+
+<p>So we know that the probability distribution, set of questions, set of answers, and the referee’s predicate function are known to all three parties. What makes the game interesting (and indeed not trivial) is what is <em>not</em> known publicly.</p>
+
+<p>As was mentioned, Alice and Bob are free to communicate prior to the game, but they may <em>not</em> communicate once the game has begun. When the referee sends questions $x$ and $y$ to Alice and Bob, Alice does not know $y$ and Bob does not know $x$.</p>
+
+<h3 id="strategies-for-alice-and-bob">Strategies for Alice and Bob</h3>
+
+<p>So now that we have the basic framework for how a nonlocal game is played, we can proceed to thinking about how Alice and Bob go about playing the game. That is, we consider Alice and Bob’s <em>strategy</em>: how Alice and Bob play the game given access to certain resources.</p>
+
+<p>There are a number of strategies that Alice and Bob could use, but for simplicity, we will restrict our attention to two types of strategies:</p>
+
+<ol>
+  <li>
+    <p>Classical Strategy: Alice and Bob answer the questions $x$ and $y$ in a deterministic manner.</p>
+  </li>
+  <li>
+    <p>Quantum Strategy: Alice and Bob may make use of quantum resources in the form of a shared quantum state and respective sets of measurements.</p>
+  </li>
+</ol>
+
+<p>The way in which the “quantum strategy” is defined is purposefully vague for the moment. What is a “shared quantum state”? What does it mean that Alice and Bob have “sets of measurements” and what do those correspond to?</p>
+
+<p>We are going to tie both of these ideas to very concrete objects that are well-studied in the area of linear algebra. That is:</p>
+
+<ol>
+  <li>Quantum state: We represent a quantum state $\rho$ as a particular type of matrix that has the properties of being positive semidefinite as well as having trace equal to one. For any matrix satisfying both of these conditions, we refer to it as a <em>density matrix</em>.</li>
+</ol>
+
+<p>Recall that a matrix is positive semidefinite if its eigenvalues are nonnegative. A matrix that has a trace equal to one is simply a matrix where if you sum along the diagonal, the total is equal to one. For example, the following matrix is both positive semidefinite and has trace equal to one, and is therefore a density matrix</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+    \frac{1}{2} \begin{pmatrix} 
+                    1 & 0 & 0 & 1 \\
+                    0 & 0 & 0 & 0 \\
+                    0 & 0 & 0 & 0 \\
+                    1 & 0 & 0 & 1
+                \end{pmatrix}.
+\end{equation} %]]></script>
+
+<p>The set of all density matrices is represented as $\text{D}()$.</p>
+
+<ol>
+  <li>Measurement: We represent a set of measurements as a collection of positive semidefinite matrices that sum to the identity matrix (the matrix whose diagonal consists of 1’s, and 0’s elsewhere). For instance, consider the collection of matrices:</li>
+</ol>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+    P_{0} = \begin{pmatrix}
+                1 & 0 \\
+                0 & 0
+            \end{pmatrix}
+    \qquad \text{and} \qquad 
+    P_{1} = \begin{pmatrix}
+                0 & 0 \\
+                0 & 1 
+            \end{pmatrix}
+\end{equation} %]]></script>
+
+<p>It’s easy to check that both $P_0$ and $P_1$ are positive semidefinite and that they sum to the identity</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+    P_0 + P_1 = \begin{pmatrix}
+                    1 & 0 \\
+                    0 & 1
+                \end{pmatrix}.
+\end{equation} %]]></script>
+
+<p>We may sometimes represent the identity operator as $\mathbb{I}$ as a shorthand.</p>
+
+<p>Now that we have some semblance of what a “state” and “measurement” are in mathematical terms, let us proceed to an example game where Alice and Bob use a classical strategy and a quantum strategy.</p>
+
+<h3 id="the-chsh-game">The CHSH Game</h3>
+
+<p>Let us define the following game where the possible pairs of questions $(x,y)$ sent from the referee to Alice and Bob are any of the four possible pairs ${ (0,0), (0,1), (1,0), (1,1) }$. Each of the four question pairs are selected uniformly. Alice and Bob win this particular game if and only if</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    a \oplus b = x \land y
+\end{equation}</script>
+
+<p>is satisfied. Recall that $\oplus$ refers to the XOR operation and the $\land$ symbol refers to the logical AND operation. For reference, the truth tables for both XOR and logical AND are given below, respectively.</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/JpKuQwb.png?1" alt="XOR and logical AND truth tables." />
+        </figure>
+    </center>
+</p>
+
+<p>Now let’s take a look at how Alice and Bob can play the CHSH game when they use either a classical or quantum strategy.</p>
+
+<h4 id="chsh--classical-strategy">CHSH : Classical Strategy</h4>
+
+<p>Before we go on, I need to introduce a quantity referred to as the <em>classical value</em> of a game. For our purposes, we can assume that this quantity refers to the maximal winning probability for Alice and Bob to win over all classical strategies. In other words, the value of a given game is a quantity that corresponds to the best that Alice and Bob can do given access to classical resources.</p>
+
+<p>For any nonlocal game, $G$, we denote the classical value of the game $G$ as $\omega(G)$.</p>
+
+<p>In this section, we want to calculate $\omega(G_{CHSH})$, where $G_{CHSH}$ is the CHSH game. First, recall that Alice and Bob win if and only if $a \oplus b = x \land y$. Consider the following table</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/LrlPXIE.png?1" alt="CHSH truth table." />
+        </figure>
+    </center>
+</p>
+
+<p>The first column corresponds to each of the possible question pairs that Alice and Bob may receive and the second column corresponds to what the value of $a \oplus b$ must evaluate to in order for Alice and Bob to win.</p>
+
+<p>Is it possible for Alice and Bob to win for every single question pair they receive with certainty? It turns out that if Alice and Bob use a classical strategy, the answer to this question is “no”. To see why, consider the following equations:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+    \begin{aligned}
+        a_0 \oplus b_0 = 0, &\qquad a_0 \oplus b_1 = 0, \\
+        a_1 \oplus b_0 = 0, &\qquad a_1 \oplus b_1 = 1.
+    \end{aligned}
+\end{equation} %]]></script>
+
+<p>In the above equation, $a_x$ is Alice’s answer in the event that she receives question $x$ from the referee for $x \in {0,1}$ and similarly for Bob. These equations express the winning conditions that Alice and Bob must satisfy in order to perfectly win the CHSH game. That is, if it’s possible to satisfy all of these equations simultaneously, it’s not possible for them to lose. This is not the case however, as we’ve mentioned.</p>
+
+<p>This can be observed by adding up the equations mod $2$. If we do so, we arrive at a contradiction, that is adding up the left-hand side we obtain a value of $0$, and adding up the right-hand side we obtain a value of $1$, giving us a contradiction of $0 = 1$.</p>
+
+<p>So we surely cannot simultaneously satisfy all four of the equations. However, it is possible to satisfy three out of the four equations. This can be achieved if Alice and Bob always send $1$ as their response, no matter what input they receive. That is if $a_0 = b_0 = a_1 = b_1 = 1$, we have that the equations</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{equation}
+    \begin{aligned}
+        a_0 \oplus b_0 = 0, &\qquad a_0 \oplus b_1 = 0, \\
+        a_1 \oplus b_0 = 0, &
+    \end{aligned}
+\end{equation} %]]></script>
+
+<p>are satisfied. In other words, the classical value of the CHSH game is $3/4$, or stated in an equivalent way</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+    \omega(G_{CHSH}) = 3/4 = 0.75.
+\end{equation}</script>
+
+<h4 id="chsh--quantum-strategy">CHSH : Quantum Strategy</h4>
+
+<p>Just as we had a quantity referred to as the classical value of a game, there is a similar quantity referred to as the quantum value of a game. That is the <em>quantum value</em> of a game refers to the maximal winning probability for Alice and Bob to win over all quantum strategies. Again, in simpler terms, this quantity represents the best that Alice and Bob can do for a given nonlocal game when they invoke a quantum strategy.</p>
+
+<p>For any nonlocal game, $G$, we denote the quantum value of the game $G$ as $\omega^*(G)$.</p>
+
+<p>In this section, we want to calculate $\omega^*(G_{CHSH})$.</p>
+
+<p>Implicit in Alice and Bob’s use of a quantum strategy is that they will make use of a quantum state and sets of measurements as their quantum resources. The following figure explicitly shows a state $\sigma$ that is shared between Alice and Bob.</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/wkmGYnn.png" alt="Alice and Bob use a quantum strategy for the CHSH game." />
+        </figure>
+    </center>
+</p>
+
+<p>The $\mathsf{U}$ and $\mathsf{V}$ letters in the figure are referred to as <em>registers</em> and they represent physical systems that store quantum information on space $\mathcal{U}$ and $\mathcal{V}$.</p>
+
+<p>What’s very intriguing about the CHSH game is that it’s an example of a nonlocal game where the players can do <em>strictly better</em> if they make use of a quantum strategy instead of a classical one. The quantum strategy that allows Alice and Bob to do strictly better is given as</p>
+
+<ol>
+  <li>
+    <p>Alice and Bob prepare a <em>quantum state</em>:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\sigma = \frac{1}{2} \begin{pmatrix}
+                             1 & 0 & 0 & 1 \\
+                             0 & 0 & 0 & 0 \\
+                             0 & 0 & 0 & 0 \\
+                             1 & 0 & 0 & 1
+                          \end{pmatrix} \in \text{D}(\mathcal{U} \otimes \mathcal{V}). %]]></script>
+  </li>
+  <li>
+    <p>The referee sends question $x$ to Alice and $y$ to Bob.</p>
+  </li>
+  <li>
+    <p>Alice and Bob perform a <em>measurement</em> on their system. The outcome of this measurement yields their answers $a$ and $b$. Specifically, Alice and Bob have collections of measurements</p>
+
+    <script type="math/tex; mode=display">\{ A_a^x : a \in \Gamma_{\text{A}} \} \subset \text{Pos}(\mathcal{U}) \quad \text{and} \quad \{ B_b^y : b \in \Gamma_{\text{B}} \} \subset \text{Pos}(\mathcal{V}),</script>
+
+    <p>such that</p>
+
+    <script type="math/tex; mode=display">\sum_{a \in \Gamma_{\text{A}}} A_a^x = \mathbb{I}_{\mathcal{U}} \quad \text{and} \quad \sum_{b \in \Gamma_{\text{B}}} B_b^y = \mathbb{I}_{\mathcal{V}}</script>
+  </li>
+  <li>
+    <p>The referee determines whether Alice and Bob win or lose, based on the questions $x$ and $y$ as well as the answers $a$ and $b$.</p>
+  </li>
+</ol>
+
+<p>Let us elaborate a bit more on Step 3, where Alice and Bob perform a measurement on their system. When Alice and Bob apply their measurements to registers $\mathsf{U}$ and $\mathsf{V}$.</p>
+
+<ol>
+  <li>
+    <p>Answers $a \in \Gamma_{\text{A}}$ and $b \in \Gamma_{\text{B}}$ are obtained at random. The probability of outcomes $a$ and $b$ given questions $x$ and $y$ is</p>
+
+    <script type="math/tex; mode=display">p(a,b|x,y) = \langle A_a^x \otimes B_b^y, \sigma \rangle,</script>
+
+    <p>for all $a \in \Gamma_{\text{A}}$ and $b \in \Gamma_{\text{B}}$.</p>
+  </li>
+  <li>
+    <p>The registers $\mathsf{U}$ and $\mathsf{V}$ are no longer accessible post-measurement.</p>
+  </li>
+</ol>
+
+<p>As we mentioned before, Alice and Bob’s measurements are described by positive semidefinite operators, and for $G_{CHSH}$ these specific measurement operators correspond to the following matrices</p>
+
+<p>Alice’s measurements:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+A_0^0 = \begin{pmatrix} 
+                1 & 0 \\
+                0 & 0 
+            \end{pmatrix}, \qquad 
+    A_1^0 = \begin{pmatrix}
+                0 & 0 \\
+                0 & 1
+            \end{pmatrix}, \\
+    A_1^0 = \frac{1}{2} \begin{pmatrix}
+                            1 & 1 \\
+                            1 & 1 
+                        \end{pmatrix}, \qquad
+    A_1^1 = \frac{1}{2} \begin{pmatrix}
+                            1 & -1 \\
+                            -1 & 1
+                        \end{pmatrix}. %]]></script>
+
+<p>Bob’s measurements:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+B_0^0 = \begin{pmatrix} 
+                c & cs \\
+                cs & s^2 
+            \end{pmatrix}, \qquad 
+    B_1^0 = \begin{pmatrix}
+                s^2 & -cs \\
+                -cs & c^2
+            \end{pmatrix}, \\
+    B_1^0 = \begin{pmatrix}
+                c^2 & -cs \\
+                -cs & s^2 
+            \end{pmatrix}, \qquad
+    B_1^1 = \begin{pmatrix}
+                s^2 & cs \\
+                cs & c^2
+            \end{pmatrix}, %]]></script>
+
+<p>where $c = \cos(\pi/8)$ and $s = \sin(\pi/8)$. The probability that Alice and Bob win using a quantum strategy is given by the equation</p>
+
+<script type="math/tex; mode=display">\sum_{x,y \in \Sigma_\text{A} \times \Sigma_{\text{B}}} \pi(x,y) \sum_{a, b \in \Gamma_{\text{A}} \times \Gamma_{\text{B}}} \langle A_a^x \otimes B_b^y, \sigma \rangle.</script>
+
+<p>Intuitively, the above equation is summing over all possible question and answer pairs for a given game, and then calculating the inner product between the measurements that Alice and Bob make on the state that they share for a given set of questions and answers. Expanding the above equation for the CHSH game where Alice and Bob use the quantum strategy as we’ve defined it gives us</p>
+
+<script type="math/tex; mode=display">\frac{1}{4} \left( \langle A_0^0 \otimes B_0^0, \sigma \rangle + \langle A_1^0 \otimes B_1^0, \sigma \rangle \right) + \frac{1}{4} \left( \langle A_0^0 \otimes B_0^1, \sigma \rangle + \langle A_1^0 \otimes B_1^1, \sigma \rangle \right) + \\
+    \frac{1}{4} \left( \langle A_0^1 \otimes B_0^0, \sigma \rangle + \langle A_1^1 \otimes B_1^0, \sigma \rangle \right) + \frac{1}{4} \left( \langle A_0^1 \otimes B_1^1, \sigma \rangle + \langle A_1^1 \otimes B_0^1, \sigma \rangle \right) \\ 
+    = \cos^2(\pi/8) \approx 0.8536 \\</script>
+
+<p>What we have here then is a nonlocal game where the players, Alice and Bob, do strictly better when they make use of a quantum strategy, where they win the game with $\cos(\pi/8) \approx 0.8536$ probability, versus the best that they can do when they use a classical strategy where they win the game with $3/4 = 0.75$ probability. Isolating tasks for which quantum resources perform better than classical resources is one of the primary motivating factors in studying quantum computation.</p>
+
+<h4 id="a-word-on-calculating-quantum-values">A Word on Calculating Quantum Values</h4>
+
+<p>In the previous example, we saw that it was possible to directly calculate the quantum value of the CHSH game. In general however, if someone was to provide an arbitrary nonlocal game, it is not a straight forward task to calculate this quantity. The CHSH game happened to have a lot of nice structure that allows a more straightforward analysis, but in general this is a hard problem. Getting into this problem in detail is beyond the scope of this blog post, but if you’re inclined to read more about this, Chapter 5 of my thesis speaks more on this issue, and provides a number of great resources that explain it in far greater than in my thesis.</p>
+
+<h3 id="extended-nonlocal-games">Extended Nonlocal Games</h3>
+
+<p>An extended nonlocal game is what it sounds like, an “extension” of the nonlocal game framework. As a result, much of what we know about nonlocal games will carry over to extended nonlocal games. The following image is one of an extended nonlocal game, and indeed it looks quite similar to the nonlocal game setting.</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/HQtCVmf.png" alt="An extended nonlocal game." />
+        </figure>
+    </center>
+</p>
+
+<p>Indeed, an extended nonlocal game looks very similar to a nonlocal game (with the exception of what appears as a blue line in the figure above). We now briefly discuss how an extended nonlocal game is played.</p>
+
+<ol>
+  <li>
+    <p>Alice and Bob prepare a quantum state in registers $\left( \mathsf{X}, \mathsf{R}, \mathsf{Y} \right)$. Alice and Bob then send register $\mathsf{R}$ to the referee.</p>
+  </li>
+  <li>
+    <p>The referee then randomly generates questions denoted as $x$ and $y$. The referee sends the question $x$ to Alice and the question $y$ to Bob. The referee also keeps a copy of $x$ and $y$ for reference.</p>
+  </li>
+  <li>
+    <p>Alice and Bob each receive their respective questions. They are then each expected to respond to their questions with answers that we denote as $a$ and $b$. Alice sends $a$ to the referee, and Bob sends $b$.</p>
+  </li>
+  <li>
+    <p>When the referee receives $a$ and $b$ from Alice and Bob, it performs a measurement ${ P_{a,b,x,y}, \mathbb{I} - P_{a,b,x,y} }$ on register $\mathsf{R}$ based on the question $x$ and $y$ as well as the answers $a$ and $b$. The outcome of this measurement is either $0$ or $1$, where an outcome of $0$ indicates a loss for Alice and Bob and an outcome of $1$ indicates a win for Alice and Bob.</p>
+  </li>
+</ol>
+
+<p>Alice and Bob’s goal in the above game is to get the measurement in Step 4 to output a $1$, or indicate a winning outcome. This type of game is referred to as an extended nonlocal game.</p>
+
+<h4 id="strategies-and-values-for-extended-nonlocal-games">Strategies and Values for Extended Nonlocal Games</h4>
+
+<p>Just as we defined the notion of a strategy and value for a nonlocal game, it’s a natural extension to define a similar notion for the class of extended nonlocal games.</p>
+
+<p>For nonlocal games we discussed classical and quantum strategies as well as their corresponding values. For extended nonlocal games, the closest analogues to these types of strategies are referred to respectively as</p>
+
+<ol>
+  <li>Unentangled strategies,</li>
+  <li>Standard quantum strategies.</li>
+</ol>
+
+<p>The <em>value</em> of an extended nonlocal game (similar to a nonlocal game) is the maximal winning probability for the players to win over all strategies of a specified type. For an extended nonlocal game, $G$,</p>
+
+<ol>
+  <li>Unentangled value: $\omega(G)$,</li>
+  <li>Standard quantum value: $\omega^*(G)$.</li>
+</ol>
+
+<h4 id="types-of-extended-nonlocal-games">Types of Extended Nonlocal Games</h4>
+
+<p>In this section, we will take a look at a very specific type of extended nonlocal game called a <em>monogamy-of-entanglement game</em>, which were originally introduced in [this paper][1].</p>
+
+<p align="center">
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/YsVW0XW.png" alt="A monogamy-of-entanglement game." />
+        </figure>
+    </center>
+</p>
+
+<p>The monogamy-of-entanglement game proceeds in a manner that is almost identical to an extended nonlocal game. This time, Alice and Bob receive the <em>same</em> question, $x$, from the referee (instead of Alice receiving $x$ and Bob receiving $y$). Once Alice and Bob obtain their questions, they produce their answers and send them back to the referee. The referee then performs a measurement on its system. Alice and Bob win if and only if the outcome of the referee’s measurement matches the answers that Alice and Bob sent back to the referee.</p>
+
+<p>To make this a bit more concrete, we can take a look at a specific monogamy-of-entanglement game that is referred to as the BB84 game. The name comes from the BB84 quantum cryptographic protocol scheme and is named as such because the measurements that the referee uses in this game are defined as the so-called BB84 bases, which we will explicitly define and write out.</p>
+
+<p>Specifically, the BB84 game (or $G_{BB84}$ for short) is defined by:</p>
+
+<ol>
+  <li>
+    <p>Question and answer sets:</p>
+
+    <script type="math/tex; mode=display">\Sigma = \Gamma = \{0,1\}.</script>
+  </li>
+  <li>
+    <p>Uniform probability for questions:</p>
+
+    <script type="math/tex; mode=display">\pi(0) = \pi(1) = \frac{1}{2}</script>
+  </li>
+  <li>
+    <p>Referee’s measurements are defined by the <em>“BB84 bases”</em>:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\text{For $x = 0$}: \quad P_{0,0} = \begin{pmatrix}
+                                             1 & 0 \\
+                                             0 & 0
+                                         \end{pmatrix},
+                                         \qquad
+                               P_{1,0} = \begin{pmatrix}
+                                             0 & 0 \\
+                                             0 & 1 
+                                         \end{pmatrix}. \\
+     \text{For $x = 1$}: \quad P_{0,1} = \frac{1}{2} \begin{pmatrix}
+                                                         1 & 1 \\
+                                                         1 & 1
+                                                     \end{pmatrix}, \qquad
+                               P_{1,1} = \frac{1}{2} \begin{pmatrix}
+                                                         1 & -1 \\
+                                                         -1 & 1
+                                                     \end{pmatrix}. %]]></script>
+  </li>
+</ol>
+
+<p>The scenarios in which Alice and Bob obtain a winning outcome for $G_{BB84}$ is depicted by the following four possible games:</p>
+<p align="center"> 
+    <center>
+        <figure>
+            <img src="http://i.imgur.com/Z2wbWKF.png" alt="Winning scenarios for BB84 game." />
+        </figure>
+    </center>
+</p>
+
+<p>Techniques that are beyond the scope of this blog post allow us to either directly calculate or bound the value of monogamy-of-entanglement games. More information may be found in [2] and [3].</p>
+
+<p>One property of the BB84 monogamy-of-entanglement game that was found in [1], was that the unentangled and standard quantum value of $G_{BB84}$ were the same. Specifically, the authors showed that</p>
+
+<script type="math/tex; mode=display">\omega(G_{BB84}) = \omega^*(G_{BB84}) = \cos^2(\pi/8) \approx 0.8536.</script>
+
+<p>One reason this is interesting is that this implies that Alice and Bob gain <em>no</em> advantage in using quantum resources for the BB84 game. A question one may ask in this setting is if this type of behavior persists for every monogamy-of-entanglement game. The punchline to this question is that for certain classes of monogamy-of-entanglement games, it does turn out that Alice and Bob gain no advantage when using a quantum strategy. However, there does exist at least one example of a monogamy-of-entanglement game where Alice and Bob do indeed gain an advantage when they adopt a quantum strategy.</p>
+
+<p>We can take a look at the monogamy-of-entanglement game that allows Alice and Bob to do strictly better in the event that they use a quantum strategy. This game consists of four possible questions and three possible answers. The way in which this game is defined, we have that</p>
+
+<ol>
+  <li>
+    <p>Question and answer sets:</p>
+
+    <script type="math/tex; mode=display">\Sigma = \{0,1,2,3\}, \quad \Gamma = \{0,1,2\}.</script>
+  </li>
+  <li>
+    <p>Uniform probability for questions:</p>
+
+    <script type="math/tex; mode=display">\pi(0) = \pi(1) = \pi(2) = \pi(3) = \frac{1}{4}.</script>
+  </li>
+  <li>
+    <p>Measurements defined by a mutually unbiased basis:</p>
+
+    <script type="math/tex; mode=display">\{ P_{0,x}, P_{1,x}, P_{2,x} \}.</script>
+  </li>
+</ol>
+
+<p>It’s possible to perform an exhaustive search over all unentangled strategies, which reveals that the optimal unentangled value is</p>
+
+<script type="math/tex; mode=display">\omega(G) = \frac{3 + \sqrt{5}}{8} \approx 0.6545.</script>
+
+<p>Alternatively, a computer search over standard quantum strategies and a heuristic approximation for the upper bound of $\omega^*(G)$ reveals that</p>
+
+<script type="math/tex; mode=display">2/3 \geq \omega^*(G) \geq 0.6609.</script>
+
+<p>This ability to compute upper bounds for monogamy-of-entanglement games (and indeed more generally for extended nonlocal games) is obtained from an adaptation of a technique known as the <em>QC hierarchy</em> or <em>NPA hierarchy</em>. Elaborating on this technique is most likely a topic for another post, but further information on these techniques may be found in [4],[5], and [6].</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>The purpose of this post was to distill some of the primary results in my thesis into a blog post form. In doing so, there will inevitably be some information loss as there is anytime a simplification is performed. For the reader who is inclined to learn more details about the above, I encourage you to take a look at the thesis document [3]. I also encourage you to reach out to me if anything I’ve said either in this post or in my thesis is unclear or if you have any questions. Feel free to contact me either by email or in the comments section of this post, and I’ll do my best to get back to you as soon as I can.</p>
+
+<p>Thanks again for taking the time to read this (or taking the time to scroll all the way to the bottom :) ).</p>
+
+<h3 id="references">References:</h3>
+
+<p>[1] “A monogamy of entanglement game with applications to device independent quantum cryptography”,<br />
+    M. Tomamichel, S. Fehr, J. Kaniewski, S. Wehner.,<br />
+    New Journal of Physics, IOP Publishing, 2013, 15, 103002, <br />
+    ArXiv: <a href="http://arxiv.org/abs/1210.4359">arxiv:1210.4359</a><br />
+<br />
+[2] “Extended nonlocal games and monogamy-of-entanglement games”, <br />
+    N. Johnston, R. Mittal, V. Russo, J. Watrous,<br />
+    Proc. R. Soc. A, 2016, 472, 20160003, 2016,<br />
+    ArXiv: <a href="https://arxiv.org/abs/1510.02083">arxiv:1510.02083</a><br />
+<br />
+[3] “Extended nonlocal games”, <br />
+    V. Russo,<br />
+    ArXiv: <a href="https://arxiv.org/abs/1704.07375">arxiv:1510.02083</a><br />
+<br />
+[4] “Bounding the set of quantum correlations”,<br />
+     M. Navascues, S. Pironio, A. Acin,<br />
+     Physical Review Letters, 98:010401, 2007,<br />
+     ArXiv: <a href="https://arxiv.org/abs/quant-ph/0607119">arxiv:quant-ph/0607119</a><br />
+<br />
+[5] “A convergent hierarchy of semidefinite programs characterizing the set of quantum correlations”,<br />
+    M. Navascues, S. Pironio, A. Acin, 
+    New Journal of Physics, 10(7):073013, 2008,
+    ArXiv: <a href="https://arxiv.org/abs/0803.4290">arxiv:quant-ph/0803.4290</a></p>
+
+<p>[6] “The quantum moment problem and bounds on entangled multi-prover games”,
+    A. Doherty, Y.C. Liang, B. Toner, S. Wehner, 
+    Computation Complexity, 23rd Annual IEEE Conference, 2008,
+    ArXiv: <a href="https://arxiv.org/abs/0803.4373">arxiv:0803.4373</a></p>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- blog -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7213376997288299"
+     data-ad-slot="4540332365"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </article>
+  
+    
+        <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'vprusso'; // required: replace example with your forum shortname
+                // var disqus_developer = 1; // Comment out when the site is live
+                var disqus_identifier = "/blog/2017/an-overview-of-my-thesis/";
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+    
+    <h2>Related Posts:</h2>
+    <ul>
+      
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+            <li>
+              <h3>
+                <a href="/blog/2017/bloom-filters-and-pokemon/">
+                  Bloom Filters and Pokemon
+                  <small>30 Sep 2017</small>
+                </a>
+              </h3>
+            </li>
+            
+            
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+      
+        
+          
+
+          
+          
+            
+          
+            
+          
+            
+          
+          
+            
+            <li>
+              <h3>
+                <a href="/blog/2018/natural-language-processing-python-5/">
+                  Natural Language Processing in Python: Part 5 -- Stemming and Lemmatization
+                  <small>10 Jan 2018</small>
+                </a>
+              </h3>
+            </li>
+          
+        
+          
+
+          
+          
+            
+          
+            
+          
+            
+          
+          
+            
+            <li>
+              <h3>
+                <a href="/blog/2018/natural-language-processing-python-4/">
+                  Natural Language Processing in Python: Part 4 -- WordNet
+                  <small>09 Jan 2018</small>
+                </a>
+              </h3>
+            </li>
+          
+        
+          
+            
+      
+    </ul>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Vincent Russo</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Vincent Russo</li>
+          <li><a href="mailto:vincentrusso1@gmail.com">vincentrusso1@gmail.com</a></li>
+        </ul>
+      </div>
+
+	  <div class="footer-col  footer-col-2">
+	   <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/vprusso">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">Github</span>
+            </a>
+          </li>
+          
+		  
+	  
+		  <li>
+		    <a href="https://ca.linkedin.com/in/vrusso11" class="icon-17 linkedin" title="LinkedIn">
+		      <span class="icon  icon--linkedin">
+		       <svg viewBox="0 0 512 512">
+			<path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"
+			/>
+		      </svg>
+		      </span>
+		      <span class="username">Linkedin</span>
+		      <!--[if lt IE 9]><em>LinkedIn</em><![endif]--></a>
+		  </li>
+	  
+	  
+	  
+		<li>
+			<a href="https://scholar.google.ca/citations?user=dJEXPiQAAAAJ&hl=en" class="icon  icon--googlescholar" title="GoogleScholar">
+			<span class="icon icon--googlescholar">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+			<path fill="#000000" d="M14.942 12.57l-4.942-8.235v-3.335h0.5c0.275 0 0.5-0.225 0.5-0.5s-0.225-0.5-0.5-0.5h-5c-0.275 0-0.5 0.225-0.5 0.5s0.225 0.5 0.5 0.5h0.5v3.335l-4.942 8.235c-1.132 1.886-0.258 3.43 1.942 3.43h10c2.2 0 3.074-1.543 1.942-3.43zM3.766 10l3.234-5.39v-3.61h2v3.61l3.234 5.39h-8.468z"></path>
+			</svg>
+			</span>
+			<span class="username">Google Scholar</span>
+			<!--[if lt IE 9]><em>GoogleScholar</em><![endif]--></a>
+		</li>
+	  
+	  
+        </ul>
+      </div>
+	  
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+      
+	  	  
+			<li><a href="http://stackexchange.com/users/412832/vincent-russo" class="icon-23 stackoverflow" title="StackOverflow">
+			<span class="icon  icon--stackoverflow">
+			<svg viewBox="0 0 512 512">
+			<path d="M294.8 361.2l-122 0.1 0-26 122-0.1L294.8 361.2zM377.2 213.7L356.4 93.5l-25.7 4.5 20.9 120.2L377.2 213.7zM297.8 301.8l-121.4-11.2 -2.4 25.9 121.4 11.2L297.8 301.8zM305.8 267.8l-117.8-31.7 -6.8 25.2 117.8 31.7L305.8 267.8zM321.2 238l-105-62 -13.2 22.4 105 62L321.2 238zM346.9 219.7l-68.7-100.8 -21.5 14.7 68.7 100.8L346.9 219.7zM315.5 275.5v106.5H155.6V275.5h-20.8v126.9h201.5V275.5H315.5z"/>
+			</svg>
+			</span>
+			<span class="username">StackOverflow</span>
+			<!--[if lt IE 9]><em>StackOverflow</em><![endif]--></a></li>
+		 
+
+          
+          <li>
+            <a href="https://twitter.com/captainhamptons">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">Twitter</span>
+            </a>
+          </li>
+          
+		  
+		  
+          <li>
+            <a href="https://soundcloud.com/captainhampton">
+              <span class="icon  icon--soundcloud">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+					<path fill="#000000" d="M13.937 8.034c-0.283 0-0.552 0.055-0.798 0.154-0.164-1.787-1.723-3.188-3.625-3.188-0.465 0-0.917 0.088-1.317 0.237-0.156 0.058-0.197 0.117-0.197 0.233v6.292c0 0.121 0.098 0.222 0.221 0.234 0.005 0.001 5.68 0.003 5.717 0.003 1.139 0 2.062-0.888 2.062-1.983s-0.924-1.983-2.063-1.983zM6.25 12h0.5l0.25-3.503-0.25-3.497h-0.5l-0.25 3.497zM4.75 12h-0.5l-0.25-2.543 0.25-2.457h0.5l0.25 2.5zM2.25 12h0.5l0.25-2-0.25-2h-0.5l-0.25 2zM0.25 11h0.5l0.25-1-0.25-1h-0.5l-0.25 1z"></path>
+				</svg>
+              </span>
+
+              <span class="username">Soundcloud</span>
+            </a>
+          </li>
+          
+		  
+		  
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text"></p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

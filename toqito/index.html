@@ -50,6 +50,7 @@
             </div>
             <div class="small-12 large-10 nav">
               <a href="https://toqito.readthedocs.io/en/latest/">Documentation</a>
+              <a href="https://toqito.readthedocs.io/en/latest/tutorials.html">Tutorial</a>
               <a href="https://toqito.readthedocs.io/en/latest/getting_started.html">Install</a>
               <a href="https://github.com/vprusso/toqito/tree/master/docs/paper">White Paper</a>
             </div>
@@ -89,25 +90,23 @@
             </div>
             <div class="medium-1"></div>
             <div class="medium-8 small-12">
-              <pre><code class="html"># Calculate the classical and quantum value of the CHSH game.
-import numpy as np
-import toqito as tq
-
-# The (x,y)-th entry of this matrix encodes the 
-# probability that Alice receives question x
-# and Bob receives question y.
-prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
-
-# The (x,y)-th entry of this binary matrix encodes 
-# the winning condition when Alice and Bob receive 
-# questions x and y, respectively.
-pred_mat = np.array([[0, 0], [0, 1]])
-
-# The classical value of the CHSH game is 3/4 = 0.75.
-tq.xor_game_value(prob_mat, pred_mat, "classical")
-
-# The quantum value of the CHSH game is cos^2(pi/8) \approx 0.8536
-tq.xor_game_value(prob_mat, pred_mat, "quantum")
+              <pre><code class="python">>>> # Calculate the classical and quantum value of the CHSH game.
+>>> import numpy as np
+>>> import toqito as tq
+>>> 
+>>> # The probability matrix.
+>>> prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
+>>> 
+>>> # The predicate matrix.
+>>> pred_mat = np.array([[0, 0], [0, 1]])
+>>> 
+>>> # Define CHSH game from matrices.
+>>> chsh = tq.XORGame(prob_mat, pred_mat)
+>>> 
+>>> chsh.classical_value()
+0.75
+>>> chsh.quantum_value()
+0.8535533
 
 </code></pre>
             </div>
@@ -119,7 +118,9 @@ tq.xor_game_value(prob_mat, pred_mat, "quantum")
       </div>
     </div>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <script src="/js/vendor/highlight.pack.js"></script>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/highlight.min.js"></script>
     <script>
       hljs.initHighlightingOnLoad();
     </script>

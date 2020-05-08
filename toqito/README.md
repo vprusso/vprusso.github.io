@@ -1,5 +1,5 @@
 <article class="markdown-body entry-content" itemprop="text"><h1><a
-id="user-content-the-website-for-qcgpu" class="anchor" aria-hidden="true"
+id="user-content-the-website-for-toqito" class="anchor" aria-hidden="true"
 href="#the-website-for-toqito"><svg class="octicon octicon-link" viewBox="0 0 16
 16" version="1.1" width="16" height="16" aria-hidden="true"><path
 fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3
@@ -9,10 +9,5 @@ fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3
 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The
 Website For toqito</h1>
 
-<blockquote>
-<p><a href="http://web.archive.org/web/20180627084729/https://qcgpu.github.io/" rel="nofollow">Check It Out</a></p>
-</blockquote>
 
-<p>The design takes a lot of clues from the <a href="http://web.archive.org/web/20180627084729/https://www.rust-lang.org/en-US/" rel="nofollow">Rust Language Website</a>,
-although that is built on bootstrap, this website is built on Foundation.</p>
 </article>

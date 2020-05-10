@@ -92,7 +92,7 @@
             <div class="medium-8 small-12">
               <pre><code class="python">>>> # Calculate the classical and quantum value of the CHSH game.
 >>> import numpy as np
->>> import toqito as tq
+>>> from toqito.nonlocal_games.xor_game import XORGame
 >>> 
 >>> # The probability matrix.
 >>> prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
@@ -101,7 +101,7 @@
 >>> pred_mat = np.array([[0, 0], [0, 1]])
 >>> 
 >>> # Define CHSH game from matrices.
->>> chsh = tq.XORGame(prob_mat, pred_mat)
+>>> chsh = XORGame(prob_mat, pred_mat)
 >>> 
 >>> chsh.classical_value()
 0.75

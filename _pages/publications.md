@@ -23,12 +23,23 @@ permalink: /publications/
 
 <!--
 <LI>
-<A HREF="">""</A>, <br> 
+<A HREF="">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</A>, <br> 
+V. Russo<br>
+XXX, (2020). <br> 
+[<A HREF="">Link</A>]
+[<A HREF="">Website</A>]
+[<A HREF="">Software</A>
+</LI>
+<BR>
+
+<LI>
+<A HREF="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</A>, <br> 
 C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
-XXX, (2019). <br> 
+XXX, (2020). <br> 
 [<A HREF="/pdf/XXX.pdf">PDF</A>]
-[<A HREF="/pdf/solution_groups_slides.pdf">Slides</A>]
+[<A HREF="/pdf/solution_group_poster.pdf">Poster</A>]
 [<A HREF="">arXiv</A>]
+[<A HREF="">Software</A>
 </LI>
 <BR>
 -->

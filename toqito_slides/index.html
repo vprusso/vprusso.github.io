@@ -61,22 +61,22 @@
 				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
                     <p>Quantum information consists of:</p>
 					<div class="r-hstack justify-center">
-                        <div data-id="box1" data-auto-animate-delay="0" style="background: cyan; width: 160px; height: 100px; margin: 10px;"><small>States</small></div>
-						<div data-id="box2" data-auto-animate-delay="0.1" style="background: magenta; width: 160px; height: 100px; margin: 10px;"><small>Channels</small></div>
-						<div data-id="box3" data-auto-animate-delay="0.2" style="background: yellow; width: 160px; height: 100px; margin: 10px;"><small>Measurements</small></div>
+                        <div data-id="box1" data-auto-animate-delay="0" style="background: #F8B195; width: 160px; height: 100px; margin: 10px;"><small style="color: white;">States</small></div>
+						<div data-id="box2" data-auto-animate-delay="0.1" style="background: #F67280; width: 160px; height: 100px; margin: 10px;"><small style="color: white;">Channels</small></div>
+						<div data-id="box3" data-auto-animate-delay="0.2" style="background: #355C7D; width: 160px; height: 100px; margin: 10px;"><small style="color: white;">Measurements</small></div>
 					</div>
 					<h2 style="margin-top: 20px;">Building blocks</h2>
 				</section>
 				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
 					<div class="r-stack">
-						<div data-id="box1" style="background: cyan; width: 300px; height: 300px; border-radius: 200px;"><small>States</small></div>
-						<div data-id="box2" style="background: magenta; width: 200px; height: 200px; border-radius: 200px;"><small>Channels</small></div>
-						<div data-id="box3" style="background: yellow; width: 100px; height: 100px; border-radius: 200px;"><small>Measurements</small></div>
+						<div data-id="box1" style="background: #F8B195; width: 300px; height: 300px; border-radius: 200px;"><small style="color: white;">States</small></div>
+						<div data-id="box2" style="background: #F67280; width: 200px; height: 200px; border-radius: 200px;"><small style="color: white;">Channels</small></div>
+						<div data-id="box3" style="background: #355C7D; width: 100px; height: 100px; border-radius: 200px;"><small style="color: white;">Measurements</small></div>
 					</div>
 					<ul>
-                        <li><b>States</b>: Data to be processed. </li> </br>
-                        <li><b>Channels</b>: Operations to perform.</li> </br>
-                        <li><b>Measurements</b>: Result of operations on data. </li>
+                        <li><b style="color: #F8B195;">States</b>: Data to be processed. </li> </br>
+                        <li><b style="color: #F67280;">Channels</b>: Operations to perform.</li> </br>
+                        <li><b style="color: #355C7D;">Measurements</b>: Result of operations on data. </li>
 					</ul>
 				</section>
 
@@ -95,12 +95,9 @@
 				</section>
 
 				<section data-auto-animate>
-					<h2 data-id="code-title">Properties of states</h2>
+					<h2 data-id="code-title">Examples of Basic Usage</h2>
 					<pre data-id="code-animation"><code class="python" data-trim>
                         from toqito.states import bell
-                        from toqito.channels import partial_trace
-                        from toqito.matrix_ops import tensor
-                        from toqito.state_metrics import fidelity
 
                         # Density matrices corresponding to Bell states.
                         rho_0 = bell(0) * bell(0).conj().T
@@ -113,11 +110,12 @@
 				</section>
 
 				<section data-auto-animate>
-					<h2 data-id="code-title">Properties of states</h2>
-					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|10-11|13-18|20-26">
+					<h2 data-id="code-title">Examples of Basic Usage</h2>
+					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|11-12|14-19|21-26|28-30|32-38">
                         from toqito.states import bell
-                        from toqito.channels import partial_trace
+                        from toqito.channels import partial_trace, partial_transpose
                         from toqito.matrix_ops import tensor
+                        from toqito.state_props import is_pure
                         from toqito.state_metrics import fidelity
 
                         # Density matrices corresponding to Bell states.
@@ -133,6 +131,17 @@
                          [0.   0.25 0.   0.  ]
                          [0.   0.   0.25 0.  ]
                          [0.   0.   0.   0.25]]
+
+                        # Compute partial transpose of rho_0.
+                        partial_transpose(rho_0)
+                        [[0.5 0.  0.  0. ]
+                         [0.  0.  0.5 0. ]
+                         [0.  0.5 0.  0. ]
+                         [0.  0.  0.  0.5]]
+
+                        # Check if sigma is a pure state.
+                        is_pure(rho_0)
+                        True
 
                         # Compute fidelity between states rho_0 and rho_1
                         fidelity(rho_0, rho_1)
@@ -287,16 +296,23 @@
 					<h2 data-id="code-title">Distinguishing states</h2>
 					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
                         import numpy as np
-                        from toqito.nonlocal_games.xor_game import XORGame
+                        from toqito.states import bell
+                        from toqito.state_opt import ppt_distinguishability, state_distinguishability
+                           
+                        # Define the list of states.
+                        states = [bell(0), bell(1), bell(2), bell(3)]
 
-                        # The probability matrix.
-                        prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
+                        # Probability with which the state is selected.
+                        probs = [1/4, 1/4, 1/4, 1/4]
 
-                        # The predicate matrix.
-                        pred_mat = np.array([[0, 0], [0, 1]])
+                        # Probability of distinguishing via global measurements.
+                        state_distinguishability(states, probs)
+
+                        # Probability of distinguishing Bell states via PPT.
+                        ppt_distinguishability(states, probs)
 
 					</code></pre>
-					<p>Classical and quantum value of the CHSH game.</p>
+					<p>Distinguishing Bell states via global and PPT measurements.</p>
 				</section>
 
 				<section data-auto-animate>

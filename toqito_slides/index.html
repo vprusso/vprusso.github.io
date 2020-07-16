@@ -85,7 +85,6 @@
 					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
                         from toqito.states import bell
 
-                        # (|00> + |11>)/sqrt(2)
                         bell(0) 
                         [[0.70710678],
                          [0.        ],
@@ -97,34 +96,51 @@
 
 				<section data-auto-animate>
 					<h2 data-id="code-title">Properties of states</h2>
-					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|10-11|13-16|18-21">
+					<pre data-id="code-animation"><code class="python" data-trim>
                         from toqito.states import bell
-
                         from toqito.channels import partial_trace
                         from toqito.matrix_ops import tensor
                         from toqito.state_metrics import fidelity
 
-                        # Construct density operator of Bell states.
-                        rho = bell(0) * bell(0).conj().T
+                        # Density matrices corresponding to Bell states.
+                        rho_0 = bell(0) * bell(0).conj().T
+                        rho_1 = bell(1) * bell(1).conj().T
+					</code></pre>
+                    <p>
+                        <small>$$\rho_0 = \frac{1}{2} \left( |0\rangle \langle 0| + |0 \rangle \langle 1 | + |1 \rangle \langle 0| + |1 \rangle \langle 1|\right)$$</small><br>
+                        <small>$$\rho_1 = \frac{1}{2} \left( |0\rangle \langle 0| - |0 \rangle \langle 1 | - |1 \rangle \langle 0| + |1 \rangle \langle 1|\right)$$</small>
+                    </p>
+				</section>
 
-                        # The probability matrix.
-                        prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
+				<section data-auto-animate>
+					<h2 data-id="code-title">Properties of states</h2>
+					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|10-11|13-18|20-26">
+                        from toqito.states import bell
+                        from toqito.channels import partial_trace
+                        from toqito.matrix_ops import tensor
+                        from toqito.state_metrics import fidelity
 
-                        # The predicate matrix.
-                        pred_mat = np.array([[0, 0], [0, 1]])
+                        # Density matrices corresponding to Bell states.
+                        rho_0 = bell(0) * bell(0).conj().T
+                        rho_1 = bell(1) * bell(1).conj().T
 
-                        # Define CHSH game from matrices.
-                        chsh = XORGame(prob_mat, pred_mat)
+                        # Compute tensor product of density matrices.
+                        sigma = tensor(rho_0, rho_1)
 
-                        # Classical value of the CHSH game.
-                        # Value of 0.75 which is 3/4.
-                        chsh.classical_value()
-                        0.75
+                        # Trace out Bob's subsystem of the state.
+                        partial_trace(sigma, sys=[1, 3], dim=[2, 2, 2, 2])
+                        [[0.25 0.   0.   0.  ]
+                         [0.   0.25 0.   0.  ]
+                         [0.   0.   0.25 0.  ]
+                         [0.   0.   0.   0.25]]
 
-                        # Quantum value of the CHSH game. 
-                        # Value is 0.8536 \approx cos^2(pi/8).
-                        chsh.quantum_value()
-                        0.8535533
+                        # Compute fidelity between states rho_0 and rho_1
+                        fidelity(rho_0, rho_1)
+                        0
+
+                        # The fidelity between identical states.
+                        fidelity(rho_0, rho_0)
+                        1
 					</code></pre>
 				</section>
 

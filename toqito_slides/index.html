@@ -125,7 +125,7 @@
                         # Compute tensor product of density matrices.
                         sigma = tensor(rho_0, rho_1)
 
-                        # Trace out Bob's subsystem of the state.
+                        # Trace out Alice's subsystem of the state.
                         partial_trace(sigma, sys=[1, 3], dim=[2, 2, 2, 2])
                         [[0.25 0.   0.   0.  ]
                          [0.   0.25 0.   0.  ]
@@ -143,11 +143,11 @@
                         is_pure(rho_0)
                         True
 
-                        # Compute fidelity between states rho_0 and rho_1
+                        # Fidelity between states rho_0 and rho_1.
                         fidelity(rho_0, rho_1)
                         0
 
-                        # The fidelity between identical states.
+                        # Fidelity between identical states.
                         fidelity(rho_0, rho_0)
                         1
 					</code></pre>
@@ -295,51 +295,59 @@
 				<section data-auto-animate>
 					<h2 data-id="code-title">Distinguishing states</h2>
 					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
-                        import numpy as np
                         from toqito.states import bell
-                        from toqito.state_opt import ppt_distinguishability, state_distinguishability
-                           
+                        from toqito.state_opt import state_distinguishability
+                        from toqito.state_opt import ppt_distinguishability
+                        from toqito.state_opt import symmetric_extension_hierarchy
+
                         # Define the list of states.
                         states = [bell(0), bell(1), bell(2), bell(3)]
 
                         # Probability with which the state is selected.
-                        probs = [1/4, 1/4, 1/4, 1/4]
+                        probs = [1 / 4, 1 / 4, 1 / 4, 1 / 4]
 
-                        # Probability of distinguishing via global measurements.
+                        # Distinguishing via global measurements.
                         state_distinguishability(states, probs)
+                        1
 
-                        # Probability of distinguishing Bell states via PPT.
+                        # Distinguishing via PPT measurements.
                         ppt_distinguishability(states, probs)
+                        0.5
 
+                        # Hierarchy of SDPs converge to separable value (for some level).
+                        symmetric_extension_hierarchy(states, probs, level=2)
+                        0.5
 					</code></pre>
-					<p>Distinguishing Bell states via global and PPT measurements.</p>
+					<p>Distinguishing Bell states via global, PPT, and separable measurements.</p>
 				</section>
 
 				<section data-auto-animate>
 					<h2 data-id="code-title">Distinguishing states</h2>
-					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|10-11|13-16|18-21">
-                        import numpy as np
-                        from toqito.nonlocal_games.xor_game import XORGame
+					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers="|1-4|6-7|9-10|12-14|16-18|20-22">
+                        from toqito.states import bell
+                        from toqito.state_opt import state_distinguishability
+                        from toqito.state_opt import ppt_distinguishability
+                        from toqito.state_opt import symmetric_extension_hierarchy
 
-                        # The probability matrix.
-                        prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
+                        # Define the list of states.
+                        states = [bell(0), bell(1), bell(2), bell(3)]
 
-                        # The predicate matrix.
-                        pred_mat = np.array([[0, 0], [0, 1]])
+                        # Probability with which the state is selected.
+                        probs = [1 / 4, 1 / 4, 1 / 4, 1 / 4]
 
-                        # Define CHSH game from matrices.
-                        chsh = XORGame(prob_mat, pred_mat)
+                        # Distinguishing via global measurements.
+                        state_distinguishability(states, probs)
+                        1
 
-                        # Classical value of the CHSH game.
-                        # Value of 0.75 which is 3/4.
-                        chsh.classical_value()
-                        0.75
+                        # Distinguishing via PPT measurements.
+                        ppt_distinguishability(states, probs)
+                        0.5
 
-                        # Quantum value of the CHSH game. 
-                        # Value is 0.8536 \approx cos^2(pi/8).
-                        chsh.quantum_value()
-                        0.8535533
+                        # Hierarchy of SDPs converge to separable value (for some level).
+                        symmetric_extension_hierarchy(states, probs, level=2)
+                        0.5
 					</code></pre>
+					<p>It is known that distinguishing the Bell states via PPT, SEP, and LOCC yields 1/2.</p>
 				</section>
 
 				<section style="text-align: left;">

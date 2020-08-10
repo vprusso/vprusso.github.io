@@ -95,34 +95,6 @@
 					</p>
 				</section>
 
-				<section data-auto-animate>
-					<h2 data-id="code-title">Distinguishing states</h2>
-					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
-                        from toqito.states import bell
-                        from toqito.state_opt import state_distinguishability
-                        from toqito.state_opt import ppt_distinguishability
-                        from toqito.state_opt import symmetric_extension_hierarchy
-
-                        # Define the list of states.
-                        states = [bell(0), bell(1), bell(2), bell(3)]
-
-                        # Probability with which the state is selected.
-                        probs = [1 / 4, 1 / 4, 1 / 4, 1 / 4]
-
-                        # Distinguishing via global measurements.
-                        state_distinguishability(states, probs)
-                        1
-
-                        # Distinguishing via PPT measurements.
-                        ppt_distinguishability(states, probs)
-                        0.5
-
-                        # Hierarchy of SDPs converge to separable value (for some level).
-                        symmetric_extension_hierarchy(states, probs, level=2)
-                        0.5
-					</code></pre>
-					<p>Distinguishing Bell states via global, PPT, and separable measurements.</p>
-				</section>
 
 
 				<section data-auto-animate>
@@ -320,6 +292,35 @@
                             </ul>
                         </small>
 					</p>
+				</section>
+
+				<section data-auto-animate>
+					<h2 data-id="code-title">Distinguishing states</h2>
+					<pre data-id="code-animation"><code class="python" data-trim data-line-numbers>
+                        from toqito.states import bell
+                        from toqito.state_opt import state_distinguishability
+                        from toqito.state_opt import ppt_distinguishability
+                        from toqito.state_opt import symmetric_extension_hierarchy
+
+                        # Define the list of states.
+                        states = [bell(0), bell(1), bell(2), bell(3)]
+
+                        # Probability with which the state is selected.
+                        probs = [1 / 4, 1 / 4, 1 / 4, 1 / 4]
+
+                        # Distinguishing via global measurements.
+                        state_distinguishability(states, probs)
+                        1
+
+                        # Distinguishing via PPT measurements.
+                        ppt_distinguishability(states, probs)
+                        0.5
+
+                        # Hierarchy of SDPs converge to separable value (for some level).
+                        symmetric_extension_hierarchy(states, probs, level=2)
+                        0.5
+					</code></pre>
+					<p>Distinguishing Bell states via global, PPT, and separable measurements.</p>
 				</section>
 
 				<section data-auto-animate>

@@ -40,6 +40,7 @@ XXX, (2020). <br>
 [<A HREF="/pdf/solution_group_poster.pdf">Poster</A>]
 [<A HREF="">arXiv</A>]
 [<A HREF="">Software</A>
+[<A HREF="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk</A>]
 </LI>
 <BR>
 -->

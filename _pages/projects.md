@@ -24,7 +24,7 @@ permalink: /projects/
       <h3 style="font-size:130%;"><a href="https://github.com/vprusso/toqito">toqito</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=toqito&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=vprussoN&repo=toqito&type=fork&count=true&v=2"
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=toqito&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
       <p style="font-size:80%;"> An open source Python library for studying various 
 objects in quantum information, namely, states, channels, and measurements. </p>
@@ -36,7 +36,7 @@ objects in quantum information, namely, states, channels, and measurements. </p>
       <h3 style="font-size:130%;"><a href="https://github.com/vprusso/youtube_tutorials">youtube_tutorials</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=youtube_tutorials&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=vprussoN&repo=youtube_tutorials&type=fork&count=true&v=2"
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=youtube_tutorials&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
       <p style="font-size:80%;"> Companion code for the my programming tutorials on my <a href="http://bit.ly/lucidcode">LucidProgramming YouTube channel.</a> </p>
     </div>
@@ -47,7 +47,7 @@ objects in quantum information, namely, states, channels, and measurements. </p>
       <h3 style="font-size:130%;"><a href="https://github.com/vprusso/scirate">scirate</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=scirate&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=vprussoN&repo=scirate&type=fork&count=true&v=2"
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=scirate&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
       <p style="font-size:80%;"> A Python wrapper for extracting information from <a href="https://scirate.com/">Scirate</a> </p>
     </div>

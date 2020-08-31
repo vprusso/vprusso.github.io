@@ -194,6 +194,21 @@ AIChE (American Institute of Chemical Engineers), (2011).
 
 </OL>
 
+<h3>Talks</h3>
+
+<OL reversed>
+
+<LI>
+<A HREF="https://www.youtube.com/watch?v=6R7qSszJwBI">"|toqito>: Theory of Quantum Information Toolkit"</A>,<br>
+V. Russo <br>
+New York City Quantum Computing Meetup (2020). <br> 
+[<A HREF="https://www.youtube.com/watch?v=6R7qSszJwBI">Link</A>]
+[<A HREF="https://vprusso.github.io/toqito_slides/">Slides</A>]
+[<A HREF="https://github.com/vprusso/toqito">Software</A>]
+</LI>
+
+</OL>
+
 
 <h3>Theses</h3>
 

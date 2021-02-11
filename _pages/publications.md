@@ -27,15 +27,17 @@ permalink: /publications/
 V. Russo<br>
 XXX, (2020). <br> 
 [<A HREF="">Link</A>]
-[<A HREF="">Website</A>]
-[<A HREF="">Software</A>
+[<A HREF="/pdf/XXX.pdf">PDF</A>]
+[<A HREF="https://vprusso.github.io/toqito">Website</A>]
+[<A HREF="https://vprusso.github.io/toqito_slides/">Slides</A>]
+[<A HREF="https://github.com/vprusso/toqito">Software</A>]
 </LI>
 <BR>
 
 <LI>
 <A HREF="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</A>, <br> 
 C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
-XXX, (2020). <br> 
+XXX, (2021). <br> 
 [<A HREF="/pdf/XXX.pdf">PDF</A>]
 [<A HREF="/pdf/solution_group_poster.pdf">Poster</A>]
 [<A HREF="">arXiv</A>]

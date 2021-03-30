@@ -206,6 +206,7 @@ Louisana State University (2021). <br>
 [<a href="https://www.youtube.com/watch?v=uAegxiHQOXw">Link</a>]
 [<a href="https://github.com/vprusso/sdp_lecture">Software</a>]
 </li>
+<br>
 
 <li>
 <a href="https://www.youtube.com/watch?v=6R7qSszJwBI">"|toqito>: Theory of

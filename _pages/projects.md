@@ -17,7 +17,7 @@ permalink: /projects/
 
 <br>
 
-<h3>Selected projects: </h3>
+<h3>Software Projects: </h3>
 
 <div class="row">
     <div class="col-md-3">
@@ -26,8 +26,21 @@ permalink: /projects/
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=toqito&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> An open source Python library for studying various 
-objects in quantum information, namely, states, channels, and measurements. </p>
+      <p style="font-size:80%;"> An open source Python library for studying
+      various objects in quantum information, namely, states, channels, and
+      measurements. </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+      <h3 style="font-size:130%;"><a href="https://github.com/vprusso/qustop">qustop</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=qustop&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=qustop&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+      <p style="font-size:80%;"> An open source Python module for investigating
+      various problems in quantum state optimization.</p>
     </div>
 </div>
 
@@ -38,7 +51,9 @@ objects in quantum information, namely, states, channels, and measurements. </p>
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=youtube_tutorials&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> Companion code for the my programming tutorials on my <a href="http://bit.ly/lucidcode">LucidProgramming YouTube channel.</a> </p>
+      <p style="font-size:80%;"> Companion code for the my programming
+      tutorials on my <a href="http://bit.ly/lucidcode">LucidProgramming
+      YouTube channel.</a> </p>
     </div>
 </div>
     	
@@ -49,7 +64,8 @@ objects in quantum information, namely, states, channels, and measurements. </p>
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=scirate&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> A Python wrapper for extracting information from <a href="https://scirate.com/">Scirate</a> </p>
+      <p style="font-size:80%;"> A Python wrapper for extracting information
+      from <a href="https://scirate.com/">Scirate</a> </p>
     </div>
 </div>
 
@@ -61,9 +77,29 @@ objects in quantum information, namely, states, channels, and measurements. </p>
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
         <iframe src="https://ghbtns.com/github-btn.html?user=YounesN&repo=GOMC_GPU&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> An open-source Monte Carlo simulation engine written in C++ using the CUDA wrapper. I worked on an early version of this software during my Masters. </p>
+      <p style="font-size:80%;"> An open-source Monte Carlo simulation engine
+      written in C++ using the CUDA wrapper. I worked on an early version of
+      this software during my Masters. </p>
     </div>
 </div>
 
 
+<h3>Misc Projects: </h3>
+
+<div class="row">
+    <div class="col-md-3">
+      <h3 style="font-size:130%;"><a href="https://www.youtube.com/channel/UCFxcvyt2Ucq5IL0_1Njzqlg">LucidProgramming</a></h3>
+      <p style="font-size:80%;">The LucidProgramming YouTube channel is where I
+      post various instructional videos on various software development
+      topics.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+      <h3 style="font-size:130%;"><a href="https://nonlocal.libsyn.com/">Nonlocal Podcast</a></h3>
+      <p style="font-size:80%;">Co-host of the "Nonlocal Podcast"--a podcast
+      about various aspects of quantum computing.</p>
+    </div>
+</div>
 

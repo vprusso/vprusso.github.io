@@ -18,19 +18,6 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
-<!--
-<li>
-<a href="">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>, <br> 
-V. Russo<br>
-Journal of Open Source Software, XXX, (2021). <br> 
-[<a href="">Link</a>]
-[<a href="/pdf/XXX.pdf">PDF</a>]
-[<a href="https://vprusso.github.io/toqito">Website</a>]
-[<a href="https://vprusso.github.io/toqito_slides/">Slides</a>]
-[<a href="https://github.com/vprusso/toqito">Software</a>]
-</li>
-<br>
--->
 
 <!--
 <li>
@@ -45,6 +32,18 @@ XXX, (2021). <br>
 </li>
 <br>
 -->
+
+<li>
+<a href="">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>, <br> 
+V. Russo<br>
+(In submission) : Journal of Open Source Software, XXX, (2021). <br> 
+[<a href="">Link</a>]
+[<a href="/pdf/toqito.pdf">PDF</a>]
+[<a href="https://vprusso.github.io/toqito">Website</a>]
+[<a href="https://vprusso.github.io/toqito_slides/">Slides</a>]
+[<a href="https://github.com/vprusso/toqito">Software</a>]
+</li>
+<br>
 
 <li>
 <a href="https://arxiv.org/pdf/1709.01837.pdf">"Extended nonlocal games from quantum-classical games"</a>, <br> 
@@ -200,7 +199,7 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <ol reversed>
 
 <li>
-<a href="">"Solving semidefinite programs in Python"</a>,<br>
+<a href="https://www.youtube.com/watch?v=uAegxiHQOXw">"Solving semidefinite programs in Python"</a>,<br>
 V. Russo <br>
 Louisana State University (2021). <br> 
 [<a href="https://www.youtube.com/watch?v=uAegxiHQOXw">Link</a>]

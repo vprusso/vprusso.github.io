@@ -43,7 +43,7 @@ XXX, (2021). <br>
 -->
 
 <li>
-<a href="">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>, <br> 
+<a href="/pdf/toqito.pdf">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>, <br> 
 V. Russo<br>
 Journal of Open Source Software, 6(61), 3082, (2021). <br> 
 [<a href="https://joss.theoj.org/papers/10.21105/joss.03082">Link</a>]

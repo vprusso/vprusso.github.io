@@ -31,13 +31,22 @@ XXX, (2021). <br>
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk</a>]
 </li>
 <br>
+<li>
+<a href="">"Entanglement cost of distinguishing an ensemble of noisy Bell states by local operations and classical communication"</a>, <br> 
+S. Bandyopadhyay, V. Russo<br>
+XXX, (2021). <br> 
+[<a href="/pdf/XXX.pdf">PDF</a>]
+[<a href="">arXiv</a>]
+[<a href="">Software</a>
+</li>
+<br>
 -->
 
 <li>
 <a href="">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>, <br> 
 V. Russo<br>
-(In submission) : Journal of Open Source Software, XXX, (2021). <br> 
-[<a href="">Link</a>]
+Journal of Open Source Software, 6(61), 3082, (2021). <br> 
+[<a href="https://joss.theoj.org/papers/10.21105/joss.03082">Link</a>]
 [<a href="/pdf/toqito.pdf">PDF</a>]
 [<a href="https://vprusso.github.io/toqito">Website</a>]
 [<a href="https://vprusso.github.io/toqito_slides/">Slides</a>]

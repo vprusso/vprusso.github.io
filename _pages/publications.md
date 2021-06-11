@@ -31,10 +31,11 @@ XXX, (2021). <br>
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk</a>]
 </li>
 <br>
+
 <li>
-<a href="">"Entanglement cost of distinguishing an ensemble of noisy Bell states by local operations and classical communication"</a>, <br> 
+<a href="">"Entanglement cost of discriminating ``noisy'' Bell states by local operations and classical communication"</a>, <br> 
 S. Bandyopadhyay, V. Russo<br>
-XXX, (2021). <br> 
+arXiv:, (2021). <br> 
 [<a href="/pdf/XXX.pdf">PDF</a>]
 [<a href="">arXiv</a>]
 [<a href="">Software</a>
@@ -206,6 +207,15 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <h3>Talks</h3>
 
 <ol reversed>
+
+<li>
+<a href="">"Numerical tools for studying extended nonlocal games"</a>,<br>
+V. Russo <br>
+University of Ottawa (2021). <br> 
+[<a href="/pdf/numerical_enlg_slides.pdf">Slides</a>]
+[<a href="https://github.com/vprusso/uottawa_enlg">Software</a>]
+</li>
+<br>
 
 <li>
 <a href="https://www.youtube.com/watch?v=uAegxiHQOXw">"Solving semidefinite programs in Python"</a>,<br>

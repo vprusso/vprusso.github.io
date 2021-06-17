@@ -18,7 +18,6 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
-
 <!--
 <li>
 <a href="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
@@ -31,17 +30,16 @@ XXX, (2021). <br>
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk</a>]
 </li>
 <br>
+-->
 
 <li>
-<a href="">"Entanglement cost of discriminating ``noisy'' Bell states by local operations and classical communication"</a>, <br> 
+<a href="">"Optimal discrimination of noisy Bell states by local operations and classical communication requires maximal entanglement"</a>, <br> 
 S. Bandyopadhyay, V. Russo<br>
-arXiv:, (2021). <br> 
-[<a href="/pdf/XXX.pdf">PDF</a>]
-[<a href="">arXiv</a>]
-[<a href="">Software</a>
+arXiv:2106.08721, (2021). <br> 
+[<a href="/pdf/noisy_bell.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2106.08721">arXiv</a>]
 </li>
 <br>
--->
 
 <li>
 <a href="/pdf/toqito.pdf">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>, <br> 

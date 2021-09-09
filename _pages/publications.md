@@ -33,9 +33,9 @@ XXX, (2021). <br>
 -->
 
 <li>
-<a href="">"Optimal discrimination of noisy Bell states by local operations and classical communication requires maximal entanglement"</a>, <br> 
+<a href="">"Entanglement cost of discriminating noisy Bell states by local operations and classical communication"</a>, <br> 
 S. Bandyopadhyay, V. Russo<br>
-arXiv:2106.08721, (2021). <br> 
+Physical Review A (In review), (2021). <br> 
 [<a href="/pdf/noisy_bell.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2106.08721">arXiv</a>]
 </li>

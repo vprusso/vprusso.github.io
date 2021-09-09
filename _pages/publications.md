@@ -33,7 +33,7 @@ XXX, (2021). <br>
 -->
 
 <li>
-<a href="">"Entanglement cost of discriminating noisy Bell states by local operations and classical communication"</a>, <br> 
+<a href="/pdf/noisy_bell.pdf">"Entanglement cost of discriminating noisy Bell states by local operations and classical communication"</a>, <br> 
 S. Bandyopadhyay, V. Russo<br>
 Physical Review A (In review), (2021). <br> 
 [<a href="/pdf/noisy_bell.pdf">PDF</a>]

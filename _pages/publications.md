@@ -39,6 +39,7 @@ Physical Review A, Vol. 104, No. 3, (2021).<br>
 [<a href="https://link.aps.org/doi/10.1103/PhysRevA.104.032429">Link</a>]
 [<a href="/pdf/noisy_bell.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2106.08721">arXiv</a>]
+[<a href="https://github.com/vprusso/qustop">Software</a>]
 </li>
 <br>
 

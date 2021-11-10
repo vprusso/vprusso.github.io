@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Resume/CV
+title: Resume
 permalink: /cv/
 ---
 
@@ -14,5 +14,5 @@ permalink: /cv/
   ga('send', 'pageview');
 
 </script>
+<embed src="{{site.url}}/pdf/resume.pdf" width="600" height="500" alt="resume" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 
-Download links for [Resume]({{ site.url }}/pdf/resume.pdf) and [CV]({{ site.url }}/pdf/cv.pdf).

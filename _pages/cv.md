@@ -14,5 +14,6 @@ permalink: /cv/
   ga('send', 'pageview');
 
 </script>
-<embed src="{{site.url}}/pdf/resume.pdf" width="600" height="500" alt="resume" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+<embed src="/pdf/resume.pdf" width="800px" height="2100px" />
+
 

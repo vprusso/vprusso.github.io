@@ -43,7 +43,7 @@ XXX, (2022). <br>
 
 <li>
 <a href="/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br> 
-R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng<br>
+R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng,<br>
 arXiv:2203.05489, (2022).<br> 
 [<a href="/pdf/qv.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2203.05489">arXiv</a>]

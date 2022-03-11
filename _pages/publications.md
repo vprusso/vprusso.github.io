@@ -22,7 +22,7 @@ permalink: /publications/
 <li>
 <a href="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
 C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
-XXX, (2021). <br> 
+XXX, (2022). <br> 
 [<a href="/pdf/XXX.pdf">PDF</a>]
 [<a href="/pdf/solution_group_poster.pdf">Poster</a>]
 [<a href="">arXiv</a>]
@@ -30,7 +30,26 @@ XXX, (2021). <br>
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk</a>]
 </li>
 <br>
+<li>
+<a href="">"A note on inner products of quantum states and their (anti)distinguishability"</a>, <br> 
+V. Russo, J. Sikora<br>
+XXX, (2022). <br> 
+[<a href="/pdf/XXX.pdf">PDF</a>]
+[<a href="">arXiv</a>]
+[<a href="https://github.com/vprusso/antidist">Software</a>
+</li>
+<br>
 -->
+
+<li>
+<a href="/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br> 
+R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng<br>
+arXiv:2203.05489, (2022).<br> 
+[<a href="/pdf/qv.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2203.05489">arXiv</a>]
+[<a href="https://github.com/unitaryfund/mitiq-qv">Software</a>]
+</li>
+<br>
 
 <li>
 <a href="/pdf/noisy_bell.pdf">"Entanglement cost of discriminating noisy Bell states by local operations and classical communication"</a>,<br> 

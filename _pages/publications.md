@@ -39,6 +39,7 @@ C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk_1</a>]
 [<a href="https://www.youtube.com/watch?v=bjM2uwLL37E">Talk_2</a>]
 </li>
+<br>
 
 <li>
 <a href="/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br> 

@@ -48,6 +48,7 @@ arXiv:2203.05489, (2022).<br>
 [<a href="/pdf/qv.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2203.05489">arXiv</a>]
 [<a href="https://github.com/unitaryfund/mitiq-qv">Software</a>]
+[<a href="https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/">Press</a>]
 </li>
 <br>
 
@@ -63,7 +64,7 @@ Physical Review A, Vol. 104, No. 3, (2021).<br>
 <br>
 
 <li>
-<a href="/pdf/toqito.pdf">"toqito -- Theory of quantum information toolkit: A Python package for studying quantum information"</a>,<br> 
+<a href="/pdf/toqito.pdf">"toqito--Theory of quantum information toolkit: A Python package for studying quantum information"</a>,<br> 
 V. Russo,<br>
 Journal of Open Source Software, 6(61), 3082, (2021).<br> 
 [<a href="https://joss.theoj.org/papers/10.21105/joss.03082">Link</a>]

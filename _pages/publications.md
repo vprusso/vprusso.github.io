@@ -19,16 +19,6 @@ permalink: /publications/
 <h3>Refereed Journal Publications and Preprints</h3>
 
 <!--
-<li>
-<a href="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
-C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
-XXX, (2022). <br> 
-[<a href="/pdf/XXX.pdf">PDF</a>]
-[<a href="/pdf/solution_group_poster.pdf">Poster</a>]
-[<a href="">arXiv</a>]
-[<a href="">Software</a>
-[<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk</a>]
-</li>
 <br>
 <li>
 <a href="">"A note on inner products of quantum states and their (anti)distinguishability"</a>, <br> 
@@ -40,6 +30,15 @@ XXX, (2022). <br>
 </li>
 <br>
 -->
+
+<li>
+<a href="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
+C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
+(In progress), (2022). <br> 
+[<a href="/pdf/solution_group_poster.pdf">Poster</a>]
+[<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk_1</a>]
+[<a href="https://www.youtube.com/watch?v=bjM2uwLL37E">Talk_2</a>]
+</li>
 
 <li>
 <a href="/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br> 

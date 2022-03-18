@@ -242,7 +242,7 @@ University of Ottawa, (2021).<br>
 <a href="https://www.youtube.com/watch?v=uAegxiHQOXw">"Solving semidefinite programs in Python"</a>,<br>
 V. Russo,<br>
 Louisana State University, (2021).<br> 
-[<a href="https://www.youtube.com/watch?v=uAegxiHQOXw">Link</a>]
+[<a href="https://www.youtube.com/watch?v=O_qoEZcigBA">Link</a>]
 [<a href="https://github.com/vprusso/sdp_lecture">Software</a>]
 </li>
 <br>

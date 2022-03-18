@@ -33,7 +33,7 @@ XXX, (2022). <br>
 
 <li>
 <a href="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
-C. Paddock, V. Russo, T. Silverthorne, W. Slofstra <br>
+C. Paddock, V. Russo, T. Silverthorne, W. Slofstra, <br>
 (In progress), (2022). <br> 
 [<a href="/pdf/solution_group_poster.pdf">Poster</a>]
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk_1</a>]

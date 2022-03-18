@@ -47,8 +47,8 @@ R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng,<br>
 arXiv:2203.05489, (2022).<br> 
 [<a href="/pdf/qv.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2203.05489">arXiv</a>]
-[<a href="https://github.com/unitaryfund/mitiq-qv">Software</a>]
 [<a href="https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/">Press</a>]
+[<a href="https://github.com/unitaryfund/mitiq-qv">Software</a>]
 </li>
 <br>
 
@@ -71,6 +71,7 @@ Journal of Open Source Software, 6(61), 3082, (2021).<br>
 [<a href="/pdf/toqito.pdf">PDF</a>]
 [<a href="https://vprusso.github.io/toqito">Website</a>]
 [<a href="https://vprusso.github.io/toqito_slides/">Slides</a>]
+[<a href="https://www.youtube.com/watch?v=6R7qSszJwBI">Talk</a>]
 [<a href="https://github.com/vprusso/toqito">Software</a>]
 </li>
 <br>

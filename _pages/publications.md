@@ -33,11 +33,11 @@ V. Russo, J. Sikora, <br>
 -->
 
 <li>
-<a href="">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
+<a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
 C. Paddock, V. Russo, T. Silverthorne, W. Slofstra, <br>
 arXiv:2205.04645, (2022). <br> 
 [<a href="/pdf/graph_incidence_nonlocal_games.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/">arXiv</a>]
+[<a href="https://arxiv.org/abs/2205.04645">arXiv</a>]
 [<a href="/pdf/solution_group_poster.pdf">Poster</a>]
 [<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk_1</a>]
 [<a href="https://www.youtube.com/watch?v=bjM2uwLL37E">Talk_2</a>]

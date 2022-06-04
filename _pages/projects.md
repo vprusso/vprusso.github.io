@@ -27,7 +27,7 @@ permalink: /projects/
         <iframe src="https://ghbtns.com/github-btn.html?user=unitaryfund&repo=metriq-app&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
       <p style="font-size:80%;"> Platform for tracking quantum computing benchmarks hosted at <a href="https://metriq.info/">metriq.info</a>. Co-developed with <a href="http://ultraphrenia.com/">Dan Strano</a>.</p>
-      <p style="font-size:80%;">Press: <a href="https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime">PRNewswire press release</a>, <a href="https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/">QC Report</a>, <a href=""https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/>Quantum Insider</a>.</p>
+      <p style="font-size:80%;">Press: <a href="https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime">PRNewswire press release</a>, <a href="https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/">QC Report</a>, <a href="https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/">Quantum Insider</a>.</p>
     </div>
 </div>
 

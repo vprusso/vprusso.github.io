@@ -18,19 +18,17 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
-<!--
 <br>
 <li>
-<a href="">"A note on inner products of quantum states and their (anti)distinguishability"</a>, <br> 
+<a href="">"A note on inner products of quantum states and their antidistinguishability"</a>, <br> 
 V. Russo, J. Sikora, <br>
-(In progress), (2022). <br> 
+arXiv:X, (2022). <br> 
 [<a href="/pdf/antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/">arXiv</a>]
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
 </li>
 <br>
--->
 
 <li>
 <a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
@@ -228,6 +226,27 @@ AIChE (American Institute of Chemical Engineers), (2011).
 </li>
 
 </ol>
+
+<h3>Press</h3>
+
+<ol reversed>
+
+<li>
+<a href="https://vprusso.github.io/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br>
+[<a href="https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/">Quantum Insider</a>]
+</li>
+<br>
+
+<li>
+<a href="https://metriq.info/">"Metriq: Platform for tracking quantum computing benchmarks"</a>,<br>
+[<a href="https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime">PRNewswire</a>]
+[<a href="https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/">QCReport</a>]
+[<a href="https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/">Quantum Insider</a>]
+</li>
+<br>
+
+</ol>
+
 
 <h3>Talks</h3>
 

@@ -20,7 +20,7 @@ permalink: /publications/
 
 <br>
 <li>
-<a href="">"A note on inner products of quantum states and their antidistinguishability"</a>, <br> 
+<a href="">"A note on the inner products of pure quantum states and their antidistinguishability"</a>, <br> 
 V. Russo, J. Sikora, <br>
 arXiv:X, (2022). <br> 
 [<a href="/pdf/antidist.pdf">PDF</a>]

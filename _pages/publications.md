@@ -20,11 +20,11 @@ permalink: /publications/
 
 <br>
 <li>
-<a href="">"A note on the inner products of pure quantum states and their antidistinguishability"</a>, <br> 
+<a href="/pdf/antidist.pdf">"A note on the inner products of pure quantum states and their antidistinguishability"</a>, <br> 
 V. Russo, J. Sikora, <br>
-arXiv:X, (2022). <br> 
+arXiv:2206.08313, (2022). <br> 
 [<a href="/pdf/antidist.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/">arXiv</a>]
+[<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
 </li>

@@ -86,6 +86,7 @@ Chicago Journal of Theoretical Computer Science, Volume: 2018, Article: 4, (2018
 [<a href="/pdf/extended_qc.pdf">PDF</a>]
 [<a href="/pdf/infinite_entanglement_slides.pdf">Slides</a>]
 [<a href="https://arxiv.org/abs/1709.01837">arXiv</a>]
+[<a href="https://github.com/vprusso/toqito/blob/master/toqito/nonlocal_games/extended_nonlocal_game.py">Software</a>]
 </li>
 <br>
 
@@ -146,6 +147,7 @@ Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014)
 [<a href="/pdf/t_count.pdf">PDF</a>]
 [<a href="/pdf/t_count_poster.pdf">Poster</a>]
 [<a href="http://arxiv.org/abs/1308.4134">arXiv</a>]
+[<a href="https://github.com/vadym-kl/sqct">Software</a>]
 </li>
 <br>
 

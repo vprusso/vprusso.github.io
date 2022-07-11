@@ -41,6 +41,7 @@ permalink: /projects/
       <p style="font-size:80%;"> An open source Python library for studying
       various objects in quantum information, namely, states, channels, and
       measurements. </p>
+      <p style="font-size:80%;">Press: <a href="https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/">QuantumInsider</a>.</p>
     </div>
 </div>
 

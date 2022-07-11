@@ -247,6 +247,12 @@ AIChE (American Institute of Chemical Engineers), (2011).
 </li>
 <br>
 
+<li>
+<a href="https://github.com/vprusso/toqito">"toqito: Theory of quantum information toolkit in Python"</a>,<br>
+[<a href="https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/">Quantum Insider (listed as one of the top quantum simulators of 2022)</a>]
+</li>
+<br>
+
 </ol>
 
 

@@ -26,6 +26,7 @@ arXiv:2206.08313, (2022). <br>
 [<a href="/pdf/antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
+[<a href="https://www.youtube.com/watch?v=uTudADhT1pE">Video</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
 </li>
 <br>

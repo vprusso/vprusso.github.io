@@ -75,6 +75,7 @@ Journal of Open Source Software, 6(61), 3082, (2021).<br>
 [<a href="https://vprusso.github.io/toqito">Website</a>]
 [<a href="https://vprusso.github.io/toqito_slides/">Slides</a>]
 [<a href="https://www.youtube.com/watch?v=6R7qSszJwBI">Talk</a>]
+[<a href="https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/">Press</a>]
 [<a href="https://github.com/vprusso/toqito">Software</a>]
 </li>
 <br>

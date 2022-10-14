@@ -18,6 +18,16 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
+<li>
+<a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
+V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
+arXiv:2210.07194, (2022).<br> 
+[<a href="/pdf/qem_in_practice.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
+[<a href="https://github.com/unitaryfund/research">Software</a>]
+</li>
+<br>
+
 <br>
 <li>
 <a href="/pdf/antidist.pdf">"A note on the inner products of pure quantum states and their antidistinguishability"</a>, <br> 

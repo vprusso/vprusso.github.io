@@ -28,7 +28,6 @@ arXiv:2210.07194, (2022).<br>
 </li>
 <br>
 
-<br>
 <li>
 <a href="/pdf/antidist.pdf">"A note on the inner products of pure quantum states and their antidistinguishability"</a>, <br> 
 V. Russo, J. Sikora, <br>

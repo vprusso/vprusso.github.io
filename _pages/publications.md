@@ -272,11 +272,20 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <ol reversed>
 
 <li>
+<a href="">"Antidistinguishability conjecture"</a>,<br>
+V. Russo,<br>
+Wayne State University, (2023).<br> 
+[<a href="/pdf/antidist_slides.pdf">Slides</a>]
+[<a href="">Software</a>]
+</li>
+<br>
+
+<li>
 <a href="">"Numerical tools for studying extended nonlocal games"</a>,<br>
 V. Russo,<br>
 University of Ottawa, (2021).<br> 
 [<a href="/pdf/numerical_enlg_slides.pdf">Slides</a>]
-[<a href="https://github.com/vprusso/uottawa_enlg">Software</a>]
+[<a href="https://github.com/vprusso/antidist/tree/jupyter_notebook">Software</a>]
 </li>
 <br>
 

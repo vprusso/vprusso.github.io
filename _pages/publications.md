@@ -272,20 +272,20 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <ol reversed>
 
 <li>
-<a href="">"Antidistinguishability conjecture"</a>,<br>
+<a href="/pdf/antidist_slides.pdf">"The antidistinguishability conjecture"</a>,<br>
 V. Russo,<br>
 Wayne State University, (2023).<br> 
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
-[<a href="">Software</a>]
+[<a href="https://github.com/vprusso/antidist/tree/jupyter_notebook">Software</a>]
 </li>
 <br>
 
 <li>
-<a href="">"Numerical tools for studying extended nonlocal games"</a>,<br>
+<a href="/pdf/numerical_enlg_slides.pdf">"Numerical tools for studying extended nonlocal games"</a>,<br>
 V. Russo,<br>
 University of Ottawa, (2021).<br> 
 [<a href="/pdf/numerical_enlg_slides.pdf">Slides</a>]
-[<a href="https://github.com/vprusso/antidist/tree/jupyter_notebook">Software</a>]
+[<a href="https://github.com/vprusso/uottawa_enlg">Software</a>]
 </li>
 <br>
 
@@ -299,8 +299,7 @@ Louisana State University, (2021).<br>
 <br>
 
 <li>
-<a href="https://www.youtube.com/watch?v=6R7qSszJwBI">"|toqito>: Theory of
-quantum information toolkit"</a>,<br>
+<a href="https://www.youtube.com/watch?v=6R7qSszJwBI">"|toqito>: Theory of quantum information toolkit"</a>,<br>
 V. Russo,<br>
 New York City Quantum Computing Meetup, (2020).<br> 
 [<a href="https://www.youtube.com/watch?v=6R7qSszJwBI">Link</a>]

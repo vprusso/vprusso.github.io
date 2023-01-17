@@ -276,7 +276,7 @@ AIChE (American Institute of Chemical Engineers), (2011).
 V. Russo,<br>
 Wayne State University, (2023).<br> 
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
-[<a href="https://github.com/vprusso/antidist/tree/jupyter_notebook">Software</a>]
+[<a href="https://github.com/vprusso/antidist/blob/jupyter_notebook/notebooks/antidist_conjecture.ipynb">Software</a>]
 </li>
 <br>
 

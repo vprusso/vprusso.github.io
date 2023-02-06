@@ -18,6 +18,18 @@ permalink: /publications/
 
 <h3>Refereed Journal Publications and Preprints</h3>
 
+<!--
+<li>
+<a href="/pdf/antidist_coherence.pdf">"Antidistinguishability and Multilevel Coherence of Quantum States"</a>, <br> 
+N. Johnston, V. Russo, J. Sikora, <br>
+arXiv:X, (2023). <br> 
+[<a href="/pdf/antidist_coherence.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
+[<a href="https://github.com/vprusso/antidist_coherence">Software</a>]
+</li>
+<br>
+-->
+
 <li>
 <a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
 V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
@@ -106,7 +118,7 @@ Chicago Journal of Theoretical Computer Science, Volume: 2018, Article: 4, (2018
 S. Arunachalam, A. Molina, V. Russo,<br>
 Theory of Quantum Computation, Communication, and Cryptography (TQC), (2017).<br> 
 [<a href="http://tqc2017.lip6.fr/program.html">Link</a>]
-[<a href="/pdf/hedging_bets.pdf">PDF</a>]
+[<a href="/pdf/hedging.pdf">PDF</a>]
 [<a href="/pdf/hedging_bets_poster.pdf">Poster</a>]
 [<a href="/pdf/hedging_bets_slides.pdf">Slides</a>]
 [<a href="http://arxiv.org/abs/1310.7954">arXiv</a>]

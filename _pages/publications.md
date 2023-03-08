@@ -20,12 +20,32 @@ permalink: /publications/
 
 <!--
 <li>
-<a href="/pdf/antidist_coherence.pdf">"Antidistinguishability and Multilevel Coherence of Quantum States"</a>, <br> 
+<a href="/pdf/qv_zne.pdf">"Pushing the fronteirs of effective quantum volume with zero noise extrapolation"</a>, <br> 
+E. Pelofskie, V. Russo, A. Mari, A. Bartschi, D. Strano, R. LaRose, S. Eidenbenz, W. Zeng<br>
+arXiv:X, (2023). <br> 
+[<a href="/pdf/qv_zne.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
+[<a href="https://github.com/X">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/antidist_coherence.pdf">"Tighter bounds on antidistinguishability"</a>, <br> 
 N. Johnston, V. Russo, J. Sikora, <br>
 arXiv:X, (2023). <br> 
 [<a href="/pdf/antidist_coherence.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
 [<a href="https://github.com/vprusso/antidist_coherence">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/vqa_sep.pdf">"Quantum steering algorithms for estimating fidelity of separability"</a>, <br> 
+A. Philip, S. Rethinasamy, V. Russo, M. Wilde <br>
+arXiv:X, (2023). <br> 
+[<a href="/pdf/vqa_sep.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
+[<a href="https://github.com/vprusso/max_sep">Software</a>]
 </li>
 <br>
 -->
@@ -36,6 +56,7 @@ V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
 arXiv:2210.07194, (2022).<br> 
 [<a href="/pdf/qem_in_practice.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
+[<a href="/pdf/qem_in_practice_poster.pdf">Poster</a>]
 [<a href="https://github.com/unitaryfund/research">Software</a>]
 </li>
 <br>

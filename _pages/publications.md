@@ -30,14 +30,15 @@ arXiv:X, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/antidist_coherence.pdf">"Tighter bounds on antidistinguishability"</a>, <br> 
+<a href="/pdf/tight_antidist.pdf">"Tighter bounds on antidistinguishability"</a>, <br> 
 N. Johnston, V. Russo, J. Sikora, <br>
 arXiv:X, (2023). <br> 
-[<a href="/pdf/antidist_coherence.pdf">PDF</a>]
+[<a href="/pdf/tight_antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
-[<a href="https://github.com/vprusso/antidist_coherence">Software</a>]
+[<a href="https://github.com/vprusso/tight_antidist">Software</a>]
 </li>
 <br>
+-->
 
 <li>
 <a href="/pdf/vqa_sep.pdf">"Quantum steering algorithms for estimating fidelity of separability"</a>, <br> 
@@ -48,7 +49,6 @@ arXiv:X, (2023). <br>
 [<a href="https://github.com/vprusso/max_sep">Software</a>]
 </li>
 <br>
--->
 
 <li>
 <a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
@@ -68,6 +68,7 @@ arXiv:2206.08313, (2022). <br>
 [<a href="/pdf/antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
+[<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
 </li>
 <br>
@@ -303,6 +304,15 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <h3>Talks</h3>
 
 <ol reversed>
+<li>
+<a href="/pdf/antidist_slides.pdf">"The antidistinguishability conjecture"</a>,<br>
+V. Russo,<br>
+University of Windsor, (2023).<br> 
+[<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Link</a>]
+[<a href="/pdf/antidist_slides.pdf">Slides</a>]
+[<a href="https://github.com/vprusso/antidist/blob/jupyter_notebook/notebooks/antidist_conjecture.ipynb">Software</a>]
+</li>
+<br>
 
 <li>
 <a href="/pdf/antidist_slides.pdf">"The antidistinguishability conjecture"</a>,<br>

@@ -45,8 +45,8 @@ arXiv:X, (2023). <br>
 A. Philip, S. Rethinasamy, V. Russo, M. Wilde <br>
 arXiv:X, (2023). <br> 
 [<a href="/pdf/vqa_sep.pdf">PDF</a>]
-[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
-[<a href="https://github.com/vprusso/max_sep">Software</a>]
+[<a href="https://arxiv.org/abs/2303.07911">arXiv</a>]
+[<a href="https://arxiv.org/src/2303.07911v1/anc">Software</a>]
 </li>
 <br>
 

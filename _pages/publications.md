@@ -43,7 +43,7 @@ arXiv:X, (2023). <br>
 <li>
 <a href="/pdf/vqa_sep.pdf">"Quantum steering algorithms for estimating fidelity of separability"</a>, <br> 
 A. Philip, S. Rethinasamy, V. Russo, M. Wilde <br>
-arXiv:X, (2023). <br> 
+arXiv:2303.07911, (2023). <br> 
 [<a href="/pdf/vqa_sep.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2303.07911">arXiv</a>]
 [<a href="https://arxiv.org/src/2303.07911v1/anc">Software</a>]
@@ -305,7 +305,7 @@ AIChE (American Institute of Chemical Engineers), (2011).
 
 <ol reversed>
 <li>
-<a href="/pdf/antidist_slides.pdf">"The antidistinguishability conjecture"</a>,<br>
+<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">"The antidistinguishability conjecture"</a>,<br>
 V. Russo,<br>
 University of Windsor, (2023).<br> 
 [<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Link</a>]

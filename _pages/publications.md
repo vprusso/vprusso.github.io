@@ -42,7 +42,7 @@ arXiv:X, (2023). <br>
 
 <li>
 <a href="/pdf/vqa_sep.pdf">"Quantum steering algorithms for estimating fidelity of separability"</a>, <br> 
-A. Philip, S. Rethinasamy, V. Russo, M. Wilde <br>
+A. Philip, S. Rethinasamy, V. Russo, M. Wilde, <br>
 arXiv:2303.07911, (2023). <br> 
 [<a href="/pdf/vqa_sep.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2303.07911">arXiv</a>]

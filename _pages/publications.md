@@ -41,6 +41,19 @@ arXiv:X, (2023). <br>
 -->
 
 <li>
+<a href="/pdf/antidist.pdf">"Inner products of pure states and their antidistinguishability"</a>, <br> 
+V. Russo, J. Sikora, <br>
+Physical Review A, Vol. 107, No. 3, (2023). <br> 
+[<a href="https://link.aps.org/doi/10.1103/PhysRevA.107.L030202">Link</a>]
+[<a href="/pdf/antidist.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
+[<a href="/pdf/antidist_slides.pdf">Slides</a>]
+[<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk</a>]
+[<a href="https://github.com/vprusso/antidist">Software</a>]
+</li>
+<br>
+
+<li>
 <a href="/pdf/vqa_sep.pdf">"Quantum steering algorithms for estimating fidelity of separability"</a>, <br> 
 A. Philip, S. Rethinasamy, V. Russo, M. Wilde, <br>
 arXiv:2303.07911, (2023). <br> 
@@ -58,18 +71,6 @@ arXiv:2210.07194, (2022).<br>
 [<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
 [<a href="/pdf/qem_in_practice_poster.pdf">Poster</a>]
 [<a href="https://github.com/unitaryfund/research">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/antidist.pdf">"A note on the inner products of pure quantum states and their antidistinguishability"</a>, <br> 
-V. Russo, J. Sikora, <br>
-arXiv:2206.08313, (2022). <br> 
-[<a href="/pdf/antidist.pdf">PDF</a>]
-[<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
-[<a href="/pdf/antidist_slides.pdf">Slides</a>]
-[<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk</a>]
-[<a href="https://github.com/vprusso/antidist">Software</a>]
 </li>
 <br>
 

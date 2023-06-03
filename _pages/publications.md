@@ -20,6 +20,26 @@ permalink: /publications/
 
 <!--
 <li>
+<a href="/pdf/X.pdf">"Layerwise folding + QEM"</a>, <br> 
+N. Johnston, V. Russo, J. Sikora, <br>
+arXiv:X, (2023). <br> 
+[<a href="/pdf/X.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
+[<a href="https://github.com/X">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/X.pdf">"m-out-of-n"</a>, <br> 
+N. Johnston, V. Russo, J. Sikora, <br>
+arXiv:X, (2023). <br> 
+[<a href="/pdf/X.pdf">PDF</a>]
+[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
+[<a href="https://github.com/X">Software</a>]
+</li>
+<br>
+
+<li>
 <a href="/pdf/qv_zne.pdf">"Pushing the fronteirs of effective quantum volume with zero noise extrapolation"</a>, <br> 
 E. Pelofskie, V. Russo, A. Mari, A. Bartschi, D. Strano, R. LaRose, S. Eidenbenz, W. Zeng<br>
 arXiv:X, (2023). <br> 
@@ -30,12 +50,12 @@ arXiv:X, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/tight_antidist.pdf">"Tighter bounds on antidistinguishability"</a>, <br> 
+<a href="/pdf/indep_antidist.pdf">"On the antidistinguishability of linearly independent pure states"</a>, <br> 
 N. Johnston, V. Russo, J. Sikora, <br>
 arXiv:X, (2023). <br> 
-[<a href="/pdf/tight_antidist.pdf">PDF</a>]
+[<a href="/pdf/indep_antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
-[<a href="https://github.com/vprusso/tight_antidist">Software</a>]
+[<a href="https://github.com/vprusso/indep_antidist">Software</a>]
 </li>
 <br>
 -->
@@ -305,6 +325,15 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <h3>Talks</h3>
 
 <ol reversed>
+<a href="https://teratec.eu/Seminaires/TQCI/2023/Seminaire_TQCI-230511.html">"Metriq: Community-driven Quantum Benchmarks"</a>,<br>
+<li>
+V. Russo,<br>
+Teratec Quantum Computing Initiative, (2023).<br> 
+[<a href="https://teratec.eu/library/seminaires/2023/TQCI/2305/PM11_METRIQ.pdf">Slides</a>]
+[<a href="https://github.com/unitaryfund/metriq-app">Software</a>]
+</li>
+<br>
+
 <li>
 <a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">"The antidistinguishability conjecture"</a>,<br>
 V. Russo,<br>

@@ -40,8 +40,8 @@ arXiv:X, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/qv_zne.pdf">"Pushing the fronteirs of effective quantum volume with zero noise extrapolation"</a>, <br> 
-E. Pelofskie, V. Russo, A. Mari, A. Bartschi, D. Strano, R. LaRose, S. Eidenbenz, W. Zeng<br>
+<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br> 
+E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
 arXiv:X, (2023). <br> 
 [<a href="/pdf/qv_zne.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
@@ -325,8 +325,26 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <h3>Talks</h3>
 
 <ol reversed>
-<a href="https://teratec.eu/Seminaires/TQCI/2023/Seminaire_TQCI-230511.html">"Metriq: Community-driven Quantum Benchmarks"</a>,<br>
+<!--
 <li>
+<a href="">"Testing quantum error mitigation on noisy quantum computers"</a>,<br>
+V. Russo,<br>
+20th International Conference on Quantum Physics and Logic (QPL), (2023).<br> 
+[<a href="">Slides</a>]
+[<a href="">Software</a>]
+</li>
+<br>
+<li>
+<a href="">"Testing quantum error mitigation on noisy quantum computers"</a>,<br>
+V. Russo,<br>
+5th International Workshop on Quantum Compilation (2023).<br> 
+[<a href="">Slides</a>]
+[<a href="">Software</a>]
+</li>
+<br>
+-->
+<li>
+<a href="https://teratec.eu/Seminaires/TQCI/2023/Seminaire_TQCI-230511.html">"Metriq: Community-driven Quantum Benchmarks"</a>,<br>
 V. Russo,<br>
 Teratec Quantum Computing Initiative, (2023).<br> 
 [<a href="https://teratec.eu/library/seminaires/2023/TQCI/2305/PM11_METRIQ.pdf">Slides</a>]

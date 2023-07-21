@@ -326,24 +326,14 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <h3>Talks</h3>
 
 <ol reversed>
-<!--
 <li>
-<a href="">"Testing quantum error mitigation on noisy quantum computers"</a>,<br>
+<a href="https://qpl2023.github.io/program/">"Testing quantum error mitigation on noisy quantum computers"</a>,<br>
 V. Russo,<br>
 20th International Conference on Quantum Physics and Logic (QPL), (2023).<br> 
-[<a href="">Slides</a>]
-[<a href="">Software</a>]
+[<a href="https://github.com/vprusso/qpl_2023_demo">Software</a>]
 </li>
 <br>
-<li>
-<a href="">"Testing quantum error mitigation on noisy quantum computers"</a>,<br>
-V. Russo,<br>
-5th International Workshop on Quantum Compilation (2023).<br> 
-[<a href="">Slides</a>]
-[<a href="">Software</a>]
-</li>
-<br>
--->
+
 <li>
 <a href="https://teratec.eu/Seminaires/TQCI/2023/Seminaire_TQCI-230511.html">"Metriq: Community-driven Quantum Benchmarks"</a>,<br>
 V. Russo,<br>

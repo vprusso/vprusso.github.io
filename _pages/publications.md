@@ -87,7 +87,8 @@ arXiv:2303.07911, (2023). <br>
 <li>
 <a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
 V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
-arXiv:2210.07194, (2022).<br> 
+IEEE Transactions on Quantum Engineering, (2023).<br> 
+[<a href="https://ieeexplore.ieee.org/document/10219054">Link</a>]
 [<a href="/pdf/qem_in_practice.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
 [<a href="/pdf/qem_in_practice_poster.pdf">Poster</a>]

@@ -67,6 +67,19 @@ Algebraic Combinatorics, Volume 6 (2023) no. 4, pp. 1119-1162., (2023). <br>
 <br>
 
 <li>
+<a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
+V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
+IEEE Transactions on Quantum Engineering, Volume 4, (2023).<br> 
+[<a href="https://ieeexplore.ieee.org/document/10219054">Link</a>]
+[<a href="/pdf/qem_in_practice.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
+[<a href="/pdf/qem_in_practice_poster.pdf">Poster</a>]
+[<a href="https://github.com/unitaryfund/research">Software</a>]
+</li>
+<br>
+
+
+<li>
 <a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br> 
 E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
 arXiv:2306.15863, (2023). <br> 
@@ -97,18 +110,6 @@ arXiv:2303.07911, (2023). <br>
 [<a href="/pdf/vqa_sep.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2303.07911">arXiv</a>]
 [<a href="https://arxiv.org/src/2303.07911v1/anc">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
-V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
-IEEE Transactions on Quantum Engineering, (2023).<br> 
-[<a href="https://ieeexplore.ieee.org/document/10219054">Link</a>]
-[<a href="/pdf/qem_in_practice.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
-[<a href="/pdf/qem_in_practice_poster.pdf">Poster</a>]
-[<a href="https://github.com/unitaryfund/research">Software</a>]
 </li>
 <br>
 

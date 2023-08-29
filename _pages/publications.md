@@ -52,6 +52,21 @@ arXiv:X, (2023). <br>
 -->
 
 <li>
+<a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
+C. Paddock, V. Russo, T. Silverthorne, W. Slofstra, <br>
+Algebraic Combinatorics, Volume 6 (2023) no. 4, pp. 1119-1162., (2023). <br> 
+[<a href="https://alco.centre-mersenne.org/articles/10.5802/alco.292/">Link</a>]
+[<a href="/pdf/graph_incidence_nonlocal_games.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2205.04645">arXiv</a>]
+[<a href="/pdf/solution_group_poster.pdf">Poster</a>]
+[<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk_1</a>]
+[<a href="https://www.youtube.com/watch?v=bjM2uwLL37E">Talk_2</a>]
+[<a href="https://www.youtube.com/watch?v=uTudADhT1pE">Video</a>]
+[<a href="https://github.com/vprusso/graph_incidence_nonlocal_games">Software</a>]
+</li>
+<br>
+
+<li>
 <a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br> 
 E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
 arXiv:2306.15863, (2023). <br> 
@@ -69,7 +84,8 @@ Physical Review A, Vol. 107, No. 3, (2023). <br>
 [<a href="/pdf/antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
-[<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk</a>]
+[<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk_1</a>]
+[<a href="https://pirsa.org/23080035">Talk_2</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
 </li>
 <br>
@@ -93,20 +109,6 @@ IEEE Transactions on Quantum Engineering, (2023).<br>
 [<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
 [<a href="/pdf/qem_in_practice_poster.pdf">Poster</a>]
 [<a href="https://github.com/unitaryfund/research">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
-C. Paddock, V. Russo, T. Silverthorne, W. Slofstra, <br>
-arXiv:2205.04645, (2022). <br> 
-[<a href="/pdf/graph_incidence_nonlocal_games.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2205.04645">arXiv</a>]
-[<a href="/pdf/solution_group_poster.pdf">Poster</a>]
-[<a href="https://www.youtube.com/watch?v=aiLho0FJxFc">Talk_1</a>]
-[<a href="https://www.youtube.com/watch?v=bjM2uwLL37E">Talk_2</a>]
-[<a href="https://www.youtube.com/watch?v=uTudADhT1pE">Video</a>]
-[<a href="https://github.com/vprusso/graph_incidence_nonlocal_games">Software</a>]
 </li>
 <br>
 

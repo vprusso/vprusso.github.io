@@ -78,17 +78,6 @@ IEEE Transactions on Quantum Engineering, Volume 4, (2023).<br>
 </li>
 <br>
 
-
-<li>
-<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br> 
-E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
-arXiv:2306.15863, (2023). <br> 
-[<a href="/pdf/qv_zne.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2306.15863">arXiv</a>]
-[<a href="https://github.com/unitaryfund/research">Software</a>]
-</li>
-<br>
-
 <li>
 <a href="/pdf/antidist.pdf">"Inner products of pure states and their antidistinguishability"</a>, <br> 
 V. Russo, J. Sikora, <br>
@@ -100,6 +89,16 @@ Physical Review A, Vol. 107, No. 3, (2023). <br>
 [<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk_1</a>]
 [<a href="https://pirsa.org/23080035">Talk_2</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br> 
+E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
+arXiv:2306.15863, (2023). <br> 
+[<a href="/pdf/qv_zne.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2306.15863">arXiv</a>]
+[<a href="https://github.com/unitaryfund/research">Software</a>]
 </li>
 <br>
 

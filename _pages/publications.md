@@ -21,7 +21,7 @@ permalink: /publications/
 <!--
 <li>
 <a href="/pdf/X.pdf">"Layerwise folding + QEM"</a>, <br> 
-N. Johnston, V. Russo, J. Sikora, <br>
+V. Russo, A. Mari, <br>
 arXiv:X, (2023). <br> 
 [<a href="/pdf/X.pdf">PDF</a>]
 [<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
@@ -38,18 +38,18 @@ arXiv:X, (2023). <br>
 [<a href="https://github.com/X">Software</a>]
 </li>
 <br>
+-->
 
 
 <li>
-<a href="/pdf/indep_antidist.pdf">"On the antidistinguishability of linearly independent pure states"</a>, <br> 
+<a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and  circulant sets of pure quantum states"</a>, <br> 
 N. Johnston, V. Russo, J. Sikora, <br>
 arXiv:X, (2023). <br> 
-[<a href="/pdf/indep_antidist.pdf">PDF</a>]
-[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
-[<a href="https://github.com/vprusso/indep_antidist">Software</a>]
+[<a href="/pdf/circulant_antidist.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2311.17047">arXiv</a>]
+[<a href="https://github.com/vprusso/circulant_antidist">Software</a>]
 </li>
 <br>
--->
 
 <li>
 <a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
@@ -84,7 +84,7 @@ V. Russo, J. Sikora, <br>
 Physical Review A, Vol. 107, No. 3, (2023). <br> 
 [<a href="https://link.aps.org/doi/10.1103/PhysRevA.107.L030202">Link</a>]
 [<a href="/pdf/antidist.pdf">PDF</a>]
-[<a href="https://arxiv.org/pdf/2206.08313.pdf">arXiv</a>]
+[<a href="https://arxiv.org/abs/2206.08313">arXiv</a>]
 [<a href="/pdf/antidist_slides.pdf">Slides</a>]
 [<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk_1</a>]
 [<a href="https://pirsa.org/23080035">Talk_2</a>]

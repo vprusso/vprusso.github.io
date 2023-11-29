@@ -44,7 +44,7 @@ arXiv:X, (2023). <br>
 <li>
 <a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and  circulant sets of pure quantum states"</a>, <br> 
 N. Johnston, V. Russo, J. Sikora, <br>
-arXiv:X, (2023). <br> 
+arXiv:2311.17047, (2023). <br> 
 [<a href="/pdf/circulant_antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2311.17047">arXiv</a>]
 [<a href="https://github.com/vprusso/circulant_antidist">Software</a>]

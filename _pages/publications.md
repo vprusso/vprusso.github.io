@@ -20,16 +20,6 @@ permalink: /publications/
 
 <!--
 <li>
-<a href="/pdf/X.pdf">"Layerwise folding + QEM"</a>, <br> 
-V. Russo, A. Mari, <br>
-arXiv:X, (2023). <br> 
-[<a href="/pdf/X.pdf">PDF</a>]
-[<a href="https://arxiv.org/pdf/X.pdf">arXiv</a>]
-[<a href="https://github.com/X">Software</a>]
-</li>
-<br>
-
-<li>
 <a href="/pdf/X.pdf">"m-out-of-n"</a>, <br> 
 N. Johnston, V. Russo, J. Sikora, <br>
 arXiv:X, (2023). <br> 
@@ -38,8 +28,18 @@ arXiv:X, (2023). <br>
 [<a href="https://github.com/X">Software</a>]
 </li>
 <br>
+
 -->
 
+<li>
+<a href="/pdf/lre.pdf">"Quantum error mitigation by layerwise Richardson extrapolation"</a>, <br> 
+V. Russo, A. Mari, <br>
+arXiv:2402.04000, (2024). <br> 
+[<a href="/pdf/lre.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2402.04000">arXiv</a>]
+[<a href="https://github.com/unitaryfund/research/tree/main/lre">Software</a>]
+</li>
+<br>
 
 <li>
 <a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and  circulant sets of pure quantum states"</a>, <br> 

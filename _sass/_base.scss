@@ -120,33 +120,36 @@ blockquote {
     }
 }
 
-
-
 /**
- * Code formatting
+ * Code formatting optimized for Python readability
  */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
+ pre,
+ code {
+     font-family: "Courier New", Courier, monospace; /* Preferred font for code */
+     font-size: 16px; /* Slightly larger font size for readability */
+     border: 1px solid $grey-color-light; /* Light grey border */
+     border-radius: 4px; /* Rounded corners */
+     background-color: #f7f7f7; /* Light grey background for less contrast */
+     color: #333; /* Dark grey text for easy reading */
+ }
+ 
+ code {
+     padding: 2px 6px; /* Padding inside inline code elements */
+ }
+ 
+ pre {
+     padding: 10px 14px; /* Padding inside code blocks */
+     overflow-x: auto; /* Scrollbar only when necessary */
+     line-height: 1.5; /* Increased line height for better readability */
+     
+     > code {
+         border: 0; /* No border inside code blocks */
+         padding-right: 0; /* No additional right padding inside code blocks */
+         padding-left: 0; /* No additional left padding inside code blocks */
+         background-color: transparent; /* No background color change for nested code elements */
+     }
+ } 
 
-code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
 
 
 

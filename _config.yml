@@ -14,11 +14,12 @@ soundcloud: captainhampton
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 # Blog pagination and post url structure
-#permalink:     '/blog/:year/:title/'
-#paginate_path: '/blog/page:num/'
-#comments: true
+permalink:     '/blog/:year/:title/'
+paginate_path: '/blog/page:num/'
+comments: true
 
 # Pages
 include: ['_pages']

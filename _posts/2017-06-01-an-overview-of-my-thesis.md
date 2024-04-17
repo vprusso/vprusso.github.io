@@ -1,6 +1,7 @@
 ---
 layout: post
 comments: true
+usemathjax: true
 title:  "A Brief Overview of my Thesis"
 date:   2017-06-01 1:58:35
 cover_image: http://i.imgur.com/PJz6yau.png

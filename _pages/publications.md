@@ -29,10 +29,50 @@ arXiv:X, (2023). <br>
 </li>
 <br>
 
+<li>
+<a href="/pdf/wigners_friend.pdf">"Violations of local friendliness with quantum computers"</a>,<br> 
+W. Zeng, F. Labib, V. Russo,<br>
+arXiv:X, (2024).<br> 
+[<a href="/pdf/wigners_friend.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/X">arXiv</a>]
+[<a href="https://github.com/unitaryfund/research/tree/main/wigners_friend">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/local_dist.pdf">"Joint measurements offer no advantage for minimum-error sequence discrimination"</a>,<br> 
+S. Bandyopadhyay, T. Gupta, S. Mushid, V. Russo,<br>
+arXiv:X, (2024).<br> 
+[<a href="/pdf/sequence_discrimination.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/X">arXiv</a>]
+[<a href="https://github.com/vprusso/sequence_discrimination">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/local_dist.pdf">"Distinguishing a maximally entangled basis using LOCC and shared entanglement"</a>,<br> 
+S. Bandyopadhyay, V. Russo,<br>
+arXiv:X, (2024).<br>
+[<a href="/pdf/mes_basis_locc.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/X">arXiv</a>]
+[<a href="https://github.com/vprusso/X">Software</a>]
+</li>
+<br>
 -->
 
 <li>
-<a href="/pdf/lre.pdf">"Quantum error mitigation by layerwise Richardson extrapolation"</a>, <br> 
+<a href="/pdf/vqa_sep.pdf">"Schrödinger as a Quantum Programmer: Estimating Entanglement via Steering"</a>, <br> 
+A. Philip, S. Rethinasamy, V. Russo, M. Wilde, <br>
+Quantum 8, 1366, (2024). <br> 
+[<a href="https://quantum-journal.org/papers/q-2024-06-11-1366/">Link</a>]
+[<a href="/pdf/vqa_sep.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2303.07911">arXiv</a>]
+[<a href="https://arxiv.org/src/2303.07911v1/anc">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/lre.pdf">"Quantum error mitigation by layerwise Richardson extrapolation"</a>, <br>
 V. Russo, A. Mari, <br>
 arXiv:2402.04000, (2024). <br> 
 [<a href="/pdf/lre.pdf">PDF</a>]
@@ -42,9 +82,9 @@ arXiv:2402.04000, (2024). <br>
 <br>
 
 <li>
-<a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and  circulant sets of pure quantum states"</a>, <br> 
+<a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and  circulant sets of pure quantum states"</a>, <br>
 N. Johnston, V. Russo, J. Sikora, <br>
-arXiv:2311.17047, (2023). <br> 
+arXiv:2311.17047, (2023). <br>
 [<a href="/pdf/circulant_antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2311.17047">arXiv</a>]
 [<a href="https://github.com/vprusso/circulant_antidist">Software</a>]
@@ -52,9 +92,9 @@ arXiv:2311.17047, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br> 
+<a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br>
 C. Paddock, V. Russo, T. Silverthorne, W. Slofstra, <br>
-Algebraic Combinatorics, Volume 6 (2023) no. 4, pp. 1119-1162., (2023). <br> 
+Algebraic Combinatorics, Volume 6 (2023) no. 4, pp. 1119-1162., (2023). <br>
 [<a href="https://alco.centre-mersenne.org/articles/10.5802/alco.292/">Link</a>]
 [<a href="/pdf/graph_incidence_nonlocal_games.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2205.04645">arXiv</a>]
@@ -67,9 +107,9 @@ Algebraic Combinatorics, Volume 6 (2023) no. 4, pp. 1119-1162., (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br> 
+<a href="/pdf/qem_in_practice.pdf">"Testing platform-independent quantum error mitigation on noisy quantum computers"</a>,<br>
 V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng,<br>
-IEEE Transactions on Quantum Engineering, Volume 4, (2023).<br> 
+IEEE Transactions on Quantum Engineering, Volume 4, (2023).<br>
 [<a href="https://ieeexplore.ieee.org/document/10219054">Link</a>]
 [<a href="/pdf/qem_in_practice.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2210.07194">arXiv</a>]
@@ -79,9 +119,9 @@ IEEE Transactions on Quantum Engineering, Volume 4, (2023).<br>
 <br>
 
 <li>
-<a href="/pdf/antidist.pdf">"Inner products of pure states and their antidistinguishability"</a>, <br> 
+<a href="/pdf/antidist.pdf">"Inner products of pure states and their antidistinguishability"</a>, <br>
 V. Russo, J. Sikora, <br>
-Physical Review A, Vol. 107, No. 3, (2023). <br> 
+Physical Review A, Vol. 107, No. 3, (2023). <br>
 [<a href="https://link.aps.org/doi/10.1103/PhysRevA.107.L030202">Link</a>]
 [<a href="/pdf/antidist.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2206.08313">arXiv</a>]
@@ -93,7 +133,7 @@ Physical Review A, Vol. 107, No. 3, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br> 
+<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br>
 E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
 arXiv:2306.15863, (2023). <br> 
 [<a href="/pdf/qv_zne.pdf">PDF</a>]
@@ -103,17 +143,7 @@ arXiv:2306.15863, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/vqa_sep.pdf">"Quantum steering algorithms for estimating fidelity of separability"</a>, <br> 
-A. Philip, S. Rethinasamy, V. Russo, M. Wilde, <br>
-arXiv:2303.07911, (2023). <br> 
-[<a href="/pdf/vqa_sep.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2303.07911">arXiv</a>]
-[<a href="https://arxiv.org/src/2303.07911v1/anc">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br> 
+<a href="/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br>
 R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng,<br>
 arXiv:2203.05489, (2022).<br> 
 [<a href="/pdf/qv.pdf">PDF</a>]
@@ -124,7 +154,7 @@ arXiv:2203.05489, (2022).<br>
 <br>
 
 <li>
-<a href="/pdf/noisy_bell.pdf">"Entanglement cost of discriminating noisy Bell states by local operations and classical communication"</a>,<br> 
+<a href="/pdf/noisy_bell.pdf">"Entanglement cost of discriminating noisy Bell states by local operations and classical communication"</a>,<br>
 S. Bandyopadhyay, V. Russo,<br>
 Physical Review A, Vol. 104, No. 3, (2021).<br> 
 [<a href="https://link.aps.org/doi/10.1103/PhysRevA.104.032429">Link</a>]
@@ -135,7 +165,7 @@ Physical Review A, Vol. 104, No. 3, (2021).<br>
 <br>
 
 <li>
-<a href="/pdf/toqito.pdf">"toqito--Theory of quantum information toolkit: A Python package for studying quantum information"</a>,<br> 
+<a href="/pdf/toqito.pdf">"toqito--Theory of quantum information toolkit: A Python package for studying quantum information"</a>,<br>
 V. Russo,<br>
 Journal of Open Source Software, 6(61), 3082, (2021).<br> 
 [<a href="https://joss.theoj.org/papers/10.21105/joss.03082">Link</a>]
@@ -149,7 +179,7 @@ Journal of Open Source Software, 6(61), 3082, (2021).<br>
 <br>
 
 <li>
-<a href="https://arxiv.org/pdf/1709.01837.pdf">"Extended nonlocal games from quantum-classical games"</a>,<br> 
+<a href="https://arxiv.org/pdf/1709.01837.pdf">"Extended nonlocal games from quantum-classical games"</a>,<br>
 V. Russo, J. Watrous,<br>
 Chicago Journal of Theoretical Computer Science, Volume: 2018, Article: 4, (2018).<br> 
 [<a href="http://cjtcs.cs.uchicago.edu/articles/2018/4/contents.html">Link</a>]
@@ -161,7 +191,7 @@ Chicago Journal of Theoretical Computer Science, Volume: 2018, Article: 4, (2018
 <br>
 
 <li>
-<a href="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</a>,<br> 
+<a href="http://arxiv.org/pdf/1310.7954v3.pdf">"Quantum hedging in two-round prover-verifier interactions"</a>,<br>
 S. Arunachalam, A. Molina, V. Russo,<br>
 Theory of Quantum Computation, Communication, and Cryptography (TQC), (2017).<br> 
 [<a href="http://tqc2017.lip6.fr/program.html">Link</a>]
@@ -174,7 +204,7 @@ Theory of Quantum Computation, Communication, and Cryptography (TQC), (2017).<br
 <br>
 
 <li> 
-<a href="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</a>,<br> 
+<a href="http://arxiv.org/pdf/1510.02083v2.pdf">"Extended nonlocal games and monogamy-of-entanglement games"</a>,<br>
 N. Johnston, R. Mittal, V. Russo, J. Watrous,<br>
 Proceedings of the Royal Society A, Volume: 472 Issue: 2189, (2016).<br> 
 [<a href="http://rspa.royalsocietypublishing.org/content/472/2189/20160003.abstract">Link</a>]
@@ -212,7 +242,7 @@ Quantum Information & Computation, 15(7&8):0694-0720, (2015).<br>
 <li>
 <a href="http://arxiv.org/pdf/1308.4134v1.pdf">"An algorithm for the T-count"</a>,<br>
 D. Gosset, V. Kliuchnikov, M. Mosca, V. Russo,<br>
-Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014).<br> 
+Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014).<br>
 [<a href="http://dl.acm.org/citation.cfm?id=2685180">Link</a>]
 [<a href="/pdf/t_count.pdf">PDF</a>]
 [<a href="/pdf/t_count_poster.pdf">Poster</a>]
@@ -224,7 +254,7 @@ Quantum Information & Computation, Volume 14 Issue 15-16, Pages 1261-1276 (2014)
 <li>
 <a href="http://arxiv.org/pdf/1307.3232v2.pdf">"Small sets of locally indistinguishable orthogonal maximally entangled states"</a>,<br>
 A. Cosentino, V. Russo,<br>
-Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014).<br> 
+Quantum Information & Computation, Volume 14 Issue 13-14, Pages 1098-1106, (2014).<br>
 [<a href="http://dl.acm.org/citation.cfm?id=2685167">Link</a>]
 [<a href="/pdf/small_sets.pdf">PDF</a>]
 [<a href="/pdf/small_sets_poster.pdf">Poster</a>]

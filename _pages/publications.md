@@ -49,19 +49,19 @@ arXiv:X, (2024).<br>
 </li>
 <br>
 
-<li>
-<a href="/pdf/local_dist.pdf">"Distinguishing a maximally entangled basis using LOCC and shared entanglement"</a>,<br> 
-S. Bandyopadhyay, V. Russo,<br>
-arXiv:X, (2024).<br>
-[<a href="/pdf/mes_basis_locc.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/X">arXiv</a>]
-[<a href="https://github.com/vprusso/X">Software</a>]
-</li>
-<br>
 -->
 
 <li>
-<a href="/pdf/vqa_sep.pdf">"Schrödinger as a Quantum Programmer: Estimating Entanglement via Steering"</a>, <br> 
+<a href="/pdf/mes_local_dist.pdf">"Distinguishing a maximally entangled basis using LOCC and shared entanglement"</a>,<br>
+S. Bandyopadhyay, V. Russo,<br>
+arXiv:2406.13430, (2024).<br>
+[<a href="/pdf/mes_local_dist.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2406.13430">arXiv</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/vqa_sep.pdf">"Schrödinger as a Quantum Programmer: Estimating Entanglement via Steering"</a>, <br>
 A. Philip, S. Rethinasamy, V. Russo, M. Wilde, <br>
 Quantum 8, 1366, (2024). <br> 
 [<a href="https://quantum-journal.org/papers/q-2024-06-11-1366/">Link</a>]

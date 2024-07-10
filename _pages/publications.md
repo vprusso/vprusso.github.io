@@ -61,7 +61,7 @@ arXiv:2406.13430, (2024).<br>
 <br>
 
 <li>
-<a href="/pdf/vqa_sep.pdf">"Schrödinger as a Quantum Programmer: Estimating Entanglement via Steering"</a>, <br>
+<a href="/pdf/vqa_sep.pdf">"Schrödinger as a quantum programmer: Estimating entanglement via steering"</a>, <br>
 A. Philip, S. Rethinasamy, V. Russo, M. Wilde, <br>
 Quantum 8, 1366, (2024). <br> 
 [<a href="https://quantum-journal.org/papers/q-2024-06-11-1366/">Link</a>]

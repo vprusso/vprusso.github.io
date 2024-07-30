@@ -52,6 +52,17 @@ arXiv:X, (2024).<br>
 -->
 
 <li>
+<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br>
+E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
+ACM Transactions on Quantum Computing, (2024). <br> 
+[<a href="https://dl.acm.org/doi/10.1145/3680290">Link</a>]
+[<a href="/pdf/qv_zne.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2306.15863">arXiv</a>]
+[<a href="https://github.com/unitaryfund/research">Software</a>]
+</li>
+<br>
+
+<li>
 <a href="/pdf/mes_local_dist.pdf">"Distinguishing a maximally entangled basis using LOCC and shared entanglement"</a>,<br>
 S. Bandyopadhyay, V. Russo,<br>
 arXiv:2406.13430, (2024).<br>
@@ -129,16 +140,6 @@ Physical Review A, Vol. 107, No. 3, (2023). <br>
 [<a href="https://www.youtube.com/watch?v=NSUQb3kaCVU">Talk_1</a>]
 [<a href="https://pirsa.org/23080035">Talk_2</a>]
 [<a href="https://github.com/vprusso/antidist">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br>
-E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
-arXiv:2306.15863, (2023). <br> 
-[<a href="/pdf/qv_zne.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2306.15863">arXiv</a>]
-[<a href="https://github.com/unitaryfund/research">Software</a>]
 </li>
 <br>
 

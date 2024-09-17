@@ -47,6 +47,7 @@ T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay<br>
 arXiv:2409.08705, (2024).<br> 
 [<a href="/pdf/sequence_discrimination.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2409.08705">arXiv</a>]
+[<a href="/pdf/sequence_discrimination_poster.pdf">Poster</a>]
 [<a href="https://github.com/vprusso/sequence_discrimination">Software</a>]
 </li>
 <br>

@@ -30,7 +30,7 @@ arXiv:X, (2023). <br>
 <br>
 
 <li>
-<a href="/pdf/wigners_friend.pdf">"Violations of local friendliness with quantum computers"</a>,<br> 
+<a href="/pdf/wigners_friend.pdf">"Towards violations of Local Friendliness with quantum computers"</a>,<br> 
 W. Zeng, F. Labib, V. Russo,<br>
 arXiv:X, (2024).<br> 
 [<a href="/pdf/wigners_friend.pdf">PDF</a>]
@@ -39,17 +39,17 @@ arXiv:X, (2024).<br>
 </li>
 <br>
 
+-->
+
 <li>
-<a href="/pdf/local_dist.pdf">"Joint measurements offer no advantage for minimum-error sequence discrimination"</a>,<br> 
-S. Bandyopadhyay, T. Gupta, S. Mushid, V. Russo,<br>
-arXiv:X, (2024).<br> 
+<a href="/pdf/sequence_discrimination.pdf">"Optimal discrimination of quantum sequences"</a>, <br> 
+T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay<br>
+arXiv:2409.08705, (2024).<br> 
 [<a href="/pdf/sequence_discrimination.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/X">arXiv</a>]
+[<a href="https://arxiv.org/abs/2409.08705">arXiv</a>]
 [<a href="https://github.com/vprusso/sequence_discrimination">Software</a>]
 </li>
 <br>
-
--->
 
 <li>
 <a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br>
@@ -68,6 +68,7 @@ S. Bandyopadhyay, V. Russo,<br>
 arXiv:2406.13430, (2024).<br>
 [<a href="/pdf/mes_local_dist.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2406.13430">arXiv</a>]
+[<a href="https://github.com/vprusso/toqito/tree/master/toqito/state_opt">Software</a>]
 </li>
 <br>
 

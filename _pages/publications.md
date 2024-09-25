@@ -29,17 +29,19 @@ arXiv:X, (2023). <br>
 </li>
 <br>
 
+
+-->
+
 <li>
 <a href="/pdf/wigners_friend.pdf">"Towards violations of Local Friendliness with quantum computers"</a>,<br> 
 W. Zeng, F. Labib, V. Russo,<br>
-arXiv:X, (2024).<br> 
+arXiv:2409.15302, (2024).<br> 
 [<a href="/pdf/wigners_friend.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/X">arXiv</a>]
+[<a href="https://arxiv.org/abs/2409.15302">arXiv</a>]
+[<a href="/pdf/wigners_friend_poster.pdf">Poster</a>]
 [<a href="https://github.com/unitaryfund/research/tree/main/wigners_friend">Software</a>]
 </li>
 <br>
-
--->
 
 <li>
 <a href="/pdf/sequence_discrimination.pdf">"Optimal discrimination of quantum sequences"</a>, <br> 

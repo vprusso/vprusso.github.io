@@ -21,18 +21,6 @@ permalink: /projects/
 
 <div class="row">
     <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/unitaryfund/metriq-app">metriq</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=unitaryfund&repo=metriq-app&type=star&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=unitaryfund&repo=metriq-app&type=fork&count=true&v=2"
-      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> Platform for tracking quantum computing benchmarks hosted at <a href="https://metriq.info/">metriq.info</a>. Co-developed with <a href="http://ultraphrenia.com/">Dan Strano</a>.</p>
-      <p style="font-size:80%;">Press: <a href="https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime">PRNewswire press release</a>, <a href="https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/">QC Report</a>, <a href="https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/">Quantum Insider</a>.</p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
       <h3 style="font-size:130%;"><a href="https://github.com/vprusso/toqito">toqito</a></h3>
       <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=toqito&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
@@ -41,19 +29,19 @@ permalink: /projects/
       <p style="font-size:80%;"> An open source Python library for studying
       various objects in quantum information, namely, states, channels, and
       measurements. </p>
-      <p style="font-size:80%;">Press: <a href="https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/">QuantumInsider</a>.</p>
+      <p style="font-size:80%;">Press: <a href="https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/">QuantumInsider</a>, <a href="https://www.kaicode.org/2024.html">KaiCode24</a>, <a href="https://numfocus.org/sponsored-projects/affiliated-projects">NumFOCUS</a>.</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-3">
-      <h3 style="font-size:130%;"><a href="https://github.com/vprusso/qustop">qustop</a></h3>
-      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=qustop&type=star&count=true&v=2"
+      <h3 style="font-size:130%;"><a href="https://github.com/unitaryfund/metriq-app">metriq</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=unitaryfund&repo=metriq-app&type=star&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=qustop&type=fork&count=true&v=2"
+        <iframe src="https://ghbtns.com/github-btn.html?user=unitaryfund&repo=metriq-app&type=fork&count=true&v=2"
       frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-      <p style="font-size:80%;"> An open source Python module for investigating
-      various problems in quantum state optimization.</p>
+      <p style="font-size:80%;"> Platform for tracking quantum computing benchmarks hosted at <a href="https://metriq.info/">metriq.info</a>. Co-developed with <a href="http://ultraphrenia.com/">Dan Strano</a>.</p>
+      <p style="font-size:80%;">Press: <a href="https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime">PRNewswire press release</a>, <a href="https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/">QC Report</a>, <a href="https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/">Quantum Insider</a>.</p>
     </div>
 </div>
 
@@ -82,6 +70,17 @@ permalink: /projects/
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-3">
+      <h3 style="font-size:130%;"><a href="https://github.com/vprusso/qustop">qustop</a></h3>
+      <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=qustop&type=star&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=vprusso&repo=qustop&type=fork&count=true&v=2"
+      frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+      <p style="font-size:80%;"> An open source Python module for investigating
+      various problems in quantum state optimization.</p>
+    </div>
+</div>
 
 <div class="row">
     <div class="col-md-3">

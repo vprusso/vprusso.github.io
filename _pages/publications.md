@@ -28,8 +28,6 @@ arXiv:X, (2023). <br>
 [<a href="https://github.com/X">Software</a>]
 </li>
 <br>
-
-
 -->
 
 <li>
@@ -55,6 +53,27 @@ arXiv:2409.08705, (2024).<br>
 <br>
 
 <li>
+<a href="/pdf/lre.pdf">"Quantum error mitigation by layerwise Richardson extrapolation"</a>, <br>
+V. Russo, A. Mari, <br>
+arXiv:2402.04000, (2024). <br> 
+[<a href="/pdf/lre.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2402.04000">arXiv</a>]
+[<a href="https://github.com/unitaryfund/research/tree/main/lre">Software</a>]
+</li>
+<br>
+
+<li>
+<a href="/pdf/mes_local_dist.pdf">"Distinguishing a maximally entangled basis using LOCC and shared entanglement"</a>,<br>
+S. Bandyopadhyay, V. Russo,<br>
+Physical Review A 110, 042406, (2024).<br>
+[<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.042406">Link</a>]
+[<a href="/pdf/mes_local_dist.pdf">PDF</a>]
+[<a href="https://arxiv.org/abs/2406.13430">arXiv</a>]
+[<a href="https://github.com/vprusso/toqito/tree/master/toqito/state_opt">Software</a>]
+</li>
+<br>
+
+<li>
 <a href="/pdf/qv_zne.pdf">"Increasing the measured effective quantum volume with zero-noise extrapolation"</a>, <br>
 E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng<br>
 ACM Transactions on Quantum Computing, (2024). <br> 
@@ -62,16 +81,6 @@ ACM Transactions on Quantum Computing, (2024). <br>
 [<a href="/pdf/qv_zne.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2306.15863">arXiv</a>]
 [<a href="https://github.com/unitaryfund/research">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/mes_local_dist.pdf">"Distinguishing a maximally entangled basis using LOCC and shared entanglement"</a>,<br>
-S. Bandyopadhyay, V. Russo,<br>
-arXiv:2406.13430, (2024).<br>
-[<a href="/pdf/mes_local_dist.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2406.13430">arXiv</a>]
-[<a href="https://github.com/vprusso/toqito/tree/master/toqito/state_opt">Software</a>]
 </li>
 <br>
 
@@ -87,17 +96,7 @@ Quantum 8, 1366, (2024). <br>
 <br>
 
 <li>
-<a href="/pdf/lre.pdf">"Quantum error mitigation by layerwise Richardson extrapolation"</a>, <br>
-V. Russo, A. Mari, <br>
-arXiv:2402.04000, (2024). <br> 
-[<a href="/pdf/lre.pdf">PDF</a>]
-[<a href="https://arxiv.org/abs/2402.04000">arXiv</a>]
-[<a href="https://github.com/unitaryfund/research/tree/main/lre">Software</a>]
-</li>
-<br>
-
-<li>
-<a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and  circulant sets of pure quantum states"</a>, <br>
+<a href="/pdf/circulant_antidist.pdf">"Tight bounds for antidistinguishability and circulant sets of pure quantum states"</a>, <br>
 N. Johnston, V. Russo, J. Sikora, <br>
 arXiv:2311.17047, (2023). <br>
 [<a href="/pdf/circulant_antidist.pdf">PDF</a>]
@@ -105,6 +104,7 @@ arXiv:2311.17047, (2023). <br>
 [<a href="https://github.com/vprusso/circulant_antidist">Software</a>]
 </li>
 <br>
+
 
 <li>
 <a href="/pdf/graph_incidence_nonlocal_games.pdf">"Arkhipov's theorem, graph minors, and linear system nonlocal games"</a>, <br>

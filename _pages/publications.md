@@ -339,6 +339,13 @@ AIChE (American Institute of Chemical Engineers), (2011).
 <ol reversed>
 
 <li>
+<a href="https://vprusso.github.io/pdf/wigners_friend.pdf">"Quantinuum Nexus Prepares to Exit Beta with Comprehensive
+Quantum Workflow Support"</a>,<br>
+[<a href="https://thequantuminsider.com/2024/11/20/quantinuum-nexus-prepares-to-exits-beta-with-comprehensive-quantum-workflow-support/">Quantum Insider</a>]
+</li>
+<br>
+
+<li>
 <a href="https://vprusso.github.io/pdf/qv.pdf">"Error mitigation increases the effective quantum volume of quantum computers"</a>,<br>
 [<a href="https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/">Quantum Insider</a>]
 </li>

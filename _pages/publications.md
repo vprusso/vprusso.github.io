@@ -55,7 +55,8 @@ arXiv:2409.08705, (2024).<br>
 <li>
 <a href="/pdf/lre.pdf">"Quantum error mitigation by layerwise Richardson extrapolation"</a>, <br>
 V. Russo, A. Mari, <br>
-arXiv:2402.04000, (2024). <br> 
+Physical Review A 110, 062420, (2024). <br> 
+[<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062420">Link</a>]
 [<a href="/pdf/lre.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2402.04000">arXiv</a>]
 [<a href="https://github.com/unitaryfund/research/tree/main/lre">Software</a>]

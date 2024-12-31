@@ -44,7 +44,8 @@ arXiv:2409.15302, (2024).<br>
 <li>
 <a href="/pdf/sequence_discrimination.pdf">"Optimal discrimination of quantum sequences"</a>, <br> 
 T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay<br>
-arXiv:2409.08705, (2024).<br> 
+Physical Review A, 110, 062426, (2024).<br> 
+[<a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062426">Link</a>]
 [<a href="/pdf/sequence_discrimination.pdf">PDF</a>]
 [<a href="https://arxiv.org/abs/2409.08705">arXiv</a>]
 [<a href="/pdf/sequence_discrimination_poster.pdf">Poster</a>]

@@ -1,0 +1,56 @@
+{{ define "main" }}
+<div class="post">
+  <h1 class="post-title"></h1>
+
+  <div class="ascii-art">
+    <pre>
+ _  _    ___  _  _   
+| || |  / _ \| || |  
+| || |_| | | | || |_ 
+|__   _| |_| |__   _|
+   |_|  \___/   |_|  
+                      
+> ERROR: PAGE_NOT_FOUND
+> SYSTEM: REBOOTING...
+</pre
+    >
+  </div>
+
+  <div class="error-message">
+    <p>$ cat /var/log/errors.log</p>
+    <p>Error 404: Page not found</p>
+    <p>$ cd /home</p>
+    <p><a href="{{ .Site.BaseURL }}">Return to home</a></p>
+  </div>
+
+  <style>
+    .ascii-art {
+      font-family: monospace;
+      white-space: pre;
+      text-align: center;
+      margin: 2em 0;
+      line-height: 1.2;
+    }
+
+    .error-message {
+      font-family: "JetBrains Mono", monospace;
+      color: var(--accent);
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    .error-message p {
+      margin: 0.5em 0;
+    }
+
+    .error-message a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .error-message a:hover {
+      text-decoration: none;
+    }
+  </style>
+</div>
+{{ end }}

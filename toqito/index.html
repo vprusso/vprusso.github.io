@@ -1,0 +1,128 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- COMMON TAGS -->
+    <title>toqito - Theory of Quantum Information Toolkit</title>
+    <!-- Search Engine -->
+    <meta name="description" content="An open source Python library for studying various objects in quantum information." />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="toqito - Theory of Quantum Information Toolkit" />
+    <meta itemprop="description" content="An open source Python library for studying various objects in quantum information." />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="toqito - Theory of Quantum Information Toolkit" />
+    <meta name="twitter:description" content="An open source Python library for studying various objects in quantum information." />
+    <meta name="twitter:creator" content="@captainhamptons" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="toqito - Theory of Quantum Information Toolkit" />
+    <meta name="og:description" content="An open source Python library for studying various objects in quantum information." />
+    <meta name="og:url" content="https://toqito.github.io" />
+    <meta name="og:site_name" content="toqito" />
+    <meta name="og:locale" content="en_US" />
+    <meta name="og:type" content="website" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="/css/foundation.min.css" />
+    <link rel="stylesheet" href="/css/code-styles/atom-one-light.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,500" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="small-1">
+          <!-- GUTTER -->
+        </div>
+        <div class="small-10">
+          <div class="grid-x grid-margin-x">
+            <div class="small-12 large-2">
+              <img class="logo" src="/images/Logo.svg" alt="toqito Logo" />
+            </div>
+            <div class="small-12 large-10 nav">
+              <a href="https://toqito.readthedocs.io/en/latest/">Documentation</a>
+              <a href="https://toqito.readthedocs.io/en/latest/tutorials.html">Tutorial</a>
+              <a href="https://toqito.readthedocs.io/en/latest/getting_started.html">Install</a>
+              <a href="https://vprusso.github.io/toqito_slides/">Slides</a>
+            </div>
+          </div>
+
+          <div class="grid-x grid-margin-x section-2">
+            <div class="medium-7 small-12">
+              <p class="pitch"><b>toqito</b> is an open source Python library for studying various objects in quantum information.
+            </div>
+            <div class="medium-1"></div>
+            <div class="medium-4 small-12">
+              <a href="https://github.com/vprusso/toqito" class="button medium expanded"> <i class="fab fa-github"></i> 
+                  GitHub Repository
+              </a>
+              <a href="https://toqito.readthedocs.io/en/latest/" class="button medium expanded">
+                Read The User Guide
+              </a>
+            </div>
+          </div>
+          <div class="grid-x grid-padding-x">
+            <div class="features medium-3 small-12">
+              <ul>
+                <div class="grid-x grid-padding-x">
+                  <div class="medium-11 small-6">
+                    <li>Estimate quantum and classical values of nonlocal games.</li>
+                    <li>Optimizations for quantum state distinguishability scenarios.</li>
+                    <li>Functions for exploring measures of entanglement and entangled states.</li>
+                    <li>Perform operations on and determine properties of quantum states, channels, and measurements.</li>
+                  </div>
+                  <div class="medium-2"></div>
+                  <div class="medium-11 small-6">
+                    <li>Support for generating random quantum states and measurement operators.</li>
+                    <li>Pure Python module that easily integrates into existing projects.</li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="medium-1"></div>
+            <div class="medium-8 small-12">
+              <pre><code class="python">>>> # Calculate the classical and quantum value of the CHSH game.
+>>> import numpy as np
+>>> from toqito.nonlocal_games.xor_game import XORGame
+>>> 
+>>> # The probability matrix.
+>>> prob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])
+>>> 
+>>> # The predicate matrix.
+>>> pred_mat = np.array([[0, 0], [0, 1]])
+>>> 
+>>> # Define CHSH game from matrices.
+>>> chsh = XORGame(prob_mat, pred_mat)
+>>> 
+>>> chsh.classical_value()
+0.75
+>>> chsh.quantum_value()
+0.8535533
+
+</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="small-1">
+          <!-- GUTTER -->
+        </div>
+      </div>
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>

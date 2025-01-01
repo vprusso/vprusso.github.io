@@ -1,0 +1,16 @@
+.footer {
+  text-align: center !important;
+  color: var(--accent);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer__inner {
+  width: 100%;
+  justify-content: center !important;
+  flex-direction: column !important;
+}
+
+.footer a {
+  margin: 0 auto !important;
+}

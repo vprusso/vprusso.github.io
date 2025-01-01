@@ -101,7 +101,7 @@ title = "Vincent Russo"
         olderPosts = "Older posts"
       [languages.en.params.logo]
         logoText = "|vincent><russo|"
-        logoHomeLink = "/about"
+        logoHomeLink = "/"
 
 # [module]
 #   # In case you would like to make changes to the theme and keep it locally in you repository,

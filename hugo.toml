@@ -11,6 +11,7 @@ theme = "terminal"
 title = "Vincent Russo"
 
 [params]
+  math = true
   # dir name of your main content (default is `content/posts`).
   # the list of set content will show up on your index page (baseurl).
   homeContent = "/about/"
@@ -102,6 +103,15 @@ title = "Vincent Russo"
       [languages.en.params.logo]
         logoText = "|vincent><russo|"
         logoHomeLink = "/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
 
 # [module]
 #   # In case you would like to make changes to the theme and keep it locally in you repository,

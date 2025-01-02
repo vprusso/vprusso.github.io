@@ -27,8 +27,8 @@ title = "code"
     A Python wrapper for extracting quantum information paper data from [Scirate](https://scirate.com/).
     [GitHub](https://github.com/vprusso/scirate)
 
-- [qustop](https://github.com/vprusso/qustop)   
-    An open-source Python module for investigating various problems in quantum state optimization.
+- [qustop](https://github.com/vprusso/qustop)  
+    An open-source Python module for investigating various problems in quantum state optimization.   
     [GitHub](https://github.com/vprusso/qustop)
 
 - [GOMC](https://github.com/GOMC-WSU/GOMC)  
@@ -36,7 +36,7 @@ title = "code"
     [GitHub](https://github.com/GOMC-WSU/GOMC)
 
 - [youtube_tutorials](https://github.com/vprusso/youtube_tutorials)  
-    Companion code for the programming tutorials on my [LucidProgramming YouTube channel](http://bit.ly/lucidcode).
+    Companion code for the programming tutorials on my [LucidProgramming channel](http://bit.ly/lucidcode).   
     [GitHub](https://github.com/vprusso/youtube_tutorials) |
     [YouTube](https://www.youtube.com/channel/UCFxcvyt2Ucq5IL0_1Njzqlg)
 

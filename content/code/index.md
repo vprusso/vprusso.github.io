@@ -20,7 +20,7 @@ title = "code"
    Platform for tracking quantum computing benchmarks hosted at [metriq.info](https://metriq.info/). Co-developed with [Dan Strano](http://ultraphrenia.com/).  
     [GitHub](https://github.com/unitaryfund/metriq-app) |
     [PRNewswire](https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime) |
-    [QC-Report](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/)
+    [QC-Report](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/) |
     [QuantumInsider](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)
 
 - [scirate](https://github.com/vprusso/scirate)   
@@ -29,11 +29,13 @@ title = "code"
 
 - [qustop](https://github.com/vprusso/qustop)  
     An open-source Python module for investigating various problems in quantum state optimization.   
-    [GitHub](https://github.com/vprusso/qustop)
+    [GitHub](https://github.com/vprusso/qustop) |
+    [Docs](https://qustop.readthedocs.io/en/latest/)
 
 - [GOMC](https://github.com/GOMC-WSU/GOMC)  
     An open-source Monte Carlo simulation engine written in C++ using the CUDA wrapper. I worked on an early version of this software during my Master's.
-    [GitHub](https://github.com/GOMC-WSU/GOMC)
+    [GitHub](https://github.com/GOMC-WSU/GOMC) |
+    [Website](https://gomc-wsu.org/)
 
 - [youtube_tutorials](https://github.com/vprusso/youtube_tutorials)  
     Companion code for the programming tutorials on my [LucidProgramming channel](http://bit.ly/lucidcode).   

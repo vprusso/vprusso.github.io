@@ -53,7 +53,7 @@ title = "papers"
    *Quantum 8, 1366, (2024)*.   
    [Link](https://quantum-journal.org/papers/q-2024-06-11-1366/) | 
    [PDF](/pdf/vqa_sep.pdf) | 
-   [arXiv](https://arxiv.org/abs/2303.07911) | k
+   [arXiv](https://arxiv.org/abs/2303.07911) |
    [Software](https://arxiv.org/src/2303.07911v1/anc)
 
 - ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  

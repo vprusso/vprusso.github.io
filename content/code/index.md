@@ -2,7 +2,8 @@
 title = "code"
 +++
 
-### Software Projects:
+Most of my code is closed-source. The following is a sampling of open-source projects that I either created or am a
+primary contributor to.
 
 ---
 
@@ -16,12 +17,17 @@ title = "code"
    [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/)
 
 
-- [metriq](https://github.com/unitaryfund/metriq-app)  
-   Platform for tracking quantum computing benchmarks hosted at [metriq.info](https://metriq.info/). Co-developed with [Dan Strano](http://ultraphrenia.com/).  
+- [metriq](https://metriq.info/)  
+   Web platform for tracking quantum computing benchmarks. Co-developed with [Dan Strano](http://ultraphrenia.com/).  
     [GitHub](https://github.com/unitaryfund/metriq-app) |
     [PRNewswire](https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime) |
     [QC-Report](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/) |
     [QuantumInsider](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)
+
+- [metriq-gym](https://github.com/unitaryfund/metriq-gym)  
+    Python API for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.
+    Co-developed with other members at the [UnitaryFund](https://unitary.fund/).   
+    [GitHub](https://github.com/unitaryfund/metriq-gym)
 
 - [scirate](https://github.com/vprusso/scirate)   
     A Python wrapper for extracting quantum information paper data from [Scirate](https://scirate.com/).
@@ -37,6 +43,10 @@ title = "code"
     [GitHub](https://github.com/GOMC-WSU/GOMC) |
     [Website](https://gomc-wsu.org/)
 
+- [triforce](https://github.com/vprusso/triforce)  
+    A Python package to study the numerical properties of triangular arrays.   
+    [GitHub](https://github.com/vprusso/triforce)
+
 - [youtube_tutorials](https://github.com/vprusso/youtube_tutorials)  
     Companion code for the programming tutorials on my [LucidProgramming channel](http://bit.ly/lucidcode).   
     [GitHub](https://github.com/vprusso/youtube_tutorials) |
@@ -50,7 +60,7 @@ title = "code"
     The LucidProgramming YouTube channel is where I post various instructional videos on software development topics.
 
 - [Nonlocal Podcast](https://nonlocal.libsyn.com/)   
-    Co-host of the "Nonlocal Podcast"—a podcast about various aspects of quantum computing.
+    Co-host of the "Nonlocal Podcast"; a podcast about various aspects of quantum computing.
 
 - [Data Structures and Algorithms in Python](https://www.educative.io/courses/ds-and-algorithms-in-python)    
     I partnered with Educative to produce a course to teach data structures and algorithms in Python.

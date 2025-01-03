@@ -231,25 +231,25 @@ title = "papers"
 ---
 
 - ["Quantinuum Nexus prepares to exit beta with comprehensive quantum workflow support"](https://thequantuminsider.com/2024/11/20/quantinuum-nexus-prepares-to-exits-beta-with-comprehensive-quantum-workflow-support/)  
-   *Quantum Insider, (2024)*   
+   *Quantum Insider, (2024)*.  
    [Link](https://thequantuminsider.com/2024/11/20/quantinuum-nexus-prepares-to-exits-beta-with-comprehensive-quantum-workflow-support/) | 
    [PDF](/pdf/wigners_friend.pdf)
 
 - ["Error mitigation increases the effective quantum volume of quantum computers"](https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/)  
-   *Quantum Insider, (2022)*  
+   *Quantum Insider, (2022)*.   
    [Link](https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/) |
    [PDF](/pdf/qv.pdf)
 
 - ["Metriq: Platform for tracking quantum computing benchmarks"](https://metriq.info/)  
-   *Quantum Computing Report, (2022)*   
+   *Quantum Computing Report, (2022)*.   
    [Link](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/) 
    
 - ["Online platform offers access to quantum technology benchmarks"](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)  
-   *Quantum Insider, (2022)*   
+   *Quantum Insider, (2022)*.  
    [Link](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)
 
 - ["toqito: Theory of quantum information toolkit in Python"](https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/)  
-   *Quantum Insider, (2022)*  
+   *Quantum Insider, (2022)*.  
    [Link](https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/)
 
 ### Talks

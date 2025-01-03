@@ -3,7 +3,7 @@ draft = false
 title = 'about'
 +++
 
-Hi 👋 I am Vincent Russo
+Hi 👋 I am Vincent Russo (PhD)
 
 I am a computer scientist specializing in the field of quantum computation.
 

@@ -312,7 +312,7 @@ title = "papers"
    [arXiv](https://arxiv.org/abs/1704.07375) | 
    [Software](https://github.com/vprusso/phd_thesis)
 
-- ["Applications of lindenmayer systems to quantum computation and quantum information" (Masters Thesis)](https://digitalcommons.wayne.edu/oa_theses/165/)   
+- ["Applications of Lindenmayer systems to quantum computation and quantum information" (Masters Thesis)](https://digitalcommons.wayne.edu/oa_theses/165/)   
    *V. Russo*,    
    *Wayne State University, (2011)*.  
    [Link](https://digitalcommons.wayne.edu/oa_theses/165/) |

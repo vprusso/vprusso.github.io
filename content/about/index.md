@@ -13,10 +13,9 @@ with my extensive software development skills and experience to tackle questions
 and quantum information [(papers)](/papers).
 
 I have over a decade of experience in creating robust software solutions and have worked in a wide variety of technical
-domains, including cryptography, GPU-driven research, numerical optimization, web, and automation services.
-Additionally, I have published several peer-reviewed journal articles in areas including computer science and quantum
-information ([code](/code)).
+domains, including cryptography, GPU-driven research, numerical optimization, scientific programming, web, and
+automation services ([code](/code)).
 
-When I'm not programming or doing research, I like to [play guitar](https://www.youtube.com/watch?v=DpjVJ76pLMY), [teach
-programming](http://bit.ly/lucidcode), [read books](https://www.goodreads.com/captainhampton), [write](/posts), and [play Jurassic Park
-II on SNES really quickly](http://speeddemosarchive.com/JurassicPark2SNES.html).
+When I'm not programming or doing research, I like to [play guitar](https://www.youtube.com/watch?v=DpjVJ76pLMY),
+[teach](http://bit.ly/lucidcode), [read](https://www.goodreads.com/captainhampton), [write](/posts), and [play Jurassic
+Park II on SNES really quickly](http://speeddemosarchive.com/JurassicPark2SNES.html).

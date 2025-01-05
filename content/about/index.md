@@ -9,8 +9,8 @@ I am a computer scientist specializing in the field of quantum computation.
 
 My primary research interests pertain to solving mathematical and computational problems within the field of quantum
 information theory. Specifically, I leverage the tools of matrix analysis, linear algebra, and convex optimization along
-with my extensive software development skills and experience to tackle questions in the theory of quantum entanglement
-and quantum information [(papers)](/papers).
+with my software development skills and experience to tackle questions in the theory of quantum entanglement and quantum
+information [(papers)](/papers).
 
 I have over a decade of experience in creating robust software solutions and have worked in a wide variety of technical
 domains, including cryptography, GPU-driven research, numerical optimization, scientific programming, web, and

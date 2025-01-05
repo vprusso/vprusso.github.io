@@ -91,8 +91,8 @@ title = "papers"
     [PDF](/pdf/antidist.pdf) | 
     [arXiv](https://arxiv.org/abs/2206.08313) | 
     [Slides](/pdf/antidist_slides.pdf) | 
-    [Video_1](https://www.youtube.com/watch?v=NSUQb3kaCVU) |
-    [Video_2](https://pirsa.org/23080035) |
+    [Talk_1](https://www.youtube.com/watch?v=NSUQb3kaCVU) |
+    [Talk_2](https://pirsa.org/23080035) |
     [Software](https://github.com/vprusso/antidist)
 
 - ["Error mitigation increases the effective quantum volume of quantum computers"](/pdf/qv.pdf)  

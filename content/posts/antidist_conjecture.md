@@ -16,7 +16,7 @@ draft=false
 
 I'm going to discuss a conjecture that got me interested in the topic of "quantum state antidistinguishability".
 
-**Conjecture**: (Havlíček, Barret [arXiv:1911.01927](https://arxiv.org/abs/1911.01927)):
+**Conjecture** [[Havlíček-Barret (2020)](https://arxiv.org/abs/1911.01927)]:
 
 Let \(S = \{\ket{\psi_1}, \ldots, \ket{\psi_n}\} \subset \mathbb{C}^n\) be a set of \(n\) pure quantum states each of
 dimension \(n\). Then \(S\) is antidistinguishable when
@@ -38,10 +38,10 @@ been interested in and have previously worked on ([arXiv:1307.3232](https://arxi
 
 - Antidistinguishability has connections to the foundations of quantum mechanics. Specifically, in the [PBR
 theorem](https://en.wikipedia.org/wiki/Pusey%E2%80%93Barrett%E2%80%93Rudolph_theorem), it was used (although the term
-"antidistinguishable" was not used) as a key piece of machinery pertaining to the question of whether the quantum state
+"antidistinguishable" was not used) as a key piece of machinery about the question of whether the quantum state
 is ontological or epistemic.
 
-- It's an intgriguingly concise conjecture with little baggage and lends itself to numerical attack. This seemed like a
+- It's an intriguingly concise conjecture with little baggage and lends itself to numerical attack. This seemed like a
 good way for me to kick the tires on my (at the time) newly developed [|toqito>](https://github.com/vprusso/toqito)
 software package.
 
@@ -57,7 +57,7 @@ To describe antidistinguishability, let's consider the following setting:
 
 **Problem**: 
 Given a single copy of an arbitrary pure state (in a lab, not on paper), from a set of states, we want to figure out
-exactly which one was *not* given to us: measuring it gives some information but causes the state to collapse.
+exactly which one were *not* given to us: measuring it provides some information but causes the state to collapse.
 
 **Approach**:
 However, if we are given extra information about the state, sometimes we can figure out which state was (not) given to us.  
@@ -72,7 +72,7 @@ $$
 Then we are given (in a lab) one of those \(n\) states. If we can successfully determine which states was *not* given to
 us for every state in the set, then we say that the set of quantum states are *antidistinguishable*.
 
-This scenario is depicted in the following ascii image: Note that `--->` denotes the transmission of quantum information
+This scenario is depicted in the following ASCII image: Note that `--->` denotes the transmission of quantum information
 whereas `===>` denotes the transmission of classical information (in this case, Bob's answer about the index of the
 state).
 
@@ -89,7 +89,7 @@ state).
 
 Alice selects one of the states \(\ket{\psi_i}\) from the set \(\{\ket{\psi_1}, \ldots, \ket{\psi_n}\}\) and sends
 \(\ket{\psi_i}\) to Bob. Bob needs to return an index "i". We say that Bob's answer is "correct" if the index "i" he
-returns is *not* the index corresponding to the index of the state \(\ket{\psi_i}\). If Bob is able to perform this task
+returns is *not* the index corresponding to the index of the state \(\ket{\psi_i}\). If Bob can perform this task
 correctly for each state in the set, then the states are antidistinguishable and otherwise, they are not.
 
 For clarity, let's write a formal definition for what it means for a set of states to be antidistinguishable:
@@ -114,7 +114,7 @@ $$
 \end{equation}
 $$
 
-Another way of phrasing this is that if such a valid set of measurement operators exist that give an inner product value
+Another way of phrasing this is that if such a valid set of measurement operators exists that gives an inner product value
 of zero for each state in the set, then the set of states are antidistinguishable, and otherwise, they are not.
 
 #### Example: Trine states   
@@ -145,7 +145,7 @@ psi_3 = -1 / 2 * (e_0 - np.sqrt(3) * e_1)
 trine_states = [psi_1, psi_2, psi_3]
 ```
 
-Here are a set of measurements that we can verify which satisfy the antidistinguishability constraints. We will see a
+Here are a set of measurements we can verify that satisfy the antidistinguishability constraints. We will see a
 method that we can use to obtain these directly later, but for now, let's just assume that we have a process to obtain
 these from a black box.
 
@@ -199,7 +199,7 @@ $$
 \end{equation}
 $$
 
-for all \(i\), we conclude that the trine states are antidistinguishable. So we have shown that the trine states are
+for all \(i\), we conclude that the trine states are antidistinguishable. So, we have shown that the trine states are
 antidistinguishable by exhibiting a set of measurement operators that satisfy the necessary criteria. 
 
 But where did these measurements come from and how can we construct such a set of measurements (if such a set exists)
@@ -234,7 +234,7 @@ $$
 \end{equation}
 $$
 
-In this SDP, we are optimziing over a set of \(n\) valid quantum measurements (this is what our constraints impose). If
+In this SDP, we are optimizing over a set of \(n\) valid quantum measurements (this is what our constraints impose). If
 the objective function yields a value of zero, this indicates that the set of states are indeed antidistinguishable. We
 can numerically implement the primal problem using `cvxpy` for a given set of vectors specified as `numpy` arrays.
 
@@ -377,7 +377,7 @@ for i in range(num_tests):
 
 After running the code for a long while, we were able to stumble upon the following counterexample.
 
-**Counterexample** [([R.–Sikora ’22](https://arxiv.org/abs/2206.08313))]: 
+**Counterexample** [[Russo–Sikora, (2022)](https://arxiv.org/abs/2206.08313)]: 
 For \(n=4\), the conjecture states that if \(|\langle \psi_i | \psi_j \rangle| \leq 2/3 \approx 0.6666\) for all \(i \neq
 j\) then \(S\) is antidistinguishable. A numerical search was able to exhibit a non-antidistinguishable set of states with
 \(|\langle \psi_i | \psi_j \rangle| \leq 0.6451\) for all \(i \neq j\).
@@ -461,7 +461,7 @@ explicitly here, but this is precisely what we do in [arXiv:2206.08313](https://
 Now, finding a counterexample and breaking things is fine, but it's a bit unsatisfactory. In a follow-up work, we were
 able to patch up the conjectured statement into the following theorem.
 
-**Theorem** [([Johnston-R.-Sikora ’23](https://arxiv.org/abs/2311.17047))]: 
+**Theorem** [[Johnston-Russo-Sikora, (2023)](https://arxiv.org/abs/2311.17047)]: 
 
 Let \(n \geq 2\) be an integer and let \(S = \{|\psi_1\rangle, |\psi_2\rangle, \ldots, |\psi_n\rangle \}\). If
 
@@ -477,7 +477,7 @@ I'll leave the details of this to our paper, but will mention that:
 
 - When \(n = 2, 3\), or \(4\), the RHS bound is \(0\), \(1/2\), or \(1/\sqrt{3}\) respectively, which are tight.
 
-- Unknown if it’s tight for \(n \geq 5).
+- Unknown if it’s tight for \(n \geq 5\).
 
-There is certainly as lot more that can be said on the topic, and I look forward to continuing to doing so in the
+There is certainly a lot more that can be said on the topic, and I look forward to continuing to doing so in the
 future!

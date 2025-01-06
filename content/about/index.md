@@ -19,3 +19,5 @@ automation services ([code](/code)).
 When I'm not programming or doing research, I like to [play guitar](https://www.youtube.com/watch?v=DpjVJ76pLMY),
 [teach](http://bit.ly/lucidcode), [read](https://www.goodreads.com/captainhampton), [write](/posts), and [play Jurassic
 Park II on SNES really quickly](http://speeddemosarchive.com/JurassicPark2SNES.html).
+
+If you’d like to reach out to me, I can be contacted via vincentrusso1(at)gmail.com.

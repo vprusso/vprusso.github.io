@@ -2,7 +2,7 @@
 <html lang="{{ $.Site.Language }}">
 <head>
   {{ block "title" . }}
-    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title | lower }} :: {{ $.Site.Title }}{{ end }}</title>
   {{ end }}
   {{ partial "head.html" . }}
   {{ if .Param "math" }}

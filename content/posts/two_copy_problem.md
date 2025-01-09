@@ -17,18 +17,14 @@ Let \(n\) be an integer, let \(\mathcal{X}\) be a complex Euclidean space, let \
 pure quantum state represented as a density operator, and let
 
 $$
-\begin{equation}
-    \eta = \left\{\left(\frac{1}{n}, \rho_1\right), \ldots, \left(\frac{1}{n}, \rho_n\right)\right\} \subset \mathcal{X}
-\end{equation}
+\eta = \left\{\left(\frac{1}{n}, \rho_1\right), \ldots, \left(\frac{1}{n}, \rho_n\right)\right\} \subset \mathcal{X}
 $$
 
 be an ensemble of pure and mutually orthogonal quantum states. Define \(\eta^{\otimes 2}\) as the two-copy ensemble where
 
 $$
-\begin{equation}
-    \eta^{\otimes 2} = \left\{\left(\frac{1}{n}, \rho_1 \otimes \rho_1\right), \ldots, \left(\frac{1}{n}, \rho_n \otimes \rho_n\right)\right\} 
-    \subset \mathcal{X} \otimes \mathcal{X}.
-\end{equation}
+\eta^{\otimes 2} = \left\{\left(\frac{1}{n}, \rho_1 \otimes \rho_1\right), \ldots, \left(\frac{1}{n}, \rho_n \otimes \rho_n\right)\right\} 
+\subset \mathcal{X} \otimes \mathcal{X}.
 $$
 
 **Question**: Does there exist an ensemble \(\eta^{\otimes 2}\) such that the optimal LOCC, PPT, or SEP values is strictly less than \(1\)? 

@@ -65,6 +65,9 @@ title = "Vincent Russo"
   # Example format, with date, time, and timezone abbreviation:
   # dateFormat = "2006-01-02 3:04:06 PM MST"
 
+[services]
+  [services.disqus]
+    shortname = 'disqus_BGkVbh0yFV'
 
 [params.twitter]
   # set Twitter handles for Twitter cards
@@ -94,6 +97,11 @@ title = "Vincent Russo"
           name = "blog"
           url = "/posts/"
           weight = 30
+        [[languages.en.menu.main]]
+          identifier = "projects"
+          name = "projects"
+          url = "/projects/"
+          weight = 40
 
       [languages.en.params]
         readMore = "Read more"

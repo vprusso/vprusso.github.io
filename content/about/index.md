@@ -12,7 +12,7 @@ information theory. Specifically, I leverage the tools of matrix analysis, linea
 with my software development skills and experience to tackle questions in the theory of quantum entanglement and quantum
 information [(papers)](/papers).
 
-I have over a decade of experience in creating robust software solutions and have worked in a wide variety of technical
+I have extensive experience in creating robust software solutions and have worked in a wide variety of technical
 domains, including cryptography, GPU-driven research, numerical optimization, scientific programming, web, and
 automation services ([code](/code)).
 

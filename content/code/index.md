@@ -51,16 +51,3 @@ primary contributor to.
     Companion code for the programming tutorials on my [LucidProgramming channel](http://bit.ly/lucidcode).   
     [GitHub](https://github.com/vprusso/youtube_tutorials) |
     [YouTube](https://www.youtube.com/channel/UCFxcvyt2Ucq5IL0_1Njzqlg)
-
-### Misc Projects:
-
----
-
-- [LucidProgramming](https://www.youtube.com/channel/UCFxcvyt2Ucq5IL0_1Njzqlg)  
-    The LucidProgramming YouTube channel is where I post various instructional videos on software development topics.
-
-- [Nonlocal Podcast](https://nonlocal.libsyn.com/)   
-    Co-host of the "Nonlocal Podcast"; a podcast about various aspects of quantum computing.
-
-- [Data Structures and Algorithms in Python](https://www.educative.io/courses/ds-and-algorithms-in-python)    
-    I partnered with Educative to produce a course to teach data structures and algorithms in Python.

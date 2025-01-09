@@ -20,7 +20,9 @@ $$
 \eta = \left\{\left(\frac{1}{n}, \rho_1\right), \ldots, \left(\frac{1}{n}, \rho_n\right)\right\} \subset \mathcal{X}
 $$
 
-be an ensemble of pure and mutually orthogonal quantum states. Define \(\eta^{\otimes 2}\) as the two-copy ensemble where
+be an ensemble of pure and mutually orthogonal quantum states. 
+
+Define \(\eta^{\otimes 2}\) as the two-copy ensemble where
 
 $$
 \eta^{\otimes 2} = \left\{\left(\frac{1}{n}, \rho_1 \otimes \rho_1\right), \ldots, \left(\frac{1}{n}, \rho_n \otimes \rho_n\right)\right\} 

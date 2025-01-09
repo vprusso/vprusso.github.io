@@ -77,3 +77,14 @@
 
 <!-- Extended head section-->
 {{ partial "extended_head.html" . }}
+
+<!-- MathJax Configuration -->
+<script type="text/x-mathjax-config">
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['$$', '$$']],
+    }
+  };
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>

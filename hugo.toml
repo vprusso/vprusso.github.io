@@ -76,10 +76,6 @@ title = "Vincent Russo"
   creator = "captainhamptons"
   site = "captainhamptons"
 
-[services]
-  [services.disqus]
-    shortname = 'disqus_BGkVbh0yFV'
-
 [languages]
   [languages.en]
     languageName = "English"

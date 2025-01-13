@@ -9,7 +9,7 @@ keywords = ["reading", "books"]
 description = ""
 showFullContent = false
 readingTime = true
-hideComments = true
+hideComments = false
 draft=false
 +++
 

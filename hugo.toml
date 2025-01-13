@@ -60,7 +60,7 @@ title = "Vincent Russo"
 
 [services]
   [services.disqus]
-    shortname = 'disqus_BGkVbh0yFV'
+    shortname = 'vprusso'
 
 [params.twitter]
   # set Twitter handles for Twitter cards

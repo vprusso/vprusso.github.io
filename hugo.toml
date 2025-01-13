@@ -1,12 +1,5 @@
 baseURL = 'https://vprusso.github.io/'
-# languageCode = 'en-us'
-# title = "Vincent Russo"
-# theme = 'terminal'
-
-# baseurl = "https://akshay.co/"
 languageCode = "en-us"
-# Add it only if you keep the theme in the `themes` directory.
-# Remove it if you use the theme as a remote Hugo Module.
 theme = "terminal"
 title = "Vincent Russo"
 

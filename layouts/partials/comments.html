@@ -1,3 +1,3 @@
-<!-- {{ if or (eq .Type "post") (eq .Section "posts") }}
+{{ if eq .Section "posts" }}
   {{ template "_internal/disqus.html" . }}
-{{ end }} -->
+{{ end }}

@@ -12,7 +12,7 @@ title = "papers"
    [PDF](/pdf/wigners_friend.pdf) |
    [arXiv](https://arxiv.org/abs/2409.15302) |
    [Poster](/pdf/wigners_friend_poster.pdf) |
-   [Software](https://github.com/unitaryfund/research/tree/main/wigners_friend)
+   [Software](https://github.com/unitaryfund/research/tree/main/ewfs)
 
 - ["Optimal discrimination of quantum sequences"](/pdf/sequence_discrimination.pdf)  
    *T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay*,   
@@ -209,6 +209,14 @@ title = "papers"
 ### Conference Proceedings
 
 ---
+
+- ["Towards Violations of Local Friendliness with Quantum Computers"](https://summit.aps.org/events/MAR-R00/351)   
+   *W. J. Zeng, F. Labib, V. Russo*,     
+   *American Physical Society (APS) March Meeting, (2025)*.
+
+- ["Automated Quantum Benchmarking with metriq-gym"](https://summit.aps.org/events/MAR-J16/10)   
+   *A. Cosentino, V. Russo, N. Shammah, D. Strano, W. J. Zeng*,   
+   *American Physical Society (APS) March Meeting, (2025)*.
 
 - ["GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations"](http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448)  
    *J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,  

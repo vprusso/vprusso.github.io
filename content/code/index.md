@@ -16,7 +16,6 @@ primary contributor to.
    [KaiCode24](https://www.kaicode.org/2024.html) | 
    [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/)
 
-
 - [metriq](https://metriq.info/)  
    Web platform for tracking quantum computing benchmarks. Co-developed with [Dan Strano](http://ultraphrenia.com/).  
     [GitHub](https://github.com/unitaryfund/metriq-app) |
@@ -27,7 +26,8 @@ primary contributor to.
 - [metriq-gym](https://github.com/unitaryfund/metriq-gym)  
     Python API for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.
     Co-developed with other members at the [UnitaryFund](https://unitary.fund/).   
-    [GitHub](https://github.com/unitaryfund/metriq-gym)
+    [GitHub](https://github.com/unitaryfund/metriq-gym) |
+    [APS](https://summit.aps.org/events/MAR-J16/10)
 
 - [scirate](https://github.com/vprusso/scirate)   
     A Python wrapper for extracting quantum information paper data from [Scirate](https://scirate.com/).

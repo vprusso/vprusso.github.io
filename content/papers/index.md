@@ -210,11 +210,11 @@ title = "papers"
 
 ---
 
-- ["Towards Violations of Local Friendliness with Quantum Computers"](https://summit.aps.org/events/MAR-R00/351)   
+- ["Towards Violations of Local Friendliness with Quantum Computers"](https://summit.aps.org/events/MAR-R00/348)   
    *W. J. Zeng, F. Labib, V. Russo*,     
    *American Physical Society (APS) March Meeting, (2025)*.
 
-- ["Automated Quantum Benchmarking with metriq-gym"](https://summit.aps.org/events/MAR-J16/10)   
+- ["Automated Quantum Benchmarking with metriq-gym"](https://summit.aps.org/events/MAR-J16/9)   
    *A. Cosentino, V. Russo, N. Shammah, D. Strano, W. J. Zeng*,   
    *American Physical Society (APS) March Meeting, (2025)*.
 

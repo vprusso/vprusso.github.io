@@ -6,6 +6,14 @@ title = "papers"
 
 ---
 
+- ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  
+   *N. Johnston, V. Russo, J. Sikora*,   
+   *Quantum 9, 1622, (2025)*.   
+   [Link](https://quantum-journal.org/papers/q-2025-02-04-1622/) |
+   [PDF](/pdf/circulant_antidist.pdf) | 
+   [arXiv](https://arxiv.org/abs/2311.17047) | 
+   [Software](https://github.com/vprusso/circulant_antidist)
+
 - ["Towards violations of Local Friendliness with quantum computers"](/pdf/wigners_friend.pdf)  
    *W. Zeng, F. Labib, V. Russo*,   
    *arXiv:2409.15302, (2024)*.   
@@ -55,13 +63,6 @@ title = "papers"
    [PDF](/pdf/vqa_sep.pdf) | 
    [arXiv](https://arxiv.org/abs/2303.07911) |
    [Software](https://arxiv.org/src/2303.07911v1/anc)
-
-- ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  
-   *N. Johnston, V. Russo, J. Sikora*,   
-   *arXiv:2311.17047, (2023)*.   
-   [PDF](/pdf/circulant_antidist.pdf) | 
-   [arXiv](https://arxiv.org/abs/2311.17047) | 
-   [Software](https://github.com/vprusso/circulant_antidist)
 
 - ["Arkhipov's theorem, graph minors, and linear system nonlocal games"](/pdf/graph_incidence_nonlocal_games.pdf)  
    *C. Paddock, V. Russo, T. Silverthorne, W. Slofstra*,   

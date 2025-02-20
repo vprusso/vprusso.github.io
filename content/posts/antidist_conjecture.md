@@ -87,9 +87,9 @@ state).
  ---------                              --------- 
 ```
 
-Alice selects one of the states \(\ket{\psi_i}\) from the set \(\{\ket{\psi_1}, \ldots, \ket{\psi_n}\}\) and sends
-\(\ket{\psi_i}\) to Bob. Bob needs to return an index "i". We say that Bob's answer is "correct" if the index "i" he
-returns is *not* the index corresponding to the index of the state \(\ket{\psi_i}\). If Bob can perform this task
+Alice selects one of the states \(|\psi_i\rangle\) from the set \(\{|\psi_1\rangle, \ldots, |\psi_n\rangle\}\) and sends
+\(|\psi_i\rangle\) to Bob. Bob needs to return an index "i". We say that Bob's answer is "correct" if the index "i" he
+returns is *not* the index corresponding to the index of the state \(|\psi_i\rangle\). If Bob can perform this task
 correctly for each state in the set, then the states are antidistinguishable and otherwise, they are not.
 
 For clarity, let's write a formal definition for what it means for a set of states to be antidistinguishable:
@@ -270,7 +270,7 @@ $$
 \begin{equation}
     \begin{aligned}
         \text{maximize:} \quad & \text{Tr}(Y)  \\
-        \text{subject to:} \quad & Y \preceq \ket{\psi_i}\bra{\psi_i}, \ \forall i \in \{1, \ldots, n\}.
+        \text{subject to:} \quad & Y \preceq |\psi_i\rangle\langle\psi_i|, \ \forall i \in \{1, \ldots, n\}.
     \end{aligned}
 \end{equation}
 $$

@@ -12,6 +12,7 @@ title = "papers"
    [Link](https://quantum-journal.org/papers/q-2025-02-04-1622/) |
    [PDF](/pdf/circulant_antidist.pdf) | 
    [arXiv](https://arxiv.org/abs/2311.17047) | 
+   [Poster](/pdf/pbm_antidist_poster.pdf) |
    [Software](https://github.com/vprusso/circulant_antidist)
 
 - ["Towards violations of Local Friendliness with quantum computers"](/pdf/wigners_friend.pdf)  

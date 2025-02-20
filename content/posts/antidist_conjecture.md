@@ -18,8 +18,8 @@ I'm going to discuss a conjecture that got me interested in the topic of "quantu
 
 **Conjecture** [[Havlíček-Barret (2020)](https://arxiv.org/abs/1911.01927)]:
 
-Let \(S = \{\ket{\psi_1}, \ldots, \ket{\psi_n}\} \subset \mathbb{C}^n\) be a set of \(n\) pure quantum states each of
-dimension \(n\). Then \(S\) is antidistinguishable when
+Let \(S = \{|\psi_1\rangle, \ldots, |\psi_n\rangle\} \subset \mathbb{C}^n\) be a set of \(n\) pure quantum states each
+of dimension \(n\). Then \(S\) is antidistinguishable when
 
 $$
     |\langle \psi_i | \psi_j \rangle| \leq \frac{n-2}{n-1}

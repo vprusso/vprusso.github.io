@@ -115,16 +115,16 @@ As an example, consider the four Bell states
 $$
 \begin{equation}
     \begin{aligned}
-        \ket{\psi_1} = \frac{1}{\sqrt{2}}\left(\ket{00} + \ket{11}\right), \quad
-        \ket{\psi_2} &= \frac{1}{\sqrt{2}}\left(\ket{00} - \ket{11}\right), \\
-        \ket{\psi_3} = \frac{1}{\sqrt{2}}\left(\ket{01} + \ket{10}\right), \quad
-        \ket{\psi_4} &= \frac{1}{\sqrt{2}}\left(\ket{01} - \ket{10}\right).
+        |\psi_1\rangle = \frac{1}{\sqrt{2}}\left(|00\rangle + |11\rangle\right), \quad
+        |\psi_2\rangle &= \frac{1}{\sqrt{2}}\left(|00\rangle - |11\rangle\right), \\
+        |\psi_3\rangle = \frac{1}{\sqrt{2}}\left(|01\rangle + |10\rangle\right), \quad
+        |\psi_4\rangle &= \frac{1}{\sqrt{2}}\left(|01\rangle - |10\rangle\right).
     \end{aligned}
 \end{equation}
 $$
 
-where \(\ket{\psi_i} \in \mathcal{A} \otimes \mathcal{B}\) such that \(\mathcal{A} = \mathcal{B} = \mathbb{C}^2\). Since
-\(\rho_i = \ket{\psi_i}\bra{\psi_i} \in \mathcal{A} \otimes \mathcal{B}\), we only want to perform the partial transpose
+where \(|\psi_i\rangle \in \mathcal{A} \otimes \mathcal{B}\) such that \(\mathcal{A} = \mathcal{B} = \mathbb{C}^2\). Since
+\(\rho_i = |\psi_i\rangle\langle\psi_i| \in \mathcal{A} \otimes \mathcal{B}\), we only want to perform the partial transpose
 on the first subsystem. Consider the following code:
 
 ```py
@@ -149,8 +149,8 @@ states = [rho_1, rho_2, rho_3, rho_4]
 ppt_primal(states, dims=[2, 2], sys=[0])
 ```
 
-Now, consider the "two-copy" setting for the four Bell states. That is, each state in the set is now \(\ket{\psi_i}
-\otimes \ket{\psi_i} \in \mathcal{A}_1 \otimes \mathcal{B}_1 \otimes \mathcal{A}_2 \otimes \mathcal{B}_2\). In other
+Now, consider the "two-copy" setting for the four Bell states. That is, each state in the set is now \(|\psi_i\rangle
+\otimes |\psi_i\rangle \in \mathcal{A}_1 \otimes \mathcal{B}_1 \otimes \mathcal{A}_2 \otimes \mathcal{B}_2\). In other
 words, Alice's subsystems, the ones we want to perform the partial transpose over, are now the first and third
 subsystems.
 

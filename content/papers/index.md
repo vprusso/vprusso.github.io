@@ -146,8 +146,8 @@ title = "papers"
     *Proceedings of the Royal Society A, Volume: 472 Issue: 2189, (2016)*.  
     [Link](https://royalsocietypublishing.org/doi/full/10.1098/rspa.2016.0003) |
     [PDF](/pdf/extended_nonlocal.pdf) |
-    [Poster](pdf/extended_nonlocal_poster.pdf) |
-    [Slides](pdf/enlg_moe_slides.pdf) |
+    [Poster](/pdf/extended_nonlocal_poster.pdf) |
+    [Slides](/pdf/enlg_moe_slides.pdf) |
     [arXiv](http://arxiv.org/abs/1510.02083) |
     [Software](https://github.com/vprusso/monogamy-of-entanglement-games)
 
@@ -155,7 +155,7 @@ title = "papers"
     *S. Bandyopadhyay, A. Cosentino, N. Johnston, V. Russo, J. Watrous*,  
     *IEEE Transactions on Information Theory, Volume 61, Issue 6, (2015)*.  
     [Link](https://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7086052&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F18%2F7109216%2F07086052.pdf%3Farnumber%3D7086052) |
-    [Poster](pdf/limitations_cone_poster.pdf) |
+    [Poster](/pdf/limitations_cone_poster.pdf) |
     [PDF](/pdf/limitations_cone.pdf) |
     [arXiv](http://arxiv.org/abs/1408.6981) |
     [Software](https://qetlab.com/List_of_functions#Distinguishing_objects)

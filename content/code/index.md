@@ -14,17 +14,18 @@ primary contributor to.
    [Video](https://www.youtube.com/watch?v=6R7qSszJwBI&ab_channel=UnitaryFund) |
    [QuantumInsider](https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/) | 
    [KaiCode24](https://www.kaicode.org/2024.html) | 
-   [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/)
+   [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/) |
+   [Blog](https://unitary.foundation/posts/2024_toqito/)
 
 - [metriq](https://metriq.info/)  
-   Web platform for tracking quantum computing benchmarks. Co-developed with [Dan Strano](http://ultraphrenia.com/).  
+   Co-developed web platform for tracking quantum computing benchmarks.
     [GitHub](https://github.com/unitaryfund/metriq-app) |
     [PRNewswire](https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime) |
     [QC-Report](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/) |
     [QuantumInsider](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)
 
 - [metriq-gym](https://github.com/unitaryfund/metriq-gym)  
-    Python API for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.
+    Python package for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.
     Co-developed with other members at the [UnitaryFund](https://unitary.fund/).   
     [GitHub](https://github.com/unitaryfund/metriq-gym) |
     [APS](https://summit.aps.org/events/MAR-J16/10)
@@ -45,7 +46,8 @@ primary contributor to.
 
 - [triforce](https://github.com/vprusso/triforce)  
     A Python package to study the numerical properties of triangular arrays.   
-    [GitHub](https://github.com/vprusso/triforce)
+    [GitHub](https://github.com/vprusso/triforce) |
+    [Blog](/posts/hexagonal_labyrinths)
 
 - [youtube_tutorials](https://github.com/vprusso/youtube_tutorials)  
     Companion code for the programming tutorials on my [LucidProgramming channel](http://bit.ly/lucidcode).   

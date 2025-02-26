@@ -95,7 +95,8 @@ title = "papers"
     [Slides](/pdf/antidist_slides.pdf) | 
     [Talk_1](https://www.youtube.com/watch?v=NSUQb3kaCVU) |
     [Talk_2](https://pirsa.org/23080035) |
-    [Software](https://github.com/vprusso/antidist)
+    [Software](https://github.com/vprusso/antidist) |
+    [Blog](posts/antidist_conjecture)
 
 - ["Error mitigation increases the effective quantum volume of quantum computers"](/pdf/qv.pdf)  
     *R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng*,   

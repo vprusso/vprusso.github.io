@@ -15,10 +15,11 @@ primary contributor to.
    [QuantumInsider](https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/) | 
    [KaiCode24](https://www.kaicode.org/2024.html) | 
    [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/) |
+   [GSoC](https://github.com/vprusso/toqito/wiki/GSoC-2025-Projects) |
    [Blog](https://unitary.foundation/posts/2024_toqito/)
 
 - [metriq](https://metriq.info/)  
-   Co-developed web platform for tracking quantum computing benchmarks.
+   Co-developed web platform for tracking quantum computing benchmarks.  
     [GitHub](https://github.com/unitaryfund/metriq-app) |
     [PRNewswire](https://www.prnewswire.com/news-releases/unitary-fund-launches-metriq-a-platform-for-community-driven-quantum-benchmarks-301551261.html?tc=eml_cleartime) |
     [QC-Report](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/) |
@@ -28,7 +29,7 @@ primary contributor to.
     Python package for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.
     Co-developed with other members at the [UnitaryFund](https://unitary.fund/).   
     [GitHub](https://github.com/unitaryfund/metriq-gym) |
-    [APS](https://summit.aps.org/events/MAR-J16/10)
+    [APS](https://summit.aps.org/events/MAR-J16/9)
 
 - [scirate](https://github.com/vprusso/scirate)   
     A Python wrapper for extracting quantum information paper data from [Scirate](https://scirate.com/).

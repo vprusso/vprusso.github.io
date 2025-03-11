@@ -6,6 +6,14 @@ title = "papers"
 
 ---
 
+- ["Digital Zero-Noise Extrapolation with Quantum Circuit Unoptimization"](/pdf/unopt_zne.pdf)  
+   *E. Pelofske, V. Russo*,   
+   *arXiv:2503.06341, (2025)*.   
+   [PDF](/pdf/unopt_zne.pdf) | 
+   [arXiv](https://arxiv.org/abs/2503.06341) | 
+   [Software](https://github.com/unitaryfund/circuit-unoptimization) |
+   [Blog](posts/circuit_unopt_zne)
+
 - ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  
    *N. Johnston, V. Russo, J. Sikora*,   
    *Quantum 9, 1622, (2025)*.   

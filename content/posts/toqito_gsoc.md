@@ -1,6 +1,6 @@
 +++
 title = "toqito is participating in Google Summer of Code for 2025"
-date = "2025-03-04"
+date = "2025-03-02"
 author = "Vincent Russo"
 authorTwitter = "captainhamptons" #do not include @
 cover = ""

@@ -80,7 +80,7 @@ determines how many times to fold the gates in the circuit.
 ![global-folding](/blog/global_folding.png)
 
 An example of the global folding technique applied to an arbitrary quantum circuit can be seen in the above figure. For
-a given collection of gates denotes by $G$, we increase the effective length of the overall circuit by create \(G
+a given collection of gates denotes by \(G\), we increase the effective length of the overall circuit by create \(G
 G^{\dagger} G\).
 
 #### Quantum circuit unoptimization

@@ -6,7 +6,7 @@ title = "papers"
 
 ---
 
-- ["Digital Zero-Noise Extrapolation with Quantum Circuit Unoptimization"](/pdf/unopt_zne.pdf)  
+- ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  
    *E. Pelofske, V. Russo*,   
    *arXiv:2503.06341, (2025)*.   
    [PDF](/pdf/unopt_zne.pdf) | 

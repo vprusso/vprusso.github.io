@@ -11,8 +11,8 @@ title = "papers"
    *arXiv:2503.06341, (2025)*.   
    [PDF](/pdf/unopt_zne.pdf) | 
    [arXiv](https://arxiv.org/abs/2503.06341) | 
-   [Software](https://github.com/unitaryfund/circuit-unoptimization) |
-   [Blog](posts/circuit_unopt_zne)
+   [Blog](posts/circuit_unopt_zne) |
+   [Software](https://github.com/unitaryfund/circuit-unoptimization)
 
 - ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  
    *N. Johnston, V. Russo, J. Sikora*,   
@@ -103,8 +103,8 @@ title = "papers"
     [Slides](/pdf/antidist_slides.pdf) | 
     [Talk_1](https://www.youtube.com/watch?v=NSUQb3kaCVU) |
     [Talk_2](https://pirsa.org/23080035) |
-    [Software](https://github.com/vprusso/antidist) |
-    [Blog](posts/antidist_conjecture)
+    [Blog](posts/antidist_conjecture) |
+    [Software](https://github.com/vprusso/antidist)
 
 - ["Error mitigation increases the effective quantum volume of quantum computers"](/pdf/qv.pdf)  
     *R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng*,   

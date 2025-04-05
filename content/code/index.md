@@ -7,7 +7,7 @@ primary contributor to.
 
 ---
 
-- [|toqito>](https://github.com/vprusso/toqito)  
+- [|toqito⟩](https://github.com/vprusso/toqito)  
     An open-source Python library for studying various objects in quantum information, namely, states, channels, and measurements.  
    [GitHub](https://github.com/vprusso/toqito) |
    [Docs](https://toqito.readthedocs.io/en/latest/) |

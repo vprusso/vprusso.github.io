@@ -11,7 +11,7 @@ primary contributor to.
     An open-source Python library for studying various objects in quantum information, namely, states, channels, and measurements.  
    [GitHub](https://github.com/vprusso/toqito) |
    [Docs](https://toqito.readthedocs.io/en/latest/) |
-   [Slides](/toqito_slides/index.html) | 
+   [Slides](https://vprusso.quarto.pub/toqito/) | 
    [Video](https://www.youtube.com/watch?v=6R7qSszJwBI&ab_channel=UnitaryFund) |
    [QuantumInsider](https://thequantuminsider.com/2022/06/14/top-63-quantum-computer-simulators-for-2022/) | 
    [KaiCode24](https://www.kaicode.org/2024.html) | 

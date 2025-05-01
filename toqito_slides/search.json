@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "toqito.html#density-operators",
+    "href": "toqito.html#density-operators",
+    "title": "|toqito⟩",
+    "section": "Density operators",
+    "text": "Density operators\n\nQuantum states can be represented as density operators.\n\n\n\\[\n\\rho \\succeq 0 \\quad \\text{and} \\quad \\text{Tr}(\\rho) = 1\n\\]\n\n\nimport numpy as np\nfrom toqito.rand import random_density_matrix\nfrom toqito.matrix_props import is_positive_semidefinite\n\nrho = random_density_matrix(4)\n\nassert np.isclose(np.trace(rho), 1) and is_positive_semidefinite(rho)"
+  },
+  {
+    "objectID": "toqito.html#entanglement-and-separability",
+    "href": "toqito.html#entanglement-and-separability",
+    "title": "|toqito⟩",
+    "section": "Entanglement and separability",
+    "text": "Entanglement and separability\n\nA quantum state is entangled if it is not separable. A separable state can be written as \\[\n\\rho = \\sum_{i} p_i \\rho_i^{A} \\otimes \\rho_j^{B}\n\\]\n\n\nfrom toqito.states import bell\nfrom toqito.state_props import is_separable\n\nis_separable(bell(0) @ bell(0).conj().T)\n\n\n\n\n\n\n\n\nComputability\n\n\nSeparability testing is NP-hard."
+  },
+  {
+    "objectID": "toqito.html#quantum-state-exclusion",
+    "href": "toqito.html#quantum-state-exclusion",
+    "title": "|toqito⟩",
+    "section": "Quantum state exclusion",
+    "text": "Quantum state exclusion\n\n\n\nAlice prepares \\(\\rho_i \\in \\{\\rho_1, \\ldots, \\rho_k \\}\\).\nAlice sends \\(\\rho_i\\) to Bob.\nBob wins if he correctly excludes an index \\(j \\neq i\\)."
+  },
+  {
+    "objectID": "toqito.html#quantum-state-exclusion-1",
+    "href": "toqito.html#quantum-state-exclusion-1",
+    "title": "|toqito⟩",
+    "section": "Quantum state exclusion",
+    "text": "Quantum state exclusion\n\\[\n\\min \\sum_{i=1}^k p_i \\text{Tr}(M_i \\rho_i)\n\\]\n\nfrom toqito.states import bell\nfrom toqito.state_opt import state_exclusion\n\nstates = [bell(0), bell(1), bell(2), bell(3)]\nstate_exclusion(states)"
+  },
+  {
+    "objectID": "toqito.html#antidistinguishability",
+    "href": "toqito.html#antidistinguishability",
+    "title": "|toqito⟩",
+    "section": "Antidistinguishability",
+    "text": "Antidistinguishability\n\\[\n\\sum_{i=1}^k \\text{Tr}(M_i \\rho_i) = 0\n\\]\n\n\nPerfect conclusive quantum state exclusion.\nConnections to quantum foundations.\nRelated to distinguishability, but less well-studied.\nApplications to other areas of quantum information.\n\n\n\nfrom toqito.states import bell\nfrom toqito.state_props import is_antidistinguishable\n\nstates = [bell(0), bell(1), bell(2), bell(3)]\nis_antidistinguishable(states)"
+  },
+  {
+    "objectID": "toqito.html#conjecture",
+    "href": "toqito.html#conjecture",
+    "title": "|toqito⟩",
+    "section": "Conjecture",
+    "text": "Conjecture\nLet \\(S = \\{|\\psi_1\\rangle, \\ldots, |\\psi_n\\rangle \\} \\subset \\mathbb{C}^n\\) be a set of \\(n\\) pure quantum states each of dimension \\(n\\). Then \\(S\\) is antidistinguishable when\n\\[\n|\\langle \\psi_i | \\psi_j \\rangle | \\leq \\frac{n-2}{n-1}\n\\]\nfor all \\(i \\neq j\\).\n\n\nWould imply existence of quantum communication task with exponential advantage over classical.\nUnfortunately, conjecture is false."
+  },
+  {
+    "objectID": "toqito.html#finding-a-counterexample",
+    "href": "toqito.html#finding-a-counterexample",
+    "title": "|toqito⟩",
+    "section": "Finding a counterexample",
+    "text": "Finding a counterexample\n\n\nRandomly generate set of quantum states of fixed dimension.\nCheck if bound is satisfied and not antidistinguishable.\n\n\n\nimport numpy as np\nfrom toqito.rand import random_states\nfrom toqito.state_props import is_antidistinguishable\n\nS = random_states(n=4, d=4)\nthreshold = (len(S) - 2) / (len(S) - 1)\n\nfor i in range(len(S)):\n    for j in range(i + 1, len(S)):\n        ip_val = np.abs(np.trace(S[i].conj().T @ S[j]))\n        if ip_val &gt; threshold and not is_antidistinguishable(S):\n            print(\"Violation found!\")"
+  },
+  {
+    "objectID": "toqito.html#finding-a-counterexample-1",
+    "href": "toqito.html#finding-a-counterexample-1",
+    "title": "|toqito⟩",
+    "section": "Finding a counterexample",
+    "text": "Finding a counterexample"
+  },
+  {
+    "objectID": "toqito.html#quantum-state-distinguishability",
+    "href": "toqito.html#quantum-state-distinguishability",
+    "title": "|toqito⟩",
+    "section": "Quantum state distinguishability",
+    "text": "Quantum state distinguishability\n\n\n\nAlice prepares \\(\\rho_i \\in \\{\\rho_1, \\ldots, \\rho_k \\}\\).\nAlice sends \\(\\rho_i\\) to Bob.\nBob wins if he correctly identifies the index \\(i\\)."
+  },
+  {
+    "objectID": "toqito.html#quantum-state-distinguishability-1",
+    "href": "toqito.html#quantum-state-distinguishability-1",
+    "title": "|toqito⟩",
+    "section": "Quantum state distinguishability",
+    "text": "Quantum state distinguishability\n\\[\n\\max \\sum_{i=1}^k p_i \\text{Tr}(M_i \\rho_i)\n\\]\n\nfrom toqito.states import bell\nfrom toqito.state_opt import state_distinguishability\n\nstates = [bell(0), bell(1), bell(2), bell(3)]\nstate_distinguishability(states)"
+  },
+  {
+    "objectID": "toqito.html#optimizing-over-measurements",
+    "href": "toqito.html#optimizing-over-measurements",
+    "title": "|toqito⟩",
+    "section": "Optimizing over measurements",
+    "text": "Optimizing over measurements\n\n\n\nGlobal: Optimize over all valid POVMs (SDP)\nPPT: Partial transpose is positive semidefinite (SDP)\nSEP: Separable operators (SDP(s))\nLOCC: Complex mathematical characterization"
+  },
+  {
+    "objectID": "toqito.html#ppt-distinguishability",
+    "href": "toqito.html#ppt-distinguishability",
+    "title": "|toqito⟩",
+    "section": "PPT distinguishability",
+    "text": "PPT distinguishability\n\n\\[\n\\max_{M_i \\in \\text{PPT}} \\sum_{i=1}^k p_i \\text{Tr}(M_i \\rho_i)\n\\]\n\n\n\\[\nS = \\{\n    \\Phi^+ \\otimes \\Phi^+,\n    \\Phi^- \\otimes \\Psi^-,\n    \\Psi^+ \\otimes \\Psi^-,\n    \\Psi^- \\otimes \\Psi^-\n\\}\n\\]\n\n\nfrom toqito.states import bell\nfrom toqito.state_opt import ppt_distinguishability\n\nstates = [\n    np.kron(bell(0), bell(0)), \n    np.kron(bell(1), bell(3)),\n    np.kron(bell(2), bell(3)),\n    np.kron(bell(3), bell(3)),\n]\nppt_distinguishability(states, dimensions=[2, 2, 2, 2], subsystems=[0, 2])"
+  },
+  {
+    "objectID": "toqito.html#the-players",
+    "href": "toqito.html#the-players",
+    "title": "|toqito⟩",
+    "section": "The players",
+    "text": "The players\n\n\nThe players: Alice and Bob\n\n\nPlay cooperatively. Cannot communicate once game begins."
+  },
+  {
+    "objectID": "toqito.html#the-referee",
+    "href": "toqito.html#the-referee",
+    "title": "|toqito⟩",
+    "section": "The referee",
+    "text": "The referee\n\n\nThe referee\n\n\nGives questions. Takes answers. Decides fate."
+  },
+  {
+    "objectID": "toqito.html#nonlocal-game",
+    "href": "toqito.html#nonlocal-game",
+    "title": "|toqito⟩",
+    "section": "Nonlocal game",
+    "text": "Nonlocal game\n\n\n\nReferee gives \\(x\\) to Alice and \\(y\\) to Bob.\nAlice responds with \\(a\\) and Bob responds with \\(b\\).\nDecides fate based on questions \\((x,y)\\) and answers \\((a,b)\\)."
+  },
+  {
+    "objectID": "toqito.html#strategies-and-values",
+    "href": "toqito.html#strategies-and-values",
+    "title": "|toqito⟩",
+    "section": "Strategies and values",
+    "text": "Strategies and values\n\n\nValue: maximum probability with which Alice and Bob win.\nPlayers can use different strategies (based on their resources).\n\n\n\n\\[\n\\omega(G) \\leq \\omega_{\\text{c}}(G) \\leq \\omega^*(G) \\leq \\omega_{\\text{ns}}(G)\n\\]"
+  },
+  {
+    "objectID": "toqito.html#bounding-the-quantum-value",
+    "href": "toqito.html#bounding-the-quantum-value",
+    "title": "|toqito⟩",
+    "section": "Bounding the quantum value",
+    "text": "Bounding the quantum value\nNPA hierarchy: Hierarchy of SDPs that converges to \\(\\omega_{\\text{c}}(G)\\)."
+  },
+  {
+    "objectID": "toqito.html#the-ffl-game",
+    "href": "toqito.html#the-ffl-game",
+    "title": "|toqito⟩",
+    "section": "The FFL game",
+    "text": "The FFL game\n\nThe FFL (Fortnow, Feige, Lovasz) game: \\[\na \\lor x = b \\lor y\n\\]\n\n\n\\[\n\\begin{equation}\n    \\pi(0,0) = \\pi(0,1) = \\pi(1,0) = \\frac{1}{3}, \\ \\pi(1,1) = 0 \\\\\n\\end{equation}\n\\]\n\n\n\\[\n\\begin{equation}\n    \\begin{aligned}\n        (x,y) &\\in \\{0,1\\} \\times \\{0,1\\} \\\\\n        (a,b) &\\in \\{0,1\\} \\times \\{0,1\\}\n    \\end{aligned}\n\\end{equation}\n\\]"
+  },
+  {
+    "objectID": "toqito.html#the-ffl-game-1",
+    "href": "toqito.html#the-ffl-game-1",
+    "title": "|toqito⟩",
+    "section": "The FFL game",
+    "text": "The FFL game\n\nimport numpy as np\nfrom toqito.nonlocal_games.nonlocal_game import NonlocalGame\n\nnum_alice_in, num_alice_out = 2, 2\nnum_bob_in, num_bob_out = 2, 2\n\nprob_mat = np.array([[1/3, 1/3], [1/3, 0]])\n\npred_mat = np.zeros((num_alice_out, num_bob_out, num_alice_in, num_bob_in))\nfor a_alice in range(num_alice_out):\n    for b_bob in range(num_bob_out):\n        for x_alice in range(num_alice_in):\n            for y_bob in range(num_bob_in):\n                if (a_alice or x_alice) != (b_bob or y_bob):\n                    pred_mat[a_alice, b_bob, x_alice, y_bob] = 1\nffl = NonlocalGame(prob_mat, pred_mat)\n\nffl = NonlocalGame(prob_mat, pred_mat)\nprint(f\"Classical value: {ffl.classical_value()}\")\nprint(f\"Quantum value (lower bound): {ffl.quantum_value_lower_bound()}\")\nprint(f\"Quantum value (upper bound): {ffl.commuting_measurement_value_upper_bound()}\")\nprint(f\"Non-signaling value: {ffl.nonsignaling_value()}\")"
+  },
+  {
+    "objectID": "toqito.html#xor-games",
+    "href": "toqito.html#xor-games",
+    "title": "|toqito⟩",
+    "section": "XOR games",
+    "text": "XOR games\n\nGames where the winning condition uses the \\(\\oplus\\) operation.\n\n\n\n\n\n\n\n\nTerminology\n\n\nValues of XOR games can be solved directly. Not true in general for nonlocal games"
+  },
+  {
+    "objectID": "toqito.html#chsh-game",
+    "href": "toqito.html#chsh-game",
+    "title": "|toqito⟩",
+    "section": "CHSH game",
+    "text": "CHSH game\n\n\\[\na \\oplus b = x \\land y\n\\]\n\n\n# Calculate the classical and quantum value of the CHSH game.\nimport numpy as np\nfrom toqito.nonlocal_games.xor_game import XORGame\n\n# The probability matrix.\nprob_mat = np.array([[1/4, 1/4], [1/4, 1/4]])\n\n# The predicate matrix.\npred_mat = np.array([[0, 0], [0, 1]])\n\n# Define CHSH game from matrices.\nchsh = XORGame(prob_mat, pred_mat)\n\nchsh.classical_value() # 0.75\nchsh.quantum_value() # 0.8535533"
+  },
+  {
+    "objectID": "toqito.html#extended-nonlocal-games-enlg",
+    "href": "toqito.html#extended-nonlocal-games-enlg",
+    "title": "|toqito⟩",
+    "section": "Extended nonlocal games (ENLG)",
+    "text": "Extended nonlocal games (ENLG)\n\n\n\nReferee gives \\(x\\) to Alice and \\(y\\) to Bob.\nAlice responds with \\(a\\) and Bob responds with \\(b\\).\nDecides fate based on questions \\((x,y)\\) and answers \\((a,b)\\)."
+  },
+  {
+    "objectID": "toqito.html#enlg-applications",
+    "href": "toqito.html#enlg-applications",
+    "title": "|toqito⟩",
+    "section": "ENLG applications",
+    "text": "ENLG applications\n\nGeneralization of nonlocal game\nDevice-independent cryptographic scenarios\nQuantum steering (intermediate between Bell nonlocality and quantum entanglement)"
+  },
+  {
+    "objectID": "toqito.html#enlg-with-quantum-advantage",
+    "href": "toqito.html#enlg-with-quantum-advantage",
+    "title": "|toqito⟩",
+    "section": "ENLG with quantum advantage",
+    "text": "ENLG with quantum advantage\nfrom toqito.nonlocal_games.extended_nonlocal_game (\n    import ExtendedNonlocalGame\n)\nfrom toqito.states import mutually_unbiased_basis\nimport numpy as np\n\nnum_in, num_out = 4, 3\nprob_mat = np.eye(num_in) / num_in\nmubs = mutually_unbiased_basis(num_out)\n\npred_mat = np.zeros(\n    (num_out, num_out, num_out, num_out, num_in, num_in), dtype=complex\n)\nfor i, basis in enumerate(mubs):\n    for j, psi in enumerate(basis):\n        pred_mat[..., j, j, i, i] = psi @ psi.conj().T\n\ng_mub = ExtendedNonlocalGame(prob_mat, pred_mat)\nprint(f\"Unentangled value: {g_mub.unentangled_value()}\")\nprint(f\"Quantum value: {g_mub.quantum_value_lower_bound()}\")"
+  },
+  {
+    "objectID": "toqito.html#open-problems",
+    "href": "toqito.html#open-problems",
+    "title": "|toqito⟩",
+    "section": "Open problems",
+    "text": "Open problems\n\n https://github.com/vprusso/toqito/wiki"
+  }
+]

@@ -58,7 +58,7 @@ title = "papers"
    [Software](https://github.com/vprusso/toqito/tree/master/toqito/state_opt)
 
 - ["Increasing the measured effective quantum volume with zero-noise extrapolation"](/pdf/qv_zne.pdf)  
-   *E. Pelofskie, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng*.  
+   *E. Pelofske, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng*.  
    *ACM Transactions on Quantum Computing, (2024)*.   
    [Link](https://dl.acm.org/doi/10.1145/3680290) | 
    [PDF](/pdf/qv_zne.pdf) | 

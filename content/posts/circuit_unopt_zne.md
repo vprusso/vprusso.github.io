@@ -2,7 +2,7 @@
 title = "Digital zero-noise extrapolation via quantum circuit unoptimization"
 date = "2025-03-10"
 author = "Vincent Russo"
-authorTwitter = "captainhamptons""
+authorTwitter = "captainhamptons"
 cover = ""
 tags = ["quantum_information", "quantum_error_mitigation"]
 keywords = ["quantum_information", "quantum_error_mitigation"]

@@ -2,7 +2,7 @@
 title = "Digital zero-noise extrapolation via quantum circuit unoptimization"
 date = "2025-03-10"
 author = "Vincent Russo"
-authorTwitter = "captainhamptons" #do not include @
+authorTwitter = "captainhamptons""
 cover = ""
 tags = ["quantum_information", "quantum_error_mitigation"]
 keywords = ["quantum_information", "quantum_error_mitigation"]
@@ -270,3 +270,4 @@ This post is just a high-level overview of the ideas elaborated on in more detai
 information, examples, etc., please check out both the arXiv preprint
 ([arXiv:2503.06341](https://arxiv.org/abs/2503.06341)) as well as the software
 ([GitHub](https://github.com/unitaryfund/circuit-unoptimization)).
+

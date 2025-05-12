@@ -75,7 +75,7 @@ exploring various properties of certain triangular arrays. Here are just some of
 [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
 ```
 
-Additionally, the `Triangle` class is extensible to allow you to define your own generating function for the ruleset. We
+Additionally, the `Triangle` class is extensible to allow you to define your own generating function for the rule-set. We
 can override the `generate_triangle` function to dictate how the triangular array is defined. As an example, here is how
 we can do this to define the [Hosoya Triangle](https://en.wikipedia.org/wiki/Hosoya%27s_triangle):
 
@@ -253,8 +253,8 @@ for \(j \geq 0\) and \(0 \leq k \leq j\). For example, here are some numbers arr
 ```
 
 If one wished, they could extend `triforce` to include a `labyrinth.py`. Doing so would give similar capabilities to
-empircally analyze the structure and make claims about the hexagonal labyrinth structures. Given an initial hexagonl
-configuration, we could "descend" into a subsequent layer of the library by selecting a hexgonal center. Then, this
+empiraclly analyze the structure and make claims about the hexagonal labyrinth structures. Given an initial hexagonal
+configuration, we could "descend" into a subsequent layer of the library by selecting a hexagonal center. Then, this
 hexagonal center would dictate the starting point of the next triangular arrangement of numbers. Again, this is not the
 only way one could define this, but it could be one way of staying "true" to the literature angle.
 
@@ -281,5 +281,6 @@ inspired by such a melding of comparisons).
 ![star-of-david](/blog/star_of_david.png)
 
 There's obviously a lot of freedom with how one could define this type of structure and maybe even one of them would be
-worthwhile to think about. I welcome any input on the above (very rough) thoughts and ideas as well as any PRs for the
+worthwhile to think about. I welcome any input on the above (very rough) thoughts and ideas as well as any pull-requests for the
 `triforce` package.
+

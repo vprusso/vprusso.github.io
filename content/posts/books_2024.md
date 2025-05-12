@@ -2,7 +2,7 @@
 title = "Books I read in 2024 and why I'll be reading less in 2025"
 date = "2025-01-01"
 author = "Vincent Russo"
-authorTwitter = "captainhamptons" #do not include @
+authorTwitter = "captainhamptons"
 cover = ""
 tags = ["reading", "books"]
 keywords = ["reading", "books"]

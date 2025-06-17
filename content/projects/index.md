@@ -22,7 +22,7 @@ to pay this gift forward by sharing my time and knowledge with others, although 
 
 I'd like to do more podcasting. If you want to talk quantum computing, feel free to reach out to me.
 
-- [Nonlocal Podcast](https://nonlocal.libsyn.com/)   
+- [Nonlocal Podcast](https://podcasts.apple.com/us/podcast/nonlocal-a-quantum-computing-podcast/id1542907244)   
     Co-host of the "Nonlocal Podcast"; a podcast about various aspects of quantum computing.
 
 

@@ -6,6 +6,12 @@ title = "papers"
 
 ---
 
+- ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
+   *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
+   *arXiv:2506.20560, (2025)*.   
+   [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
+   [arXiv](http://arxiv.org/abs/2506.20560)
+
 - ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  
    *E. Pelofske, V. Russo*,   
    *arXiv:2503.06341, (2025)*.   
@@ -317,6 +323,17 @@ title = "papers"
    [Link](https://www.youtube.com/watch?v=6R7qSszJwBI) |
    [Slides](https://vprusso.github.io/toqito_slides/) |
    [Software](https://github.com/vprusso/toqito)
+
+
+### Scientific Reports
+
+---
+
+- ["Tough Errors Are no Match (TEAM): Optimizing the quantum compiler for noise resilience"](/pdf/uf_arqc_team_report.pdf)
+   *N. Shammah, N. Stemen, A. Mari, V. Russo M. Wahl, W. J. Zeng*,  
+   *Final Report for Grant DOE DE-SC0020266u*.  
+   [PDF](/pdf/uf_arqc_team_report.pdf) | 
+   [Software](https://github.com/unitaryfoundation/mitiq)
 
 ### Theses
 

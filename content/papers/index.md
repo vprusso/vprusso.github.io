@@ -10,6 +10,7 @@ title = "papers"
    *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
    *arXiv:2506.20560, (2025)*.   
    [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
+   [Blog](posts/nonlocality_without_entanglement) |
    [arXiv](http://arxiv.org/abs/2506.20560)
 
 - ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  

@@ -199,5 +199,4 @@ alone. It's a relational property that emerges from the interplay between the st
 asking about them. The very same set of states can be nonlocal under one set of rules but perfectly local under another.
 The quantum weirdness can appear or disappear depending on how you choose to look.
 
-For all the mathematical details and the nitty-gritty of the proofs, feel free to check out [the full
-paper](https://arxiv.org/abs/2506.20560).
+For all the mathematical details and the nitty-gritty of the proofs, feel free to check out [the full paper](https://arxiv.org/abs/2506.20560).

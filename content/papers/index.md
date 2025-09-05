@@ -8,8 +8,8 @@ title = "papers"
 
 - ["Towards violations of Local Friendliness with quantum computers"](/pdf/wigners_friend.pdf)  
    *W. Zeng, F. Labib, V. Russo*,   
-   *Quantum 9, 1851 (2025).*.   
-   [Link](https://quantum-journal.org/papers/q-2025-09-05-1851/) |  
+   *Quantum 9, 1851 (2025).*   
+   [Link](https://quantum-journal.org/papers/q-2025-09-05-1851/) |
    [PDF](/pdf/wigners_friend.pdf) |
    [arXiv](https://arxiv.org/abs/2409.15302) |
    [Poster](/pdf/wigners_friend_poster.pdf) |

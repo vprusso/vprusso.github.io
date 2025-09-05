@@ -6,50 +6,51 @@ title = "papers"
 
 ---
 
-- ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
-   *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
-   *arXiv:2506.20560, (2025)*.   
-   [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
-   [Blog](posts/nonlocality_without_entanglement) |
-   [arXiv](http://arxiv.org/abs/2506.20560)
-
-- ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  
-   *E. Pelofske, V. Russo*,   
-   *arXiv:2503.06341, (2025)*.   
-   [PDF](/pdf/unopt_zne.pdf) | 
-   [arXiv](https://arxiv.org/abs/2503.06341) | 
-   [Blog](posts/circuit_unopt_zne) |
-   [Software](https://github.com/unitaryfund/circuit-unoptimization)
-
-- ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  
-   *N. Johnston, V. Russo, J. Sikora*,   
-   *Quantum 9, 1622, (2025)*.   
-   [Link](https://quantum-journal.org/papers/q-2025-02-04-1622/) |
-   [PDF](/pdf/circulant_antidist.pdf) | 
-   [arXiv](https://arxiv.org/abs/2311.17047) | 
-   [Poster](/pdf/pbm_antidist_poster.pdf) |
-   [Software](https://github.com/vprusso/circulant_antidist)
-
 - ["Towards violations of Local Friendliness with quantum computers"](/pdf/wigners_friend.pdf)  
-   *W. Zeng, F. Labib, V. Russo*,   
-   *arXiv:2409.15302, (2024)*.   
+   *W. Zeng, F. Labib, V. Russo*,
+   *Quantum 9, 1851, (2025)*.
+   [Link](https://quantum-journal.org/papers/q-2025-09-05-1851/) |
    [PDF](/pdf/wigners_friend.pdf) |
    [arXiv](https://arxiv.org/abs/2409.15302) |
    [Poster](/pdf/wigners_friend_poster.pdf) |
    [Software](https://github.com/unitaryfund/research/tree/main/ewfs)
 
+- ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
+   *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,
+   *arXiv:2506.20560, (2025)*.
+   [PDF](/pdf/nonlocality_without_entanglement.pdf) |
+   [Blog](posts/nonlocality_without_entanglement) |
+   [arXiv](http://arxiv.org/abs/2506.20560)
+
+- ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  
+   *E. Pelofske, V. Russo*,
+   *arXiv:2503.06341, (2025)*.
+   [PDF](/pdf/unopt_zne.pdf) |
+   [arXiv](https://arxiv.org/abs/2503.06341) |
+   [Blog](posts/circuit_unopt_zne) |
+   [Software](https://github.com/unitaryfund/circuit-unoptimization)
+
+- ["Tight bounds for antidistinguishability and circulant sets of pure quantum states"](/pdf/circulant_antidist.pdf)  
+   *N. Johnston, V. Russo, J. Sikora*,
+   *Quantum 9, 1622, (2025)*.
+   [Link](https://quantum-journal.org/papers/q-2025-02-04-1622/) |
+   [PDF](/pdf/circulant_antidist.pdf) |
+   [arXiv](https://arxiv.org/abs/2311.17047) |
+   [Poster](/pdf/pbm_antidist_poster.pdf) |
+   [Software](https://github.com/vprusso/circulant_antidist)
+
 - ["Optimal discrimination of quantum sequences"](/pdf/sequence_discrimination.pdf)  
-   *T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay*,   
-   *Physical Review A, 110, 062426, (2024)*.   
+   *T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay*,
+   *Physical Review A, 110, 062426, (2024)*.
    [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062426) |
-   [PDF](/pdf/sequence_discrimination.pdf) | 
-   [arXiv](https://arxiv.org/abs/2409.08705) | 
-   [Poster](/pdf/sequence_discrimination_poster.pdf) | 
+   [PDF](/pdf/sequence_discrimination.pdf) |
+   [arXiv](https://arxiv.org/abs/2409.08705) |
+   [Poster](/pdf/sequence_discrimination_poster.pdf) |
    [Software](https://github.com/vprusso/sequence_discrimination)
 
 - ["Quantum error mitigation by layerwise Richardson extrapolation"](/pdf/lre.pdf)  
-   *V. Russo, A. Mari*,   
-   *Physical Review A 110, 062420, (2024)*.   
+   *V. Russo, A. Mari*,
+   *Physical Review A 110, 062420, (2024)*.
    [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062420) |
    [PDF](/pdf/lre.pdf) |
    [arXiv](https://arxiv.org/abs/2402.04000) |
@@ -57,31 +58,31 @@ title = "papers"
    [Software](https://github.com/unitaryfund/research/tree/main/lre)
 
 - ["Distinguishing a maximally entangled basis using LOCC and shared entanglement"](/pdf/mes_local_dist.pdf)  
-   *S. Bandyopadhyay, V. Russo*,   
-   *Physical Review A 110, 042406, (2024)*.   
-   [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.042406) | 
-   [PDF](/pdf/mes_local_dist.pdf) | 
-   [arXiv](https://arxiv.org/abs/2406.13430) | 
+   *S. Bandyopadhyay, V. Russo*,
+   *Physical Review A 110, 042406, (2024)*.
+   [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.042406) |
+   [PDF](/pdf/mes_local_dist.pdf) |
+   [arXiv](https://arxiv.org/abs/2406.13430) |
    [Software](https://github.com/vprusso/toqito/tree/master/toqito/state_opt)
 
 - ["Increasing the measured effective quantum volume with zero-noise extrapolation"](/pdf/qv_zne.pdf)  
    *E. Pelofske, V. Russo, A. Mari, R. LaRose, D. Strano, A. Bartschi, S. Eidenbenz, W. Zeng*.  
-   *ACM Transactions on Quantum Computing, (2024)*.   
-   [Link](https://dl.acm.org/doi/10.1145/3680290) | 
-   [PDF](/pdf/qv_zne.pdf) | 
-   [arXiv](https://arxiv.org/abs/2306.15863) | 
+   *ACM Transactions on Quantum Computing, (2024)*.
+   [Link](https://dl.acm.org/doi/10.1145/3680290) |
+   [PDF](/pdf/qv_zne.pdf) |
+   [arXiv](https://arxiv.org/abs/2306.15863) |
    [Software](https://github.com/unitaryfund/research)
 
 - ["Schrödinger as a quantum programmer: Estimating entanglement via steering"](/pdf/vqa_sep.pdf)  
-   *A. Philip, S. Rethinasamy, V. Russo, M. Wilde*,   
-   *Quantum 8, 1366, (2024)*.   
-   [Link](https://quantum-journal.org/papers/q-2024-06-11-1366/) | 
-   [PDF](/pdf/vqa_sep.pdf) | 
+   *A. Philip, S. Rethinasamy, V. Russo, M. Wilde*,
+   *Quantum 8, 1366, (2024)*.
+   [Link](https://quantum-journal.org/papers/q-2024-06-11-1366/) |
+   [PDF](/pdf/vqa_sep.pdf) |
    [arXiv](https://arxiv.org/abs/2303.07911) |
    [Software](https://arxiv.org/src/2303.07911v1/anc)
 
 - ["Arkhipov's theorem, graph minors, and linear system nonlocal games"](/pdf/graph_incidence_nonlocal_games.pdf)  
-   *C. Paddock, V. Russo, T. Silverthorne, W. Slofstra*,   
+   *C. Paddock, V. Russo, T. Silverthorne, W. Slofstra*,
    *Algebraic Combinatorics, Volume 6 no. 4, pp. 1119-1162., (2023)*.  
    [Link](https://alco.centre-mersenne.org/articles/10.5802/alco.292/) |
    [PDF](/pdf/graph_incidence_nonlocal_games.pdf) |
@@ -95,37 +96,37 @@ title = "papers"
 - ["Testing platform-independent quantum error mitigation on noisy quantum computers"](/pdf/qem_in_practice.pdf)  
    *V. Russo, A. Mari, N. Shammah, R. LaRose, W. Zeng*,  
    *IEEE Transactions on Quantum Engineering, Volume 4, (2023)*.  
-   [Link](https://ieeexplore.ieee.org/document/10219054) | 
-   [PDF](/pdf/qem_in_practice.pdf) | 
-   [arXiv](https://arxiv.org/abs/2210.07194) | 
-   [Poster](/pdf/qem_in_practice_poster.pdf) | 
+   [Link](https://ieeexplore.ieee.org/document/10219054) |
+   [PDF](/pdf/qem_in_practice.pdf) |
+   [arXiv](https://arxiv.org/abs/2210.07194) |
+   [Poster](/pdf/qem_in_practice_poster.pdf) |
    [Software](https://github.com/unitaryfund/research)
 
 - ["Inner products of pure states and their antidistinguishability"](/pdf/antidist.pdf)  
     *V. Russo, J. Sikora*,  
-    *Physical Review A, Vol. 107, No. 3, (2023)*.   
-    [Link](https://link.aps.org/doi/10.1103/PhysRevA.107.L030202) | 
-    [PDF](/pdf/antidist.pdf) | 
-    [arXiv](https://arxiv.org/abs/2206.08313) | 
-    [Slides](/pdf/antidist_slides.pdf) | 
+    *Physical Review A, Vol. 107, No. 3, (2023)*.
+    [Link](https://link.aps.org/doi/10.1103/PhysRevA.107.L030202) |
+    [PDF](/pdf/antidist.pdf) |
+    [arXiv](https://arxiv.org/abs/2206.08313) |
+    [Slides](/pdf/antidist_slides.pdf) |
     [Talk_1](https://www.youtube.com/watch?v=NSUQb3kaCVU) |
     [Talk_2](https://pirsa.org/23080035) |
     [Blog](posts/antidist_conjecture) |
     [Software](https://github.com/vprusso/antidist)
 
 - ["Error mitigation increases the effective quantum volume of quantum computers"](/pdf/qv.pdf)  
-    *R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng*,   
-    *arXiv:2203.05489, (2022)*.   
+    *R. LaRose, A. Mari, V. Russo, D. Strano, W. Zeng*,
+    *arXiv:2203.05489, (2022)*.
     [PDF](/pdf/qv.pdf) |
     [Press](https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/) |
     [arXiv](https://arxiv.org/abs/2203.05489) |
     [Software](https://github.com/unitaryfund/mitiq-qv)
 
 - ["Entanglement cost of discriminating noisy Bell states by local operations and classical communication"](/pdf/noisy_bell.pdf)  
-    *S. Bandyopadhyay, V. Russo*,   
+    *S. Bandyopadhyay, V. Russo*,
     *Physical Review A, Vol. 104, No. 3, (2021)*.  
     [Link](https://link.aps.org/doi/10.1103/PhysRevA.104.032429) |
-    [PDF](/pdf/noisy_bell.pdf) | 
+    [PDF](/pdf/noisy_bell.pdf) |
     [arXiv](https://arxiv.org/abs/2106.08721) |
     [Software](https://github.com/vprusso/qustop)
 
@@ -210,7 +211,7 @@ title = "papers"
     [Software](https://github.com/GOMC-WSU)
 
 - ["Parallel Monte Carlo simulation for the canonical ensemble on the GPU"](/pdf/gpu_parallel.pdf)  
-    *E. Hailat, J. Mick, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,   
+    *E. Hailat, J. Mick, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,
     *Journal of Parallel and Distributed Computing, (2012)*.  
     [Link](https://www.tandfonline.com/doi/abs/10.1080/17445760.2013.833617) |
     [PDF](/pdf/gpu_parallel.pdf) |
@@ -228,12 +229,12 @@ title = "papers"
 
 ---
 
-- ["Towards Violations of Local Friendliness with Quantum Computers"](https://summit.aps.org/events/MAR-R00/348)   
-   *W. J. Zeng, F. Labib, V. Russo*,     
+- ["Towards Violations of Local Friendliness with Quantum Computers"](https://summit.aps.org/events/MAR-R00/348)
+   *W. J. Zeng, F. Labib, V. Russo*,
    *American Physical Society (APS) March Meeting, (2025)*.
 
-- ["Automated Quantum Benchmarking with metriq-gym"](https://summit.aps.org/events/MAR-J16/9)   
-   *A. Cosentino, V. Russo, N. Shammah, D. Strano, W. J. Zeng*,   
+- ["Automated Quantum Benchmarking with metriq-gym"](https://summit.aps.org/events/MAR-J16/9)
+   *A. Cosentino, V. Russo, N. Shammah, D. Strano, W. J. Zeng*,
    *American Physical Society (APS) March Meeting, (2025)*.
 
 - ["GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations"](http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448)  
@@ -262,14 +263,14 @@ title = "papers"
    [PDF](/pdf/wigners_friend.pdf)
 
 - ["Error mitigation increases the effective quantum volume of quantum computers"](https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/)  
-   *Quantum Insider, (2022)*.   
+   *Quantum Insider, (2022)*.
    [Link](https://thequantuminsider.com/2022/03/16/error-mitigation-techniques-can-pump-up-the-quantum-volume/) |
    [PDF](/pdf/qv.pdf)
 
 - ["Metriq: Platform for tracking quantum computing benchmarks"](https://metriq.info/)  
-   *Quantum Computing Report, (2022)*.   
+   *Quantum Computing Report, (2022)*.
    [Link](https://quantumcomputingreport.com/unitary-fund-introduces-metriq-a-repository-for-quantum-benchmark-results/) 
-   
+
 - ["Online platform offers access to quantum technology benchmarks"](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)  
    *Quantum Insider, (2022)*.  
    [Link](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)
@@ -294,7 +295,7 @@ title = "papers"
    [Software](https://github.com/unitaryfund/metriq-app)
 
 - ["The antidistinguishability conjecture"](https://www.youtube.com/watch?v=NSUQb3kaCVU)  
-   *V. Russo*, 
+   *V. Russo*,
    *University of Windsor, (2023)*.  
    [Link](https://www.youtube.com/watch?v=NSUQb3kaCVU) |
    [Slides](/pdf/antidist_slides.pdf) |
@@ -333,7 +334,7 @@ title = "papers"
 - ["Tough Errors Are no Match (TEAM): Optimizing the quantum compiler for noise resilience"](/pdf/uf_arqc_team_report.pdf)
    *N. Shammah, N. Stemen, A. Mari, V. Russo M. Wahl, W. J. Zeng*,  
    *Final Report for Grant DOE DE-SC0020266u*.  
-   [PDF](/pdf/uf_arqc_team_report.pdf) | 
+   [PDF](/pdf/uf_arqc_team_report.pdf) |
    [Software](https://github.com/unitaryfoundation/mitiq)
 
 ### Theses
@@ -341,16 +342,16 @@ title = "papers"
 ---
 
 - ["Extended nonlocal games" (Ph.D. Thesis)](/pdf/thesis.pdf)  
-   *V. Russo*,   
+   *V. Russo*,
    *University of Waterloo, (2017)*.  
-   [Link](https://uwspace.uwaterloo.ca/handle/10012/11620) | 
-   [PDF](/pdf/thesis.pdf) | 
-   [Slides](/pdf/defense_slides.pdf) | 
-   [arXiv](https://arxiv.org/abs/1704.07375) | 
+   [Link](https://uwspace.uwaterloo.ca/handle/10012/11620) |
+   [PDF](/pdf/thesis.pdf) |
+   [Slides](/pdf/defense_slides.pdf) |
+   [arXiv](https://arxiv.org/abs/1704.07375) |
    [Software](https://github.com/vprusso/phd_thesis)
 
 - ["Applications of Lindenmayer systems to quantum computation and quantum information" (Masters Thesis)](https://digitalcommons.wayne.edu/oa_theses/165/)   
-   *V. Russo*,    
+   *V. Russo*,
    *Wayne State University, (2011)*.  
    [Link](https://digitalcommons.wayne.edu/oa_theses/165/) |
-   [PDF](/pdf/msc_lindenmayer.pdf) 
+   [PDF](/pdf/msc_lindenmayer.pdf)

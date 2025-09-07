@@ -2,7 +2,7 @@
 title = "toqito is participating in Google Summer of Code for 2025"
 date = "2025-03-02"
 author = "Vincent Russo"
-authorTwitter = "captainhamptons" #do not include @
+authorTwitter = "captainhamptons"
 cover = ""
 tags = ["quantum_information", "quantum_software"]
 keywords = ["quantum_information", "quantum_software"]
@@ -18,11 +18,11 @@ delving into some research questions I wanted to pursue in quantum information b
 community. When I was a Ph.D. student, having software like toqito would have been indispensible for rapidly prototyping
 ideas and attacking problems numerically. I've been continuing to build my quantum information numerical arsenal that
 has been a real feather in my cap when probing into particularly thorny research questions and it's also been a ton of
-fun to build and to watch grow. 
+fun to build and to watch grow.
 
 ![toqito logo](/blog/toqito_logo.png)
 
-# Google Summer of Code (GSoC)
+## Google Summer of Code (GSoC)
 
 The toqito project has grown in no small part by being part of the open-source ecosystem. Prior hackathon involvement
 has served to improve the functionality and quality of toqito beyond what I could reasonably do as one person, and I'm
@@ -44,13 +44,15 @@ you can consult the listing of ideas for contributors for toqito on the NumFOCUS
 In any case, if you are so inclined to contribute to or to use toqito (whether within the context of GSoC our outside of
 it), I encourage you to peruse the [issues board](https://github.com/vprusso/toqito/issues) and see if any of the
 outstanding issues strike your fancy.  Additionally, if there are features that you would like to see in toqito, I
-welcome any feedback and suggestions for improvements. 
+welcome any feedback and suggestions for improvements.
 
-# GSoC projects in toqito
+## GSoC projects in toqito
 
-I am particularly excited to see progress on two research areas that I have spent quite a lot of time thinking about and
-developing software for; namely the "extended nonlocal games" and "quantum state distinguishability and
-antidistinguishability". 
+I am particularly excited to see progress on two research areas that I have
+spent quite a lot of time thinking about and
+ developing software for; namely
+the "extended nonlocal games" and "quantum state distinguishability and
+antidistinguishability".
 
 Extended nonlocal games are particularly close to my heart, as these abstractions were the subject of my [Ph.D.
 thesis](https://arxiv.org/abs/1704.07375). These are generalizatons of nonlocal games; a well-studied area that

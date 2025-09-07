@@ -2,7 +2,7 @@
 title = "The two-copy problem for quantum states"
 date = "2025-01-08"
 author = "Vincent Russo"
-authorTwitter = "captainhamptons" #do not include @
+authorTwitter = "captainhamptons"
 cover = ""
 tags = ["quantum_information", "quantum_state_distinguishability"]
 keywords = ["quantum_information", "quantum_state_distinguishability"]
@@ -219,7 +219,7 @@ Of course, we may never find any such example. Perhaps because one does not exis
 special or specific to stumble upon randomly, or we are just unlucky.
 
 One thing to note here is that the problem scales quickly as a function of `dim`, the dimenion. As we increase `dim`,
-the matrices scale exponentially, and therefore, will likely only be feasible for relatively small dimensions. 
+the matrices scale exponentially, and therefore, will likely only be feasible for relatively small dimensions.
 
 Also, certain solvers tend to perform quite a bit better than others. For instance the [MOSEK](https://www.mosek.com/) solver
 heuristically seems to be much better than either the free and stock [CVXOPT](https://cvxopt.org/) or
@@ -232,7 +232,7 @@ NP-hard and requires a hierarchy of SDPs that become progressively more computat
 climb the hierarchy. The [toqito](https://github.com/vprusso/toqito) library does have such functionality for computing
 these hierarchies (for instance,
 [symmetric_extension_hierarchy.py](https://github.com/vprusso/toqito/blob/master/toqito/state_opt/symmetric_extension_hierarchy.py)),
-and these may prove interesting to investigate further. 
+and these may prove interesting to investigate further.
 
 I'm personally quite curious to know the resolution to this question. Please feel free to reach out to me should you
 want to discuss it further!

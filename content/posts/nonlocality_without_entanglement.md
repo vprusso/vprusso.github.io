@@ -37,12 +37,12 @@ playing to tell them apart.
 When you're trying to identify an unknown quantum state from a known list, there are two main ways to approach the
 problem:
 
-1.  **Minimum-Error Discrimination (The "Best Guess" Game):** In this game, you *must* make a guess every time. Your
+1. **Minimum-Error Discrimination (The "Best Guess" Game):** In this game, you *must* make a guess every time. Your
 goal is to maximize the probability of being correct. You accept that you'll sometimes be wrong, but you want to
 minimize your average error rate. This is like a multiple-choice test where you're penalized for wrong answers, but you
 have to answer every question.
 
-2.  **Unambiguous Discrimination (The "No Wrong Answers" Game):** This game is stricter. You are allowed to say, "I
+2. **Unambiguous Discrimination (The "No Wrong Answers" Game):** This game is stricter. You are allowed to say, "I
 don't know" (an inconclusive result). But if you *do* provide an answer, it **must** be correct. There is zero room for
 error. Your goal is to maximize the probability of getting a conclusive, correct result.
 

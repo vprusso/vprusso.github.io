@@ -22,9 +22,10 @@ strategy to deal with the noise in a less idealized manner in the interim is the
 
 There are a variety of QEM techniques that are the subject of active research, for example, zero-noise extrapolation
 (ZNE), probabilistic-error cancellation (PEC), dynamical decoupling (DD), and Clifford data regression (CDR) to name a
-few. 
+few.
 
 ### Zero-noise extrapolation (ZNE)
+
 As you can probably tell from the title, we will be focused on ZNE in this post. The general idea of ZNE is quite simple
 (although, perhaps at first, a bit counterintuitive). Here's a memorable tongue-and-cheek description of the technique:
 
@@ -75,7 +76,7 @@ circuit.  However, if we run this circuit on a noisy device, this increases the 
 computation.
 
 The "volume level" (or noise-scale factor) is usually referred to as a parameter \(\lambda\), which in this case,
-determines how many times to fold the gates in the circuit. 
+determines how many times to fold the gates in the circuit.
 
 ![global-folding](/blog/global_folding.png)
 
@@ -92,7 +93,7 @@ both cases will be unitarily equivalent.
 
 Why would anyone want to do this---aren't people are concerned with *optimizing* a quantum circuit? Well, yes, usually
 this is the case. However, one primary reason to do this is to check how good quantum hardware compilers are at
-simplifying garbled circuits. 
+simplifying garbled circuits.
 
 In our instance, we are interested in techniques that can effectively increase the noise of a quantum circuit in a
 deliberate and controlled manner. Quantum circuit unoptimization gives us one way of doing that.
@@ -270,4 +271,3 @@ This post is just a high-level overview of the ideas elaborated on in more detai
 information, examples, etc., please check out both the arXiv preprint
 ([arXiv:2503.06341](https://arxiv.org/abs/2503.06341)) as well as the software
 ([GitHub](https://github.com/unitaryfund/circuit-unoptimization)).
-

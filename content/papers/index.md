@@ -6,6 +6,13 @@ title = "papers"
 
 ---
 
+- ["The complexity of perfect quantum state classification"](/pdf/quantum_state_classification.pdf)  
+   *N. Johnston, B. Lovitz, V. Russo, J. Sikora*,   
+   *arXiv:2510.20789, (2025)*.   
+   [PDF](/pdf/quantum_state_classification.pdf) | 
+   [arXiv](https://arxiv.org/abs/2510.20789) |
+   [Software](https://toqito.readthedocs.io/en/latest/auto_examples/quantum_states/classification.html#sphx-glr-auto-examples-quantum-states-classification-py)
+
 - ["Towards violations of Local Friendliness with quantum computers"](/pdf/wigners_friend.pdf)  
    *W. Zeng, F. Labib, V. Russo*,   
    *Quantum 9, 1851 (2025).*   

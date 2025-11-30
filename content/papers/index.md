@@ -228,8 +228,9 @@ title = "papers"
 - ["Beatty sequences, Fibonacci sequences, and the Golden ratio"](/pdf/beatty_sequences.pdf)  
     *V. Russo, L. Schwiebert*,  
     *Fibonacci Quarterly, Volume 49, (2011)*.  
-    [Link](https://www.fq.math.ca/Papers/49-2/RussoSchwiebert.pdf) |
+    [Link](https://www.fq.math.ca/Papers1/49-2/RussoSchwiebert.pdf) |
     [PDF](/pdf/beatty_sequences.pdf) |
+    [Blog](posts/swappage_problem) |
     [Software](https://github.com/vprusso/swappage_problem)
 
 ### Conference Proceedings

@@ -334,7 +334,6 @@ title = "papers"
    [Slides](https://vprusso.github.io/toqito_slides/) |
    [Software](https://github.com/vprusso/toqito)
 
-
 ### Scientific Reports
 
 ---

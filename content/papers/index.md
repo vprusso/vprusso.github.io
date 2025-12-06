@@ -47,7 +47,7 @@ title = "papers"
    [Software](https://github.com/vprusso/circulant_antidist)
 
 - ["Optimal discrimination of quantum sequences"](/pdf/sequence_discrimination.pdf)  
-   *T. Gupta, S. Mushid, V. Russo, S. Bandyopadhyay*,   
+   *T. Gupta, S. Murshid, V. Russo, S. Bandyopadhyay*,   
    *Physical Review A, 110, 062426, (2024)*.   
    [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062426) |
    [PDF](/pdf/sequence_discrimination.pdf) | 
@@ -57,7 +57,7 @@ title = "papers"
 
 - ["Quantum error mitigation by layerwise Richardson extrapolation"](/pdf/lre.pdf)  
    *V. Russo, A. Mari*,   
-   *Physical Review A 110, 062420, (2024)*.   
+   *Physical Review A, 110, 062420, (2024)*.   
    [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062420) |
    [PDF](/pdf/lre.pdf) |
    [arXiv](https://arxiv.org/abs/2402.04000) |

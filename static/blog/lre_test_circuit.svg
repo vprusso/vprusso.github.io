@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <defs>
+    <linearGradient id="noiseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0.5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="320" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-family="monospace" font-size="16" font-weight="bold">Test Circuit: 3 Qubits, 12 Moments (6 Rotation + 6 CNOT Layers)</text>
+
+  <!-- Noise gradient background -->
+  <rect x="90" y="55" width="620" height="170" fill="url(#noiseGradient)" rx="5"/>
+
+  <!-- Qubit lines -->
+  <line x1="50" y1="100" x2="750" y2="100" stroke="#666" stroke-width="2"/>
+  <line x1="50" y1="150" x2="750" y2="150" stroke="#666" stroke-width="2"/>
+  <line x1="50" y1="200" x2="750" y2="200" stroke="#666" stroke-width="2"/>
+
+  <!-- Qubit labels -->
+  <text x="30" y="105" fill="#e0e0e0" font-family="monospace" font-size="14">q₀</text>
+  <text x="30" y="155" fill="#e0e0e0" font-family="monospace" font-size="14">q₁</text>
+  <text x="30" y="205" fill="#e0e0e0" font-family="monospace" font-size="14">q₂</text>
+
+  <!-- Layer 1: Rx gates -->
+  <rect x="85" y="80" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="105" y="105" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="85" y="130" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="105" y="155" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="85" y="180" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="105" y="205" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+
+  <!-- Layer 2: CNOT -->
+  <circle cx="155" cy="100" r="8" fill="#ffd93d" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="155" y1="108" x2="155" y2="142" stroke="#ffd93d" stroke-width="2"/>
+  <circle cx="155" cy="150" r="12" fill="none" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="143" y1="150" x2="167" y2="150" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="155" y1="138" x2="155" y2="162" stroke="#ffd93d" stroke-width="2"/>
+
+  <!-- Layer 3: Rx gates -->
+  <rect x="185" y="80" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="205" y="105" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="185" y="130" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="205" y="155" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="185" y="180" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="205" y="205" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+
+  <!-- Layer 4: CNOT -->
+  <circle cx="255" cy="100" r="8" fill="#ffd93d" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="255" y1="108" x2="255" y2="142" stroke="#ffd93d" stroke-width="2"/>
+  <circle cx="255" cy="150" r="12" fill="none" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="243" y1="150" x2="267" y2="150" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="255" y1="138" x2="255" y2="162" stroke="#ffd93d" stroke-width="2"/>
+
+  <!-- Layer 5: Rx gates -->
+  <rect x="285" y="80" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="305" y="105" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="285" y="130" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="305" y="155" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="285" y="180" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="305" y="205" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+
+  <!-- Layer 6: CNOT -->
+  <circle cx="355" cy="100" r="8" fill="#ffd93d" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="355" y1="108" x2="355" y2="142" stroke="#ffd93d" stroke-width="2"/>
+  <circle cx="355" cy="150" r="12" fill="none" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="343" y1="150" x2="367" y2="150" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="355" y1="138" x2="355" y2="162" stroke="#ffd93d" stroke-width="2"/>
+
+  <!-- Ellipsis -->
+  <text x="400" y="155" text-anchor="middle" fill="#e0e0e0" font-family="monospace" font-size="24">···</text>
+
+  <!-- Layer 11: Rx gates -->
+  <rect x="435" y="80" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="455" y="105" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="435" y="130" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="455" y="155" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+  <rect x="435" y="180" width="40" height="40" fill="#6bcb77" stroke="#4ade80" stroke-width="2" rx="5"/>
+  <text x="455" y="205" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="10" font-weight="bold">Rx</text>
+
+  <!-- Layer 12: CNOT -->
+  <circle cx="505" cy="100" r="8" fill="#ffd93d" stroke="#f59e0b" stroke-width="2"/>
+  <line x1="505" y1="108" x2="505" y2="142" stroke="#ffd93d" stroke-width="2"/>
+  <circle cx="505" cy="150" r="12" fill="none" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="493" y1="150" x2="517" y2="150" stroke="#ffd93d" stroke-width="2"/>
+  <line x1="505" y1="138" x2="505" y2="162" stroke="#ffd93d" stroke-width="2"/>
+
+  <!-- Noise level indicators -->
+  <text x="105" y="245" text-anchor="middle" fill="#4ade80" font-family="monospace" font-size="11">Low noise</text>
+  <text x="505" y="245" text-anchor="middle" fill="#ef4444" font-family="monospace" font-size="11">High noise</text>
+
+  <!-- Arrow showing noise increase -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e0e0e0"/>
+    </marker>
+  </defs>
+  <line x1="150" y1="265" x2="460" y2="265" stroke="#e0e0e0" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="305" y="285" text-anchor="middle" fill="#e0e0e0" font-family="monospace" font-size="12">Noise increases with layer depth (up to 5×)</text>
+
+  <!-- Legend -->
+  <rect x="560" y="240" width="20" height="20" fill="#6bcb77" stroke="#4ade80" stroke-width="1" rx="3"/>
+  <text x="590" y="255" fill="#e0e0e0" font-family="monospace" font-size="11">Rx rotation</text>
+  <circle cx="570" cy="280" r="6" fill="#ffd93d" stroke="#f59e0b" stroke-width="1"/>
+  <text x="590" y="285" fill="#e0e0e0" font-family="monospace" font-size="11">CNOT gate</text>
+</svg>

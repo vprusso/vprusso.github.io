@@ -31,7 +31,8 @@ title = "papers"
 
 - ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  
    *E. Pelofske, V. Russo*,   
-   *arXiv:2503.06341, (2025)*.   
+   *IEEE QCE-2025, LA-UR-25-21046, (2025)*.   
+   [Link](https://www.osti.gov/servlets/purl/2561264) |
    [PDF](/pdf/unopt_zne.pdf) | 
    [arXiv](https://arxiv.org/abs/2503.06341) | 
    [Blog](posts/circuit_unopt_zne) |

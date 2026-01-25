@@ -62,8 +62,10 @@ title = "papers"
    [Link](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.062420) |
    [PDF](/pdf/lre.pdf) |
    [arXiv](https://arxiv.org/abs/2402.04000) |
+   [Poster](/pdf/lre_poster.pdf) |
+   [Blog](posts/lre) |
    [Video](https://www.youtube.com/watch?v=47GWi4h7TWM) |
-   [Software](https://github.com/unitaryfund/research/tree/main/lre)
+   [Software](https://mitiq.readthedocs.io/en/stable/guide/lre.html)
 
 - ["Distinguishing a maximally entangled basis using LOCC and shared entanglement"](/pdf/mes_local_dist.pdf)  
    *S. Bandyopadhyay, V. Russo*,   

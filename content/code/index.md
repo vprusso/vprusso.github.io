@@ -31,6 +31,10 @@ primary contributor to.
     [GitHub](https://github.com/unitaryfund/metriq-gym) |
     [APS](https://summit.aps.org/events/MAR-J16/9)
 
+- [qemzoo](https://qemzoo.com/)  
+    A comprehensive catalog of quantum error mitigation and suppression techniques.
+    [GitHub](https://github.com/vprusso/qemzoo)
+
 - [scirate](https://github.com/vprusso/scirate)   
     A Python wrapper for extracting quantum information paper data from [Scirate](https://scirate.com/).
     [GitHub](https://github.com/vprusso/scirate)

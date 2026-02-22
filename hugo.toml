@@ -2,6 +2,7 @@ baseURL = 'https://vprusso.github.io/'
 languageCode = "en-us"
 theme = "terminal"
 title = "Vincent Russo"
+ignoreFiles = ['README\.md']
 
 
 [params]

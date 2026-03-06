@@ -6,6 +6,13 @@ title = "papers"
 
 ---
 
+- ["Local strategies are pretty good at computing Boolean properties of quantum sequences"](/pdf/boolean_quantum_sequences.pdf)  
+   *T. Gupta, A. Mohan, S. Murshid, V. Russo, J. Sikora A. Zeng*,   
+   *arXiv:2603.05452, (2026)*.   
+   [PDF](/pdf/boolean_quantum_sequences.pdf) | 
+   [arXiv](https://arxiv.org/abs/2603.05452) |
+   [Software](https://github.com/vprusso/toqito)
+
 - ["The complexity of perfect quantum state classification"](/pdf/quantum_state_classification.pdf)  
    *N. Johnston, B. Lovitz, V. Russo, J. Sikora*,   
    *arXiv:2510.20789, (2025)*.   

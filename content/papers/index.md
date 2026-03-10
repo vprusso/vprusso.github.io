@@ -6,8 +6,15 @@ title = "papers"
 
 ---
 
+- ["Metriq: A Collaborative Platform for Benchmarking Quantum Computers"](/pdf/metriq_paper.pdf)  
+   *A. Cosentino, C. Li, V. Russo, B. A. Chase, T. Lubinski, S. Niu, N. Patel, N. Shammah, W. J. Zeng*,   
+   *arXiv:2603.08680, (2026)*.   
+   [PDF](/pdf/metriq_paper.pdf) | 
+   [arXiv](https://arxiv.org/abs/2603.08680) |
+   [Software](https://github.com/unitaryfoundation/metriq-gym)
+
 - ["Local strategies are pretty good at computing Boolean properties of quantum sequences"](/pdf/boolean_quantum_sequences.pdf)  
-   *T. Gupta, A. Mohan, S. Murshid, V. Russo, J. Sikora A. Zeng*,   
+   *T. Gupta, A. Mohan, S. Murshid, V. Russo, J. Sikora, A. Zeng*,   
    *arXiv:2603.05452, (2026)*.   
    [PDF](/pdf/boolean_quantum_sequences.pdf) | 
    [arXiv](https://arxiv.org/abs/2603.05452) |

@@ -123,6 +123,8 @@ ignoreFiles = ['README\.md']
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 # [module]
 #   # In case you would like to make changes to the theme and keep it locally in you repository,

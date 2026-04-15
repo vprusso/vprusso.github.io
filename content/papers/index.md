@@ -8,9 +8,9 @@ title = "papers"
 
 - ["Distinguishability of locally diagonal orthogonally invariant quantum states"](/pdf/ldoi.pdf)  
    *N. Johnston, V. Russo*,   
-   *arXiv:X, (2026)*.   
+   *arXiv:2604.12808, (2026)*.   
    [PDF](/pdf/ldoi.pdf) | 
-   [arXiv](https://arxiv.org/abs/X) |
+   [arXiv](https://arxiv.org/abs/2604.12808) |
    [Software](https://github.com/vprusso/toqito/blob/master/toqito/matrix_props/is_ldoi.py)
 
 - ["Metriq: A Collaborative Platform for Benchmarking Quantum Computers"](/pdf/metriq_paper.pdf)  

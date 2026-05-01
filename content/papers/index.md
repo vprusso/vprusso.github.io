@@ -6,6 +6,14 @@ title = "papers"
 
 ---
 
+- ["Compressed sensing for efficient fidelity estimation of GHZ states"](/pdf/ghz_cs.pdf)  
+   *F. Labib, D. Nicholaeff, V. Russo, W. J. Zeng*,   
+   *arXiv:2604.27824, (2026)*.   
+   [PDF](/pdf/ghz_cs.pdf) | 
+   [Blog](posts/ghz_cs) |
+   [arXiv](https://arxiv.org/abs/2604.27824) |
+   [Software](https://github.com/unitaryfoundation/wigners_friend)
+
 - ["Distinguishability of locally diagonal orthogonally invariant quantum states"](/pdf/ldoi.pdf)  
    *N. Johnston, V. Russo*,   
    *arXiv:2604.12808, (2026)*.   

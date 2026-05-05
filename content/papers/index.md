@@ -14,6 +14,20 @@ title = "papers"
    [arXiv](https://arxiv.org/abs/2604.27824) |
    [Software](https://github.com/unitaryfoundation/wigners_friend)
 
+- ["Opportunities and challenges in scaling quantum error detection on hardware"](/pdf/qedc.pdf)  
+   *Y. Le Fur, E. Egger, H-Y. Hu, V. Russo, W. J. Zeng, R. LaRose*,   
+   *arXiv:2605.02861, (2026)*.   
+   [PDF](/pdf/qedc.pdf) | 
+   [arXiv](https://arxiv.org/abs/2605.02861) |
+   [Software](https://github.com/rmlarose/encoded)
+
+- ["PauLie: Fast classification of Pauli dynamical Lie algebras"](/pdf/paulie.pdf)  
+   *O. Shaya, K. Golovkin, M. Roy, V. Russo*,   
+   *arXiv:X, (2026)*.   
+   [PDF](/pdf/paulie.pdf) | 
+   [arXiv](https://arxiv.org/abs/X) |
+   [Software](https://github.com/QPauLie/PauLie)
+
 - ["Distinguishability of locally diagonal orthogonally invariant quantum states"](/pdf/ldoi.pdf)  
    *N. Johnston, V. Russo*,   
    *arXiv:2604.12808, (2026)*.   

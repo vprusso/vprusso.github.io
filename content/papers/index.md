@@ -6,14 +6,6 @@ title = "papers"
 
 ---
 
-- ["Compressed sensing for efficient fidelity estimation of GHZ states"](/pdf/ghz_cs.pdf)  
-   *F. Labib, D. Nicholaeff, V. Russo, W. J. Zeng*,   
-   *arXiv:2604.27824, (2026)*.   
-   [PDF](/pdf/ghz_cs.pdf) | 
-   [Blog](posts/ghz_cs) |
-   [arXiv](https://arxiv.org/abs/2604.27824) |
-   [Software](https://github.com/unitaryfoundation/wigners_friend)
-
 - ["Opportunities and challenges in scaling quantum error detection on hardware"](/pdf/qedc.pdf)  
    *Y. Le Fur, E. Egger, H-Y. Hu, V. Russo, W. J. Zeng, R. LaRose*,   
    *arXiv:2605.02861, (2026)*.   
@@ -21,12 +13,13 @@ title = "papers"
    [arXiv](https://arxiv.org/abs/2605.02861) |
    [Software](https://github.com/rmlarose/encoded)
 
-- ["PauLie: Fast classification of Pauli dynamical Lie algebras"](/pdf/paulie.pdf)  
-   *O. Shaya, K. Golovkin, M. Roy, V. Russo*,   
-   *arXiv:X, (2026)*.   
-   [PDF](/pdf/paulie.pdf) | 
-   [arXiv](https://arxiv.org/abs/X) |
-   [Software](https://github.com/QPauLie/PauLie)
+- ["Compressed sensing for efficient fidelity estimation of GHZ states"](/pdf/ghz_cs.pdf)  
+   *F. Labib, D. Nicholaeff, V. Russo, W. J. Zeng*,   
+   *arXiv:2604.27824, (2026)*.   
+   [PDF](/pdf/ghz_cs.pdf) | 
+   [Blog](posts/ghz_cs) |
+   [arXiv](https://arxiv.org/abs/2604.27824) |
+   [Software](https://github.com/unitaryfoundation/wigners_friend)
 
 - ["Distinguishability of locally diagonal orthogonally invariant quantum states"](/pdf/ldoi.pdf)  
    *N. Johnston, V. Russo*,   

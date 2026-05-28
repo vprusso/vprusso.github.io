@@ -6,6 +6,13 @@ title = "papers"
 
 ---
 
+- ["Stabilizer rank bounds for magic-state orbits"](/pdf/stabrank.pdf)  
+   *F. Labib, V. Russo*,   
+   *arXiv:2605.28586, (2026)*.   
+   [PDF](/pdf/stabrank.pdf) | 
+   [arXiv](https://arxiv.org/abs/2605.28586) |
+   [Software](https://github.com/unitaryfoundation/stabrank)
+
 - ["Opportunities and challenges in scaling quantum error detection on hardware"](/pdf/qedc.pdf)  
    *Y. Le Fur, E. Egger, H-Y. Hu, V. Russo, W. J. Zeng, R. LaRose*,   
    *arXiv:2605.02861, (2026)*.   

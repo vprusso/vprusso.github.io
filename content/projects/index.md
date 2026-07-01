@@ -38,6 +38,9 @@ recordings as many have been lost to the sands of time.
 - [captainhampton](https://www.youtube.com/@captainhampton):  
     YouTube channel featuring guitar videos.
 
+- [Sunsets and Powerlines](https://www.youtube.com/watch?v=9v5kG2KDTSY&list=PLcPZC70EInL4HkbIBgbs2WpQ6ir9CL0cm):   
+    Musical solo project.
+
 - [Four Way Stop](https://soundcloud.com/captainhampton/sets/four-way-stop):   
     This is the name that I've had for my solo project for years with a large spectrum of musical styles.
 

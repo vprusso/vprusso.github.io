@@ -18,6 +18,11 @@ primary contributor to.
    [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/) |
    [Blog](https://unitary.foundation/posts/2024_toqito/)
 
+- [stabrank](https://unitaryfoundation.github.io/stabrank/)  
+  Tools for calculating stabilizer-rank bounds of quantum magic states.
+    [GitHub](https://github.com/unitaryfoundation/stabrank) |
+    [Paper](https://arxiv.org/abs/2605.28586)
+
 - [metriq](https://metriq.info/)  
    Co-developed web platform for tracking quantum computing benchmarks.  
     [GitHub](https://github.com/unitaryfund/metriq-app) |

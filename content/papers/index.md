@@ -6,6 +6,12 @@ title = "papers"
 
 ---
 
+- ["A validation framework for quantum simulation of spin dynamics against inelastic neutron scattering and classical simulation"](/pdf/qsc_validation.pdf)  
+   *G. Buchs, E. Wong, A. Baul, K. E. Hamilton, A. Banerjee, S. Eidenbenz, G. B. Halasz, K. Kumaran, T. Maier, T. Naughton III, E. Pelofske, V. Russo, A. Scheie, Y. Subasi, D. A. Tennant, A. Touli, T. S. Humble, A. T. Somborger*,   
+   *arXiv:2607.01568, (2026)*.   
+   [PDF](/pdf/qsc_validation.pdf) | 
+   [arXiv](https://arxiv.org/abs/2607.01568)
+
 - ["Stabilizer rank bounds for magic-state orbits"](/pdf/stabrank.pdf)  
    *F. Labib, V. Russo*,   
    *arXiv:2605.28586, (2026)*.   

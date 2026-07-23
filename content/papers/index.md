@@ -56,6 +56,14 @@ title = "papers"
    [arXiv](https://arxiv.org/abs/2603.05452) |
    [Software](https://github.com/vprusso/toqito)
 
+- ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
+   *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
+   *Quantum 10, 2174 (2026), (2026)*.   
+   [Link](https://quantum-journal.org/papers/q-2026-07-23-2174/) |
+   [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
+   [Blog](posts/nonlocality_without_entanglement) |
+   [arXiv](http://arxiv.org/abs/2506.20560)
+
 - ["The complexity of perfect quantum state classification"](/pdf/quantum_state_classification.pdf)  
    *N. Johnston, B. Lovitz, V. Russo, J. Sikora*,   
    *arXiv:2510.20789, (2025)*.   
@@ -71,14 +79,6 @@ title = "papers"
    [arXiv](https://arxiv.org/abs/2409.15302) |
    [Poster](/pdf/wigners_friend_poster.pdf) |
    [Software](https://github.com/unitaryfund/research/tree/main/ewfs)
-
-- ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
-   *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
-   *Quantum 10, 2174 (2026), (2026)*.   
-   [Link](https://quantum-journal.org/papers/q-2026-07-23-2174/) |
-   [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
-   [Blog](posts/nonlocality_without_entanglement) |
-   [arXiv](http://arxiv.org/abs/2506.20560)
 
 - ["Digital zero-noise extrapolation with quantum circuit unoptimization"](/pdf/unopt_zne.pdf)  
    *E. Pelofske, V. Russo*,   

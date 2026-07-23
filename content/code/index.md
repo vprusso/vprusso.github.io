@@ -19,7 +19,7 @@ primary contributor to.
    [Blog](https://unitary.foundation/posts/2024_toqito/)
 
 - [stabrank](https://unitaryfoundation.github.io/stabrank/)  
-  Tools for calculating stabilizer-rank bounds of quantum magic states.
+  Tools for calculating stabilizer-rank bounds of quantum magic states.    
     [GitHub](https://github.com/unitaryfoundation/stabrank) |
     [Paper](https://arxiv.org/abs/2605.28586)
 
@@ -31,8 +31,7 @@ primary contributor to.
     [QuantumInsider](https://thequantuminsider.com/2022/05/18/online-platform-offers-access-to-quantum-technology-benchmarks/)
 
 - [metriq-gym](https://github.com/unitaryfund/metriq-gym)  
-    Python package for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.
-    Co-developed with other members at the [UnitaryFund](https://unitary.fund/).   
+    Python package for running a suite of quantum computing benchmarks on a variety of quantum hardware devices.   
     [GitHub](https://github.com/unitaryfund/metriq-gym) |
     [APS](https://summit.aps.org/events/MAR-J16/9)
 

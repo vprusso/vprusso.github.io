@@ -74,7 +74,8 @@ title = "papers"
 
 - ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
    *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
-   *arXiv:2506.20560, (2025)*.   
+   *Quantum 10, 2174 (2026), (2026)*.   
+   [Link](https://quantum-journal.org/papers/q-2026-07-23-2174/) |
    [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
    [Blog](posts/nonlocality_without_entanglement) |
    [arXiv](http://arxiv.org/abs/2506.20560)
@@ -289,6 +290,14 @@ title = "papers"
 ### Conference Proceedings
 
 ---
+
+- ["Metriq-data: an open, cross-platform dataset of quantum benchmark results"](https://sites.google.com/view/quantum-software-workshop-2026)   
+   *A. Cosentino, C. Li, V. Russo, W. J. Zeng*,    
+   *Quantum Software 2.6: Current challenges and headways in quantum software, (2026)*.
+
+- ["The QEC Challenge: a public, automatically verified leaderboard for quantum LDPC codes"](https://sites.google.com/view/quantum-software-workshop-2026)   
+   *F. Labib, V. Russo, B. Castanon, B. A. Chase, M. Rennala, W. J. Zeng*,    
+   *Quantum Software 2.6: Current challenges and headways in quantum software, (2026)*.
 
 - ["Towards Violations of Local Friendliness with Quantum Computers"](https://summit.aps.org/events/MAR-R00/348)   
    *W. J. Zeng, F. Labib, V. Russo*,    

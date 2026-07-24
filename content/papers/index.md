@@ -58,7 +58,7 @@ title = "papers"
 
 - ["Quantum nonlocality without entanglement and state discrimination measures"](/pdf/nonlocality_without_entanglement.pdf)  
    *S. Murshid, T. Gupta, V. Russo, S. Bandyopadhyay*,   
-   *Quantum 10, 2174 (2026), (2026)*.   
+   *Quantum 10, 2174 (2026)*.   
    [Link](https://quantum-journal.org/papers/q-2026-07-23-2174/) |
    [PDF](/pdf/nonlocality_without_entanglement.pdf) | 
    [Blog](posts/nonlocality_without_entanglement) |

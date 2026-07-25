@@ -17,7 +17,7 @@ title = "papers"
    *arXiv:2605.28586, (2026)*.   
    [PDF](/pdf/stabrank.pdf) | 
    [arXiv](https://arxiv.org/abs/2605.28586) |
-   [website](https://unitaryfoundation.github.io/stabrank/) |
+   [Website](https://unitaryfoundation.github.io/stabrank/) |
    [Software](https://github.com/unitaryfoundation/stabrank)
 
 - ["Opportunities and challenges in scaling quantum error detection on hardware"](/pdf/qedc.pdf)  

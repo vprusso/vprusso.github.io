@@ -47,7 +47,7 @@ error can destroy the entanglement, making both *preparation* and *verification*
 a serious challenge.
 
 Recently, IBM demonstrated a 120-qubit GHZ state with fidelity above 0.5 in their
-["Big Cats"](https://arxiv.org/abs/2502.05982) paper (Javadi-Abhari et al., 2025), using
+["Big Cats"](https://arxiv.org/abs/2510.09520) paper (Javadi-Abhari et al., 2025), using
 low-overhead error detection ideas from
 [Martiel et al.](https://arxiv.org/abs/2504.15725). The core technique is to use pairs of qubits as
 parity checks that maximize "coverage" of the preparation circuit. Our work applies these same ideas
@@ -270,4 +270,4 @@ For the full details, proofs, and experimental results on Quantinuum hardware, s
 ([arXiv:2604.27824](https://arxiv.org/abs/2604.27824)).
 
 The code is available at
-[github.com/unitaryfoundation/wigners-friend](https://github.com/unitaryfoundation/wigners-friend).
+[github.com/unitaryfoundation/wigners_friend](https://github.com/unitaryfoundation/wigners_friend).

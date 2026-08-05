@@ -230,7 +230,7 @@ title = "papers"
     [Software](https://github.com/vprusso/monogamy-of-entanglement-games)
 
 - ["Limitations on separable measurements from cone programming"](/pdf/limitations_cone.pdf)  
-    *S. Bandyopadhyay, A. Cosentino, N. Johnston, V. Russo, J. Watrous*,  
+    *S. Bandyopadhyay, A. Cosentino, N. Johnston, V. Russo, J. Watrous, N. Yu*,  
     *IEEE Transactions on Information Theory, Volume 61, Issue 6, (2015)*.  
     [Link](https://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7086052&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel7%2F18%2F7109216%2F07086052.pdf%3Farnumber%3D7086052) |
     [Poster](/pdf/limitations_cone_poster.pdf) |

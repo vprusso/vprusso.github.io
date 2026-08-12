@@ -302,13 +302,18 @@ maximally entangled basis and a product basis. Along that family the single-copy
 value moves smoothly from \(1/2\) to \(1\), so the family covers the full range
 from hard to trivial, while the two-copy value stays fixed at one throughout.
 
-Two remarks constrain where a counterexample could live. A basis of product
-states is perfectly distinguishable by the measurement onto those states, which
-is separable, so the value is one for a trivial reason. A basis of maximally
-entangled states is two-copy distinguishable by
-[GKRS04](https://arxiv.org/abs/quant-ph/0205105). Any counterexample must
-therefore be entangled but not maximally so, and every family I constructed in
-that middle range returned one.
+Two remarks bear on where a counterexample could live, though they constrain
+less than I first supposed. A basis of product states is perfectly
+distinguishable by the measurement onto those states, which is separable, so the
+value is one for a trivial reason. The maximally entangled case is narrower than
+I stated it above: [GKRS04](https://arxiv.org/abs/quant-ph/0205105) covers sets
+drawn from the canonical generalized-Bell family
+\(\frac{1}{\sqrt{d}}\sum_j e^{2\pi i jn/d}|j\rangle|(j+m) \bmod d\rangle\),
+and its authors write that they are unable to proceed the same way for an
+arbitrary set of \(d^2\) pairwise orthogonal maximally entangled states, giving
+a \(3 \otimes 3\) case where the method fails. A maximally entangled basis
+outside that family is therefore still a candidate, and the middle range is not
+the only place to look.
 
 One caution about reading such numerics, which cost me some time. The three
 classes are ordered by inclusion, so their optimal values satisfy
@@ -321,11 +326,35 @@ A PPT value of one is consistent with a separable or LOCC value strictly below
 one, and says nothing about either. The PPT computations above are evidence only
 about the largest of the three classes.
 
+## What the literature does and does not contain
+
+A systematic search turned up one partial result worth recording. Shu
+([EPJ Plus 136:1172](https://doi.org/10.1140/s13360-021-02182-5)) proves that any
+\(N\) pairwise orthogonal *product* states in \(\mathbb{C}^m \otimes
+\mathbb{C}^n\) are perfectly LOCC-distinguishable with \(\lceil N/4 \rceil\)
+copies, so any set of at most eight orthogonal product states is two-copy
+distinguishable. That covers no entangled ensemble, but it does transfer to SEP
+and PPT for the reason given next.
+
+There is a logical asymmetry here that is easy to get backwards, and I did. An
+adaptive protocol is itself a measurement on the joint two-copy system, so every
+achievability result stated for adaptive protocols is already valid for the
+generic classes, and for SEP and PPT above them. The adaptive restriction
+therefore matters only for *negative* results. A counterexample answering the
+question must be a lower bound against a genuinely joint measurement, and no
+bound of that kind appears in the literature.
+
 I could find no treatment of the two-copy PPT question for orthogonal pure
 states anywhere in the literature. The multi-copy PPT results I am aware of, such
 as those of [YDY14](https://arxiv.org/abs/1209.4222) and
 [LWD17](https://arxiv.org/abs/1702.00231), all concern ensembles containing a
-mixed state, where a subspace-based unextendibility argument is available that
-has no counterpart here.
+mixed state, and the reason is structural rather than incidental. That machinery
+requires the support of one ensemble member to be strongly PPT-unextendible, and
+the minimum dimension of such a subspace in an \(m \otimes n\) system is
+\(m + n - 1 \geq 3\). A pure state has support of dimension one, so the
+mechanism can never be triggered by a pure-state ensemble. Relatedly, since
+\(N-1\) copies always suffice for \(N\) orthogonal pure states, no pure
+ensemble is *many*-copy indistinguishable at all, which is why that literature
+never formulates the fixed two-copy question.
 
 As before, I would be glad to hear from anyone who wants to discuss it.

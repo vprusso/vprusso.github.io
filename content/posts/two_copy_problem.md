@@ -29,10 +29,12 @@ $$
 
 **Question**: Does there exist an ensemble \(\eta^{\otimes 2}\) such that the optimal LOCC, PPT, or SEP values is strictly less than \(1\)? 
 
-Ghosh et al. [GKRS04](https://arxiv.org/abs/quant-ph/0205105) showed that orthogonal maximally entangled states can
-always be perfectly discriminated via LOCC if two copies of each of the states are provided. However, the question above
-is more general and asks whether two copies for any set of mutually orthogonal states are *always* sufficient for
-perfectly distinguishing via LOCC, SEP, or PPT measurements. 
+Ghosh et al. [GKRS04](https://arxiv.org/abs/quant-ph/0205105) showed that orthogonal maximally entangled states drawn
+from the canonical generalized-Bell family can be perfectly discriminated via LOCC if two copies of each of the states
+are provided. Their argument does not cover an arbitrary set of \(d^2\) pairwise orthogonal maximally entangled states,
+and they exhibit a \(3 \otimes 3\) case where it fails. The question above is more general still, and asks whether two
+copies for any set of mutually orthogonal states are *always* sufficient for perfectly distinguishing via LOCC, SEP, or
+PPT measurements. 
 
 These classes of measurements abide by the following inclusion relationship:
 

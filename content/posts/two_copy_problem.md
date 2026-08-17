@@ -29,10 +29,12 @@ $$
 
 **Question**: Does there exist an ensemble \(\eta^{\otimes 2}\) such that the optimal LOCC, PPT, or SEP values is strictly less than \(1\)? 
 
-Ghosh et al. [GKRS04](https://arxiv.org/abs/quant-ph/0205105) showed that orthogonal maximally entangled states can
-always be perfectly discriminated via LOCC if two copies of each of the states are provided. However, the question above
-is more general and asks whether two copies for any set of mutually orthogonal states are *always* sufficient for
-perfectly distinguishing via LOCC, SEP, or PPT measurements. 
+Ghosh et al. [GKRS04](https://arxiv.org/abs/quant-ph/0205105) showed that orthogonal maximally entangled states drawn
+from the canonical generalized-Bell family can be perfectly discriminated via LOCC if two copies of each of the states
+are provided. Their argument does not cover an arbitrary set of \(d^2\) pairwise orthogonal maximally entangled states,
+and they exhibit a \(3 \otimes 3\) case where it fails. The question above is more general still, and asks whether two
+copies for any set of mutually orthogonal states are *always* sufficient for perfectly distinguishing via LOCC, SEP, or
+PPT measurements. 
 
 These classes of measurements abide by the following inclusion relationship:
 
@@ -236,3 +238,125 @@ and these may prove interesting to investigate further.
 
 I'm personally quite curious to know the resolution to this question. Please feel free to reach out to me should you
 want to discuss it further!
+
+# Update (August 2026)
+
+Since writing this post I learned of work that settles a restricted form of the
+question. It does not resolve the question as posed above, but it does show that
+the question needs to be stated more carefully than I stated it.
+
+## Adaptive versus generic protocols
+
+There are two ways that Alice and Bob might use two copies. In an *adaptive*
+protocol the copies are measured one at a time, and the measurement applied to
+the second copy may depend on the outcome obtained from the first. In a
+*non-adaptive* protocol each party addresses both of their systems at once, so
+that Alice performs a single measurement on her halves of both copies while Bob
+does the same. Neither class contains the other.
+
+The optimal values computed by the SDPs above are taken over a class that is
+larger than both. A PPT or separable operator on \(\mathcal{X} \otimes
+\mathcal{X}\) is under no obligation to factor across the two copies, nor to
+arise from measuring one copy and then the other. This distinction is what the
+question above turns on, and I did not draw it originally.
+
+## What is now known
+
+Banik, Guha, Alimuddin, Kar, Halder, and Bhattacharya
+[BGAKHB20](https://arxiv.org/abs/2011.09287) resolve the adaptive case for two
+qubits. Their Theorem 3 states that any orthonormal basis of \(\mathbb{C}^2
+\otimes \mathbb{C}^2\) containing exactly three entangled states requires three
+copies for perfect discrimination under adaptive LOCC. Two copies therefore do
+not suffice for such a basis under an adaptive protocol. One such basis is
+
+$$
+\left\{
+|00\rangle, \quad
+\frac{|01\rangle + |10\rangle}{\sqrt{2}}, \quad
+\frac{1}{\sqrt{2}}\left(\frac{|01\rangle - |10\rangle}{\sqrt{2}} + |11\rangle\right), \quad
+\frac{1}{\sqrt{2}}\left(\frac{|01\rangle - |10\rangle}{\sqrt{2}} - |11\rangle\right)
+\right\},
+$$
+
+whose first element is a product state and whose remaining three elements are
+entangled. The result is striking in that the Bell basis, in which all four
+states are entangled, *is* two-copy distinguishable under an adaptive protocol.
+A basis with less entanglement is here the harder one.
+
+That paper is explicit that the non-adaptive case is not settled. The authors
+write that their constructions "either will establish two-copy
+indistinguishability (under generic protocol) or it will demonstrate
+super-additivity of locally accessible information", and they leave the
+construction of such ensembles open.
+
+The question posed in this post is the generic one, so it remains open.
+
+## What the numerics say
+
+Running the search described above turns up nothing. The optimal PPT value for
+the two-copy ensemble came back equal to one for random orthonormal bases in
+\(2 \otimes 2\), \(2 \otimes 3\), and \(2 \otimes 4\), for structured families,
+and for gradient-free minimization run directly against the two-copy value from
+several starting points.
+
+The most informative of these is a one-parameter family interpolating between a
+maximally entangled basis and a product basis. Along that family the single-copy
+value moves smoothly from \(1/2\) to \(1\), so the family covers the full range
+from hard to trivial, while the two-copy value stays fixed at one throughout.
+
+Two remarks bear on where a counterexample could live, though they constrain
+less than I first supposed. A basis of product states is perfectly
+distinguishable by the measurement onto those states, which is separable, so the
+value is one for a trivial reason. The maximally entangled case is narrower than
+I stated it above: [GKRS04](https://arxiv.org/abs/quant-ph/0205105) covers sets
+drawn from the canonical generalized-Bell family
+\(\frac{1}{\sqrt{d}}\sum_j e^{2\pi i jn/d}|j\rangle|(j+m) \bmod d\rangle\),
+and its authors write that they are unable to proceed the same way for an
+arbitrary set of \(d^2\) pairwise orthogonal maximally entangled states, giving
+a \(3 \otimes 3\) case where the method fails. A maximally entangled basis
+outside that family is therefore still a candidate, and the middle range is not
+the only place to look.
+
+One caution about reading such numerics, which cost me some time. The three
+classes are ordered by inclusion, so their optimal values satisfy
+
+$$
+\omega_{\text{LOCC}} \leq \omega_{\text{SEP}} \leq \omega_{\text{PPT}}.
+$$
+
+A PPT value of one is consistent with a separable or LOCC value strictly below
+one, and says nothing about either. The PPT computations above are evidence only
+about the largest of the three classes.
+
+## What the literature does and does not contain
+
+A systematic search turned up one partial result worth recording. Shu
+([EPJ Plus 136:1172](https://doi.org/10.1140/s13360-021-02182-5)) proves that any
+\(N\) pairwise orthogonal *product* states in \(\mathbb{C}^m \otimes
+\mathbb{C}^n\) are perfectly LOCC-distinguishable with \(\lceil N/4 \rceil\)
+copies, so any set of at most eight orthogonal product states is two-copy
+distinguishable. That covers no entangled ensemble, but it does transfer to SEP
+and PPT for the reason given next.
+
+There is a logical asymmetry here that is easy to get backwards, and I did. An
+adaptive protocol is itself a measurement on the joint two-copy system, so every
+achievability result stated for adaptive protocols is already valid for the
+generic classes, and for SEP and PPT above them. The adaptive restriction
+therefore matters only for *negative* results. A counterexample answering the
+question must be a lower bound against a genuinely joint measurement, and no
+bound of that kind appears in the literature.
+
+I could find no treatment of the two-copy PPT question for orthogonal pure
+states anywhere in the literature. The multi-copy PPT results I am aware of, such
+as those of [YDY14](https://arxiv.org/abs/1209.4222) and
+[LWD17](https://arxiv.org/abs/1702.00231), all concern ensembles containing a
+mixed state, and the reason is structural rather than incidental. That machinery
+requires the support of one ensemble member to be strongly PPT-unextendible, and
+the minimum dimension of such a subspace in an \(m \otimes n\) system is
+\(m + n - 1 \geq 3\). A pure state has support of dimension one, so the
+mechanism can never be triggered by a pure-state ensemble. Relatedly, since
+\(N-1\) copies always suffice for \(N\) orthogonal pure states, no pure
+ensemble is *many*-copy indistinguishable at all, which is why that literature
+never formulates the fixed two-copy question.
+
+As before, I would be glad to hear from anyone who wants to discuss it.

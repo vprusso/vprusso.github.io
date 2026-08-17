@@ -18,6 +18,11 @@ primary contributor to.
    [NumFOCUS](https://numfocus.org/sponsored-projects/affiliated-projects/) |
    [Blog](https://unitary.foundation/posts/2024_toqito/)
 
+- [qldpc-challenge](https://unitaryfoundation.github.io/qldpc-challenge/)  
+    A public, automatically verified leaderboard for quantum low-density parity-check codes.   
+    [GitHub](https://github.com/unitaryfoundation/qldpc-challenge) |
+    [Whitepaper](https://unitaryfoundation.github.io/qldpc-challenge/whitepaper.html)
+
 - [stabrank](https://unitaryfoundation.github.io/stabrank/)  
   Tools for calculating stabilizer-rank bounds of quantum magic states.    
     [GitHub](https://github.com/unitaryfoundation/stabrank) |

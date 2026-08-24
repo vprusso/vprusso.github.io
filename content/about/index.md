@@ -8,9 +8,10 @@ Hi 👋 I am Vincent Russo (PhD).
 I am a computer scientist specializing in the field of quantum computation.
 
 My primary research interests pertain to solving mathematical and computational problems within the field of quantum
-information theory. Specifically, I leverage the tools of matrix analysis, linear algebra, and convex optimization along
-with my software development skills and experience to tackle questions in the theory of quantum entanglement and quantum
-information [(papers)](/papers).
+information theory. I leverage the tools of matrix analysis, linear algebra, and convex optimization to tackle questions
+in quantum entanglement, state discrimination, and nonlocal games. I also work on quantum error correction, quantum error
+mitigation, and the benchmarking and characterization of quantum computers, work that leans more on software and on
+experiments run against present-day hardware [(papers)](/papers).
 
 I have extensive experience in creating robust software solutions and have worked in a wide variety of technical
 domains, including cryptography, GPU-driven research, numerical optimization, scientific programming, web, and
@@ -18,6 +19,7 @@ automation services ([code](/code)).
 
 When I'm not programming or doing research, I like to [play guitar](https://www.youtube.com/watch?v=DpjVJ76pLMY),
 [teach](https://www.youtube.com/@LucidProgramming), [read](https://www.goodreads.com/captainhampton), [write](/posts), and [play Jurassic
-Park II on SNES really quickly](http://speeddemosarchive.com/JurassicPark2SNES.html).
+Park II on SNES really quickly](http://speeddemosarchive.com/JurassicPark2SNES.html). My [Erdős number](https://en.wikipedia.org/wiki/Erd%C5%91s_number) is
+[3](https://mathscinet.ams.org/mathscinet/freetools/collab-dist?source=940720&target=189017).
 
 If you’d like to reach out to me, I can be contacted via vincentrusso1(at)gmail.com.

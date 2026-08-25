@@ -38,6 +38,7 @@ Physics-informed and hardware-aware code design with SAT solvers"](/pdf/sat_qec.
    *F. Labib, D. Nicholaeff, V. Russo, W. J. Zeng*,   
    *arXiv:2604.27824, (2026)*.   
    [PDF](/pdf/ghz_cs.pdf) | 
+   [Slides](/pdf/ghz_cs_slides.pdf) |
    [Blog](posts/ghz_cs) |
    [arXiv](https://arxiv.org/abs/2604.27824) |
    [Software](https://github.com/unitaryfoundation/wigners_friend)

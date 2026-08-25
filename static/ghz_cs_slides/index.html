@@ -1,0 +1,2351 @@
+<!doctype html>
+<!--
+  Web version of the QCE talk, with animated concept figures.
+  Open directly (file://) or serve locally; fully offline, vendored deps.
+  Keys: arrows advance (fragments trigger the animations), S = speaker
+  notes, F = fullscreen, ESC = overview.
+  Paper figures are referenced from ../../ so they stay single-sourced.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Compressed Sensing for Efficient Fidelity Estimation of GHZ States</title>
+<link rel="stylesheet" href="vendor/reveal/reset.css">
+<link rel="stylesheet" href="vendor/reveal/reveal.css">
+<link rel="stylesheet" href="vendor/reveal/theme/white.css">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<style>
+  :root {
+    --csblue: #1f77b4;
+    --csorange: #d55e00;
+    --ink: #23373b;
+  }
+  .reveal { font-size: 28px; }
+  .reveal h1, .reveal h2, .reveal h3 {
+    color: var(--ink);
+    text-transform: none;
+    font-weight: 600;
+  }
+  .reveal h2 {
+    font-size: 1.25em;
+    text-align: left;
+    border-bottom: 3px solid var(--csorange);
+    padding-bottom: 0.15em;
+    margin-bottom: 0.6em;
+  }
+  .reveal .slides section { text-align: left; }
+  .reveal ul { display: block; margin-left: 1em; }
+  .reveal li { margin: 0.35em 0; line-height: 1.35; }
+  .reveal p { line-height: 1.4; }
+  .good { color: var(--csblue); font-weight: 600; }
+  .bad { color: var(--csorange); font-weight: 600; }
+  .alert { color: var(--csorange); }
+  .cols { display: flex; gap: 1.2em; align-items: flex-start; }
+  .col { flex: 1; min-width: 0; }
+  .center { text-align: center; }
+  .small { font-size: 0.78em; }
+  .footnote { font-size: 0.7em; color: #555; margin-top: 0.8em; }
+  .reveal img { max-width: 100%; height: auto; }
+  .card {
+    display: inline-block;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.3em 0.9em;
+    margin: 0 0.4em;
+  }
+  .stat { text-align: center; }
+  .stat .big { font-size: 1.7em; font-weight: 600; }
+  .flow {
+    display: flex;
+    gap: 0.6em;
+    align-items: center;
+    justify-content: center;
+  }
+  .stage {
+    background: #f2f2f2;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 0.5em 0.7em;
+    font-size: 0.82em;
+    text-align: center;
+  }
+  .arrow { font-size: 1.4em; color: #888; }
+  table.cmp { font-size: 0.75em; border-collapse: collapse; margin: 0 auto; }
+  table.cmp th, table.cmp td { padding: 0.3em 0.8em; text-align: center; }
+  table.cmp thead th { border-bottom: 2px solid var(--ink); }
+  table.cmp tbody tr:last-child { font-weight: 600; }
+  table.cmp.plain tbody tr:last-child { font-weight: inherit; }
+  .sectiontitle { text-align: center !important; }
+  .sectiontitle h1 { font-size: 1.6em; margin: 0; }
+  svg text { font-family: inherit; }
+  .replay-hint { font-size: 0.6em; color: #999; }
+  table.dm { border-collapse: collapse; margin: 0 auto; font-size: 0.62em; }
+  table.dm td {
+    border: 1px solid #ccc;
+    width: 1.9em; height: 1.9em;
+    text-align: center; vertical-align: middle;
+  }
+  table.dm td.pop { background: rgba(31,119,180,0.18); }
+  table.dm td.coh { background: rgba(213,94,0,0.25); }
+  .dmcap { font-size: 0.68em; text-align: center; margin-top: 0.3em; }
+  .term {
+    background: #1d1f21; border-radius: 10px;
+    width: 80%; margin: 0 auto; overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  }
+  .term-bar { padding: 9px 12px; background: #2b2d2f; }
+  .term-bar span {
+    display: inline-block; width: 11px; height: 11px;
+    border-radius: 50%; margin-right: 6px;
+  }
+  .term-bar .r { background: #ff5f56; }
+  .term-bar .y { background: #ffbd2e; }
+  .term-bar .g { background: #27c93f; }
+  .term pre {
+    margin: 0; padding: 14px 18px 18px;
+    font-family: monospace; font-size: 0.62em;
+    line-height: 1.55; color: #c5c8c6; text-align: left;
+    min-height: 9.5em;
+  }
+  .term .cmd { color: #ffffff; }
+  .term .ok { color: #27c93f; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ============================================================ 1 -->
+<section data-anim="title">
+  <svg id="title-svg" viewBox="0 0 1100 110"
+    style="width:100%; margin-top:1.2em;"></svg>
+  <h1 style="font-size:1.35em; margin-top:0.3em;">
+    Compressed Sensing for Efficient Fidelity Estimation of GHZ States
+  </h1>
+  <p style="border-top:3px solid var(--csorange); padding-top:0.5em;"
+     class="small">
+    IEEE International Conference on Quantum Computing and Engineering
+    (QCE26)
+  </p>
+  <p class="small">
+    Farrokh Labib<sup>1</sup>, David Nicholaeff<sup>2</sup>,
+    <strong>Vincent Russo</strong><sup>1</sup>,
+    William J. Zeng<sup>1,3</sup><br>
+    <span style="color:#666;"><sup>1</sup>Unitary Foundation
+    &nbsp; <sup>2</sup>New Mexico Consortium
+    &nbsp; <sup>3</sup>Quantonation</span>
+  </p>
+  <p class="small">arXiv:2604.27824</p>
+  <p class="footnote center"><a href="https://vprusso.github.io"
+    style="color:inherit;"><code>vprusso.github.io</code></a></p>
+</section>
+
+<!-- =========================================================== 1b -->
+<section data-anim="cs">
+  <h2>What compressed sensing is</h2>
+  <div class="center">
+    <svg id="cs1" viewBox="0 0 1140 175" style="width:96%;"></svg>
+  </div>
+  <div class="fragment" data-fragment-index="0">
+    <div class="center">
+      <svg id="cs2" viewBox="0 0 1140 175" style="width:96%;"></svg>
+    </div>
+  </div>
+  <ul class="small" style="margin-top:0.5em;">
+    <li>The right-hand chart is the signal's
+      <span class="alert">recipe</span>: the signal rewritten as a
+      sum of simple waves, one entry per wave saying how much of it
+      the signal contains. Natural signals have
+      <span class="alert">nearly empty recipes</span>.</li>
+    <li>A JPEG keeps the few big entries and looks identical, but it
+      <span class="alert">measures everything first</span>: fine when
+      a measurement is a cheap pixel.</li>
+    <li class="fragment" data-fragment-index="0">Compressed sensing
+      pays <span class="good">for the information, not the signal
+      length</span>: few random samples, solve for the big
+      entries.<sup>1</sup> Ours is the expensive case:
+      <span class="alert">each measurement is a quantum
+      circuit</span>.</li>
+  </ul>
+  <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Brunton,
+    Steven L., and J. Nathan Kutz. Data-Driven Science and
+    Engineering. Cambridge University Press, 2019.</p>
+  <aside class="notes">
+    JPEG's transform is the discrete cosine transform, the same
+    dictionary family the parity curve lives in. Fragment reveals the
+    compressed-sensing row. The whole talk is one instance of the
+    bottom row; our parity signal is 2-sparse.
+  </aside>
+</section>
+
+<!-- ============================================================ 2 -->
+<section>
+  <h2>GHZ states as a hardware benchmark</h2>
+  <p class="center">
+    \[ |\mathrm{GHZ}\rangle = \frac{1}{\sqrt{2}}
+       \bigl(|0\rangle^{\otimes N} + |1\rangle^{\otimes N}\bigr) \]
+  </p>
+  <p class="center">
+    <span class="card">secret sharing</span>
+    <span class="card">metrology</span>
+    <span class="card">error correction</span>
+  </p>
+  <div class="cols" style="margin-top:0.7em;">
+    <div class="col stat">
+      <div class="big">120 qubits
+        <svg viewBox="0 0 60 78" width="44" height="57"
+          style="vertical-align:-0.5em;" aria-hidden="true">
+          <g fill="#d5d7d9">
+            <path d="M30 74 C10 74 14 56 22 48 L38 48
+              C46 56 50 74 30 74 Z"/>
+            <circle cx="30" cy="34" r="13"/>
+            <path d="M18 28 L23 15 L29 27 Z"/>
+            <path d="M42 28 L37 15 L31 27 Z"/>
+            <path d="M40 71 C55 73 57 46 47 41" fill="none"
+              stroke="#d5d7d9" stroke-width="4"
+              stroke-linecap="round"/>
+          </g>
+        </svg></div>
+      largest GHZ state to date<br>(IBM, 2025;
+      \(F > 0.5\))<sup>1</sup>
+    </div>
+    <div class="col stat">
+      <div class="big">1 bit flip</div>
+      is enough to destroy<br>the global coherence
+    </div>
+  </div>
+  <p class="center alert" style="margin-top:0.8em;">
+    This talk: verify GHZ states with \(\log N\) measurement
+    circuits instead of \(2N\),<br>
+    and detect errors during preparation on trapped-ion hardware.
+  </p>
+  <p class="footnote"><sup>1</sup>Javadi-Abhari, Ali, et al.
+    &ldquo;Big cats: entanglement in 120 qubits and beyond.&rdquo;
+    arXiv:2510.09520 (2025).</p>
+  <aside class="notes">
+    F above one half is the GME witness. IBM 2025: low-overhead error
+    detection; our flag strategy builds on it. One bit flip moves the
+    coherence off frequency N, which the certificate uses later.
+  </aside>
+</section>
+
+<!-- =========================================================== 2b -->
+<section>
+  <h2>Fidelity is four matrix elements</h2>
+  <p class="center">
+    \[ F(\rho) = \langle \mathrm{GHZ} | \rho | \mathrm{GHZ} \rangle
+       = \frac{1}{2}\Bigl(
+       \underbrace{\rho_{\mathbf{0},\mathbf{0}}
+         + \rho_{\mathbf{1},\mathbf{1}}}_{\text{population } P}
+       + \underbrace{\rho_{\mathbf{0},\mathbf{1}}
+         + \rho_{\mathbf{1},\mathbf{0}}}_{\text{coherence } C}
+       \Bigr) \]
+  </p>
+  <div class="cols">
+    <div class="col">
+      <table class="dm">
+        <tr><td class="pop">0.5</td><td>0</td><td>0</td>
+          <td class="coh">0.5</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="coh">0.5</td><td>0</td><td>0</td>
+          <td class="pop">0.5</td></tr>
+      </table>
+      <div class="dmcap">GHZ state: \(F = 1\)</div>
+    </div>
+    <div class="col">
+      <table class="dm">
+        <tr><td class="pop">0.5</td><td>0</td><td>0</td>
+          <td class="coh">0</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="coh">0</td><td>0</td><td>0</td>
+          <td class="pop">0.5</td></tr>
+      </table>
+      <div class="dmcap">classical mixture: \(F = 1/2\)</div>
+    </div>
+    <div class="col">
+      <table class="dm">
+        <tr><td class="pop">0.5</td><td>0</td><td>0</td>
+          <td class="coh">0.3</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td class="coh">0.3</td><td>0</td><td>0</td>
+          <td class="pop">0.5</td></tr>
+      </table>
+      <div class="dmcap">noisy state: \(F = 0.8\)</div>
+    </div>
+  </div>
+  <p class="small center" style="margin-top:0.6em;">
+    Diagonal entries are outcome probabilities; the corner
+    off-diagonals measure the superposition itself.
+  </p>
+  <p class="center alert small">
+    A coin flip scores exactly \(F = 1/2\). Everything above
+    \(1/2\) lives in the orange corners: \(C\) is the number to
+    measure.
+  </p>
+  <aside class="notes">
+    Population: diagonal corners, probability of all-0s / all-1s.
+    Coherence: off-diagonal corners, the superposition part. Mixture
+    scores exactly one half, which is why F above one half witnesses
+    entanglement. Z-basis data sees only the diagonal, hence the next
+    slide.
+  </aside>
+</section>
+
+
+
+<!-- ============================================================ 3 -->
+<!-- =========================================================== 2b -->
+
+
+<!-- =========================================================== 2c -->
+<section data-anim="parity">
+  <h2>Fidelity from parity oscillations</h2>
+  <p class="center small" style="margin-bottom:0.3em;">
+    The fit returns amplitude \(C \ge 0\) and phase
+    \(\theta\); the fidelity is \(F = (P + C\cos\theta)/2\).
+  </p>
+  <div class="cols">
+    <div class="col center">
+      <strong>Population \(P\)</strong><br>
+      <span class="small">chance of reading all-0s or all-1s</span><br>
+      <svg id="pop-svg" viewBox="0 0 460 210"
+        style="width:88%;"></svg>
+      <div class="small">\(Z\)-basis counts:
+        <span class="good">1 circuit</span></div>
+    </div>
+    <div class="col center">
+      <strong>Coherence \(C\)</strong><br>
+      <span class="small">rotate every qubit by \(\phi\), measure
+        all; a shot's parity is +1 iff an <span class="alert">even
+        </span> number read 1; average over shots</span><br>
+      <svg id="parity-svg" viewBox="0 0 460 210"
+        style="width:88%;"></svg>
+      <div class="small">
+        average parity \(\mathcal{P}(\phi) = C\cos(N\phi +
+        \theta)\). Resolving <span class="alert">any</span>
+        frequency up to \(N\): <span class="bad">two samples per
+        oscillation</span> (Nyquist), the \(2N = 10\) dots,
+        <span class="bad">each one circuit</span>.
+      </div>
+    </div>
+  </div>
+  <p class="center fragment" style="margin-top:0.5em;">
+    At \(N = 100\): <span class="bad">200 measurement circuits</span>,
+    just to verify the state.
+  </p>
+  <aside class="notes">
+    Curve draws itself on entry; the 2N grid dots are always shown and
+    the caption points at them. Fragment reveals the cost line.
+  </aside>
+</section>
+
+<!-- =========================================================== 2c -->
+<!-- ============================================================ 4 -->
+<!-- =========================================================== 3c -->
+<section data-anim="sparse">
+  <h2>The observation: the signal is sparse</h2>
+  <div class="cols">
+    <div class="col center">
+      <svg id="sparse-svg" viewBox="0 0 520 200" style="width:100%;"></svg>
+      <svg id="spec-svg" viewBox="0 0 520 150" style="width:100%;"></svg>
+    </div>
+    <div class="col">
+      <ul class="small" style="margin-top:1.5em;">
+        <li>For an ideal GHZ state, the average-parity curve is a
+          <span class="alert">single cosine</span> at frequency
+          \(N\): one spike below.</li>
+        <li>The bottom panel is the curve's
+          <span class="alert">recipe</span>: how much of each
+          candidate frequency it contains. Ours reads 0.9 at
+          frequency \(N\), zero elsewhere: 2 of \(\sim 200\)
+          numbers (a cos and a sin amount).
+          <span class="alert">Sparse</span> means the recipe is
+          nearly empty.</li>
+        <li>Recovering a sparse signal from few random samples is the
+          textbook compressed sensing problem:
+          <span class="good">\(M \propto \log N\) random
+          angles</span> (orange dots) replace the \(2N\) equally
+          spaced ones.</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    On entry: random dots drop onto the curve one by one, then the
+    single spectral spike grows at frequency N.
+  </aside>
+</section>
+
+<!-- =========================================================== 4b -->
+<section data-anim="alias">
+  <h2>Why random beats regular</h2>
+  <div class="center">
+    <svg id="alias-svg" viewBox="0 0 800 300" style="width:88%;"></svg>
+  </div>
+  <p class="small center" id="alias-caption">
+    Frequency 2, sampled at 8 equally spaced angles.
+  </p>
+  <ul class="small">
+    <li class="fragment" data-fragment-anim="alias-draw">Frequency 10
+      passes through <span class="alert">every one</span> of the same
+      samples: \(\cos(10\phi_k) = \cos(2\phi_k)\) exactly. A
+      regular grid has a period for impostors to hide behind; ruling
+      that out for every frequency up to \(N\) is what costs
+      \(2N\).</li>
+    <li class="fragment" data-fragment-anim="alias-random">A random
+      angle has no period: distinct frequencies agree there with
+      probability zero, so each further sample rules out a
+      <span class="alert">constant fraction</span> of the wrong
+      candidates: <span class="good">&sim;log(candidates) samples
+      leave one survivor</span>.</li>
+  </ul>
+</section>
+
+<!-- =========================================================== 4c -->
+
+
+<!-- ============================================================ 5 -->
+<section data-anim="pipe">
+  <h2>Recovery separates detection from estimation</h2>
+  <div class="cols" style="align-items:center;">
+    <div class="col center">
+      <div class="small">1. measure at \(M \approx 5\ln N\)
+        random angles</div>
+      <svg id="pipe1" viewBox="0 0 360 170" style="width:100%;"></svg>
+    </div>
+    <div class="arrow">&#10132;</div>
+    <div class="col center">
+      <div class="small">2. joint fit: penalty leaves one
+        frequency</div>
+      <svg id="pipe2" viewBox="0 0 360 170" style="width:100%;"></svg>
+    </div>
+    <div class="arrow">&#10132;</div>
+    <div class="col center">
+      <div class="small">3. refit the survivor: \(C\) and
+        \(\theta\)</div>
+      <svg id="pipe3" viewBox="0 0 360 170" style="width:100%;"></svg>
+    </div>
+  </div>
+  <ul class="small" style="margin-top:0.8em;">
+    <li>Step 2 is the Lasso<sup>1</sup>: Fit all candidate
+      frequencies <span class="alert">together</span>, with an
+      \(L_1\) penalty on the cosine and sine coefficients; weak
+      candidates are driven
+      <span class="alert">exactly to zero</span>.</li>
+    <li>Why so few: each sample rules out a constant fraction of
+      the wrong frequencies, so \(M \propto \log N\) suffices for
+      a signal this sparse; the refit then leaves only shot
+      noise.</li>
+  </ul>
+  <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Tibshirani,
+    Robert. &ldquo;Regression shrinkage and selection via the
+    lasso.&rdquo; Journal of the Royal Statistical Society B 58.1
+    (1996).</p>
+  <aside class="notes">
+    Details kept off the slide: objective min (1/2M)||y - Ax||^2 +
+    alpha ||x||_1 over columns cos(k phi) and -sin(k phi), k up to
+    K = 100; RIP bound M at least c s log^2(s) log(N) with s = 2.
+    Lasso shrinks amplitudes, hence the unregularized refit.
+  </aside>
+</section>
+
+<!-- =========================================================== 5a2 -->
+
+
+
+
+<!-- =========================================================== 5c -->
+
+
+<!-- ============================================================ 6 -->
+<section data-anim="cert">
+  <h2>The frequency doubles as a certificate</h2>
+  <p class="small">
+    The oscillation frequency <span class="alert">is</span> the size of
+    the prepared coherence: a weight-\(w\) coherence oscillates at
+    frequency \(N - 2w\).
+  </p>
+  <div class="center">
+    <svg id="cert-svg" viewBox="0 0 640 220" style="width:75%;"></svg>
+  </div>
+  <ul class="small">
+    <li class="fragment" data-fragment-anim="cert-flip">
+      <span class="bad">Fixed-frequency fit at \(n = N\)</span>: assigns
+      amplitude to a frequency that is not there.</li>
+    <li class="fragment">
+      <span class="good">Blind recovery</span>: returns
+      \(n_{\mathrm{rec}} = N - 2\) and catches the failure.</li>
+  </ul>
+  <p class="center small fragment">
+    <span class="good">\(n_{\mathrm{rec}} = N\): the dominant
+    coherence is the one an \(N\)-qubit GHZ state would
+    have.</span>
+    &emsp;
+    <span class="bad">\(n_{\mathrm{rec}} \neq N\): caught, not
+      mis-certified.</span><br>
+    <span class="footnote">With \(F > 1/2\) this certifies genuine
+    \(N\)-partite entanglement against the phase-optimized target; it
+    does not rule out other errors or smaller competing
+    coherences.</span>
+  </p>
+  <aside class="notes">
+    First fragment animates the bit flip: the spike slides from N to
+    N minus 2 and turns orange.
+  </aside>
+</section>
+
+<!-- ============================================================ 7 -->
+
+
+
+
+<!-- ============================================================ 9 -->
+<section>
+  <h2>Fixed-frequency fitting produces false certificates</h2>
+  <div class="cols">
+    <div class="col" style="flex:1.2;">
+      <img src="assets/cs_false_certificate.png">
+    </div>
+    <div class="col">
+      <p class="small">Synthetic corrupted state, emulator sampling:
+        dominant coherence (\(C = 0.8\)) at \(N - 2\), zero
+        coherence at \(N\).</p>
+      <ul class="small">
+        <li><span class="bad">Known-frequency OLS at \(n = N\)</span>
+          reports median amplitude 0.75 at \(M = 3\), still
+          \(\approx 0.19\) at \(M = 30\): a false-positive entanglement
+          certificate.</li>
+        <li><span class="good">The CS pipeline</span> recovers
+          \(n_{\mathrm{rec}} = N - 2\) and assigns zero coherence to
+          \(N\): the failure is caught.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== 10 -->
+<section>
+  <h2>Recovery saturates below the working budget</h2>
+  <div class="cols">
+    <div class="col center" style="flex:1.2;">
+      <img src="assets/cs_success_probability.png"
+        style="max-height:420px;">
+    </div>
+    <div class="col">
+      <ul class="small">
+        <li>How often does blind recovery return the right frequency?
+          \(P(n_{\mathrm{rec}} = N)\) at \(N = 42\), 200 trials,
+          1000 shots per angle.</li>
+        <li>Two free passes, then a sharp climb:
+          <span class="good">success saturates by \(M \approx
+          15\)</span>, below the \(5\ln N \approx 19\) we actually
+          budget.</li>
+        <li>That margin is why the hardware run used
+          <span class="alert">19 angles at \(N = 50\)</span> instead
+          of 100.</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    The empirical answer to "how many settings do you really need".
+    Simulated with the analytic emulator and binomial parity sampling.
+    5 ln N is a working rule past this curve's knee, not a theorem.
+  </aside>
+</section>
+
+<section class="sectiontitle">
+  <h1>Preparing states worth verifying</h1>
+</section>
+
+<!-- ========================================================== 10b -->
+<section data-anim="circ">
+  <h2>Preparing a GHZ state: chain versus tree</h2>
+  <div class="cols">
+    <div class="col center">
+      <svg id="circ-chain" viewBox="0 0 380 220" style="width:80%;"></svg>
+      <svg id="arcs-chain" viewBox="0 0 460 100" style="width:88%;"></svg>
+      <div class="small">chain: depth \(N - 1\)
+        (7 layers at \(N = 8\))</div>
+    </div>
+    <div class="col center">
+      <svg id="circ-tree" viewBox="0 0 380 220" style="width:80%;"></svg>
+      <svg id="arcs-tree" viewBox="0 0 460 100" style="width:88%;"></svg>
+      <div class="small">tree: depth \(\log_2 N\)
+        (3 layers at \(N = 8\))</div>
+    </div>
+  </div>
+  <ul class="small" style="margin-top:0.6em;">
+    <li>Same state, same gate count: only the CNOT
+      <span class="alert">schedule</span> differs; every layer is an
+      opportunity for noise, so shallower wins.</li>
+    <li>A CNOT copies bit flips, so a fault near the root fans out to
+      its whole subtree.</li>
+    <li><span class="alert">Shallow preparation trades depth for
+      high-weight errors.</span></li>
+  </ul>
+</section>
+
+<!-- =========================================================== 11 -->
+<section data-anim="spread">
+  <h2>How one bit flip spreads</h2>
+  <div class="cols">
+    <div class="col center" style="flex:1.05;">
+      <svg id="spread-svg" viewBox="0 0 560 300" style="width:100%;"></svg>
+      <div class="small" id="spread-cap"></div>
+    </div>
+    <div class="col">
+      <ul class="small">
+        <li>A CNOT <span class="alert">copies bit flips</span>:
+          <ul>
+            <li>\(\mathrm{CNOT}(X \otimes I) = (X \otimes X)\mathrm{CNOT}\).</li>
+          </ul>
+        </li>
+        <li>Damage depends on <span class="alert">when</span> the
+          fault happens, not how big it was.</li>
+      </ul>
+      <ul class="small" style="margin-top:0.2em;">
+        <li><span class="alert">depth 1</span>: floods the whole
+          subtree.</li>
+        <li class="fragment" data-fragment-anim="spread-d2"><span
+          class="alert">depth 2</span>: reaches far less.</li>
+        <li class="fragment" data-fragment-anim="spread-d3">a <span
+          class="alert">leaf</span>: exactly one qubit.</li>
+      </ul>
+      <p class="small" id="spread-out" style="margin-top:0.4em;"></p>
+    </div>
+  </div>
+  <aside class="notes">
+    Fragments step through the three depths: 7, 3, 1 qubits flipped, so the
+    frequency lands at 1, 9, 13. The frequency is a headcount, which
+    is what the certificate reads.
+  </aside>
+</section>
+
+<!-- ========================================================== 11b -->
+<section data-anim="flagck">
+  <h2>What a flag check measures, and what it does not</h2>
+  <div class="cols" style="align-items:center;">
+    <div class="col center">
+      <svg id="flagck-svg" viewBox="0 0 420 210" style="width:100%;"></svg>
+    </div>
+    <div class="col">
+      <table class="cmp plain small" style="margin:0 0 0.7em;">
+        <thead><tr><th></th><th>\(q_a q_b\)</th>
+          <th>flag reads</th></tr></thead>
+        <tbody>
+          <tr><td>branch \(|0\cdots0\rangle\)</td><td>00</td>
+            <td><span class="good">0</span></td></tr>
+          <tr><td>branch \(|1\cdots1\rangle\)</td><td>11</td>
+            <td><span class="good">0</span></td></tr>
+          <tr><td>after a flip on \(q_a\)</td><td>10</td>
+            <td><span class="bad">1</span></td></tr>
+          <tr><td>after a flip on <em>both</em></td><td>11</td>
+            <td><span class="bad">0 (missed)</span></td></tr>
+        </tbody>
+      </table>
+      <ul class="small">
+        <li><span class="good">Same answer on both branches</span>:
+          the flag learns nothing about <em>which</em>, so the
+          superposition survives.</li>
+        <li>Flag reads 1: <span class="alert">odd bit-flip
+          parity</span> in its region; discard the shot.</li>
+        <li>The missed double flip (two independent faults) moves
+          the frequency to \(N - 4\): <span class="good">the certificate catches
+          what the flag cannot</span>.</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Circuit, spoken: two CNOTs into a spare qubit, then read it.
+    Trimmed from the slide, say only if asked: Z-type errors are
+    invisible to a ZZ check, and the check's own gates can fire it.
+    The check measures Z_a Z_b, which commutes with the GHZ state and
+    has the same eigenvalue on both branches, so no which-branch
+    information leaks. That commutation is why mid-circuit checks are
+    allowed at all.
+  </aside>
+</section>
+
+<!-- ========================================================== 11c -->
+<section data-anim="tree">
+  <h2>One check watches half the tree</h2>
+  <div class="cols">
+    <div class="col center" style="flex:1.1;">
+      <svg id="tree-svg" viewBox="0 0 560 310" style="width:100%;"></svg>
+      <svg id="topo-svg" viewBox="0 0 560 160" style="width:82%;"></svg>
+    </div>
+    <div class="col">
+      <ul class="small">
+        <li class="fragment" data-fragment-anim="tree-pair">The
+          check compares two qubits, so a fault is visible only if
+          it reaches <span class="alert">exactly one</span> of them:
+          true on these paths, not at the split
+          (<span class="alert">both, cancels</span>) or off them
+          (<span class="alert">neither</span>). Coverage counts that
+          path, a proxy rather than a guarantee.</li>
+        <li class="fragment" data-fragment-anim="tree-error">A flip
+          on a covered qubit: caught, shot discarded.</li>
+        <li class="fragment" data-fragment-anim="tree-pair2">Each
+          extra check adds <span class="alert">less than the
+          last</span>: submodular, so <span class="good">greedy is
+          within \(1 - 1/e\) of optimal</span>.</li>
+        <li>Cost: <span class="alert">acceptance</span>, and extra
+          gates can hurt fidelity. A
+          <span class="alert">hardware-dependent break-even</span>.</li>
+      </ul>
+      <p class="small" style="color:#555;">Adapted from IBM's
+        low-overhead error detection<sup>1,2</sup> to trapped-ion
+        connectivity.</p>
+    </div>
+  </div>
+  <p class="footnote" style="margin-bottom:0.1em;"><sup>1</sup>Martiel,
+    Simon, and Ali Javadi-Abhari. &ldquo;Low-overhead error detection
+    with spacetime codes.&rdquo; arXiv:2504.15725
+    (2025).</p>
+  <p class="footnote" style="margin-top:0;"><sup>2</sup>Javadi-Abhari,
+    Ali, et al. &ldquo;Big cats: entanglement in 120 qubits and
+    beyond.&rdquo; arXiv:2510.09520 (2025).</p>
+  <aside class="notes">
+    Fragment 1 highlights the check pair and its covered paths.
+    Fragment 2 animates an error pulse propagating down into a flagged
+    leaf; the flag fires.
+  </aside>
+</section>
+
+<!-- =========================================================== 12 -->
+
+<!-- =========================================================== 14 -->
+<section>
+  <h2>Quantinuum H2-1 hardware, 50 qubits</h2>
+  <div class="center">
+    <img src="assets/ghz_analysis_50q_fidphase.png"
+      style="width:74%;">
+  </div>
+  <ul class="small" style="margin-top:0.5em;">
+    <li><span class="good">19 random angles</span> instead of
+      \(2N = 100\): 5&times; fewer circuits; 1000 shots per circuit
+      (cost-limited), hence the wide error bars.</li>
+    <li>\(F_{\mathrm{rot}} = (P + C)/2\) scores against the GHZ
+      state with the measured phase folded in; the standard fidelity
+      pays \(\cos\theta\). Rotated fidelity \(\approx 0.72\)
+      with 4 flags; <span class="good">both improve with
+      flags</span>.</li>
+    <li>Large phase offset at zero flags: consistent with accumulated
+      coherent calibration error, amplified by
+      \(\theta = \sum_i \epsilon_i\) at \(N = 50\).</li>
+  </ul>
+  <aside class="notes">
+    Population and coherence panels live in the paper figure;
+    population rises with flags, coherence flat within error bars.
+  </aside>
+</section>
+
+
+
+
+
+<!-- =========================================================== 17 -->
+<section data-anim="term">
+  <h2>Run it yourself: metriq-gym</h2>
+  <div class="term">
+    <div class="term-bar"><span class="r"></span><span
+      class="y"></span><span class="g"></span></div>
+    <pre id="term-pre"></pre>
+  </div>
+  <ul class="small" style="margin-top:0.7em;">
+    <li>One dispatch, one poll, on any supported backend (IBM,
+      Quantinuum, IonQ, local simulators); the estimator and the
+      \(n_{\mathrm{rec}} = N\) size check come built in.</li>
+    <li>DFE and full parity oscillation are included as alternative
+      verification methods for comparison.</li>
+  </ul>
+  <p class="center small">
+    <a href="https://github.com/unitaryfoundation/metriq-gym"
+      style="color:inherit;"><code>github.com/unitaryfoundation/metriq-gym</code></a>
+  </p>
+  <aside class="notes">
+    The terminal types itself on entry. GHZ benchmark lands via
+    metriq-gym PR 736: BFS spanning tree on the device connectivity
+    graph, three verification methods (DFE, parity oscillation,
+    compressed sensing with M = ceil(5 ln N)).
+  </aside>
+</section>
+
+
+
+
+
+<!-- ============================================================== -->
+<section class="sectiontitle" data-anim="thanks">
+  <h1 style="font-size:1.8em; margin-bottom:0.3em;">Thanks!</h1>
+  <div class="cols" style="align-items:center;">
+    <div class="col center">
+      <svg id="thx-cs" viewBox="0 0 380 170"
+        style="width:88%;"></svg>
+      <div class="footnote">verify with \(\log N\) random
+        circuits</div>
+    </div>
+    <div class="col center">
+      <p style="margin:0.1em 0;">Vincent Russo</p>
+      <p class="small" style="margin:0.3em 0;">
+        <a href="https://vprusso.github.io" style="color:inherit;"><code>vprusso.github.io</code></a><br>
+        <a href="mailto:vincentrusso1@gmail.com" style="color:inherit;"><code>vincentrusso1@gmail.com</code></a><br>
+        <a href="https://github.com/vprusso" style="color:inherit;"><code>github.com/vprusso</code></a>
+      </p>
+      <p style="margin:0.3em 0; font-size:0.62em;
+        white-space:nowrap;">Paper: arXiv:2604.27824<br>
+        Blog: <a href="https://vprusso.github.io/posts/ghz_cs/"
+        style="color:inherit;"><code>vprusso.github.io/posts/ghz_cs/</code></a></p>
+    </div>
+    <div class="col center">
+      <svg id="thx-flag" viewBox="0 0 380 170"
+        style="width:88%;"></svg>
+      <div class="footnote">catch errors during preparation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 8 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================================== 13 -->
+
+
+
+
+<!-- =========================================================== 15 -->
+
+
+<!-- =========================================================== 16 -->
+
+
+<!-- ========================================================== 18b -->
+
+
+<!-- =========================================================== 19 -->
+<!-- =========================================================== 20 -->
+
+
+
+
+</div>
+</div>
+
+<script src="vendor/reveal/reveal.js"></script>
+<script src="vendor/reveal/plugin/notes/notes.js"></script>
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/auto-render.min.js"></script>
+<script>
+// ===================== plotting helpers =====================
+// ?noanim=1 renders every animation at its final state (for printing,
+// PDF export, or screenshots).
+const NOANIM = new URLSearchParams(location.search).has('noanim');
+let animGen = 0;  // bumped on slide change; running loops check it
+const NS = 'http://www.w3.org/2000/svg';
+
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+// Simple axes-in-a-box mapper: data range -> pixel range inside svg.
+function mapper(x0, x1, y0, y1, px0, px1, py0, py1) {
+  return {
+    x: v => px0 + (v - x0) / (x1 - x0) * (px1 - px0),
+    y: v => py0 + (v - y0) / (y1 - y0) * (py1 - py0),
+  };
+}
+
+function curveData(fn, x0, x1, n, m) {
+  let d = '';
+  for (let i = 0; i <= n; i++) {
+    const x = x0 + (x1 - x0) * i / n;
+    d += (i ? 'L' : 'M') + m.x(x).toFixed(1) + ',' + m.y(fn(x)).toFixed(1);
+  }
+  return d;
+}
+
+function axisLines(svg, m, x0, x1, y0, y1) {
+  el('line', {x1: m.x(x0), y1: m.y(y0), x2: m.x(x1), y2: m.y(y0),
+    stroke: '#999', 'stroke-width': 1.2}, svg);
+  el('line', {x1: m.x(x0), y1: m.y(y0), x2: m.x(x0), y2: m.y(y1),
+    stroke: '#999', 'stroke-width': 1.2}, svg);
+}
+
+// Draw-on animation for a path.
+function drawOn(path, ms, done) {
+  if (NOANIM) {
+    path.style.opacity = 1;
+    if (done) done();
+    return;
+  }
+  const L = path.getTotalLength();
+  path.style.strokeDasharray = L;
+  path.style.strokeDashoffset = L;
+  path.style.opacity = 1;
+  let t0 = null;
+  function step(t) {
+    if (t0 === null) t0 = t;
+    const f = Math.min((t - t0) / ms, 1);
+    path.style.strokeDashoffset = L * (1 - f);
+    if (f < 1) requestAnimationFrame(step);
+    else if (done) done();
+  }
+  requestAnimationFrame(step);
+}
+
+const BLUE = '#1f77b4', ORANGE = '#d55e00';
+
+// ===================== title banner =====================
+const titleAnim = {};
+function buildTitle() {
+  const svg = document.getElementById('title-svg');
+  svg.innerHTML = '';
+  const m = mapper(0, 2 * Math.PI, -1.45, 1.45, 10, 1090, 100, 10);
+  titleAnim.curve = el('path', {
+    d: curveData(x => Math.cos(6 * x), 0, 2 * Math.PI, 600, m),
+    fill: 'none', stroke: BLUE, 'stroke-width': 3, opacity: 0}, svg);
+  [0.53, 1.31, 2.02, 2.94, 4.13, 5.41].forEach(x => {
+    el('circle', {cx: m.x(x), cy: m.y(Math.cos(6 * x)), r: 6,
+      fill: ORANGE}, svg);
+  });
+}
+function startTitle() {
+  buildTitle();
+  const gen = animGen;
+  setTimeout(function cycle() {
+    if (gen !== animGen) return;
+    drawOn(titleAnim.curve, 2200, () => {
+      if (!NOANIM) setTimeout(cycle, 3500);
+    });
+  }, 80);
+}
+
+// ===================== slide 3: parity =====================
+const parity = {};
+function buildParity() {
+  // population bars
+  const ps = document.getElementById('pop-svg');
+  ps.innerHTML = '';
+  const pm = mapper(0.3, 7.7, 0, 0.6, 45, 440, 180, 15);
+  axisLines(ps, pm, 0.3, 7.7, 0, 0.6);
+  el('text', {x: 16, y: 100, 'font-size': 15,
+    transform: 'rotate(-90 16 100)', 'text-anchor': 'middle'},
+    ps).textContent = 'probability';
+  const heights = [0.47, 0.01, 0.02, 0.01, 0.02, 0.01, 0.46];
+  heights.forEach((h, i) => {
+    const x = pm.x(i + 1);
+    el('rect', {x: x - 9, y: pm.y(h), width: 18,
+      height: pm.y(0) - pm.y(h), fill: BLUE}, ps);
+  });
+  el('text', {x: pm.x(1), y: 202, 'text-anchor': 'middle',
+    'font-size': 15}, ps).textContent = '|0⋯0⟩';
+  el('text', {x: pm.x(7), y: 202, 'text-anchor': 'middle',
+    'font-size': 15}, ps).textContent = '|1⋯1⟩';
+
+  // parity curve, N = 5 over the full sweep: wiggles are countable
+  const svg = document.getElementById('parity-svg');
+  svg.innerHTML = '';
+  const f = x => 0.9 * Math.cos(5 * x + 0.5);
+  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 440, 190, 26);
+  axisLines(svg, m, 0, 2 * Math.PI, -1.2, 1.2);
+  el('text', {x: 242, y: 14, 'text-anchor': 'middle', 'font-size': 13,
+    fill: '#667'}, svg).textContent =
+    'drawn for N = 5: count the oscillations, count the qubits';
+  el('text', {x: 240, y: 207, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  el('text', {x: 16, y: 108, 'font-size': 15,
+    transform: 'rotate(-90 16 108)', 'text-anchor': 'middle'},
+    svg).textContent = 'average parity';
+  parity.curve = el('path', {
+    d: curveData(f, 0, 2 * Math.PI, 400, m),
+    fill: 'none', stroke: BLUE, 'stroke-width': 2.5, opacity: 0}, svg);
+  parity.dots = el('g', {}, svg);
+  for (let k = 0; k < 10; k++) {
+    const x = 2 * Math.PI * k / 10;
+    el('circle', {cx: m.x(x), cy: m.y(f(x)), r: 3.8,
+      fill: '#444'}, parity.dots);
+  }
+}
+function drawRings(rs, tsec) {
+  rs.innerHTML = '';
+  [[180, 108, BLUE], [280, 108, ORANGE]].forEach(src => {
+    const cx = src[0], cy = src[1], col = src[2];
+    for (let i = 0; i < 4; i++) {
+      const r = (tsec * 30 + i * 25) % 100;
+      el('circle', {cx: cx, cy: cy, r: Math.max(r, 0.1),
+        fill: 'none', stroke: col, 'stroke-width': 2,
+        opacity: (0.85 * (1 - r / 100)).toFixed(2)}, rs);
+    }
+    el('circle', {cx: cx, cy: cy, r: 4, fill: col}, rs);
+  });
+}
+function buildOscCurves() {
+  const svg = document.getElementById('osc-curves');
+  svg.innerHTML = '';
+  const m = mapper(0, 2 * Math.PI, -1.35, 1.35, 40, 440, 220, 15);
+  axisLines(svg, m, 0, 2 * Math.PI, -1.35, 1.35);
+  el('text', {x: 240, y: 250, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  el('text', {x: 14, y: 118, 'font-size': 15,
+    transform: 'rotate(-90 14 118)', 'text-anchor': 'middle'},
+    svg).textContent = 'average parity';
+  el('path', {d: curveData(x => Math.cos(2 * x), 0, 2 * Math.PI, 300,
+    m), fill: 'none', stroke: BLUE, 'stroke-width': 2.5}, svg);
+  el('path', {d: curveData(x => 0.6 * Math.cos(2 * x), 0,
+    2 * Math.PI, 300, m), fill: 'none', stroke: ORANGE,
+    'stroke-width': 2.5}, svg);
+  el('path', {d: curveData(x => 0, 0, 2 * Math.PI, 2, m),
+    fill: 'none', stroke: '#999', 'stroke-width': 2.5}, svg);
+  el('text', {x: 448, y: m.y(1.0) + 4, 'font-size': 13,
+    fill: BLUE}, svg).textContent = 'C = 1';
+  el('text', {x: 448, y: m.y(0.6) + 4, 'font-size': 13,
+    fill: ORANGE}, svg).textContent = 'C = 0.6';
+  el('text', {x: 448, y: m.y(0) + 4, 'font-size': 13,
+    fill: '#888'}, svg).textContent = 'coin flip';
+}
+function startOsc() {
+  buildOscCurves();
+  const gen = animGen;
+  const rs = document.getElementById('osc-ripple');
+  if (NOANIM) { drawRings(rs, 1.6); return; }
+  let t0 = null;
+  requestAnimationFrame(function rip(t) {
+    if (gen !== animGen) return;
+    if (t0 === null) t0 = t;
+    drawRings(rs, (t - t0) / 1000);
+    requestAnimationFrame(rip);
+  });
+}
+function buildFreqMove() {
+  [['fm1', 8, BLUE, false], ['fm2', 6, ORANGE, false],
+   ['fm3', 0, ORANGE, true]].forEach(row => {
+    const svg = document.getElementById(row[0]);
+    svg.innerHTML = '';
+    const m = mapper(0, 2 * Math.PI, -1.3, 1.3, 4, 256, 56, 4);
+    if (row[3]) {
+      el('path', {d: curveData(x => 0.15, 0, 2 * Math.PI, 2, m),
+        fill: 'none', stroke: row[2], 'stroke-width': 2.5}, svg);
+    } else {
+      el('path', {d: curveData(x => 0.9 * Math.cos(row[1] * x), 0,
+        2 * Math.PI, 400, m), fill: 'none', stroke: row[2],
+        'stroke-width': 2.5}, svg);
+    }
+  });
+}
+function buildCircArcs() {
+  const nx = i => 40 + 54.5 * i, ny = 74;
+  const chain = document.getElementById('arcs-chain');
+  chain.innerHTML = '';
+  for (let i = 0; i < 7; i++)
+    el('line', {x1: nx(i) + 12, y1: ny, x2: nx(i + 1) - 12, y2: ny,
+      stroke: BLUE, 'stroke-width': 2.5}, chain);
+  const tree = document.getElementById('arcs-tree');
+  tree.innerHTML = '';
+  const layers = [
+    [[1, 2, BLUE]],
+    [[1, 3, ORANGE], [2, 4, ORANGE]],
+    [[1, 5, '#999'], [2, 6, '#999'], [3, 7, '#999'], [4, 8, '#999']],
+  ];
+  layers.forEach(layer => layer.forEach(g => {
+    const a = nx(g[0] - 1), b = nx(g[1] - 1);
+    const h = 14 + 0.22 * (b - a);
+    el('path', {d: 'M' + a + ',' + (ny - 12) + ' Q' + ((a + b) / 2)
+      + ',' + (ny - 12 - h) + ' ' + b + ',' + (ny - 12),
+      fill: 'none', stroke: g[2], 'stroke-width': 2.2}, tree);
+  }));
+  [chain, tree].forEach(svg => {
+    for (let i = 0; i < 8; i++) {
+      el('circle', {cx: nx(i), cy: ny, r: 12, fill: '#eee',
+        stroke: '#999'}, svg);
+      el('text', {x: nx(i), y: ny + 4.5, 'text-anchor': 'middle',
+        'font-size': 12}, svg).textContent = i + 1;
+    }
+  });
+}
+function buildCirc() {
+  buildCircArcs();
+  [['circ-chain', [[1, 2], [2, 3], [3, 4]], [120, 190, 260]],
+   ['circ-tree', [[1, 2], [1, 3], [2, 4]], [120, 210, 260]]]
+  .forEach(spec => {
+    const svg = document.getElementById(spec[0]);
+    svg.innerHTML = '';
+    const wy = q => 30 + 50 * (q - 1);
+    if (spec[0] === 'circ-tree') {
+      el('rect', {x: 192, y: wy(1) - 20, width: 88,
+        height: wy(4) - wy(1) + 40, rx: 6, fill: '#1f77b4',
+        opacity: 0.1}, svg);
+      el('text', {x: 236, y: wy(4) + 38, 'text-anchor': 'middle',
+        'font-size': 13, fill: '#1f77b4'}, svg).textContent =
+        'one layer';
+    }
+    for (let q = 1; q <= 4; q++) {
+      el('line', {x1: 55, y1: wy(q), x2: 330, y2: wy(q),
+        stroke: '#444', 'stroke-width': 2}, svg);
+      el('text', {x: 48, y: wy(q) + 5, 'text-anchor': 'end',
+        'font-size': 15}, svg).textContent = 'q' + q + ' |0⟩';
+    }
+    el('rect', {x: 72, y: wy(1) - 14, width: 28, height: 28,
+      fill: 'white', stroke: '#444', 'stroke-width': 2}, svg);
+    el('text', {x: 86, y: wy(1) + 5, 'text-anchor': 'middle',
+      'font-size': 16, 'font-style': 'italic'}, svg).textContent = 'H';
+    spec[1].forEach((g, i) => {
+      const x = spec[2][i], ya = wy(g[0]), yb = wy(g[1]);
+      el('circle', {cx: x, cy: ya, r: 4.5, fill: '#444'}, svg);
+      el('line', {x1: x, y1: ya, x2: x, y2: yb + 10,
+        stroke: '#444', 'stroke-width': 2}, svg);
+      el('circle', {cx: x, cy: yb, r: 10, fill: 'none',
+        stroke: '#444', 'stroke-width': 2}, svg);
+    });
+  });
+}
+function startParity() {
+  buildParity();
+  setTimeout(() => drawOn(parity.curve, 1600), 80);
+}
+
+// ===================== compressed sensing intro =====================
+function csSignal(x) {
+  return 0.5 * Math.cos(2 * x) + 0.32 * Math.cos(5 * x)
+    + 0.22 * Math.cos(9 * x);
+}
+// small content at every other frequency, so the JPEG row's spectrum
+// is an exact transform of its curve; stub heights match these
+function csJunk(x) {
+  let v = 0;
+  for (let k = 1; k <= 20; k++) {
+    if ([2, 5, 9].includes(k)) continue;
+    v += (0.03 + 0.025 * ((k * 7) % 3)) * Math.cos(k * x + k);
+  }
+  return v;
+}
+function csRow(svgId, label1, label2, dense, arrowLabel, note1, note2) {
+  const svg = document.getElementById(svgId);
+  svg.innerHTML = '';
+  el('text', {x: 170, y: 78, 'text-anchor': 'end', 'font-size': 17,
+    'font-weight': 600}, svg).textContent = label1;
+  el('text', {x: 170, y: 100, 'text-anchor': 'end',
+    'font-size': 16}, svg).textContent = label2;
+  const ms = mapper(0, 2 * Math.PI, -1.25, 1.25, 195, 480, 150, 20);
+  axisLines(svg, ms, 0, 2 * Math.PI, -1.25, 1.25);
+  if (dense) {
+    const f = x => csSignal(x) + csJunk(x);
+    el('path', {d: curveData(f, 0, 2 * Math.PI, 400, ms),
+      fill: 'none', stroke: BLUE, 'stroke-width': 2.2}, svg);
+    for (let i = 0; i <= 60; i++) {
+      const x = 2 * Math.PI * i / 60;
+      el('circle', {cx: ms.x(x), cy: ms.y(f(x)), r: 2,
+        fill: '#555'}, svg);
+    }
+  } else {
+    el('path', {d: curveData(csSignal, 0, 2 * Math.PI, 400, ms),
+      fill: 'none', stroke: '#a9cbe3', 'stroke-dasharray': '6 5',
+      'stroke-width': 2}, svg);
+    [0.53, 1.31, 2.02, 2.94, 4.13, 5.41].forEach(x =>
+      el('circle', {cx: ms.x(x), cy: ms.y(csSignal(x)), r: 5.5,
+        fill: ORANGE}, svg));
+  }
+  el('line', {x1: 505, y1: 85, x2: 585, y2: 85, stroke: '#888',
+    'stroke-width': 2.5}, svg);
+  el('path', {d: 'M585,85 l-10,-5 l0,10 z', fill: '#888'}, svg);
+  el('text', {x: 545, y: 72, 'text-anchor': 'middle',
+    'font-size': 14, fill: '#666'}, svg).textContent = arrowLabel;
+  const mf = mapper(0, 21, 0, 0.62, 610, 895, 150, 20);
+  axisLines(svg, mf, 0, 21, 0, 0.62);
+  el('text', {x: 893, y: 168, 'text-anchor': 'end',
+    'font-size': 14}, svg).textContent = 'frequency';
+  if (dense) {
+    for (let k = 1; k <= 20; k++) {
+      if ([2, 5, 9].includes(k)) continue;
+      el('line', {x1: mf.x(k), y1: mf.y(0), x2: mf.x(k),
+        y2: mf.y(0.03 + 0.025 * ((k * 7) % 3)), stroke: '#bbb',
+        'stroke-width': 2.5}, svg);
+    }
+  }
+  [[2, 0.5], [5, 0.32], [9, 0.22]].forEach(([k, a]) => {
+    el('line', {x1: mf.x(k), y1: mf.y(0), x2: mf.x(k), y2: mf.y(a),
+      stroke: BLUE, 'stroke-width': 5}, svg);
+    el('circle', {cx: mf.x(k), cy: mf.y(a), r: 4.5, fill: BLUE}, svg);
+  });
+  el('text', {x: 920, y: 78, 'font-size': 15,
+    fill: '#555'}, svg).textContent = note1;
+  el('text', {x: 920, y: 100, 'font-size': 15,
+    fill: '#555'}, svg).textContent = note2;
+}
+function buildCS() {
+  csRow('cs1', 'compression', '(a JPEG)', true, 'transform',
+    'keep 3,', 'drop the rest');
+  el('text', {x: 752, y: 14, 'text-anchor': 'middle',
+    'font-size': 14, fill: '#666'},
+    document.getElementById('cs1')).textContent = 'its recipe';
+  csRow('cs2', 'compressed', 'sensing', false, 'solve',
+    'same 3 numbers,', 'never measured the rest');
+}
+
+// ===================== slide 4: sparse =====================
+const sparse = {};
+function buildSparse() {
+  const svg = document.getElementById('sparse-svg');
+  svg.innerHTML = '';
+  const m = mapper(0, Math.PI, -1.2, 1.2, 45, 500, 180, 12);
+  axisLines(svg, m, 0, Math.PI, -1.2, 1.2);
+  el('text', {x: 270, y: 197, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  el('text', {x: 16, y: 100, 'font-size': 15,
+    transform: 'rotate(-90 16 100)', 'text-anchor': 'middle'},
+    svg).textContent = 'average parity';
+  el('path', {d: curveData(x => 0.9 * Math.cos(10 * x), 0, Math.PI,
+    300, m), fill: 'none', stroke: BLUE, 'stroke-width': 2.5}, svg);
+  sparse.xs = [0.23, 0.61, 1.07, 1.52, 2.18, 2.74];
+  sparse.dots = sparse.xs.map(x => el('circle', {
+    cx: m.x(x), cy: m.y(1.35), r: 4.5, fill: ORANGE, opacity: 0}, svg));
+  sparse.targets = sparse.xs.map(x => m.y(0.9 * Math.cos(10 * x)));
+
+  const sp = document.getElementById('spec-svg');
+  sp.innerHTML = '';
+  const sm = mapper(0, 20, 0, 1.15, 45, 500, 120, 15);
+  axisLines(sp, sm, 0, 20, 0, 1.15);
+  el('text', {x: 16, y: 70, 'font-size': 14,
+    transform: 'rotate(-90 16 70)', 'text-anchor': 'middle'},
+    sp).textContent = 'amplitude';
+  el('text', {x: 498, y: 143, 'text-anchor': 'end',
+    'font-size': 15}, sp).textContent = 'frequency';
+  el('text', {x: sm.x(10), y: 143, 'text-anchor': 'middle',
+    'font-size': 15, fill: '#333'}, sp).textContent = 'N';
+  el('line', {x1: sm.x(10), y1: sm.y(0), x2: sm.x(10),
+    y2: sm.y(0) + 6, stroke: '#333'}, sp);
+  el('text', {x: 52, y: 14, 'font-size': 13, fill: '#777'},
+    sp).textContent = "the curve's recipe: how much of each frequency";
+  sparse.spike = el('line', {x1: sm.x(10), y1: sm.y(0), x2: sm.x(10),
+    y2: sm.y(0), stroke: BLUE, 'stroke-width': 5}, sp);
+  sparse.spikeTop = sm.y(0.9);
+  sparse.spikeBase = sm.y(0);
+  sparse.dotTop = el('circle', {cx: sm.x(10), cy: sm.y(0), r: 5,
+    fill: BLUE, opacity: 0}, sp);
+  el('text', {x: sm.x(10) + 14, y: sm.y(0.9) + 12, 'font-size': 13,
+    fill: '#888'}, sp).textContent = 'the whole curve, one entry';
+}
+function startSparse() {
+  const gen = animGen;
+  (function cycle() {
+  if (gen !== animGen) return;
+  buildSparse();
+  if (NOANIM) {
+    sparse.dots.forEach((d, i) => {
+      d.setAttribute('opacity', 1);
+      d.setAttribute('cy', sparse.targets[i]);
+    });
+    sparse.spike.setAttribute('y2', sparse.spikeTop);
+    sparse.dotTop.setAttribute('cy', sparse.spikeTop);
+    sparse.dotTop.setAttribute('opacity', 1);
+    return;
+  }
+  sparse.dots.forEach((d, i) => {
+    setTimeout(() => {
+      if (gen !== animGen) return;
+      d.setAttribute('opacity', 1);
+      const y0 = parseFloat(d.getAttribute('cy')), y1 = sparse.targets[i];
+      let t0 = null;
+      requestAnimationFrame(function fall(t) {
+        if (t0 === null) t0 = t;
+        const f = Math.min((t - t0) / 350, 1);
+        d.setAttribute('cy', y0 + (y1 - y0) * (f * f));
+        if (f < 1) requestAnimationFrame(fall);
+      });
+    }, 350 * i + 400);
+  });
+  setTimeout(() => {
+    if (gen !== animGen) return;
+    let t0 = null;
+    requestAnimationFrame(function grow(t) {
+      if (gen !== animGen) return;
+      if (t0 === null) t0 = t;
+      const f = Math.min((t - t0) / 600, 1);
+      const y = sparse.spikeBase + (sparse.spikeTop - sparse.spikeBase) * f;
+      sparse.spike.setAttribute('y2', y);
+      if (f < 1) requestAnimationFrame(grow);
+      else {
+        sparse.dotTop.setAttribute('cy', sparse.spikeTop);
+        sparse.dotTop.setAttribute('opacity', 1);
+      }
+    });
+  }, 350 * sparse.xs.length + 900);
+  setTimeout(cycle, 350 * sparse.xs.length + 5000);
+  })();
+}
+
+// ===================== slide 6: pipeline =====================
+const pipe = {};
+function buildPipe() {
+  const xs = [0.23, 0.61, 1.07, 1.52, 2.18, 2.74];
+  const f = x => 0.9 * Math.cos(10 * x);
+
+  const s1 = document.getElementById('pipe1');
+  s1.innerHTML = '';
+  const m1 = mapper(0, Math.PI, -1.25, 1.25, 28, 350, 152, 12);
+  axisLines(s1, m1, 0, Math.PI, -1.25, 1.25);
+  el('text', {x: 189, y: 168, 'text-anchor': 'middle',
+    'font-size': 12}, s1).textContent = 'rotation angle \u03d5';
+  el('text', {x: 11, y: 82, 'font-size': 12,
+    transform: 'rotate(-90 11 82)', 'text-anchor': 'middle'},
+    s1).textContent = 'average parity';
+  el('path', {d: curveData(f, 0, Math.PI, 300, m1), fill: 'none',
+    stroke: '#a9cbe3', 'stroke-dasharray': '6 5',
+    'stroke-width': 2}, s1);
+  pipe.dots = xs.map(x => el('circle', {cx: m1.x(x), cy: m1.y(1.4),
+    r: 5, fill: ORANGE, opacity: 0}, s1));
+  pipe.dotTargets = xs.map(x => m1.y(f(x)));
+
+  const s2 = document.getElementById('pipe2');
+  s2.innerHTML = '';
+  const m2 = mapper(0, 21, 0, 1.15, 28, 350, 140, 12);
+  axisLines(s2, m2, 0, 21, 0, 1.15);
+  el('text', {x: 12, y: 76, 'font-size': 14,
+    transform: 'rotate(-90 12 76)', 'text-anchor': 'middle'},
+    s2).textContent = 'amplitude';
+  el('text', {x: 348, y: 160, 'text-anchor': 'end',
+    'font-size': 12}, s2).textContent = 'frequency';
+  const lab = el('text', {x: m2.x(10), y: 160,
+    'text-anchor': 'middle', 'font-size': 14}, s2);
+  lab.textContent = 'n';
+  const sub = document.createElementNS(NS, 'tspan');
+  sub.setAttribute('font-size', '10');
+  sub.setAttribute('dy', '3');
+  sub.textContent = 'rec';
+  lab.appendChild(sub);
+  const grayH = [0.10, 0.06, 0.13, 0.05, 0.09, 0.12, 0.04, 0.08,
+    0.06, 0, 0.05, 0.11, 0.07, 0.04, 0.10, 0.06, 0.08, 0.05, 0.09,
+    0.06];
+  pipe.grays = [];
+  for (let k = 1; k <= 20; k++) {
+    if (k === 10) continue;
+    pipe.grays.push(el('line', {x1: m2.x(k), y1: m2.y(0),
+      x2: m2.x(k), y2: m2.y(grayH[k - 1]), stroke: '#bbb',
+      'stroke-width': 3}, s2));
+  }
+  pipe.blue = el('line', {x1: m2.x(10), y1: m2.y(0), x2: m2.x(10),
+    y2: m2.y(0), stroke: BLUE, 'stroke-width': 5}, s2);
+  pipe.blueTop = m2.y(0.9);
+  pipe.blueBase = m2.y(0);
+
+  const s3 = document.getElementById('pipe3');
+  s3.innerHTML = '';
+  const m3 = mapper(0, Math.PI, -1.25, 1.25, 28, 350, 152, 12);
+  axisLines(s3, m3, 0, Math.PI, -1.25, 1.25);
+  el('text', {x: 189, y: 168, 'text-anchor': 'middle',
+    'font-size': 12}, s3).textContent = 'rotation angle \u03d5';
+  el('text', {x: 11, y: 82, 'font-size': 12,
+    transform: 'rotate(-90 11 82)', 'text-anchor': 'middle'},
+    s3).textContent = 'average parity';
+  pipe.curve = el('path', {d: curveData(f, 0, Math.PI, 300, m3),
+    fill: 'none', stroke: BLUE, 'stroke-width': 2.5, opacity: 0}, s3);
+  xs.forEach(x => el('circle', {cx: m3.x(x), cy: m3.y(f(x)), r: 5,
+    fill: ORANGE}, s3));
+}
+function startPipe() {
+  const gen = animGen;
+  (function cycle() {
+  if (gen !== animGen) return;
+  buildPipe();
+  if (NOANIM) {
+    pipe.dots.forEach((d, i) => {
+      d.setAttribute('opacity', 1);
+      d.setAttribute('cy', pipe.dotTargets[i]);
+    });
+    pipe.grays.forEach(g => g.setAttribute('opacity', 0.3));
+    pipe.blue.setAttribute('y2', pipe.blueTop);
+    pipe.curve.style.opacity = 1;
+    return;
+  }
+  pipe.dots.forEach((d, i) => {
+    setTimeout(() => {
+      if (gen !== animGen) return;
+      d.setAttribute('opacity', 1);
+      const y0 = parseFloat(d.getAttribute('cy'));
+      const y1 = pipe.dotTargets[i];
+      let t0 = null;
+      requestAnimationFrame(function fall(t) {
+        if (t0 === null) t0 = t;
+        const g = Math.min((t - t0) / 300, 1);
+        d.setAttribute('cy', y0 + (y1 - y0) * (g * g));
+        if (g < 1) requestAnimationFrame(fall);
+      });
+    }, 180 * i + 200);
+  });
+  setTimeout(() => {
+    if (gen !== animGen) return;
+    pipe.grays.forEach(g => { g.style.transition = 'opacity 0.6s';
+      g.style.opacity = 0.3; });
+    let t0 = null;
+    requestAnimationFrame(function grow(t) {
+      if (gen !== animGen) return;
+      if (t0 === null) t0 = t;
+      const g = Math.min((t - t0) / 500, 1);
+      pipe.blue.setAttribute('y2',
+        pipe.blueBase + (pipe.blueTop - pipe.blueBase) * g);
+      if (g < 1) requestAnimationFrame(grow);
+    });
+  }, 1700);
+  setTimeout(() => { if (gen === animGen) drawOn(pipe.curve, 1200); },
+    2700);
+  setTimeout(cycle, 6400);
+  })();
+}
+
+// ===================== live recovery demo =====================
+const demo = {};
+
+function lassoRecover(phis, ys, K, alpha) {
+  // dictionary columns cos(k phi), -sin(k phi); coordinate descent
+  const M = ys.length, ncol = 2 * K;
+  const cols = [], norm2 = [];
+  for (let k = 1; k <= K; k++) {
+    const c = phis.map(p => Math.cos(k * p));
+    const sn = phis.map(p => -Math.sin(k * p));
+    cols.push(c, sn);
+  }
+  cols.forEach(col => norm2.push(col.reduce((a, v) => a + v * v, 0)));
+  const beta = new Float64Array(ncol);
+  const resid = ys.slice();
+  for (let it = 0; it < 250; it++) {
+    for (let j = 0; j < ncol; j++) {
+      if (norm2[j] < 1e-12) continue;
+      const old = beta[j];
+      let rho = 0;
+      for (let i = 0; i < M; i++)
+        rho += cols[j][i] * (resid[i] + old * cols[j][i]);
+      rho /= M;
+      const z = norm2[j] / M;
+      const b = Math.sign(rho) * Math.max(Math.abs(rho) - alpha, 0) / z;
+      if (b !== old) {
+        for (let i = 0; i < M; i++)
+          resid[i] += (old - b) * cols[j][i];
+        beta[j] = b;
+      }
+    }
+  }
+  const amps = [];
+  for (let k = 1; k <= K; k++)
+    amps.push(Math.hypot(beta[2 * (k - 1)], beta[2 * k - 1]));
+  let best = 0;
+  amps.forEach((a, i) => { if (a > amps[best]) best = i; });
+  const nrec = best + 1;
+  // OLS refit on the two columns of nrec removes the Lasso shrinkage
+  const c = phis.map(p => Math.cos(nrec * p));
+  const sn = phis.map(p => -Math.sin(nrec * p));
+  let scc = 0, sss = 0, scs = 0, scy = 0, ssy = 0;
+  for (let i = 0; i < M; i++) {
+    scc += c[i] * c[i]; sss += sn[i] * sn[i]; scs += c[i] * sn[i];
+    scy += c[i] * ys[i]; ssy += sn[i] * ys[i];
+  }
+  const det = scc * sss - scs * scs;
+  let chat = amps[best];
+  if (Math.abs(det) > 1e-12) {
+    const a = (sss * scy - scs * ssy) / det;
+    const b = (scc * ssy - scs * scy) / det;
+    chat = Math.hypot(a, b);
+  }
+  return {amps: amps, nrec: nrec, chat: chat};
+}
+
+function gauss() {
+  return Math.sqrt(-2 * Math.log(1 - Math.random()))
+    * Math.cos(2 * Math.PI * Math.random());
+}
+
+function buildDemoData() {
+  const N = 42, C = 0.8, theta = 0.4, sigma = 1 / Math.sqrt(1000);
+  demo.N = N;
+  demo.phis = [];
+  demo.ys = [];
+  for (let i = 0; i < 15; i++) {
+    const p = Math.random() * 2 * Math.PI;
+    demo.phis.push(p);
+    demo.ys.push(C * Math.cos(N * p + theta) + sigma * gauss());
+  }
+}
+
+function demoRender(m) {
+  const s1 = document.getElementById('demo-data');
+  s1.innerHTML = '';
+  const m1 = mapper(0, 2 * Math.PI, -1.1, 1.1, 35, 505, 185, 15);
+  axisLines(s1, m1, 0, 2 * Math.PI, -1.1, 1.1);
+  el('text', {x: 14, y: 100, 'font-size': 14,
+    transform: 'rotate(-90 14 100)', 'text-anchor': 'middle'},
+    s1).textContent = 'average parity';
+  el('text', {x: 270, y: 205, 'text-anchor': 'middle',
+    'font-size': 14}, s1).textContent = 'rotation angle ϕ';
+  for (let i = 0; i < m; i++)
+    el('circle', {cx: m1.x(demo.phis[i]), cy: m1.y(demo.ys[i]), r: 5,
+      fill: ORANGE}, s1);
+
+  const res = lassoRecover(demo.phis.slice(0, m), demo.ys.slice(0, m),
+    100, 0.1);
+  const s2 = document.getElementById('demo-spec');
+  s2.innerHTML = '';
+  const m2 = mapper(0, 101, 0, 1.0, 35, 505, 185, 15);
+  axisLines(s2, m2, 0, 101, 0, 1.0);
+  el('text', {x: 14, y: 100, 'font-size': 14,
+    transform: 'rotate(-90 14 100)', 'text-anchor': 'middle'},
+    s2).textContent = 'amplitude';
+  el('text', {x: m2.x(demo.N), y: 205, 'text-anchor': 'middle',
+    'font-size': 14, fill: '#444'}, s2).textContent =
+    'N = ' + demo.N;
+  el('text', {x: 503, y: 205, 'text-anchor': 'end',
+    'font-size': 14}, s2).textContent = 'frequency';
+  el('line', {x1: m2.x(demo.N), y1: m2.y(0), x2: m2.x(demo.N),
+    y2: m2.y(0) + 5, stroke: '#444'}, s2);
+  res.amps.forEach((a, i) => {
+    if (a < 1e-3) return;
+    const k = i + 1;
+    const good = (k === res.nrec);
+    el('line', {x1: m2.x(k), y1: m2.y(0), x2: m2.x(k),
+      y2: m2.y(Math.min(a, 1)), stroke: good
+        ? (k === demo.N ? BLUE : ORANGE) : '#bbb',
+      'stroke-width': good ? 5 : 2.5}, s2);
+  });
+
+  const v = document.getElementById('demo-verdict');
+  if (res.nrec === demo.N) {
+    v.innerHTML = 'M = ' + m + ':&ensp;n<sub>rec</sub> = ' + res.nrec
+      + ' &#10003; correct frequency, C&#770; = '
+      + res.chat.toFixed(2) + ' (true 0.8)';
+    v.style.color = BLUE;
+  } else {
+    v.innerHTML = 'M = ' + m + ':&ensp;n<sub>rec</sub> = ' + res.nrec
+      + ' &#10007; wrong frequency (true N = ' + demo.N + ')';
+    v.style.color = ORANGE;
+  }
+}
+
+function startDemo() {
+  buildDemoData();
+  demoRender(NOANIM ? 15 : 5);
+}
+function demoStep8(on) { if (demo.phis) demoRender(on ? 8 : 5); }
+function demoStep15(on) { if (demo.phis) demoRender(on ? 15 : 8); }
+
+// ===================== average parity =====================
+function buildAvgPar() {
+  const svg = document.getElementById('avgpar-svg');
+  svg.innerHTML = '';
+  const m = mapper(0, Math.PI, -1.2, 1.2, 45, 500, 195, 15);
+  axisLines(svg, m, 0, Math.PI, -1.2, 1.2);
+  el('text', {x: 272, y: 222, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent = 'rotation angle \u03d5';
+  el('text', {x: 16, y: 105, 'font-size': 15,
+    transform: 'rotate(-90 16 105)', 'text-anchor': 'middle'},
+    svg).textContent = 'average parity';
+  el('path', {d: curveData(x => 0.9 * Math.cos(5 * x), 0, Math.PI,
+    300, m), fill: 'none', stroke: '#a9cbe3',
+    'stroke-width': 2.5}, svg);
+  el('circle', {cx: m.x(0.987), cy: m.y(0.2), r: 7,
+    fill: ORANGE}, svg);
+}
+
+// ===================== twenty questions =====================
+function buildTwenty() {
+  const svg = document.getElementById('twenty-svg');
+  svg.innerHTML = '';
+  const m = mapper(0.3, 8.7, 0, 118, 70, 590, 290, 30);
+  axisLines(svg, m, 0.3, 8.7, 0, 118);
+  el('text', {x: 330, y: 330, 'text-anchor': 'middle',
+    'font-size': 16}, svg).textContent = 'samples revealed m';
+  el('text', {x: 22, y: 160, 'font-size': 15,
+    transform: 'rotate(-90 22 160)', 'text-anchor': 'middle'},
+    svg).textContent = 'surviving candidate frequencies';
+  [1, 10, 45, 100].forEach(v => {
+    el('text', {x: 62, y: m.y(v) + 5, 'text-anchor': 'end',
+      'font-size': 13}, svg).textContent = v;
+  });
+  const data = [[1, 100], [2, 100], [3, 45], [4, 10], [5, 1],
+    [6, 1], [7, 1], [8, 1]];
+  data.forEach(([x, v]) => {
+    el('text', {x: m.x(x), y: 308, 'text-anchor': 'middle',
+      'font-size': 13}, svg).textContent = x;
+    el('line', {x1: m.x(x), y1: m.y(0), x2: m.x(x), y2: m.y(v),
+      stroke: BLUE, 'stroke-width': 5}, svg);
+    el('circle', {cx: m.x(x), cy: m.y(v), r: 5, fill: BLUE}, svg);
+  });
+  el('text', {x: m.x(1.5), y: m.y(112), 'font-size': 14,
+    fill: '#777'}, svg).textContent = 'free passes';
+  el('text', {x: m.x(5.6), y: m.y(20), 'font-size': 14,
+    fill: '#777'}, svg).textContent = 'only the truth left';
+}
+
+// ===================== lasso intro =====================
+const LASSO_A0 = [0.01, 0.04, 0.06, 0.03, 0.03, 0.09, 0.12, 0.10,
+  0.17, 0.18, 0.14, 0.15, 0.12, 0.04, 0.04, 0.03, 0.07, 0.06,
+  0.05, 0.07];
+function lassoPanel(svgId, bars, blue, ymax, trueLine) {
+  const svg = document.getElementById(svgId);
+  svg.innerHTML = '';
+  const m = mapper(0, 21, 0, ymax, 40, 340, 160, 20);
+  axisLines(svg, m, 0, 21, 0, ymax);
+  el('text', {x: 338, y: 180, 'text-anchor': 'end',
+    'font-size': 13}, svg).textContent = 'frequency';
+  if (trueLine) {
+    el('line', {x1: m.x(0), y1: m.y(0.9), x2: m.x(21), y2: m.y(0.9),
+      stroke: '#999', 'stroke-dasharray': '5 4'}, svg);
+    el('text', {x: m.x(12), y: m.y(0.9) + 16, 'font-size': 12,
+      fill: '#777'}, svg).textContent = 'true 0.9';
+  }
+  bars.forEach(([k, a]) => el('line', {x1: m.x(k), y1: m.y(0),
+    x2: m.x(k), y2: m.y(a), stroke: '#999',
+    'stroke-width': 3}, svg));
+  blue.forEach(([k, a]) => {
+    el('line', {x1: m.x(k), y1: m.y(0), x2: m.x(k), y2: m.y(a),
+      stroke: BLUE, 'stroke-width': 5}, svg);
+    el('circle', {cx: m.x(k), cy: m.y(a), r: 4.5, fill: BLUE}, svg);
+  });
+}
+function buildLasso() {
+  lassoPanel('lasso1', LASSO_A0.map((a, i) => [i + 1, a]), [],
+    0.22, false);
+  lassoPanel('lasso2', [[9, 0.02], [11, 0.01], [18, 0.01]],
+    [[10, 0.89]], 1.02, true);
+  lassoPanel('lasso3', [], [[10, 0.73]], 1.02, true);
+}
+
+// ===================== error spread on the tree =====================
+const SPREAD_POS = {};
+(function () {
+  const levels = [[1], [2, 3], [4, 5, 6, 7],
+    [8, 9, 10, 11, 12, 13, 14, 15]];
+  levels.forEach((row, d) => row.forEach((n, i) => {
+    SPREAD_POS[n] = {x: 560 * (i + 0.5) / row.length, y: 34 + d * 72};
+  }));
+})();
+function subtreeOf(n) {
+  const out = [];
+  (function rec(k) {
+    if (k > 15) return;
+    out.push(k); rec(2 * k); rec(2 * k + 1);
+  })(n);
+  return out;
+}
+function buildSpread(root) {
+  const svg = document.getElementById('spread-svg');
+  svg.innerHTML = '';
+  const hit = subtreeOf(root);
+  for (let n = 2; n <= 15; n++) {
+    const p = SPREAD_POS[n >> 1], q = SPREAD_POS[n];
+    el('line', {x1: p.x, y1: p.y, x2: q.x, y2: q.y,
+      stroke: hit.includes(n) ? ORANGE : '#bbb',
+      'stroke-width': hit.includes(n) ? 3 : 2}, svg);
+  }
+  for (let n = 1; n <= 15; n++) {
+    const p = SPREAD_POS[n], on = hit.includes(n);
+    el('circle', {cx: p.x, cy: p.y, r: n <= 7 ? 13 : 11,
+      fill: on ? '#f6c9a8' : '#e8e8e8',
+      stroke: on ? ORANGE : '#999', 'stroke-width': on ? 2.4 : 1.4}, svg);
+    el('text', {x: p.x, y: p.y + 4.5, 'text-anchor': 'middle',
+      'font-size': 12}, svg).textContent = n;
+  }
+  const w = hit.length;
+  document.getElementById('spread-cap').textContent =
+    'a flip at qubit ' + root + ', copied down its whole subtree';
+  document.getElementById('spread-out').innerHTML =
+    'flipped w = <span class="alert">' + w + '</span> of N = 15'
+    + ' &nbsp; → &nbsp; frequency N - 2w = <span class="alert">'
+    + (15 - 2 * w) + '</span><br>'
+    + '<span class="good">The frequency is a headcount</span>: what '
+    + 'the certificate reads.';
+}
+function startSpread() {
+  buildSpread(2);
+}
+function spreadD2(on) {
+  if (document.getElementById('spread-svg')) buildSpread(on ? 5 : 2);
+}
+function spreadD3(on) {
+  if (document.getElementById('spread-svg')) buildSpread(on ? 12 : 5);
+}
+
+// ===================== the flag check circuit =====================
+function buildFlagCk() {
+  const svg = document.getElementById('flagck-svg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  const rows = [['q', 'a', 40], ['q', 'b', 95],
+    ['flag |0\u27e9', '', 160]];
+  rows.forEach(r => {
+    el('line', {x1: 90, y1: r[2], x2: 400, y2: r[2], stroke: '#444',
+      'stroke-width': 2}, svg);
+    const t = el('text', {x: 82, y: r[2] + 5, 'text-anchor': 'end',
+      'font-size': 15}, svg);
+    t.textContent = r[0];
+    if (r[1]) {
+      const sub = document.createElementNS(NS, 'tspan');
+      sub.setAttribute('font-size', '11');
+      sub.setAttribute('dy', '4');
+      sub.textContent = r[1];
+      t.appendChild(sub);
+    }
+  });
+  [[170, 40], [250, 95]].forEach(g => {
+    el('circle', {cx: g[0], cy: g[1], r: 5, fill: '#444'}, svg);
+    el('line', {x1: g[0], y1: g[1], x2: g[0], y2: 171, stroke: '#444',
+      'stroke-width': 2}, svg);
+    el('circle', {cx: g[0], cy: 160, r: 11, fill: 'none',
+      stroke: '#444', 'stroke-width': 2}, svg);
+    el('line', {x1: g[0] - 11, y1: 160, x2: g[0] + 11, y2: 160,
+      stroke: '#444', 'stroke-width': 2}, svg);
+  });
+  el('rect', {x: 330, y: 144, width: 34, height: 32, fill: 'white',
+    stroke: '#444', 'stroke-width': 2}, svg);
+  el('path', {d: 'M336,168 A11,11 0 0 1 358,168', fill: 'none',
+    stroke: '#444', 'stroke-width': 2}, svg);
+  el('line', {x1: 347, y1: 168, x2: 355, y2: 151, stroke: '#444',
+    'stroke-width': 2.2}, svg);
+
+}
+
+// ===================== metriq-gym terminal =====================
+const TERM_LINES = [
+  ['cmd', '$ pip install metriq-gym', true],
+  ['cmd', '$ mgym job dispatch ghz.example.json -p quantinuum -d H2-1E',
+   true],
+  ['out', 'Dispatching GHZ (N = 26, compressed sensing, M = 17 angles)...',
+   false],
+  ['out', 'job id 7f3a91c2 submitted', false],
+  ['cmd', '$ mgym job poll latest', true],
+  ['out', 'population = 0.951   coherence = 0.906   n_rec = 26 \u2713',
+   false],
+  ['out', 'fidelity (rotated) = 0.93', false],
+];
+function termRender(upto, partial) {
+  const pre = document.getElementById('term-pre');
+  pre.innerHTML = '';
+  for (let i = 0; i < upto; i++) {
+    const sp = document.createElement('span');
+    sp.className = TERM_LINES[i][0] === 'cmd' ? 'cmd' : '';
+    let txt = TERM_LINES[i][1];
+    if (i === upto - 1 && partial !== null) txt = txt.slice(0, partial);
+    if (TERM_LINES[i][1].includes('\u2713') && partial === null) {
+      sp.textContent = txt.replace('\u2713', '');
+      const ok = document.createElement('span');
+      ok.className = 'ok';
+      ok.textContent = '\u2713';
+      pre.appendChild(sp);
+      pre.appendChild(ok);
+      pre.appendChild(document.createTextNode('\n'));
+      continue;
+    }
+    sp.textContent = txt;
+    pre.appendChild(sp);
+    pre.appendChild(document.createTextNode('\n'));
+  }
+}
+function startTerm() {
+  const gen = animGen;
+  if (NOANIM) { termRender(TERM_LINES.length, null); return; }
+  let line = 0;
+  function nextLine() {
+    if (gen !== animGen) return;
+    if (line >= TERM_LINES.length) return;
+    const [kind, text, typed] = TERM_LINES[line];
+    line++;
+    if (typed) {
+      let c = 0;
+      const tick = setInterval(() => {
+        if (gen !== animGen) { clearInterval(tick); return; }
+        c++;
+        termRender(line, c);
+        if (c >= text.length) {
+          clearInterval(tick);
+          termRender(line, null);
+          setTimeout(nextLine, 350);
+        }
+      }, 28);
+    } else {
+      termRender(line, null);
+      setTimeout(nextLine, 420);
+    }
+  }
+  termRender(0, null);
+  setTimeout(nextLine, 400);
+}
+
+// ===================== acceptance trade-off =====================
+function buildArTrade(N, p) {
+  const svg = document.getElementById('ar-svg');
+  document.getElementById('ar-n-val').textContent = N;
+  document.getElementById('ar-p-val').textContent =
+    (p * 100).toFixed(2) + '%';
+  svg.innerHTML = '';
+  const m = mapper(0, 8, 0, 1.05, 45, 600, 260, 20);
+  axisLines(svg, m, 0, 8, 0, 1.05);
+  el('text', {x: 320, y: 292, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent = 'flag pairs k';
+  [0, 0.5, 1].forEach(v => {
+    el('text', {x: 38, y: m.y(v) + 4, 'text-anchor': 'end',
+      'font-size': 13}, svg).textContent = v;
+    el('line', {x1: 45, y1: m.y(v), x2: 600, y2: m.y(v),
+      stroke: '#eee'}, svg);
+  });
+  let dF = '', dA = '';
+  for (let k = 0; k <= 8; k++) {
+    const lam = p * (N - 1 + 2 * k);
+    const P0 = Math.exp(-lam);
+    const c = 1 - Math.pow(0.68, k);
+    const acc = P0 + (1 - c) * (1 - P0);
+    const F = P0 / acc;
+    dF += (k ? 'L' : 'M') + m.x(k) + ',' + m.y(F);
+    dA += (k ? 'L' : 'M') + m.x(k) + ',' + m.y(acc);
+  }
+  el('path', {d: dF, fill: 'none', stroke: BLUE,
+    'stroke-width': 3}, svg);
+  el('path', {d: dA, fill: 'none', stroke: ORANGE,
+    'stroke-width': 3}, svg);
+  el('text', {x: 590, y: 40, 'text-anchor': 'end', 'font-size': 15,
+    fill: BLUE}, svg).textContent = 'post-selected fidelity';
+  el('text', {x: 590, y: 62, 'text-anchor': 'end', 'font-size': 15,
+    fill: ORANGE}, svg).textContent = 'acceptance rate';
+}
+function startArTrade() {
+  const gen = animGen;
+  const N = 26;
+  if (NOANIM) { buildArTrade(N, 0.012); return; }
+  (function loop(ts) {
+    if (gen !== animGen) return;
+    const u = (ts / 7000) % 1;
+    const tri = u < 0.5 ? 2 * u : 2 * (1 - u);
+    buildArTrade(N, 0.001 + tri * 0.019);
+    requestAnimationFrame(loop);
+  })(0);
+}
+
+// ===================== slide 6: certificate =====================
+const cert = {};
+function buildCert() {
+  const svg = document.getElementById('cert-svg');
+  svg.innerHTML = '';
+  const m = mapper(0, 20, 0, 1.15, 55, 610, 180, 20);
+  axisLines(svg, m, 0, 20, 0, 1.15);
+  el('text', {x: 22, y: 100, 'font-size': 14,
+    transform: 'rotate(-90 22 100)', 'text-anchor': 'middle'},
+    svg).textContent = 'amplitude';
+  el('text', {x: 606, y: 205, 'text-anchor': 'end',
+    'font-size': 14}, svg).textContent = 'frequency';
+  [[8, 'N − 2'], [13, 'N']].forEach(([v, lab]) => {
+    el('line', {x1: m.x(v), y1: m.y(0), x2: m.x(v), y2: m.y(0) + 6,
+      stroke: '#999'}, svg);
+    el('text', {x: m.x(v), y: 205, 'text-anchor': 'middle',
+      'font-size': 16}, svg).textContent = lab;
+  });
+  cert.m = m;
+  cert.spike = el('line', {x1: m.x(13), y1: m.y(0), x2: m.x(13),
+    y2: m.y(0.9), stroke: BLUE, 'stroke-width': 6}, svg);
+  cert.dot = el('circle', {cx: m.x(13), cy: m.y(0.9), r: 6,
+    fill: BLUE}, svg);
+  cert.label = el('text', {x: m.x(13), y: m.y(0.9) - 14,
+    'text-anchor': 'middle', 'font-size': 16, fill: BLUE}, svg);
+  cert.label.textContent = 'intended state';
+}
+function certFlip(flipped) {
+  if (!cert.m) return;
+  if (!cert.spike) return;
+  const m = cert.m;
+  if (NOANIM) {
+    const x = m.x(flipped ? 8 : 13);
+    cert.spike.setAttribute('x1', x);
+    cert.spike.setAttribute('x2', x);
+    cert.dot.setAttribute('cx', x);
+    cert.label.setAttribute('x', x);
+    const c0 = flipped ? ORANGE : BLUE;
+    cert.spike.setAttribute('stroke', c0);
+    cert.dot.setAttribute('fill', c0);
+    cert.label.setAttribute('fill', c0);
+    cert.label.textContent = flipped ? 'after one bit flip'
+      : 'intended state';
+    return;
+  }
+  const from = flipped ? 13 : 8, to = flipped ? 8 : 13;
+  const gen = animGen;
+  let t0 = null;
+  requestAnimationFrame(function slide(t) {
+    if (gen !== animGen) return;
+    if (t0 === null) t0 = t;
+    const f = Math.min((t - t0) / 700, 1);
+    const v = from + (to - from) * f;
+    const x = m.x(v);
+    cert.spike.setAttribute('x1', x);
+    cert.spike.setAttribute('x2', x);
+    cert.dot.setAttribute('cx', x);
+    cert.label.setAttribute('x', x);
+    if (f < 1) requestAnimationFrame(slide);
+  });
+  const c = flipped ? ORANGE : BLUE;
+  cert.spike.setAttribute('stroke', c);
+  cert.dot.setAttribute('fill', c);
+  cert.label.setAttribute('fill', c);
+  cert.label.textContent = flipped ? 'after one bit flip' : 'intended state';
+}
+
+// ===================== slide 11: tree =====================
+const tree = {};
+function buildTree() {
+  const svg = document.getElementById('tree-svg');
+  svg.innerHTML = '';
+  // heap-indexed depth-4 tree; node i children 2i, 2i+1
+  const pos = {};
+  const levels = [[1], [2, 3], [4, 5, 6, 7],
+    [8, 9, 10, 11, 12, 13, 14, 15]];
+  levels.forEach((row, d) => {
+    row.forEach((n, i) => {
+      pos[n] = {x: 560 * (i + 0.5) / row.length, y: 30 + d * 78};
+    });
+  });
+  tree.edges = {};
+  for (let n = 2; n <= 15; n++) {
+    const p = pos[n >> 1];
+    tree.edges[n] = el('line', {x1: p.x, y1: p.y, x2: pos[n].x,
+      y2: pos[n].y, stroke: '#999', 'stroke-width': 2}, svg);
+  }
+  tree.nodes = {};
+  for (let n = 1; n <= 15; n++) {
+    tree.nodes[n] = el('circle', {cx: pos[n].x, cy: pos[n].y,
+      r: n <= 7 ? 13 : 11, fill: '#d8d8d8', stroke: '#888'}, svg);
+    el('text', {x: pos[n].x, y: pos[n].y + 4.5, 'text-anchor': 'middle',
+      'font-size': 12}, svg).textContent = n;
+  }
+  tree.pos = pos;
+  tree.pathNodes = [8, 4, 2, 1, 3, 6, 12];
+  tree.pathEdges = [8, 4, 2, 12, 6, 3];
+  tree.flagBadge = el('text', {x: pos[12].x, y: pos[12].y + 32,
+    'text-anchor': 'middle', 'font-size': 17, fill: ORANGE,
+    'font-weight': 'bold', opacity: 0}, svg);
+  tree.flagBadge.textContent = 'flag fires → shot discarded';
+  tree.covBadge = el('text', {x: 552, y: 20, 'text-anchor': 'end',
+    'font-size': 16, fill: '#444', opacity: 0}, svg);
+  tree.pair2Nodes = [10, 5, 7, 14];
+  tree.pair2Edges = [10, 5, 14, 7];
+
+  // topology contrast under the tree
+  const ts = document.getElementById('topo-svg');
+  ts.innerHTML = '';
+  const gx = i => 80 + 45 * i, gy = j => 15 + 45 * j;
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 2; j++) {
+      el('line', {x1: gx(i), y1: gy(j), x2: gx(i), y2: gy(j + 1),
+        stroke: '#ccc', 'stroke-width': 2}, ts);
+      el('line', {x1: gx(j), y1: gy(i), x2: gx(j + 1), y2: gy(i),
+        stroke: '#ccc', 'stroke-width': 2}, ts);
+    }
+  }
+  el('path', {d: 'M' + gx(0) + ',' + gy(2) + 'L' + gx(1) + ',' + gy(2)
+    + 'L' + gx(2) + ',' + gy(2) + 'L' + gx(2) + ',' + gy(1)
+    + 'L' + gx(2) + ',' + gy(0), fill: 'none', stroke: ORANGE,
+    'stroke-width': 3.5, 'stroke-dasharray': '7 5'}, ts);
+  for (let i = 0; i < 3; i++)
+    for (let j = 0; j < 3; j++)
+      el('circle', {cx: gx(i), cy: gy(j), r: 5,
+        fill: (i === 0 && j === 2) || (i === 2 && j === 0)
+          ? ORANGE : '#999'}, ts);
+  el('text', {x: gx(1), y: 140, 'text-anchor': 'middle',
+    'font-size': 14, fill: '#555'}, ts).textContent =
+    'fixed coupling: checks must route';
+  const kx = a => 420 + 55 * Math.cos(Math.PI * a / 4);
+  const ky = a => 60 + 55 * Math.sin(Math.PI * a / 4);
+  for (let a = 0; a < 8; a++)
+    for (let b = a + 1; b < 8; b++)
+      el('line', {x1: kx(a), y1: ky(a), x2: kx(b), y2: ky(b),
+        stroke: '#e2e2e2', 'stroke-width': 1.5}, ts);
+  el('line', {x1: kx(1), y1: ky(1), x2: kx(4), y2: ky(4),
+    stroke: BLUE, 'stroke-width': 3.5}, ts);
+  for (let a = 0; a < 8; a++)
+    el('circle', {cx: kx(a), cy: ky(a), r: 5,
+      fill: (a === 1 || a === 4) ? BLUE : '#999'}, ts);
+  el('text', {x: 420, y: 140, 'text-anchor': 'middle',
+    'font-size': 14, fill: '#555'}, ts).textContent =
+    'trapped ions: any pair, one check';
+}
+function treePair(on) {
+  if (!tree.nodes) return;
+  tree.pathNodes.forEach(n => tree.nodes[n] &&
+    tree.nodes[n].setAttribute('fill', on ? '#ff6b52' : '#d8d8d8'));
+  tree.pathEdges.forEach(e => tree.edges[e] &&
+    tree.edges[e].setAttribute('stroke', on ? BLUE : '#999'));
+  tree.pathEdges.forEach(e => tree.edges[e] &&
+    tree.edges[e].setAttribute('stroke-width', on ? 3.5 : 2));
+  tree.covBadge.setAttribute('opacity', on ? 1 : 0);
+  if (on) tree.covBadge.textContent =
+    'pair (8,12): 7/15 covered (47%)';
+}
+function treePair2(on) {
+  if (!tree.nodes) return;
+  tree.pair2Nodes.forEach(n => tree.nodes[n] &&
+    tree.nodes[n].setAttribute('fill', on ? '#41ab5d' : '#d8d8d8'));
+  tree.pair2Edges.forEach(e => tree.edges[e] &&
+    tree.edges[e].setAttribute('stroke', on ? '#41ab5d' : '#999'));
+  tree.pair2Edges.forEach(e => tree.edges[e] &&
+    tree.edges[e].setAttribute('stroke-width', on ? 3.5 : 2));
+  if (on) tree.covBadge.textContent =
+    '+ pair (10,14): 11/15 covered (73%)';
+  else if (tree.covBadge.getAttribute('opacity') === '1')
+    tree.covBadge.textContent = 'pair (8,12): 7/15 covered (47%)';
+}
+function treeError(on, instant) {
+  if (!tree.nodes) return;
+  tree.errActive = on;
+  const route = [2, 4, 8];
+  if (!on) {
+    tree.flagBadge.setAttribute('opacity', 0);
+    if (tree.pulse) tree.pulse.remove();
+    route.forEach(n => {
+      if (!tree.nodes[n]) return;
+      tree.nodes[n].setAttribute('stroke', '#888');
+      tree.nodes[n].setAttribute('stroke-width', 1);
+    });
+    return;
+  }
+  const svg = document.getElementById('tree-svg');
+  // error on internal node 2 propagates down to checked leaf 8
+  if (NOANIM || instant) {
+    if (tree.pulse) tree.pulse.remove();
+    tree.pulse = el('circle', {cx: tree.pos[8].x, cy: tree.pos[8].y,
+      r: 7, fill: 'none', stroke: ORANGE, 'stroke-width': 3.5}, svg);
+    route.forEach(n => {
+      tree.nodes[n].setAttribute('stroke', '#111');
+      tree.nodes[n].setAttribute('stroke-width', 3.5);
+    });
+    tree.flagBadge.setAttribute('opacity', 1);
+    return;
+  }
+  const gen = animGen;
+  const mark = n => {
+    tree.nodes[n].setAttribute('stroke', '#111');
+    tree.nodes[n].setAttribute('stroke-width', 3.5);
+  };
+  const unmark = n => {
+    tree.nodes[n].setAttribute('stroke', '#888');
+    tree.nodes[n].setAttribute('stroke-width', 1);
+  };
+  (function cycle() {
+    if (!tree.errActive || gen !== animGen) return;
+    if (tree.pulse) tree.pulse.remove();
+    route.forEach(unmark);
+    mark(route[0]);
+    tree.pulse = el('circle', {cx: tree.pos[2].x, cy: tree.pos[2].y,
+      r: 7, fill: 'none', stroke: ORANGE, 'stroke-width': 3.5}, svg);
+    let seg = 0;
+    let t0 = null;
+    requestAnimationFrame(function run(t) {
+      if (gen !== animGen || !tree.errActive) return;
+      if (t0 === null) t0 = t;
+      const f = Math.min((t - t0) / 500 - seg, 1);
+      if (f >= 1 && seg < route.length - 2) {
+        seg++; mark(route[seg]); requestAnimationFrame(run); return;
+      }
+      const g = Math.min(Math.max((t - t0) / 500 - seg, 0), 1);
+      const a = tree.pos[route[seg]], b = tree.pos[route[seg + 1]];
+      tree.pulse.setAttribute('cx', a.x + (b.x - a.x) * g);
+      tree.pulse.setAttribute('cy', a.y + (b.y - a.y) * g);
+      if (!(seg === route.length - 2 && g >= 1)) requestAnimationFrame(run);
+      else {
+        mark(route[route.length - 1]);
+        tree.flagBadge.setAttribute('opacity', 1);
+        setTimeout(cycle, 1400);
+      }
+    });
+  })();
+}
+
+// ============ backup: what one check can and cannot see ============
+function drawMiniTree(svgId, reach, pair) {
+  const svg = document.getElementById(svgId);
+  if (!svg) return;
+  svg.innerHTML = '';
+  const pos = {};
+  [[1], [2, 3], [4, 5, 6, 7], [8, 9, 10, 11, 12, 13, 14, 15]]
+    .forEach((row, d) => row.forEach((n, i) => {
+      pos[n] = {x: 300 * (i + 0.5) / row.length, y: 24 + d * 50};
+    }));
+  for (let n = 2; n <= 15; n++) {
+    const p = pos[n >> 1], q = pos[n];
+    el('line', {x1: p.x, y1: p.y, x2: q.x, y2: q.y,
+      stroke: '#bbb', 'stroke-width': 1.5}, svg);
+  }
+  for (let n = 1; n <= 15; n++) {
+    const p = pos[n], on = reach.includes(n);
+    el('circle', {cx: p.x, cy: p.y, r: 9,
+      fill: on ? '#f6c9a8' : '#e8e8e8',
+      stroke: on ? ORANGE : '#999',
+      'stroke-width': on ? 2 : 1.2}, svg);
+    el('text', {x: p.x, y: p.y + 3.5, 'text-anchor': 'middle',
+      'font-size': 9}, svg).textContent = n;
+  }
+  pair.forEach(n => el('circle', {cx: pos[n].x, cy: pos[n].y, r: 13,
+    fill: 'none', stroke: BLUE, 'stroke-width': 2.5}, svg));
+}
+function buildSee() {
+  drawMiniTree('see1', [5, 10, 11], [8, 12]);
+  drawMiniTree('see2', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+    14, 15], [8, 12]);
+  drawMiniTree('see3', [4, 8, 9], [8, 12]);
+}
+
+// ===================== slide 18: aliasing =====================
+const alias = {};
+function buildAlias() {
+  const svg = document.getElementById('alias-svg');
+  svg.innerHTML = '';
+  const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 50, 770, 270, 15);
+  axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);
+  el('text', {x: 410, y: 296, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent = 'rotation angle \u03d5';
+  el('text', {x: 18, y: 142, 'font-size': 15,
+    transform: 'rotate(-90 18 142)', 'text-anchor': 'middle'},
+    svg).textContent = 'average parity';
+  alias.m = m;
+  el('path', {d: curveData(x => Math.cos(2 * x), 0, 2 * Math.PI, 300,
+    m), fill: 'none', stroke: BLUE, 'stroke-width': 2.5}, svg);
+  alias.curve10 = el('path', {d: curveData(x => Math.cos(10 * x), 0,
+    2 * Math.PI, 900, m), fill: 'none', stroke: ORANGE,
+    'stroke-width': 2.5, opacity: 0}, svg);
+  alias.grid = el('g', {}, svg);
+  for (let k = 0; k < 8; k++) {
+    const x = 2 * Math.PI * k / 8;
+    el('circle', {cx: m.x(x), cy: m.y(Math.cos(2 * x)), r: 5.5,
+      fill: '#222'}, alias.grid);
+  }
+  alias.rand = el('g', {opacity: 0}, svg);
+  [0.53, 1.31, 2.02, 2.94, 4.13, 5.41].forEach(x => {
+    el('line', {x1: m.x(x), y1: m.y(Math.cos(2 * x)), x2: m.x(x),
+      y2: m.y(Math.cos(10 * x)), stroke: '#888',
+      'stroke-dasharray': '4 3'}, alias.rand);
+    el('circle', {cx: m.x(x), cy: m.y(Math.cos(2 * x)), r: 5.5,
+      fill: BLUE}, alias.rand);
+    el('rect', {x: m.x(x) - 5, y: m.y(Math.cos(10 * x)) - 5, width: 10,
+      height: 10, fill: ORANGE}, alias.rand);
+  });
+}
+function aliasDraw(on, instant) {
+  if (!alias.curve10) return;
+  if (on && instant) alias.curve10.style.opacity = 1;
+  else if (on) drawOn(alias.curve10, 1800);
+  else alias.curve10.style.opacity = 0;
+  document.getElementById('alias-caption').textContent = on
+    ? 'Both frequencies pass through all 8 samples: aliasing is exact.'
+    : 'Frequency 2, sampled at 8 equally spaced angles.';
+}
+function aliasRandom(on) {
+  if (!alias.rand) return;
+  alias.rand.setAttribute('opacity', on ? 1 : 0);
+  alias.grid.setAttribute('opacity', on ? 0.15 : 1);
+  if (on) document.getElementById('alias-caption').textContent =
+    'The same six random angles give different values for the two hypotheses.';
+}
+
+// ===================== thanks: two key ideas =====================
+function thxBuildCS() {
+  const svg = document.getElementById('thx-cs');
+  svg.innerHTML = '';
+  const m = mapper(0, Math.PI, -1.3, 1.3, 20, 360, 140, 15);
+  const f = x => 0.95 * Math.cos(6 * x);
+  el('path', {d: curveData(f, 0, Math.PI, 300, m), fill: 'none',
+    stroke: '#a9cbe3', 'stroke-dasharray': '5 4',
+    'stroke-width': 2}, svg);
+  const xs = [0.31, 0.83, 1.35, 1.92, 2.51, 2.95];
+  const dots = xs.map(x => el('circle', {cx: m.x(x), cy: m.y(f(x)),
+    r: 5.5, fill: ORANGE, opacity: NOANIM ? 1 : 0}, svg));
+  const curve = el('path', {d: curveData(f, 0, Math.PI, 300, m),
+    fill: 'none', stroke: BLUE, 'stroke-width': 2.5,
+    opacity: NOANIM ? 1 : 0}, svg);
+  return {dots, curve};
+}
+function thxBuildFlag() {
+  const svg = document.getElementById('thx-flag');
+  svg.innerHTML = '';
+  const nx = i => 32 + 45 * i, ny = 105;
+  const layers = [[[1, 2]], [[1, 3], [2, 4]],
+    [[1, 5], [2, 6], [3, 7], [4, 8]]];
+  layers.forEach((layer, li) => layer.forEach(g => {
+    const a = nx(g[0] - 1), b = nx(g[1] - 1);
+    const h = 16 + 0.24 * (b - a);
+    el('path', {d: 'M' + a + ',' + (ny - 13) + ' Q' + ((a + b) / 2)
+      + ',' + (ny - 13 - h) + ' ' + b + ',' + (ny - 13),
+      fill: 'none', stroke: ['#5b9bd5', '#e8a33d', '#bbb'][li],
+      'stroke-width': 2.2}, svg);
+  }));
+  const nodes = [];
+  for (let i = 0; i < 8; i++) {
+    nodes.push(el('circle', {cx: nx(i), cy: ny, r: 12, fill: '#eee',
+      stroke: '#999', 'stroke-width': 1.5}, svg));
+    el('text', {x: nx(i), y: ny + 4.5, 'text-anchor': 'middle',
+      'font-size': 12}, svg).textContent = i + 1;
+  }
+  const caught = el('text', {x: nx(3), y: ny + 45,
+    'text-anchor': 'middle', 'font-size': 16, fill: '#2a9d3f',
+    opacity: NOANIM ? 1 : 0}, svg);
+  caught.textContent = '\u2713 flag caught it';
+  return {nodes, caught};
+}
+function startThanks() {
+  const cs = thxBuildCS();
+  const fl = thxBuildFlag();
+  if (NOANIM) {
+    fl.nodes[1].setAttribute('fill', '#f5c9a0');
+    fl.nodes[3].setAttribute('fill', '#f5c9a0');
+    return;
+  }
+  const gen = animGen;
+  (function csCycle() {
+    if (gen !== animGen) return;
+    cs.dots.forEach(d => { d.style.opacity = 0; });
+    cs.curve.style.opacity = 0;
+    cs.dots.forEach((d, i) => setTimeout(() => {
+      if (gen === animGen) d.style.opacity = 1;
+    }, 300 + 220 * i));
+    setTimeout(() => {
+      if (gen !== animGen) return;
+      drawOn(cs.curve, 1200, () => {
+        if (gen === animGen) setTimeout(csCycle, 2200);
+      });
+    }, 300 + 220 * cs.dots.length + 200);
+  })();
+  (function flCycle() {
+    if (gen !== animGen) return;
+    fl.nodes.forEach(n => n.setAttribute('fill', '#eee'));
+    fl.caught.style.opacity = 0;
+    setTimeout(() => {
+      if (gen === animGen) fl.nodes[1].setAttribute('fill', '#f5c9a0');
+    }, 700);
+    setTimeout(() => {
+      if (gen === animGen) fl.nodes[3].setAttribute('fill', '#f5c9a0');
+    }, 1400);
+    setTimeout(() => {
+      if (gen === animGen) fl.caught.style.opacity = 1;
+    }, 2100);
+    setTimeout(flCycle, 4600);
+  })();
+}
+
+// ===================== wiring =====================
+const starters = {title: startTitle, osc: startOsc,
+  parity: startParity, cs: buildCS, avgpar: buildAvgPar,
+  spread: startSpread, flagck: buildFlagCk,
+  twenty: buildTwenty, sparse: startSparse,
+  pipe: startPipe,
+  demo: startDemo, lasso: buildLasso, freqmove: buildFreqMove,
+  cert: buildCert,
+  circ: buildCirc, tree: buildTree, alias: buildAlias,
+  see: buildSee,
+  term: startTerm, artrade: startArTrade, thanks: startThanks};
+
+const fragActions = {
+  'demo-8': demoStep8,
+  'demo-15': demoStep15,
+  'tree-pair2': treePair2,
+  'cert-flip': certFlip,
+  'tree-pair': treePair,
+  'tree-error': treeError,
+  'alias-draw': aliasDraw,
+  'alias-random': aliasRandom,
+  'spread-d2': spreadD2,
+  'spread-d3': spreadD3,
+};
+
+Reveal.initialize({
+  width: 1280, height: 720,
+  hash: true,
+  transition: 'none',
+  slideNumber: slide => {
+    const isB = s => {
+      const h = s && s.querySelector('h2');
+      return !!(h && h.textContent.trim().startsWith('Backup'));
+    };
+    if (!slide) return [''];
+    const main = Reveal.getSlides().filter(s => !isB(s));
+    if (isB(slide)) return ['backup'];
+    return [main.indexOf(slide) + 1, '/', main.length];
+  },
+  plugins: [RevealNotes],
+});
+
+let lastAnim = {slide: null, t: 0};
+function runAnimFor(slide) {
+  const kind = slide.getAttribute('data-anim');
+  if (!kind || !starters[kind]) return;
+  const now = Date.now();
+  if (lastAnim.slide === slide && now - lastAnim.t < 300) return;
+  lastAnim = {slide: slide, t: now};
+  starters[kind]();
+}
+Reveal.on('ready', e => {
+  renderMathInElement(document.body, {delimiters: [
+    {left: '\\[', right: '\\]', display: true},
+    {left: '\\(', right: '\\)', display: false}]});
+  runAnimFor(e.currentSlide);
+  reapplyFragments(e.currentSlide);
+});
+function reapplyFragments(slide) {
+  // Stacked fragment actions restore the previous stage when turned
+  // off, so hidden ones must unwind in reverse document order before
+  // visible ones replay forward.
+  const frags = [...slide.querySelectorAll('.fragment[data-fragment-anim]')];
+  frags.slice().reverse().forEach(f => {
+    const a = f.getAttribute('data-fragment-anim');
+    if (fragActions[a] && !f.classList.contains('visible'))
+      fragActions[a](false, true);
+  });
+  frags.forEach(f => {
+    const a = f.getAttribute('data-fragment-anim');
+    if (fragActions[a] && f.classList.contains('visible'))
+      fragActions[a](true, true);
+  });
+}
+Reveal.on('slidechanged', e => {
+  animGen++;
+  runAnimFor(e.currentSlide);
+  reapplyFragments(e.currentSlide);
+});
+Reveal.on('fragmentshown', e => {
+  const a = e.fragment.getAttribute('data-fragment-anim');
+  if (a && fragActions[a]) fragActions[a](true, false);
+});
+Reveal.on('fragmenthidden', e => {
+  const a = e.fragment.getAttribute('data-fragment-anim');
+  if (a && fragActions[a]) fragActions[a](false);
+});
+
+// Test hook for headless screenshots / PDF export: ?adv=N auto-advances
+// N fragments after load (e.g. index.html?adv=2#/10). No effect without
+// the query parameter.
+const adv = parseInt(new URLSearchParams(location.search).get('adv') || '0');
+if (adv > 0) Reveal.on('ready', () => {
+  let i = 0;
+  const tick = setInterval(() => {
+    Reveal.next();
+    if (++i >= adv) clearInterval(tick);
+  }, 700);
+});
+</script>
+</body>
+</html>

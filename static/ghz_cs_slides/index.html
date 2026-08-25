@@ -142,42 +142,7 @@
 </section>
 
 <!-- =========================================================== 1b -->
-<section data-anim="cs">
-  <h2>What compressed sensing is</h2>
-  <div class="center">
-    <svg id="cs1" viewBox="0 0 1140 175" style="width:96%;"></svg>
-  </div>
-  <div class="fragment" data-fragment-index="0">
-    <div class="center">
-      <svg id="cs2" viewBox="0 0 1140 175" style="width:96%;"></svg>
-    </div>
-  </div>
-  <ul class="small" style="margin-top:0.5em;">
-    <li>The right-hand chart is the signal's
-      <span class="alert">recipe</span>: the signal rewritten as a
-      sum of simple waves, one entry per wave saying how much of it
-      the signal contains. Natural signals have
-      <span class="alert">nearly empty recipes</span>.</li>
-    <li>A JPEG keeps the few big entries and looks identical, but it
-      <span class="alert">measures everything first</span>: fine when
-      a measurement is a cheap pixel.</li>
-    <li class="fragment" data-fragment-index="0">Compressed sensing
-      pays <span class="good">for the information, not the signal
-      length</span>: few random samples, solve for the big
-      entries.<sup>1</sup> Ours is the expensive case:
-      <span class="alert">each measurement is a quantum
-      circuit</span>.</li>
-  </ul>
-  <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Brunton,
-    Steven L., and J. Nathan Kutz. Data-Driven Science and
-    Engineering. Cambridge University Press, 2019.</p>
-  <aside class="notes">
-    JPEG's transform is the discrete cosine transform, the same
-    dictionary family the parity curve lives in. Fragment reveals the
-    compressed-sensing row. The whole talk is one instance of the
-    bottom row; our parity signal is 2-sparse.
-  </aside>
-</section>
+
 
 <!-- ============================================================ 2 -->
 <section>
@@ -346,6 +311,43 @@
 <!-- =========================================================== 2c -->
 <!-- ============================================================ 4 -->
 <!-- =========================================================== 3c -->
+<section data-anim="cs">
+  <h2>What compressed sensing is</h2>
+  <div class="center">
+    <svg id="cs1" viewBox="0 0 1140 175" style="width:96%;"></svg>
+  </div>
+  <div class="fragment" data-fragment-index="0">
+    <div class="center">
+      <svg id="cs2" viewBox="0 0 1140 175" style="width:96%;"></svg>
+    </div>
+  </div>
+  <ul class="small" style="margin-top:0.5em;">
+    <li>The right-hand chart is the signal's
+      <span class="alert">recipe</span>: the signal rewritten as a
+      sum of simple waves, one entry per wave saying how much of it
+      the signal contains. Natural signals have
+      <span class="alert">nearly empty recipes</span>.</li>
+    <li>A JPEG keeps the few big entries and looks identical, but it
+      <span class="alert">measures everything first</span>: fine when
+      a measurement is a cheap pixel.</li>
+    <li class="fragment" data-fragment-index="0">Compressed sensing
+      pays <span class="good">for the information, not the signal
+      length</span>: few random samples, solve for the big
+      entries.<sup>1</sup> Ours is the expensive case:
+      <span class="alert">each measurement is a quantum
+      circuit</span>.</li>
+  </ul>
+  <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Brunton,
+    Steven L., and J. Nathan Kutz. Data-Driven Science and
+    Engineering. Cambridge University Press, 2019.</p>
+  <aside class="notes">
+    JPEG's transform is the discrete cosine transform, the same
+    dictionary family the parity curve lives in. Fragment reveals the
+    compressed-sensing row. The whole talk is one instance of the
+    bottom row; our parity signal is 2-sparse.
+  </aside>
+</section>
+
 <section data-anim="sparse">
   <h2>The observation: the signal is sparse</h2>
   <div class="cols">

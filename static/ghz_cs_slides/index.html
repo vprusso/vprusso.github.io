@@ -212,7 +212,7 @@
     </div>
     <div class="col stat">
       <div class="big">1 bit flip</div>
-      is enough to destroy<br>the global coherence
+      drops the fidelity<br>to zero
     </div>
   </div>
   <p class="center alert" style="margin-top:0.8em;">
@@ -435,10 +435,10 @@
       \(L_1\) penalty on the cosine and sine coefficients; weak
       candidates are driven
       <span class="alert">exactly to zero</span>.</li>
-    <li>Why so few: each sample rules out a constant fraction of
-      the wrong frequencies, so \(M \propto \log N\) suffices for
-      a signal this sparse; the refit then leaves only shot
-      noise.</li>
+    <li>Why so few: amplitude and phase absorb the first samples,
+      then each further one rules out a constant fraction of the
+      wrong frequencies. \(M \propto \log N\) suffices, and the
+      refit leaves only shot noise.</li>
   </ul>
   <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Tibshirani,
     Robert. &ldquo;Regression shrinkage and selection via the

@@ -11,7 +11,8 @@ Physics-informed and hardware-aware code design with SAT solvers"](/pdf/sat_qec.
    *B. DalFavero, W. M. Watkins, M. L. LaBorde, V. Russo, E. Egger, G. Quiroz, R. LaRose*,   
    *arXiv:2608.23460, (2026)*.   
    [PDF](/pdf/sat_qec.pdf) | 
-   [arXiv](https://arxiv.org/abs/2608.23460)
+   [arXiv](https://arxiv.org/abs/2608.23460) |
+   [Software](https://github.com/bdalfavero/satisfying-codes)
 
 - ["A validation framework for quantum simulation of spin dynamics against inelastic neutron scattering and classical simulation"](/pdf/qsc_validation.pdf)  
    *G. Buchs, E. Wong, A. Baul, K. E. Hamilton, A. Banerjee, S. Eidenbenz, G. B. Halasz, K. Kumaran, T. Maier, T. Naughton III, E. Pelofske, V. Russo, A. Scheie, Y. Subasi, D. A. Tennant, A. Touli, T. S. Humble, A. T. Somborger*,   

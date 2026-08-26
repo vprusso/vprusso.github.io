@@ -543,8 +543,11 @@
           1000 shots per angle.</li>
         <li>Two free passes, then a sharp climb:
           <span class="good">success saturates by \(M \approx
-          15\)</span>, below the \(5\ln N \approx 19\) we actually
-          budget.</li>
+          15\)</span>.</li>
+        <li>Theory supplies the <span class="alert">scaling</span>,
+          \(M \propto \log N\); the constant is ours. We budget
+          \(5\ln N \approx 19\) to sit past this knee: a working
+          rule, not a theorem.</li>
         <li>That margin is why the hardware run used
           <span class="alert">19 angles at \(N = 50\)</span> instead
           of 100.</li>
@@ -720,6 +723,59 @@
 <!-- =========================================================== 12 -->
 
 <!-- =========================================================== 14 -->
+<section>
+  <h2>The two layers catch different failures</h2>
+  <div style="display:flex; align-items:flex-start;
+    justify-content:center; gap:0.5em; margin:0.8em 0 0.2em;">
+    <div style="flex:0 0 20%; text-align:center;">
+      <div style="background:#f2f2f2; border:1px solid #ccc; border-radius:8px; padding:0.5em 0.4em; font-size:0.72em; line-height:1.3;"><strong>prepare</strong><br>
+        tree, depth \(\log N\)<br>\(k\) flag checks</div>
+    </div>
+    <div class="arrow" style="padding-top:1.2em;">&#10132;</div>
+    <div style="flex:0 0 20%; text-align:center;">
+      <div style="background:#f2f2f2; border:1px solid #ccc; border-radius:8px; padding:0.5em 0.4em; font-size:0.72em; line-height:1.3;"><strong>post-select</strong><br>
+        keep shots with<br>every flag 0</div>
+      <div style="color:#d55e00; font-size:0.68em; margin-top:0.5em;
+        line-height:1.3;">&#8595;<br>flip on a covered path:<br>
+        <strong>discarded here</strong></div>
+    </div>
+    <div class="arrow" style="padding-top:1.2em;">&#10132;</div>
+    <div style="flex:0 0 20%; text-align:center;">
+      <div style="background:#f2f2f2; border:1px solid #ccc; border-radius:8px; padding:0.5em 0.4em; font-size:0.72em; line-height:1.3;"><strong>measure</strong><br>
+        \(M \approx 5\ln N\)<br>random angles</div>
+    </div>
+    <div class="arrow" style="padding-top:1.2em;">&#10132;</div>
+    <div style="flex:0 0 20%; text-align:center;">
+      <div style="background:#f2f2f2; border:1px solid #ccc; border-radius:8px; padding:0.5em 0.4em; font-size:0.72em; line-height:1.3;"><strong>recover</strong><br>
+        Lasso + refit<br>\(C\), \(\theta\),
+        \(n_{\mathrm{rec}}\)</div>
+      <div style="color:#1f77b4; font-size:0.68em; margin-top:0.5em;
+        line-height:1.3;">&#8595;<br>flip that slips through:<br>
+        \(n_{\mathrm{rec}} \neq N\),
+        <strong>caught here</strong></div>
+    </div>
+  </div>
+  <ul class="small" style="margin-top:0.8em;">
+    <li>Flags act <span class="alert">before</span> the measurement,
+      on bit flips in the covered region. The certificate acts
+      <span class="alert">after</span>, on whatever survived, by
+      checking the size of the coherence that is left.</li>
+    <li>Neither is complete: flags are blind to phase errors and to
+      flips that reach both checked qubits; the certificate is blind
+      to noise that <span class="alert">shrinks \(C\) without
+      moving weight</span>, which is what \(F\) is for.</li>
+    <li>Flags cost <span class="alert">acceptance, not
+      settings</span>: verification is \(M\) circuits either
+      way.</li>
+  </ul>
+  <aside class="notes">
+    Why the two contributions are in one paper. Lower flag coverage
+    means the certificate matters more, and vice versa. Not
+    exhaustive: dephasing lowers C while leaving n_rec = N, which is
+    why we still report a fidelity.
+  </aside>
+</section>
+
 <section>
   <h2>Quantinuum H2-1 hardware, 50 qubits</h2>
   <div class="center">

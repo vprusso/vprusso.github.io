@@ -156,7 +156,11 @@
     <span class="card">metrology</span>
     <span class="card">error correction</span>
   </p>
-  <div class="cols" style="margin-top:0.7em;">
+  <p class="center small" style="margin-top:0.6em;">
+    <span class="alert">Fidelity</span> \(F\): how close the built
+    state is to the intended one, from 0 to 1.
+  </p>
+  <div class="cols" style="margin-top:0.3em;">
     <div class="col stat">
       <div class="big">120 qubits
         <svg viewBox="0 0 60 78" width="44" height="57"
@@ -177,7 +181,7 @@
     </div>
     <div class="col stat">
       <div class="big">1 bit flip</div>
-      drops the fidelity<br>to zero
+      drops \(F\)<br>to zero
     </div>
   </div>
   <p class="center alert" style="margin-top:0.8em;">
@@ -248,8 +252,8 @@
   </p>
   <p class="center alert small">
     A coin flip scores exactly \(F = 1/2\). Everything above
-    \(1/2\) lives in the orange corners: \(C\) is the number to
-    measure.
+    \(1/2\) lives in the orange corners: the coherence is the
+    number to measure.
   </p>
   <aside class="notes">
     Population: diagonal corners, probability of all-0s / all-1s.
@@ -270,13 +274,15 @@
 <section data-anim="parity">
   <h2>Fidelity from parity oscillations</h2>
   <p class="center small" style="margin-bottom:0.3em;">
-    The fit returns amplitude \(C \ge 0\) and phase
-    \(\theta\); the fidelity is \(F = (P + C\cos\theta)/2\).
+    The fit returns \(C \ge 0\) and \(\theta\); the fidelity is
+    \(F = (P + C\cos\theta)/2\).
   </p>
   <div class="cols">
     <div class="col center">
       <strong>Population \(P\)</strong><br>
-      <span class="small">chance of reading all-0s or all-1s</span><br>
+      <span class="small" style="display:block;
+        min-height:2.9em;">chance of reading all-0s or
+        all-1s</span>
       <svg id="pop-svg" viewBox="0 0 460 210"
         style="width:88%;"></svg>
       <div class="small">\(Z\)-basis counts:
@@ -284,24 +290,29 @@
     </div>
     <div class="col center">
       <strong>Coherence \(C\)</strong><br>
-      <span class="small">rotate every qubit by \(\phi\), measure
-        all; a shot's parity is +1 iff an <span class="alert">even
-        </span> number read 1; average over shots</span><br>
+      <span class="small" style="display:block;
+        min-height:2.9em;">rotate all by \(\phi\), measure; shot
+        parity +1 iff an <span class="alert">even</span> number
+        read 1; average</span>
       <svg id="parity-svg" viewBox="0 0 460 210"
         style="width:88%;"></svg>
       <div class="small">
         average parity \(\mathcal{P}(\phi) = C\cos(N\phi +
-        \theta)\). Resolving <span class="alert">any</span>
-        frequency up to \(N\): <span class="bad">two samples per
-        oscillation</span> (Nyquist), the \(2N = 10\) dots,
-        <span class="bad">each one circuit</span>.
+        \theta)\), drawn for \(N = 5\); the dots:
+        <span class="bad">two samples per
+        oscillation</span><sup>1</sup>, ten in all.
       </div>
     </div>
   </div>
-  <p class="center fragment" style="margin-top:0.5em;">
-    At \(N = 100\): <span class="bad">200 measurement circuits</span>,
-    just to verify the state.
+  <p class="center small" style="margin-top:0.5em;">
+    <span class="alert">Why rotate?</span> At \(\phi = 0\) this asks
+    whether the state survives swapping all-0s and all-1s (a coin
+    flip does not); sweeping \(\phi\) turns the branch phase into
+    \(\theta\).
   </p>
+  <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Nyquist,
+    Harry. &ldquo;Certain topics in telegraph transmission
+    theory.&rdquo; Transactions of the AIEE 47.2 (1928).</p>
   <aside class="notes">
     Curve draws itself on entry; the 2N grid dots are always shown and
     the caption points at them. Fragment reveals the cost line.
@@ -311,6 +322,86 @@
 <!-- =========================================================== 2c -->
 <!-- ============================================================ 4 -->
 <!-- =========================================================== 3c -->
+<section data-anim="circplot">
+  <h2>Every data point is its own circuit</h2>
+  <svg id="circplot-svg" viewBox="0 0 1180 480"
+    style="width:96%; margin-top:0.4em;"></svg>
+  <p class="small" style="margin-top:0.4em;">One setting is one
+    circuit, run for many shots; the <span class="alert">average</span>
+    of that circuit's &plusmn;1 parities is its
+    <span class="alert">one dot</span>. A different angle is a
+    <span class="alert">different circuit</span>: shots cannot be
+    shared between dots. Resolving <span class="alert">any</span>
+    frequency up to \(N\) blind takes \(M = 2N\) angles: at
+    \(N = 100\), <span class="bad">201 circuits</span>. The game is
+    how small \(M\) can be.</p>
+  <aside class="notes">
+    Grounding slide: population is one Z-basis circuit; each swept
+    angle is compiled and run separately; a dot is that circuit's
+    shot average. Rotation is Rz(-phi) then Ry(-pi/2), then measure Z.
+  </aside>
+</section>
+
+
+
+<section data-anim="alias">
+  <h2>Why random beats regular</h2>
+  <div class="center">
+    <svg id="alias-svg" viewBox="0 0 800 300" style="width:88%;"></svg>
+  </div>
+  <p class="small center" id="alias-caption">
+    Frequency 2, sampled at 8 equally spaced angles.
+  </p>
+  <ul class="small">
+    <li class="fragment" data-fragment-anim="alias-draw">Frequency 10
+      passes through <span class="alert">every one</span> of the same
+      samples: \(\cos(10\phi_k) = \cos(2\phi_k)\) exactly. A
+      regular grid has a period for impostors to hide behind; ruling
+      that out for every frequency up to \(N\) is what costs
+      \(2N\).</li>
+    <li class="fragment" data-fragment-anim="alias-random">A random
+      angle has no period: distinct frequencies agree there with
+      probability zero, so each further sample rules out a
+      <span class="alert">constant fraction</span> of the wrong
+      candidates: <span class="good">&sim;log(candidates) samples
+      leave one survivor</span>.</li>
+  </ul>
+</section>
+
+<section data-anim="sparse">
+  <h2>The observation: the signal is sparse</h2>
+  <div class="cols">
+    <div class="col center">
+      <svg id="sparse-svg" viewBox="0 0 520 200" style="width:100%;"></svg>
+      <svg id="spec-svg" viewBox="0 0 520 150" style="width:100%;"></svg>
+    </div>
+    <div class="col">
+      <ul class="small" style="margin-top:1.5em;">
+        <li>For an ideal GHZ state, the average-parity curve is a
+          <span class="alert">single cosine</span> at frequency
+          \(N\): one spike below.</li>
+        <li>The bottom panel is the curve's
+          <span class="alert">recipe</span>: how much of each
+          candidate frequency it contains. Ours reads 0.9 at
+          frequency \(N\), zero elsewhere: 2 of \(\sim 200\)
+          numbers (a cos and a sin amount).
+          <span class="alert">Sparse</span> means the recipe is
+          nearly empty.</li>
+        <li>Recovering a sparse signal from few random samples is the
+          textbook compressed sensing problem:
+          <span class="good">\(M \propto \log N\) random
+          angles</span> (orange dots) replace the \(2N\) equally
+          spaced ones.</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    On entry: random dots drop onto the curve one by one, then the
+    single spectral spike grows at frequency N.
+  </aside>
+</section>
+
+<!-- =========================================================== 4b -->
 <section data-anim="cs">
   <h2>What compressed sensing is</h2>
   <div class="center">
@@ -348,63 +439,7 @@
   </aside>
 </section>
 
-<section data-anim="sparse">
-  <h2>The observation: the signal is sparse</h2>
-  <div class="cols">
-    <div class="col center">
-      <svg id="sparse-svg" viewBox="0 0 520 200" style="width:100%;"></svg>
-      <svg id="spec-svg" viewBox="0 0 520 150" style="width:100%;"></svg>
-    </div>
-    <div class="col">
-      <ul class="small" style="margin-top:1.5em;">
-        <li>For an ideal GHZ state, the average-parity curve is a
-          <span class="alert">single cosine</span> at frequency
-          \(N\): one spike below.</li>
-        <li>The bottom panel is the curve's
-          <span class="alert">recipe</span>: how much of each
-          candidate frequency it contains. Ours reads 0.9 at
-          frequency \(N\), zero elsewhere: 2 of \(\sim 200\)
-          numbers (a cos and a sin amount).
-          <span class="alert">Sparse</span> means the recipe is
-          nearly empty.</li>
-        <li>Recovering a sparse signal from few random samples is the
-          textbook compressed sensing problem:
-          <span class="good">\(M \propto \log N\) random
-          angles</span> (orange dots) replace the \(2N\) equally
-          spaced ones.</li>
-      </ul>
-    </div>
-  </div>
-  <aside class="notes">
-    On entry: random dots drop onto the curve one by one, then the
-    single spectral spike grows at frequency N.
-  </aside>
-</section>
 
-<!-- =========================================================== 4b -->
-<section data-anim="alias">
-  <h2>Why random beats regular</h2>
-  <div class="center">
-    <svg id="alias-svg" viewBox="0 0 800 300" style="width:88%;"></svg>
-  </div>
-  <p class="small center" id="alias-caption">
-    Frequency 2, sampled at 8 equally spaced angles.
-  </p>
-  <ul class="small">
-    <li class="fragment" data-fragment-anim="alias-draw">Frequency 10
-      passes through <span class="alert">every one</span> of the same
-      samples: \(\cos(10\phi_k) = \cos(2\phi_k)\) exactly. A
-      regular grid has a period for impostors to hide behind; ruling
-      that out for every frequency up to \(N\) is what costs
-      \(2N\).</li>
-    <li class="fragment" data-fragment-anim="alias-random">A random
-      angle has no period: distinct frequencies agree there with
-      probability zero, so each further sample rules out a
-      <span class="alert">constant fraction</span> of the wrong
-      candidates: <span class="good">&sim;log(candidates) samples
-      leave one survivor</span>.</li>
-  </ul>
-</section>
 
 <!-- =========================================================== 4c -->
 
@@ -420,7 +455,7 @@
     </div>
     <div class="arrow">&#10132;</div>
     <div class="col center">
-      <div class="small">2. joint fit: penalty leaves one
+      <div class="small">2. Lasso: keep the dominant
         frequency</div>
       <svg id="pipe2" viewBox="0 0 360 170" style="width:100%;"></svg>
     </div>
@@ -506,60 +541,48 @@
 
 <!-- ============================================================ 9 -->
 <section>
-  <h2>Fixed-frequency fitting produces false certificates</h2>
+  <h2>Recovery saturates below the budget; a fixed fit invents
+    coherence</h2>
   <div class="cols">
-    <div class="col" style="flex:1.2;">
-      <img src="assets/cs_false_certificate.png">
-    </div>
     <div class="col">
-      <p class="small">Synthetic corrupted state, emulator sampling:
-        dominant coherence (\(C = 0.8\)) at \(N - 2\), zero
-        coherence at \(N\).</p>
+      <img src="assets/cs_success_probability.png"
+        style="width:88%; display:block; margin:0 auto;">
       <ul class="small">
-        <li><span class="bad">Known-frequency OLS at \(n = N\)</span>
-          reports median amplitude 0.75 at \(M = 3\), still
-          \(\approx 0.19\) at \(M = 30\): a false-positive entanglement
-          certificate.</li>
-        <li><span class="good">The CS pipeline</span> recovers
-          \(n_{\mathrm{rec}} = N - 2\) and assigns zero coherence to
-          \(N\): the failure is caught.</li>
+        <li>\(P(n_{\mathrm{rec}} = N)\) at \(N = 42\), 200
+          trials: <span class="good">saturates by \(M \approx
+          15\)</span>.</li>
+        <li>Theory gives the scaling \(M \propto \log N\); the
+          budget \(5\ln N \approx 19\) is <span
+          class="alert">our rule</span>, set past this knee. The
+          margin is why the hardware run used <span class="alert">19
+          angles at \(N = 50\)</span>.</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<!-- =========================================================== 10 -->
-<section>
-  <h2>Recovery saturates below the working budget</h2>
-  <div class="cols">
-    <div class="col center" style="flex:1.2;">
-      <img src="assets/cs_success_probability.png"
-        style="max-height:420px;">
-    </div>
     <div class="col">
+      <img src="assets/cs_false_certificate.png"
+        style="width:88%; display:block; margin:0 auto;">
       <ul class="small">
-        <li>How often does blind recovery return the right frequency?
-          \(P(n_{\mathrm{rec}} = N)\) at \(N = 42\), 200 trials,
-          1000 shots per angle.</li>
-        <li>Two free passes, then a sharp climb:
-          <span class="good">success saturates by \(M \approx
-          15\)</span>.</li>
-        <li>Theory supplies the <span class="alert">scaling</span>,
-          \(M \propto \log N\); the constant is ours. We budget
-          \(5\ln N \approx 19\) to sit past this knee: a working
-          rule, not a theorem.</li>
-        <li>That margin is why the hardware run used
-          <span class="alert">19 angles at \(N = 50\)</span> instead
-          of 100.</li>
+        <li>Corrupted state: coherence 0.8 at \(N - 2\),
+          <span class="alert">none at \(N\)</span>.
+          <span class="bad">Assumed-\(N\) fit</span>: 0.75 at
+          \(M = 3\), still 0.19 at \(M = 30\); in a
+          healthy-population mixture that crosses
+          <span class="bad">\(F > 1/2\)</span>.</li>
+        <li><span class="good">Blind recovery</span>:
+          \(n_{\mathrm{rec}} = N - 2\), zero at \(N\):
+          caught.</li>
       </ul>
     </div>
   </div>
   <aside class="notes">
-    The empirical answer to "how many settings do you really need".
-    Simulated with the analytic emulator and binomial parity sampling.
-    5 ln N is a working rule past this curve's knee, not a theorem.
+    Left: budget validation; 5 ln N is a working rule past the knee.
+    Right: leakage decays as 1/sqrt(M); blind recovery returns N-2 in
+    essentially every trial. Analytic emulator, 1000 shots per angle.
   </aside>
 </section>
+
+<!-- =========================================================== 10 -->
+
 
 <section class="sectiontitle">
   <h1>Preparing states worth verifying</h1>
@@ -657,7 +680,7 @@
           superposition survives.</li>
         <li>Flag reads 1: <span class="alert">odd bit-flip
           parity</span> in its region; discard the shot.</li>
-        <li>The missed double flip (two independent faults) moves
+        <li>The missed double flip moves
           the frequency to \(N - 4\): <span class="good">the certificate catches
           what the flag cannot</span>.</li>
       </ul>
@@ -783,14 +806,15 @@
       style="width:74%;">
   </div>
   <ul class="small" style="margin-top:0.5em;">
-    <li><span class="good">19 random angles</span> instead of
-      \(2N = 100\): 5&times; fewer circuits; 1000 shots per circuit
-      (cost-limited), hence the wide error bars.</li>
+    <li><span class="good">19 random angles</span> instead of the
+      blind scan's \(2N = 100\): 5&times; fewer circuits; 1000
+      shots per circuit (cost-limited), hence the wide error
+      bars.</li>
     <li>\(F_{\mathrm{rot}} = (P + C)/2\) scores against the GHZ
       state with the measured phase folded in; the standard fidelity
       pays \(\cos\theta\). Rotated fidelity \(\approx 0.72\)
-      with 4 flags; <span class="good">both improve with
-      flags</span>.</li>
+      with 4 flags; <span class="good">both point estimates rise
+      with flags</span>.</li>
     <li>Large phase offset at zero flags: consistent with accumulated
       coherent calibration error, amplified by
       \(\theta = \sum_i \epsilon_i\) at \(N = 50\).</li>
@@ -808,10 +832,25 @@
 <!-- =========================================================== 17 -->
 <section data-anim="term">
   <h2>Run it yourself: metriq-gym</h2>
-  <div class="term">
-    <div class="term-bar"><span class="r"></span><span
-      class="y"></span><span class="g"></span></div>
-    <pre id="term-pre"></pre>
+  <div style="display:flex; gap:1em; align-items:stretch;
+    margin-top:0.4em;">
+    <div style="flex:0 0 27%;">
+      <pre style="background:#f2f2f2; border:1px solid #ccc;
+        border-radius:8px; padding:0.7em 0.9em; font-size:0.52em;
+        line-height:1.5; margin:0;">{
+  "benchmark_name": "GHZ",
+  "num_qubits": 26,
+  "method":
+    "compressed_sensing",
+  "num_phases": 20,
+  "shots": 30000
+}</pre>
+    </div>
+    <div class="term" style="flex:1;">
+      <div class="term-bar"><span class="r"></span><span
+        class="y"></span><span class="g"></span></div>
+      <pre id="term-pre"></pre>
+    </div>
   </div>
   <ul class="small" style="margin-top:0.7em;">
     <li>One dispatch, one poll, on any supported backend (IBM,
@@ -1010,10 +1049,10 @@ function buildParity() {
   // population bars
   const ps = document.getElementById('pop-svg');
   ps.innerHTML = '';
-  const pm = mapper(0.3, 7.7, 0, 0.6, 45, 440, 180, 15);
+  const pm = mapper(0.3, 7.7, 0, 0.6, 45, 440, 185, 22);
   axisLines(ps, pm, 0.3, 7.7, 0, 0.6);
-  el('text', {x: 16, y: 100, 'font-size': 15,
-    transform: 'rotate(-90 16 100)', 'text-anchor': 'middle'},
+  el('text', {x: 16, y: 104, 'font-size': 15,
+    transform: 'rotate(-90 16 104)', 'text-anchor': 'middle'},
     ps).textContent = 'probability';
   const heights = [0.47, 0.01, 0.02, 0.01, 0.02, 0.01, 0.46];
   heights.forEach((h, i) => {
@@ -1030,15 +1069,12 @@ function buildParity() {
   const svg = document.getElementById('parity-svg');
   svg.innerHTML = '';
   const f = x => 0.9 * Math.cos(5 * x + 0.5);
-  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 440, 190, 26);
+  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 440, 185, 22);
   axisLines(svg, m, 0, 2 * Math.PI, -1.2, 1.2);
-  el('text', {x: 242, y: 14, 'text-anchor': 'middle', 'font-size': 13,
-    fill: '#667'}, svg).textContent =
-    'drawn for N = 5: count the oscillations, count the qubits';
   el('text', {x: 240, y: 207, 'text-anchor': 'middle',
     'font-size': 15}, svg).textContent = 'rotation angle ϕ';
-  el('text', {x: 16, y: 108, 'font-size': 15,
-    transform: 'rotate(-90 16 108)', 'text-anchor': 'middle'},
+  el('text', {x: 16, y: 104, 'font-size': 15,
+    transform: 'rotate(-90 16 104)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
   parity.curve = el('path', {
     d: curveData(f, 0, 2 * Math.PI, 400, m),
@@ -2169,6 +2205,84 @@ function buildSee() {
   drawMiniTree('see3', [4, 8, 9], [8, 12]);
 }
 
+// ============ every data point is its own circuit ============
+function buildCircplot() {
+  const svg = document.getElementById('circplot-svg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  const box = (x, y, wd, txt, fill, stroke) => {
+    el('rect', {x: x, y: y - 16, width: wd, height: 32, rx: 4,
+      fill: fill, stroke: stroke, 'stroke-width': 1.3}, svg);
+    el('text', {x: x + wd / 2, y: y + 5, 'text-anchor': 'middle',
+      'font-size': 15}, svg).textContent = txt;
+  };
+  const arrow = (x1, y1, x2, y2, col) => {
+    const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy);
+    const ux = dx / L, uy = dy / L;
+    const bx = x2 - 12 * ux, by = y2 - 12 * uy;
+    el('line', {x1: x1, y1: y1, x2: bx, y2: by, stroke: col,
+      'stroke-width': 2.2}, svg);
+    el('path', {d: 'M' + x2 + ',' + y2
+      + 'L' + (bx - 5 * uy) + ',' + (by + 5 * ux)
+      + 'L' + (bx + 5 * uy) + ',' + (by - 5 * ux) + 'Z',
+      fill: col}, svg);
+  };
+  // population row
+  el('text', {x: 34, y: 51, 'text-anchor': 'end', 'font-size': 15},
+    svg).textContent = '1\u00d7';
+  box(46, 46, 122, 'prepare GHZ', '#e8f0f7', '#7aa8cc');
+  el('line', {x1: 168, y1: 46, x2: 206, y2: 46, stroke: '#888',
+    'stroke-width': 1.5}, svg);
+  box(206, 46, 138, 'measure all (Z)', '#f2f2f2', '#888');
+  arrow(344, 46, 470, 46, '#888');
+  const hb = 490, hbase = 78;
+  [[0, 52, 1], [30, 6, 0.35], [60, 7, 0.35], [90, 50, 1]]
+    .forEach(b => el('rect', {x: hb + b[0], y: hbase - b[1],
+      width: 20, height: b[1], fill: '#1f77b4',
+      opacity: b[2]}, svg));
+  el('line', {x1: hb - 8, y1: hbase, x2: hb + 118, y2: hbase,
+    stroke: '#888', 'stroke-width': 1.5}, svg);
+  el('text', {x: hb + 10, y: hbase + 17, 'text-anchor': 'middle',
+    'font-size': 13}, svg).textContent = '0\u22ef0';
+  el('text', {x: hb + 100, y: hbase + 17, 'text-anchor': 'middle',
+    'font-size': 13}, svg).textContent = '1\u22ef1';
+  el('text', {x: hb + 135, y: 51, 'font-size': 15},
+    svg).textContent = '\u2192 population P';
+  // coherence rows
+  const rows = [140, 210, 280];
+  rows.forEach((y, i) => {
+    box(46, y, 122, 'prepare GHZ', '#e8f0f7', '#7aa8cc');
+    el('line', {x1: 168, y1: y, x2: 186, y2: y, stroke: '#888',
+      'stroke-width': 1.5}, svg);
+    box(186, y, 132, 'rotate by \u03c6' + (i + 1),
+      '#fbe9d8', '#d55e00');
+    el('line', {x1: 318, y1: y, x2: 336, y2: y, stroke: '#888',
+      'stroke-width': 1.5}, svg);
+    box(336, y, 96, 'measure', '#f2f2f2', '#888');
+  });
+  el('text', {x: 250, y: 330, 'text-anchor': 'middle',
+    'font-size': 15}, svg).textContent =
+    '\u22ee   one circuit per angle, M in all';
+  // parity curve
+  const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 560, 1150, 440, 155);
+  axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);
+  el('text', {x: 855, y: 468, 'text-anchor': 'middle',
+    'font-size': 14}, svg).textContent =
+    'rotation angle \u03c6';
+  el('text', {x: 532, y: 300, 'font-size': 14,
+    transform: 'rotate(-90 532 300)', 'text-anchor': 'middle'},
+    svg).textContent = 'average parity';
+  const f = x => 0.9 * Math.cos(5 * x + 0.5);
+  el('path', {d: curveData(f, 0, 2 * Math.PI, 300, m),
+    fill: 'none', stroke: '#a9cbe3', 'stroke-width': 2.5}, svg);
+  const phis = [1.152, 2.723, 5.55];
+  phis.forEach((p, i) => {
+    el('circle', {cx: m.x(p), cy: m.y(f(p)), r: 6,
+      fill: ORANGE}, svg);
+    arrow(432, rows[i], m.x(p) - 8, m.y(f(p)), '#c25400');
+  });
+}
+
 // ===================== slide 18: aliasing =====================
 const alias = {};
 function buildAlias() {
@@ -2315,6 +2429,7 @@ const starters = {title: startTitle, osc: startOsc,
   cert: buildCert,
   circ: buildCirc, tree: buildTree, alias: buildAlias,
   see: buildSee,
+  circplot: buildCircplot,
   term: startTerm, artrade: startArTrade, thanks: startThanks};
 
 const fragActions = {

@@ -332,9 +332,9 @@
     <span class="alert">one dot</span>. A different angle is a
     <span class="alert">different circuit</span>: shots cannot be
     shared between dots. Resolving <span class="alert">any</span>
-    frequency up to \(N\) blind takes \(M = 2N\) angles: at
-    \(N = 100\), <span class="bad">201 circuits</span>. The game is
-    how small \(M\) can be.</p>
+    frequency up to \(N\) blind takes \(M = 2N\) parity angles;
+    with the one \(Z\) circuit, <span class="bad">201 in all</span>
+    at \(N = 100\). The game is how small \(M\) can be.</p>
   <aside class="notes">
     Grounding slide: population is one Z-basis circuit; each swept
     angle is compiled and run separately; a dot is that circuit's
@@ -362,7 +362,7 @@
     <li class="fragment" data-fragment-anim="alias-random">A random
       angle has no period: distinct frequencies agree there with
       probability zero, so each further sample rules out a
-      <span class="alert">constant fraction</span> of the wrong
+      <span class="alert">roughly constant fraction</span> of the wrong
       candidates: <span class="good">&sim;log(candidates) samples
       leave one survivor</span>.</li>
   </ul>
@@ -383,8 +383,9 @@
         <li>The bottom panel is the curve's
           <span class="alert">recipe</span>: how much of each
           candidate frequency it contains. Ours reads 0.9 at
-          frequency \(N\), zero elsewhere: 2 of \(\sim 200\)
-          numbers (a cos and a sin amount).
+          frequency \(N\), zero elsewhere:
+          one active frequency, two numbers (its cos and sin
+          amounts), of \(\sim 200\).
           <span class="alert">Sparse</span> means the recipe is
           nearly empty.</li>
         <li>Recovering a sparse signal from few random samples is the
@@ -680,9 +681,10 @@
           superposition survives.</li>
         <li>Flag reads 1: <span class="alert">odd bit-flip
           parity</span> in its region; discard the shot.</li>
-        <li>The missed double flip moves
-          the frequency to \(N - 4\): <span class="good">the certificate catches
-          what the flag cannot</span>.</li>
+        <li>The missed double flip is a weight-2 error: its
+          coherence sits at \(N - 4\), where <span
+          class="good">blind recovery catches what the flag
+          cannot</span>.</li>
       </ul>
     </div>
   </div>
@@ -784,7 +786,8 @@
       <span class="alert">after</span>, on whatever survived, by
       checking the size of the coherence that is left.</li>
     <li>Neither is complete: flags are blind to phase errors and to
-      flips that reach both checked qubits; the certificate is blind
+      flips that reach both checked qubits; the frequency check is
+      blind
       to noise that <span class="alert">shrinks \(C\) without
       moving weight</span>, which is what \(F\) is for.</li>
     <li>Flags cost <span class="alert">acceptance, not
@@ -806,15 +809,15 @@
       style="width:74%;">
   </div>
   <ul class="small" style="margin-top:0.5em;">
-    <li><span class="good">19 random angles</span> instead of the
-      blind scan's \(2N = 100\): 5&times; fewer circuits; 1000
-      shots per circuit (cost-limited), hence the wide error
-      bars.</li>
     <li>\(F_{\mathrm{rot}} = (P + C)/2\) scores against the GHZ
       state with the measured phase folded in; the standard fidelity
       pays \(\cos\theta\). Rotated fidelity \(\approx 0.72\)
       with 4 flags; <span class="good">both point estimates rise
       with flags</span>.</li>
+    <li><span class="good">19 random angles</span> instead of the
+      blind scan's \(2N = 100\): 5&times; fewer circuits; 1000
+      shots per circuit (cost-limited), hence the wide error
+      bars.</li>
     <li>Large phase offset at zero flags: consistent with accumulated
       coherent calibration error, amplified by
       \(\theta = \sum_i \epsilon_i\) at \(N = 50\).</li>

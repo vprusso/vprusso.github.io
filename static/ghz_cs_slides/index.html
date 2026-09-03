@@ -1072,16 +1072,43 @@ function buildParity() {
   const svg = document.getElementById('parity-svg');
   svg.innerHTML = '';
   const f = x => 0.9 * Math.cos(5 * x + 0.5);
-  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 440, 185, 22);
+  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 355, 185, 22);
   axisLines(svg, m, 0, 2 * Math.PI, -1.2, 1.2);
-  el('text', {x: 240, y: 207, 'text-anchor': 'middle',
+  el('text', {x: 200, y: 207, 'text-anchor': 'middle',
     'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  // equator dial: the measurement axis at azimuth phi
+  const dc = {x: 412, y: 92, r: 34};
+  el('circle', {cx: dc.x, cy: dc.y, r: dc.r, fill: 'none',
+    stroke: '#999', 'stroke-width': 1.5}, svg);
+  el('line', {x1: dc.x + dc.r, y1: dc.y, x2: dc.x + dc.r + 6,
+    y2: dc.y, stroke: '#777', 'stroke-width': 1.5}, svg);
+  el('text', {x: dc.x + dc.r + 10, y: dc.y + 4, 'font-size': 11,
+    fill: '#555'}, svg).textContent = 'X';
+  el('line', {x1: dc.x, y1: dc.y - dc.r, x2: dc.x,
+    y2: dc.y - dc.r - 6, stroke: '#777', 'stroke-width': 1.5}, svg);
+  el('text', {x: dc.x, y: dc.y - dc.r - 10, 'font-size': 11,
+    fill: '#555', 'text-anchor': 'middle'}, svg).textContent = 'Y';
+  parity.arrow = el('line', {x1: dc.x, y1: dc.y,
+    x2: dc.x + 0.88 * dc.r, y2: dc.y, stroke: ORANGE,
+    'stroke-width': 2.5}, svg);
+  el('circle', {cx: dc.x, cy: dc.y, r: 2.5, fill: '#777'}, svg);
+  parity.dial = dc;
+  el('text', {x: dc.x, y: dc.y + dc.r + 16, 'font-size': 11,
+    fill: '#667', 'text-anchor': 'middle'}, svg).textContent =
+    "each qubit's";
+  el('text', {x: dc.x, y: dc.y + dc.r + 29, 'font-size': 11,
+    fill: '#667', 'text-anchor': 'middle'}, svg).textContent =
+    'measurement axis';
   el('text', {x: 16, y: 104, 'font-size': 15,
     transform: 'rotate(-90 16 104)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
   parity.curve = el('path', {
     d: curveData(f, 0, 2 * Math.PI, 400, m),
     fill: 'none', stroke: BLUE, 'stroke-width': 2.5, opacity: 0}, svg);
+  parity.f = f;
+  parity.m = m;
+  parity.tip = el('circle', {cx: m.x(0), cy: m.y(f(0)), r: 4,
+    fill: ORANGE, opacity: 0}, svg);
   parity.dots = el('g', {}, svg);
   for (let k = 0; k < 10; k++) {
     const x = 2 * Math.PI * k / 10;
@@ -1223,7 +1250,37 @@ function buildCirc() {
 }
 function startParity() {
   buildParity();
-  setTimeout(() => drawOn(parity.curve, 1600), 80);
+  const gen = animGen;
+  const path = parity.curve, dc = parity.dial;
+  const setPhi = p => {
+    const phi = 2 * Math.PI * p;
+    parity.arrow.setAttribute('x2',
+      dc.x + 0.88 * dc.r * Math.cos(phi));
+    parity.arrow.setAttribute('y2',
+      dc.y - 0.88 * dc.r * Math.sin(phi));
+    parity.tip.setAttribute('cx', parity.m.x(phi));
+    parity.tip.setAttribute('cy', parity.m.y(parity.f(phi)));
+  };
+  if (NOANIM) {
+    path.style.opacity = 1;
+    setPhi(1);
+    return;
+  }
+  const L = path.getTotalLength();
+  path.style.strokeDasharray = L;
+  path.style.strokeDashoffset = L;
+  path.style.opacity = 1;
+  parity.tip.setAttribute('opacity', 1);
+  let t0 = null;
+  requestAnimationFrame(function step(t) {
+    if (gen !== animGen) return;
+    if (t0 === null) t0 = t;
+    const p = Math.min((t - t0) / 2200, 1);
+    path.style.strokeDashoffset = L * (1 - p);
+    setPhi(p);
+    if (p < 1) requestAnimationFrame(step);
+    else parity.tip.setAttribute('opacity', 0);
+  });
 }
 
 // ===================== compressed sensing intro =====================

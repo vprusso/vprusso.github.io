@@ -6,6 +6,13 @@ title = "papers"
 
 ---
 
+- ["PauLie: Fast classification of Pauli dynamical Lie algebras"](/pdf/paulie.pdf)  
+   *O. Shaya, K. Golovkin, M. Roy, V. Russo*,   
+   *arXiv:2608.30771, (2026)*.   
+   [PDF](/pdf/paulie.pdf) | 
+   [arXiv](https://arxiv.org/abs/2608.30771) |
+   [Software](https://github.com/QPauLie/PauLie)
+
 - ["Satisfying quantum codes:
 Physics-informed and hardware-aware code design with SAT solvers"](/pdf/sat_qec.pdf)  
    *B. DalFavero, W. M. Watkins, M. L. LaBorde, V. Russo, E. Egger, G. Quiroz, R. LaRose*,   

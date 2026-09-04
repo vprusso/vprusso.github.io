@@ -344,29 +344,7 @@
 
 
 
-<section data-anim="alias">
-  <h2>Why random beats regular</h2>
-  <div class="center">
-    <svg id="alias-svg" viewBox="0 0 800 300" style="width:88%;"></svg>
-  </div>
-  <p class="small center" id="alias-caption">
-    Frequency 2, sampled at 8 equally spaced angles.
-  </p>
-  <ul class="small">
-    <li class="fragment" data-fragment-anim="alias-draw">Frequency 10
-      passes through <span class="alert">every one</span> of the same
-      samples: \(\cos(10\phi_k) = \cos(2\phi_k)\) exactly. A
-      regular grid has a period for impostors to hide behind; ruling
-      that out for every frequency up to \(N\) is what costs
-      \(2N\).</li>
-    <li class="fragment" data-fragment-anim="alias-random">A random
-      angle has no period: distinct frequencies agree there with
-      probability zero, so each further sample rules out a
-      <span class="alert">roughly constant fraction</span> of the wrong
-      candidates: <span class="good">&sim;log(candidates) samples
-      leave one survivor</span>.</li>
-  </ul>
-</section>
+
 
 <section data-anim="sparse">
   <h2>The observation: the signal is sparse</h2>
@@ -446,6 +424,30 @@
 
 
 <!-- ============================================================ 5 -->
+<section data-anim="alias">
+  <h2>Why random beats regular</h2>
+  <div class="center">
+    <svg id="alias-svg" viewBox="0 0 800 300" style="width:88%;"></svg>
+  </div>
+  <p class="small center" id="alias-caption">
+    Frequency 2, sampled at 8 equally spaced angles.
+  </p>
+  <ul class="small">
+    <li class="fragment" data-fragment-anim="alias-draw">Frequency 10
+      passes through <span class="alert">every one</span> of the same
+      samples: \(\cos(10\phi_k) = \cos(2\phi_k)\) exactly. A
+      regular grid has a period for impostors to hide behind; ruling
+      that out for every frequency up to \(N\) is what costs
+      \(2N\).</li>
+    <li class="fragment" data-fragment-anim="alias-random">A random
+      angle has no period: distinct frequencies agree there with
+      probability zero, so each further sample rules out a
+      <span class="alert">roughly constant fraction</span> of the wrong
+      candidates: <span class="good">&sim;log(candidates) samples
+      leave one survivor</span>.</li>
+  </ul>
+</section>
+
 <section data-anim="pipe">
   <h2>Recovery separates detection from estimation</h2>
   <div class="cols" style="align-items:center;">
@@ -981,6 +983,17 @@ function mapper(x0, x1, y0, y1, px0, px1, py0, py1) {
   };
 }
 
+function phiLabel(attrs, parent, prefix) {
+  const t = el('text', attrs, parent);
+  t.textContent = (prefix === undefined ? 'rotation angle ' : prefix);
+  const sp = document.createElementNS(NS, 'tspan');
+  sp.setAttribute('font-family', 'KaTeX_Math');
+  sp.setAttribute('font-style', 'italic');
+  sp.textContent = '\u03d5';
+  t.appendChild(sp);
+  return t;
+}
+
 function curveData(fn, x0, x1, n, m) {
   let d = '';
   for (let i = 0; i <= n; i++) {
@@ -1074,8 +1087,8 @@ function buildParity() {
   const f = x => 0.9 * Math.cos(5 * x + 0.5);
   const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 355, 185, 22);
   axisLines(svg, m, 0, 2 * Math.PI, -1.2, 1.2);
-  el('text', {x: 200, y: 207, 'text-anchor': 'middle',
-    'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  phiLabel({x: 200, y: 207, 'text-anchor': 'middle',
+    'font-size': 15}, svg);
   // equator dial: the measurement axis at azimuth phi
   const dc = {x: 412, y: 92, r: 34};
   el('circle', {cx: dc.x, cy: dc.y, r: dc.r, fill: 'none',
@@ -1134,8 +1147,8 @@ function buildOscCurves() {
   svg.innerHTML = '';
   const m = mapper(0, 2 * Math.PI, -1.35, 1.35, 40, 440, 220, 15);
   axisLines(svg, m, 0, 2 * Math.PI, -1.35, 1.35);
-  el('text', {x: 240, y: 250, 'text-anchor': 'middle',
-    'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  phiLabel({x: 240, y: 250, 'text-anchor': 'middle',
+    'font-size': 15}, svg);
   el('text', {x: 14, y: 118, 'font-size': 15,
     transform: 'rotate(-90 14 118)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
@@ -1394,8 +1407,8 @@ function buildSparse() {
   svg.innerHTML = '';
   const m = mapper(0, Math.PI, -1.2, 1.2, 45, 500, 180, 12);
   axisLines(svg, m, 0, Math.PI, -1.2, 1.2);
-  el('text', {x: 270, y: 197, 'text-anchor': 'middle',
-    'font-size': 15}, svg).textContent = 'rotation angle ϕ';
+  phiLabel({x: 270, y: 197, 'text-anchor': 'middle',
+    'font-size': 15}, svg);
   el('text', {x: 16, y: 100, 'font-size': 15,
     transform: 'rotate(-90 16 100)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
@@ -1489,8 +1502,8 @@ function buildPipe() {
   s1.innerHTML = '';
   const m1 = mapper(0, Math.PI, -1.25, 1.25, 28, 350, 152, 12);
   axisLines(s1, m1, 0, Math.PI, -1.25, 1.25);
-  el('text', {x: 189, y: 168, 'text-anchor': 'middle',
-    'font-size': 12}, s1).textContent = 'rotation angle \u03d5';
+  phiLabel({x: 189, y: 168, 'text-anchor': 'middle',
+    'font-size': 12}, s1);
   el('text', {x: 11, y: 82, 'font-size': 12,
     transform: 'rotate(-90 11 82)', 'text-anchor': 'middle'},
     s1).textContent = 'average parity';
@@ -1537,8 +1550,8 @@ function buildPipe() {
   s3.innerHTML = '';
   const m3 = mapper(0, Math.PI, -1.25, 1.25, 28, 350, 152, 12);
   axisLines(s3, m3, 0, Math.PI, -1.25, 1.25);
-  el('text', {x: 189, y: 168, 'text-anchor': 'middle',
-    'font-size': 12}, s3).textContent = 'rotation angle \u03d5';
+  phiLabel({x: 189, y: 168, 'text-anchor': 'middle',
+    'font-size': 12}, s3);
   el('text', {x: 11, y: 82, 'font-size': 12,
     transform: 'rotate(-90 11 82)', 'text-anchor': 'middle'},
     s3).textContent = 'average parity';
@@ -1678,8 +1691,8 @@ function demoRender(m) {
   el('text', {x: 14, y: 100, 'font-size': 14,
     transform: 'rotate(-90 14 100)', 'text-anchor': 'middle'},
     s1).textContent = 'average parity';
-  el('text', {x: 270, y: 205, 'text-anchor': 'middle',
-    'font-size': 14}, s1).textContent = 'rotation angle ϕ';
+  phiLabel({x: 270, y: 205, 'text-anchor': 'middle',
+    'font-size': 14}, s1);
   for (let i = 0; i < m; i++)
     el('circle', {cx: m1.x(demo.phis[i]), cy: m1.y(demo.ys[i]), r: 5,
       fill: ORANGE}, s1);
@@ -1736,8 +1749,8 @@ function buildAvgPar() {
   svg.innerHTML = '';
   const m = mapper(0, Math.PI, -1.2, 1.2, 45, 500, 195, 15);
   axisLines(svg, m, 0, Math.PI, -1.2, 1.2);
-  el('text', {x: 272, y: 222, 'text-anchor': 'middle',
-    'font-size': 15}, svg).textContent = 'rotation angle \u03d5';
+  phiLabel({x: 272, y: 222, 'text-anchor': 'middle',
+    'font-size': 15}, svg);
   el('text', {x: 16, y: 105, 'font-size': 15,
     transform: 'rotate(-90 16 105)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
@@ -2376,8 +2389,8 @@ function buildAlias() {
   svg.innerHTML = '';
   const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 50, 770, 270, 15);
   axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);
-  el('text', {x: 410, y: 296, 'text-anchor': 'middle',
-    'font-size': 15}, svg).textContent = 'rotation angle \u03d5';
+  phiLabel({x: 410, y: 296, 'text-anchor': 'middle',
+    'font-size': 15}, svg);
   el('text', {x: 18, y: 142, 'font-size': 15,
     transform: 'rotate(-90 18 142)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';

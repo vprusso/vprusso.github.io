@@ -1263,10 +1263,27 @@ function startParity() {
   };
   if (NOANIM) {
     path.style.opacity = 1;
-    setPhi(1);
+    setPhi(0.2);
     return;
   }
   const L = path.getTotalLength();
+  // arc length is not uniform in phi, so build an x -> length table
+  // to keep the revealed curve edge exactly under the dial's angle
+  const K = 240, xs = new Array(K + 1), ss = new Array(K + 1);
+  for (let i = 0; i <= K; i++) {
+    const s = L * i / K;
+    xs[i] = path.getPointAtLength(s).x;
+    ss[i] = s;
+  }
+  const lenAtX = x => {
+    let lo = 0, hi = K;
+    while (hi - lo > 1) {
+      const mid = (lo + hi) >> 1;
+      if (xs[mid] < x) lo = mid; else hi = mid;
+    }
+    const f = (x - xs[lo]) / (xs[hi] - xs[lo] || 1);
+    return ss[lo] + f * (ss[hi] - ss[lo]);
+  };
   path.style.strokeDasharray = L;
   path.style.strokeDashoffset = L;
   path.style.opacity = 1;
@@ -1275,11 +1292,20 @@ function startParity() {
   requestAnimationFrame(function step(t) {
     if (gen !== animGen) return;
     if (t0 === null) t0 = t;
-    const p = Math.min((t - t0) / 2200, 1);
-    path.style.strokeDashoffset = L * (1 - p);
+    const p = Math.min((t - t0) / 2600, 1);
+    path.style.strokeDashoffset =
+      L - lenAtX(parity.m.x(2 * Math.PI * p));
     setPhi(p);
-    if (p < 1) requestAnimationFrame(step);
-    else parity.tip.setAttribute('opacity', 0);
+    if (p < 1) { requestAnimationFrame(step); return; }
+    // curve stays complete; the dial and dot keep cycling
+    path.style.strokeDashoffset = 0;
+    let t1 = null;
+    requestAnimationFrame(function loop(u) {
+      if (gen !== animGen) return;
+      if (t1 === null) t1 = u;
+      setPhi(((u - t1) / 4500) % 1);
+      requestAnimationFrame(loop);
+    });
   });
 }
 

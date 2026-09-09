@@ -205,10 +205,12 @@
   <p class="center">
     \[ F(\rho) = \langle \mathrm{GHZ} | \rho | \mathrm{GHZ} \rangle
        = \frac{1}{2}\Bigl(
-       \underbrace{\rho_{\mathbf{0},\mathbf{0}}
-         + \rho_{\mathbf{1},\mathbf{1}}}_{\text{population } P}
-       + \underbrace{\rho_{\mathbf{0},\mathbf{1}}
-         + \rho_{\mathbf{1},\mathbf{0}}}_{\text{coherence } C}
+       \underbrace{\langle\mathbf{0}|\rho|\mathbf{0}\rangle
+         + \langle\mathbf{1}|\rho|\mathbf{1}\rangle}_{
+         \text{population } P}
+       + \underbrace{\langle\mathbf{0}|\rho|\mathbf{1}\rangle
+         + \langle\mathbf{1}|\rho|\mathbf{0}\rangle}_{
+         \text{coherence}}
        \Bigr) \]
   </p>
   <div class="cols">
@@ -247,7 +249,9 @@
     </div>
   </div>
   <p class="small center" style="margin-top:0.6em;">
-    Diagonal entries are outcome probabilities; the corner
+    Here \(\mathbf{0} = 0\cdots0\) and
+    \(\mathbf{1} = 1\cdots1\). Diagonal entries are outcome
+    probabilities; the corner
     off-diagonals measure the superposition itself.
   </p>
   <p class="center alert small">
@@ -274,14 +278,15 @@
 <section data-anim="parity">
   <h2>Fidelity from parity oscillations</h2>
   <p class="center small" style="margin-bottom:0.3em;">
-    The fit returns \(C \ge 0\) and \(\theta\); the fidelity is
-    \(F = (P + C\cos\theta)/2\).
+    Fit measured parities to \(\mathcal{P}(\phi) = C\cos(N\phi +
+    \theta)\); the amplitude \(C \ge 0\) and phase \(\theta\) give
+    \(F(\rho) = (P + C\cos\theta)/2\).
   </p>
   <div class="cols">
     <div class="col center">
       <strong>Population \(P\)</strong><br>
       <span class="small" style="display:block;
-        min-height:2.9em;">chance of reading all-0s or
+        min-height:1.5em;">chance of reading all-0s or
         all-1s</span>
       <svg id="pop-svg" viewBox="0 0 460 210"
         style="width:88%;"></svg>
@@ -291,28 +296,22 @@
     <div class="col center">
       <strong>Coherence \(C\)</strong><br>
       <span class="small" style="display:block;
-        min-height:2.9em;">rotate all by \(\phi\), measure; shot
-        parity +1 iff an <span class="alert">even</span> number
-        read 1; average</span>
+        min-height:1.5em;">rotate all by \(\phi\); parity +1 iff
+        <span class="alert">evenly</span> many 1s; average</span>
       <svg id="parity-svg" viewBox="0 0 460 210"
         style="width:88%;"></svg>
       <div class="small">
-        average parity \(\mathcal{P}(\phi) = C\cos(N\phi +
-        \theta)\), drawn for \(N = 5\); the dots:
-        <span class="bad">two samples per
-        oscillation</span><sup>1</sup>, ten in all.
+        Two samples per
+        oscillation<sup>1,2</sup>: <span class="bad">\(2N\)
+        circuits</span>.
       </div>
     </div>
   </div>
-  <p class="center small" style="margin-top:0.5em;">
-    <span class="alert">Why rotate?</span> At \(\phi = 0\) this asks
-    whether the state survives swapping all-0s and all-1s (a coin
-    flip does not); sweeping \(\phi\) turns the branch phase into
-    \(\theta\).
-  </p>
   <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Nyquist,
-    Harry. &ldquo;Certain topics in telegraph transmission
-    theory.&rdquo; Transactions of the AIEE 47.2 (1928).</p>
+    &ldquo;Certain topics in telegraph transmission theory,&rdquo;
+    Trans. AIEE 47.2 (1928).<br><sup>2</sup>Shannon,
+    &ldquo;Communication in the presence of noise,&rdquo; Proc. IRE
+    37.1 (1949).</p>
   <aside class="notes">
     Curve draws itself on entry; the 2N grid dots are always shown and
     the caption points at them. Fragment reveals the cost line.
@@ -1085,36 +1084,76 @@ function buildParity() {
   const svg = document.getElementById('parity-svg');
   svg.innerHTML = '';
   const f = x => 0.9 * Math.cos(5 * x + 0.5);
-  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 355, 185, 22);
+  const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 296, 185, 22);
   axisLines(svg, m, 0, 2 * Math.PI, -1.2, 1.2);
   phiLabel({x: 200, y: 207, 'text-anchor': 'middle',
     'font-size': 15}, svg);
-  // equator dial: the measurement axis at azimuth phi
-  const dc = {x: 412, y: 92, r: 34};
+  // the coherence arrow (fixed, angle theta) and its shadow on a
+  // measurement axis that winds at N*phi; styled like the
+  // corner-and-shadow intuition page
+  const dc = {x: 376, y: 90, r: 58, th: 0.5};
+  el('line', {x1: dc.x - dc.r - 8, y1: dc.y, x2: dc.x + dc.r + 8,
+    y2: dc.y, stroke: '#ddd', 'stroke-width': 1}, svg);
+  el('line', {x1: dc.x, y1: dc.y - dc.r - 8, x2: dc.x,
+    y2: dc.y + dc.r + 8, stroke: '#ddd', 'stroke-width': 1}, svg);
   el('circle', {cx: dc.x, cy: dc.y, r: dc.r, fill: 'none',
-    stroke: '#999', 'stroke-width': 1.5}, svg);
-  el('line', {x1: dc.x + dc.r, y1: dc.y, x2: dc.x + dc.r + 6,
-    y2: dc.y, stroke: '#777', 'stroke-width': 1.5}, svg);
-  el('text', {x: dc.x + dc.r + 10, y: dc.y + 4, 'font-size': 11,
-    fill: '#555'}, svg).textContent = 'X';
-  el('line', {x1: dc.x, y1: dc.y - dc.r, x2: dc.x,
-    y2: dc.y - dc.r - 6, stroke: '#777', 'stroke-width': 1.5}, svg);
-  el('text', {x: dc.x, y: dc.y - dc.r - 10, 'font-size': 11,
-    fill: '#555', 'text-anchor': 'middle'}, svg).textContent = 'Y';
-  parity.arrow = el('line', {x1: dc.x, y1: dc.y,
-    x2: dc.x + 0.88 * dc.r, y2: dc.y, stroke: ORANGE,
-    'stroke-width': 2.5}, svg);
+    stroke: '#ccc', 'stroke-width': 1.5}, svg);
+  el('text', {x: dc.x + dc.r + 10, y: dc.y + 4, 'font-size': 10,
+    fill: '#888'}, svg).textContent = 'Re';
+  el('text', {x: dc.x + 5, y: dc.y - dc.r - 2, 'font-size': 10,
+    fill: '#888'}, svg).textContent = 'Im';
+  parity.axis = el('line', {x1: dc.x - dc.r - 8, y1: dc.y,
+    x2: dc.x + dc.r + 8, y2: dc.y, stroke: BLUE, opacity: 0.5,
+    'stroke-width': 1.5, 'stroke-dasharray': '6 5'}, svg);
+  const AL = 0.88 * dc.r;
+  const tipX = dc.x + AL * Math.cos(dc.th);
+  const tipY = dc.y - AL * Math.sin(dc.th);
+  parity.drop = el('line', {x1: tipX, y1: tipY, x2: tipX,
+    y2: dc.y, stroke: '#999', 'stroke-width': 1,
+    'stroke-dasharray': '2 3'}, svg);
+  parity.shadow = el('line', {x1: dc.x, y1: dc.y,
+    x2: dc.x + AL * Math.cos(dc.th), y2: dc.y,
+    stroke: BLUE, 'stroke-width': 5, 'stroke-linecap': 'round'},
+    svg);
+  el('line', {x1: dc.x, y1: dc.y, x2: tipX, y2: tipY,
+    stroke: ORANGE, 'stroke-width': 3}, svg);
+  const ha = 8, ang = dc.th;
+  el('path', {d: 'M ' + tipX + ' ' + tipY +
+    ' L ' + (tipX - ha * Math.cos(ang - 0.45)) + ' ' +
+      (tipY + ha * Math.sin(ang - 0.45)) +
+    ' L ' + (tipX - ha * Math.cos(ang + 0.45)) + ' ' +
+      (tipY + ha * Math.sin(ang + 0.45)) + ' Z',
+    fill: ORANGE}, svg);
+  const tl = el('text', {x: tipX + 4, y: tipY - 10,
+    'font-size': 13, fill: ORANGE, 'text-anchor': 'middle',
+    'font-family': 'KaTeX_Math', 'font-style': 'italic'}, svg);
+  tl.textContent = 'C, \u03b8';
   el('circle', {cx: dc.x, cy: dc.y, r: 2.5, fill: '#777'}, svg);
+  parity.axLab = el('text', {x: dc.x - 0.7 * dc.r, y: dc.y - 12,
+    'font-size': 12, fill: BLUE, opacity: 0.8,
+    'text-anchor': 'middle', 'font-family': 'KaTeX_Math',
+    'font-style': 'italic', 'paint-order': 'stroke',
+    stroke: '#fafafa', 'stroke-width': 4}, svg);
+  parity.axLab.textContent = '\u2212N\u03d5';
   parity.dial = dc;
-  el('text', {x: dc.x, y: dc.y + dc.r + 16, 'font-size': 11,
-    fill: '#667', 'text-anchor': 'middle'}, svg).textContent =
-    "each qubit's";
-  el('text', {x: dc.x, y: dc.y + dc.r + 29, 'font-size': 11,
-    fill: '#667', 'text-anchor': 'middle'}, svg).textContent =
-    'measurement axis';
+  const capt = ['the coherence arrow; each', 'angle reads its shadow'];
+  capt.forEach((s, i) => {
+    el('text', {x: dc.x, y: dc.y + dc.r + 17 + 13 * i,
+      'font-size': 11, fill: '#667', 'text-anchor': 'middle'},
+      svg).textContent = s;
+  });
   el('text', {x: 16, y: 104, 'font-size': 15,
     transform: 'rotate(-90 16 104)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
+  [0.9, -0.9].forEach(v => {
+    el('line', {x1: m.x(0), y1: m.y(v), x2: m.x(2 * Math.PI),
+      y2: m.y(v), stroke: ORANGE, 'stroke-width': 1,
+      'stroke-dasharray': '4 4', opacity: 0.55}, svg);
+  });
+  el('text', {x: m.x(6.15), y: m.y(0.9) - 5, 'font-size': 13,
+    fill: ORANGE, 'text-anchor': 'end',
+    'font-family': 'KaTeX_Math', 'font-style': 'italic'},
+    svg).textContent = 'C';
   parity.curve = el('path', {
     d: curveData(f, 0, 2 * Math.PI, 400, m),
     fill: 'none', stroke: BLUE, 'stroke-width': 2.5, opacity: 0}, svg);
@@ -1128,6 +1167,23 @@ function buildParity() {
     el('circle', {cx: m.x(x), cy: m.y(f(x)), r: 3.8,
       fill: '#444'}, parity.dots);
   }
+  el('circle', {cx: m.x(0), cy: m.y(0.9 * Math.cos(0.5)), r: 5,
+    fill: 'none', stroke: ORANGE, 'stroke-width': 2.2}, svg);
+  const ccl = el('text', {x: m.x(0) + 8,
+    y: m.y(0.9 * Math.cos(0.5)) + 18, 'font-size': 12, fill: ORANGE,
+    'paint-order': 'stroke', stroke: '#fafafa', 'stroke-width': 4},
+    svg);
+  const sp1 = document.createElementNS(NS, 'tspan');
+  sp1.setAttribute('font-family', 'KaTeX_Math');
+  sp1.setAttribute('font-style', 'italic');
+  sp1.textContent = 'C';
+  ccl.appendChild(sp1);
+  ccl.appendChild(document.createTextNode(' cos '));
+  const sp2 = document.createElementNS(NS, 'tspan');
+  sp2.setAttribute('font-family', 'KaTeX_Math');
+  sp2.setAttribute('font-style', 'italic');
+  sp2.textContent = '\u03b8';
+  ccl.appendChild(sp2);
 }
 function drawRings(rs, tsec) {
   rs.innerHTML = '';
@@ -1267,10 +1323,21 @@ function startParity() {
   const path = parity.curve, dc = parity.dial;
   const setPhi = p => {
     const phi = 2 * Math.PI * p;
-    parity.arrow.setAttribute('x2',
-      dc.x + 0.88 * dc.r * Math.cos(phi));
-    parity.arrow.setAttribute('y2',
-      dc.y - 0.88 * dc.r * Math.sin(phi));
+    const a = -5 * phi;               // wound axis angle
+    const dx = Math.cos(a), dy = -Math.sin(a);
+    const R = dc.r + 8;
+    parity.axis.setAttribute('x1', dc.x - dx * R);
+    parity.axis.setAttribute('y1', dc.y - dy * R);
+    parity.axis.setAttribute('x2', dc.x + dx * R);
+    parity.axis.setAttribute('y2', dc.y + dy * R);
+    parity.axLab.setAttribute('x', dc.x - dx * 0.7 * dc.r - dy * 13);
+    parity.axLab.setAttribute('y', dc.y - dy * 0.7 * dc.r + dx * 13);
+    // signed shadow of the arrow (length 0.88r at angle theta)
+    const s = 0.88 * dc.r * Math.cos(dc.th - a);
+    parity.shadow.setAttribute('x2', dc.x + dx * s);
+    parity.shadow.setAttribute('y2', dc.y + dy * s);
+    parity.drop.setAttribute('x2', dc.x + dx * s);
+    parity.drop.setAttribute('y2', dc.y + dy * s);
     parity.tip.setAttribute('cx', parity.m.x(phi));
     parity.tip.setAttribute('cy', parity.m.y(parity.f(phi)));
   };
@@ -1305,7 +1372,7 @@ function startParity() {
   requestAnimationFrame(function step(t) {
     if (gen !== animGen) return;
     if (t0 === null) t0 = t;
-    const p = Math.min((t - t0) / 2600, 1);
+    const p = Math.min((t - t0) / 24000, 1);
     path.style.strokeDashoffset =
       L - lenAtX(parity.m.x(2 * Math.PI * p));
     setPhi(p);
@@ -1316,7 +1383,7 @@ function startParity() {
     requestAnimationFrame(function loop(u) {
       if (gen !== animGen) return;
       if (t1 === null) t1 = u;
-      setPhi(((u - t1) / 4500) % 1);
+      setPhi(((u - t1) / 24000) % 1);
       requestAnimationFrame(loop);
     });
   });

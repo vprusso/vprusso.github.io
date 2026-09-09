@@ -993,6 +993,10 @@ function phiLabel(attrs, parent, prefix) {
   return t;
 }
 
+function tickText(svg, x, y, s, anch, fs) {
+  el('text', {x: x, y: y, 'font-size': fs || 11, fill: '#777',
+    'text-anchor': anch || 'middle'}, svg).textContent = s;
+}
 function curveData(fn, x0, x1, n, m) {
   let d = '';
   for (let i = 0; i <= n; i++) {
@@ -1064,8 +1068,12 @@ function buildParity() {
   // population bars
   const ps = document.getElementById('pop-svg');
   ps.innerHTML = '';
-  const pm = mapper(0.3, 7.7, 0, 0.6, 45, 440, 185, 22);
-  axisLines(ps, pm, 0.3, 7.7, 0, 0.6);
+  const pm = mapper(0.3, 7.7, 0, 1, 45, 440, 185, 22);
+  axisLines(ps, pm, 0.3, 7.7, 0, 1);
+  [[0, '0'], [1, '1']].forEach(t => {
+    el('text', {x: 40, y: pm.y(t[0]) + 4, 'font-size': 12,
+      fill: '#777', 'text-anchor': 'end'}, ps).textContent = t[1];
+  });
   el('text', {x: 16, y: 104, 'font-size': 15,
     transform: 'rotate(-90 16 104)', 'text-anchor': 'middle'},
     ps).textContent = 'probability';
@@ -1086,6 +1094,15 @@ function buildParity() {
   const f = x => 0.9 * Math.cos(5 * x + 0.5);
   const m = mapper(0, 2 * Math.PI, -1.2, 1.2, 45, 296, 185, 22);
   axisLines(svg, m, 0, 2 * Math.PI, -1.2, 1.2);
+  [[-1, '\u22121'], [1, '+1']].forEach(t => {
+    el('text', {x: 41, y: m.y(t[0]) + 4, 'font-size': 12,
+      fill: '#777', 'text-anchor': 'end'}, svg).textContent = t[1];
+  });
+  el('text', {x: m.x(0), y: 200, 'font-size': 12, fill: '#777',
+    'text-anchor': 'middle'}, svg).textContent = '0';
+  el('text', {x: m.x(2 * Math.PI), y: 200, 'font-size': 12,
+    fill: '#777', 'text-anchor': 'middle'}, svg).textContent =
+    '2\u03c0';
   phiLabel({x: 200, y: 207, 'text-anchor': 'middle',
     'font-size': 15}, svg);
   // the coherence arrow (fixed, angle theta) and its shadow on a
@@ -1410,9 +1427,14 @@ function csRow(svgId, label1, label2, dense, arrowLabel, note1, note2) {
   el('text', {x: 170, y: 78, 'text-anchor': 'end', 'font-size': 17,
     'font-weight': 600}, svg).textContent = label1;
   el('text', {x: 170, y: 100, 'text-anchor': 'end',
-    'font-size': 16}, svg).textContent = label2;
+    'font-size': 16, 'font-weight': label2 === 'sensing'
+      ? 600 : 400}, svg).textContent = label2;
   const ms = mapper(0, 2 * Math.PI, -1.25, 1.25, 195, 480, 150, 20);
   axisLines(svg, ms, 0, 2 * Math.PI, -1.25, 1.25);
+  tickText(svg, ms.x(0), ms.y(-1.25) + 13, '0');
+  tickText(svg, ms.x(2 * Math.PI), ms.y(-1.25) + 13, '2\u03c0');
+  tickText(svg, ms.x(0) - 4, ms.y(-1) + 4, '\u22121', 'end');
+  tickText(svg, ms.x(0) - 4, ms.y(1) + 4, '+1', 'end');
   if (dense) {
     const f = x => csSignal(x) + csJunk(x);
     el('path', {d: curveData(f, 0, 2 * Math.PI, 400, ms),
@@ -1437,7 +1459,9 @@ function csRow(svgId, label1, label2, dense, arrowLabel, note1, note2) {
     'font-size': 14, fill: '#666'}, svg).textContent = arrowLabel;
   const mf = mapper(0, 21, 0, 0.62, 610, 895, 150, 20);
   axisLines(svg, mf, 0, 21, 0, 0.62);
-  el('text', {x: 893, y: 168, 'text-anchor': 'end',
+  tickText(svg, mf.x(0), mf.y(0) + 13, '0');
+  tickText(svg, mf.x(20), mf.y(0) + 13, '20');
+  el('text', {x: 830, y: 168, 'text-anchor': 'end',
     'font-size': 14}, svg).textContent = 'frequency';
   if (dense) {
     for (let k = 1; k <= 20; k++) {
@@ -1474,6 +1498,10 @@ function buildSparse() {
   svg.innerHTML = '';
   const m = mapper(0, Math.PI, -1.2, 1.2, 45, 500, 180, 12);
   axisLines(svg, m, 0, Math.PI, -1.2, 1.2);
+  tickText(svg, m.x(0), m.y(-1.2) + 14, '0', 'middle', 12);
+  tickText(svg, m.x(Math.PI), m.y(-1.2) + 14, '\u03c0', 'middle', 12);
+  tickText(svg, m.x(0) - 5, m.y(-1) + 4, '\u22121', 'end', 12);
+  tickText(svg, m.x(0) - 5, m.y(1) + 4, '+1', 'end', 12);
   phiLabel({x: 270, y: 197, 'text-anchor': 'middle',
     'font-size': 15}, svg);
   el('text', {x: 16, y: 100, 'font-size': 15,
@@ -1490,10 +1518,14 @@ function buildSparse() {
   sp.innerHTML = '';
   const sm = mapper(0, 20, 0, 1.15, 45, 500, 120, 15);
   axisLines(sp, sm, 0, 20, 0, 1.15);
+  tickText(sp, sm.x(0), sm.y(0) + 16, '0', 'middle', 12);
+  tickText(sp, sm.x(20), sm.y(0) + 16, '2N', 'middle', 12);
+  tickText(sp, sm.x(0) - 5, sm.y(0) + 4, '0', 'end', 12);
+  tickText(sp, sm.x(0) - 5, sm.y(1) + 4, '1', 'end', 12);
   el('text', {x: 16, y: 70, 'font-size': 14,
     transform: 'rotate(-90 16 70)', 'text-anchor': 'middle'},
     sp).textContent = 'amplitude';
-  el('text', {x: 498, y: 143, 'text-anchor': 'end',
+  el('text', {x: 430, y: 143, 'text-anchor': 'end',
     'font-size': 15}, sp).textContent = 'frequency';
   el('text', {x: sm.x(10), y: 143, 'text-anchor': 'middle',
     'font-size': 15, fill: '#333'}, sp).textContent = 'N';
@@ -1569,6 +1601,10 @@ function buildPipe() {
   s1.innerHTML = '';
   const m1 = mapper(0, Math.PI, -1.25, 1.25, 28, 350, 152, 12);
   axisLines(s1, m1, 0, Math.PI, -1.25, 1.25);
+  tickText(s1, m1.x(0), m1.y(-1.25) + 12, '0', 'middle', 10);
+  tickText(s1, m1.x(Math.PI), m1.y(-1.25) + 12, '\u03c0', 'middle', 10);
+  tickText(s1, m1.x(0) - 3, m1.y(-1) + 3, '\u22121', 'end', 10);
+  tickText(s1, m1.x(0) - 3, m1.y(1) + 3, '+1', 'end', 10);
   phiLabel({x: 189, y: 168, 'text-anchor': 'middle',
     'font-size': 12}, s1);
   el('text', {x: 11, y: 82, 'font-size': 12,
@@ -1585,6 +1621,9 @@ function buildPipe() {
   s2.innerHTML = '';
   const m2 = mapper(0, 21, 0, 1.15, 28, 350, 140, 12);
   axisLines(s2, m2, 0, 21, 0, 1.15);
+  tickText(s2, m2.x(0), m2.y(0) + 14, '0', 'middle', 10);
+  tickText(s2, m2.x(0) - 3, m2.y(0) + 3, '0', 'end', 10);
+  tickText(s2, m2.x(0) - 3, m2.y(1) + 3, '1', 'end', 10);
   el('text', {x: 12, y: 76, 'font-size': 14,
     transform: 'rotate(-90 12 76)', 'text-anchor': 'middle'},
     s2).textContent = 'amplitude';
@@ -1617,6 +1656,10 @@ function buildPipe() {
   s3.innerHTML = '';
   const m3 = mapper(0, Math.PI, -1.25, 1.25, 28, 350, 152, 12);
   axisLines(s3, m3, 0, Math.PI, -1.25, 1.25);
+  tickText(s3, m3.x(0), m3.y(-1.25) + 12, '0', 'middle', 10);
+  tickText(s3, m3.x(Math.PI), m3.y(-1.25) + 12, '\u03c0', 'middle', 10);
+  tickText(s3, m3.x(0) - 3, m3.y(-1) + 3, '\u22121', 'end', 10);
+  tickText(s3, m3.x(0) - 3, m3.y(1) + 3, '+1', 'end', 10);
   phiLabel({x: 189, y: 168, 'text-anchor': 'middle',
     'font-size': 12}, s3);
   el('text', {x: 11, y: 82, 'font-size': 12,
@@ -2108,23 +2151,26 @@ function buildCert() {
   svg.innerHTML = '';
   const m = mapper(0, 20, 0, 1.15, 55, 610, 180, 20);
   axisLines(svg, m, 0, 20, 0, 1.15);
+  tickText(svg, m.x(0), m.y(0) + 16, '0', 'middle', 13);
+  tickText(svg, m.x(0) - 6, m.y(0) + 4, '0', 'end', 13);
+  tickText(svg, m.x(0) - 6, m.y(1) + 4, '1', 'end', 13);
   el('text', {x: 22, y: 100, 'font-size': 14,
     transform: 'rotate(-90 22 100)', 'text-anchor': 'middle'},
     svg).textContent = 'amplitude';
-  el('text', {x: 606, y: 205, 'text-anchor': 'end',
+  el('text', {x: 540, y: 205, 'text-anchor': 'end',
     'font-size': 14}, svg).textContent = 'frequency';
-  [[8, 'N − 2'], [13, 'N']].forEach(([v, lab]) => {
+  [[8, 'N − 2'], [10, 'N'], [20, '2N']].forEach(([v, lab]) => {
     el('line', {x1: m.x(v), y1: m.y(0), x2: m.x(v), y2: m.y(0) + 6,
       stroke: '#999'}, svg);
     el('text', {x: m.x(v), y: 205, 'text-anchor': 'middle',
       'font-size': 16}, svg).textContent = lab;
   });
   cert.m = m;
-  cert.spike = el('line', {x1: m.x(13), y1: m.y(0), x2: m.x(13),
+  cert.spike = el('line', {x1: m.x(10), y1: m.y(0), x2: m.x(10),
     y2: m.y(0.9), stroke: BLUE, 'stroke-width': 6}, svg);
-  cert.dot = el('circle', {cx: m.x(13), cy: m.y(0.9), r: 6,
+  cert.dot = el('circle', {cx: m.x(10), cy: m.y(0.9), r: 6,
     fill: BLUE}, svg);
-  cert.label = el('text', {x: m.x(13), y: m.y(0.9) - 14,
+  cert.label = el('text', {x: m.x(10), y: m.y(0.9) - 14,
     'text-anchor': 'middle', 'font-size': 16, fill: BLUE}, svg);
   cert.label.textContent = 'intended state';
 }
@@ -2133,7 +2179,7 @@ function certFlip(flipped) {
   if (!cert.spike) return;
   const m = cert.m;
   if (NOANIM) {
-    const x = m.x(flipped ? 8 : 13);
+    const x = m.x(flipped ? 8 : 10);
     cert.spike.setAttribute('x1', x);
     cert.spike.setAttribute('x2', x);
     cert.dot.setAttribute('cx', x);
@@ -2146,7 +2192,7 @@ function certFlip(flipped) {
       : 'intended state';
     return;
   }
-  const from = flipped ? 13 : 8, to = flipped ? 8 : 13;
+  const from = flipped ? 10 : 8, to = flipped ? 8 : 10;
   const gen = animGen;
   let t0 = null;
   requestAnimationFrame(function slide(t) {
@@ -2420,8 +2466,20 @@ function buildCircplot() {
     box(46, y, 122, 'prepare GHZ', '#e8f0f7', '#7aa8cc');
     el('line', {x1: 168, y1: y, x2: 186, y2: y, stroke: '#888',
       'stroke-width': 1.5}, svg);
-    box(186, y, 132, 'rotate by \u03c6' + (i + 1),
-      '#fbe9d8', '#d55e00');
+    box(186, y, 132, '', '#fbe9d8', '#d55e00');
+    const bt = el('text', {x: 252, y: y + 5, 'text-anchor': 'middle',
+      'font-size': 15}, svg);
+    bt.textContent = 'rotate by ';
+    const bph = document.createElementNS(NS, 'tspan');
+    bph.setAttribute('font-family', 'KaTeX_Math');
+    bph.setAttribute('font-style', 'italic');
+    bph.textContent = '\u03d5';
+    bt.appendChild(bph);
+    const bsub = document.createElementNS(NS, 'tspan');
+    bsub.setAttribute('font-size', '11');
+    bsub.setAttribute('dy', '3');
+    bsub.textContent = String(i + 1);
+    bt.appendChild(bsub);
     el('line', {x1: 318, y1: y, x2: 336, y2: y, stroke: '#888',
       'stroke-width': 1.5}, svg);
     box(336, y, 96, 'measure', '#f2f2f2', '#888');
@@ -2432,9 +2490,13 @@ function buildCircplot() {
   // parity curve
   const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 560, 1150, 440, 155);
   axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);
-  el('text', {x: 855, y: 468, 'text-anchor': 'middle',
-    'font-size': 14}, svg).textContent =
-    'rotation angle \u03c6';
+  tickText(svg, m.x(0), m.y(-1.25) + 16, '0', 'middle', 13);
+  tickText(svg, m.x(2 * Math.PI), m.y(-1.25) + 16, '2\u03c0',
+    'middle', 13);
+  tickText(svg, m.x(0) - 6, m.y(-1) + 4, '\u22121', 'end', 13);
+  tickText(svg, m.x(0) - 6, m.y(1) + 4, '+1', 'end', 13);
+  phiLabel({x: 855, y: 468, 'text-anchor': 'middle',
+    'font-size': 14}, svg);
   el('text', {x: 532, y: 300, 'font-size': 14,
     transform: 'rotate(-90 532 300)', 'text-anchor': 'middle'},
     svg).textContent = 'average parity';
@@ -2456,6 +2518,11 @@ function buildAlias() {
   svg.innerHTML = '';
   const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 50, 770, 270, 15);
   axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);
+  tickText(svg, m.x(0), m.y(-1.25) + 15, '0', 'middle', 13);
+  tickText(svg, m.x(2 * Math.PI), m.y(-1.25) + 15, '2\u03c0',
+    'middle', 13);
+  tickText(svg, m.x(0) - 6, m.y(-1) + 4, '\u22121', 'end', 13);
+  tickText(svg, m.x(0) - 6, m.y(1) + 4, '+1', 'end', 13);
   phiLabel({x: 410, y: 296, 'text-anchor': 'middle',
     'font-size': 15}, svg);
   el('text', {x: 18, y: 142, 'font-size': 15,

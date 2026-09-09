@@ -11,7 +11,7 @@ My primary research interests pertain to solving mathematical and computational 
 information theory. I leverage the tools of matrix analysis, linear algebra, and convex optimization to tackle questions
 in quantum entanglement, state discrimination, and nonlocal games. I also work on quantum error correction, quantum error
 mitigation, and the benchmarking and characterization of quantum computers, work that leans more on software and on
-experiments run against present-day hardware [(papers)](/papers).
+experiments run against present-day hardware ([papers](/papers)).
 
 I have extensive experience in creating robust software solutions and have worked in a wide variety of technical
 domains, including cryptography, GPU-driven research, numerical optimization, scientific programming, web, and

@@ -268,61 +268,23 @@
   </aside>
 </section>
 
-
-
 <!-- ============================================================ 3 -->
 <!-- =========================================================== 2b -->
 
 
 <!-- =========================================================== 2c -->
-<section data-anim="parity">
-  <h2>Fidelity from parity oscillations</h2>
-  <p class="center small" style="margin-bottom:0.3em;">
-    Fit measured parities to \(\mathcal{P}(\phi) = C\cos(N\phi +
-    \theta)\); the amplitude \(C \ge 0\) and phase \(\theta\) give
-    \(F(\rho) = (P + C\cos\theta)/2\).
-  </p>
-  <div class="cols">
-    <div class="col center">
-      <strong>Population \(P\)</strong><br>
-      <span class="small" style="display:block;
-        min-height:1.5em;">chance of reading all-0s or
-        all-1s</span>
-      <svg id="pop-svg" viewBox="0 0 460 210"
-        style="width:88%;"></svg>
-      <div class="small">\(Z\)-basis counts:
-        <span class="good">1 circuit</span></div>
-    </div>
-    <div class="col center">
-      <strong>Coherence \(C\)</strong><br>
-      <span class="small" style="display:block;
-        min-height:1.5em;">rotate all by \(\phi\); parity +1 iff
-        <span class="alert">evenly</span> many 1s; average</span>
-      <svg id="parity-svg" viewBox="0 0 460 210"
-        style="width:88%;"></svg>
-      <div class="small">
-        Two samples per
-        oscillation<sup>1,2</sup>: <span class="bad">\(2N\)
-        circuits</span>.
-      </div>
-    </div>
-  </div>
-  <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Nyquist,
-    &ldquo;Certain topics in telegraph transmission theory,&rdquo;
-    Trans. AIEE 47.2 (1928).<br><sup>2</sup>Shannon,
-    &ldquo;Communication in the presence of noise,&rdquo; Proc. IRE
-    37.1 (1949).</p>
-  <aside class="notes">
-    Curve draws itself on entry; the 2N grid dots are always shown and
-    the caption points at them. Fragment reveals the cost line.
-  </aside>
-</section>
+
 
 <!-- =========================================================== 2c -->
 <!-- ============================================================ 4 -->
 <!-- =========================================================== 3c -->
 <section data-anim="circplot">
   <h2>Every data point is its own circuit</h2>
+  <p class="center small" style="margin-bottom:0.2em;">
+    Average parity follows \(\mathcal{P}(\phi) = C\cos(N\phi +
+    \theta)\); the amplitude \(C \ge 0\) and phase \(\theta\)
+    give \(F(\rho) = (P + C\cos\theta)/2\).
+  </p>
   <svg id="circplot-svg" viewBox="0 0 1180 480"
     style="width:96%; margin-top:0.4em;"></svg>
   <p class="small" style="margin-top:0.4em;">One setting is one
@@ -417,8 +379,6 @@
   </aside>
 </section>
 
-
-
 <!-- =========================================================== 4c -->
 
 
@@ -448,11 +408,10 @@
 </section>
 
 <section data-anim="pipe">
-  <h2>Recovery separates detection from estimation</h2>
+  <h2>Recovery pipeline via compressed sensing</h2>
   <div class="cols" style="align-items:center;">
     <div class="col center">
-      <div class="small">1. measure at \(M \approx 5\ln N\)
-        random angles</div>
+      <div class="small">1. measure at \(M\) random angles</div>
       <svg id="pipe1" viewBox="0 0 360 170" style="width:100%;"></svg>
     </div>
     <div class="arrow">&#10132;</div>
@@ -494,8 +453,6 @@
 <!-- =========================================================== 5a2 -->
 
 
-
-
 <!-- =========================================================== 5c -->
 
 
@@ -523,8 +480,8 @@
     coherence is the one an \(N\)-qubit GHZ state would
     have.</span>
     &emsp;
-    <span class="bad">\(n_{\mathrm{rec}} \neq N\): caught, not
-      mis-certified.</span><br>
+    <span class="bad">\(n_{\mathrm{rec}} \neq N\): the
+    failure is caught.</span><br>
     <span class="footnote">With \(F > 1/2\) this certifies genuine
     \(N\)-partite entanglement against the phase-optimized target; it
     does not rule out other errors or smaller competing
@@ -539,47 +496,24 @@
 <!-- ============================================================ 7 -->
 
 
-
-
 <!-- ============================================================ 9 -->
 <section>
-  <h2>Recovery saturates below the budget; a fixed fit invents
-    coherence</h2>
-  <div class="cols">
-    <div class="col">
-      <img src="assets/cs_success_probability.png"
-        style="width:88%; display:block; margin:0 auto;">
-      <ul class="small">
-        <li>\(P(n_{\mathrm{rec}} = N)\) at \(N = 42\), 200
-          trials: <span class="good">saturates by \(M \approx
-          15\)</span>.</li>
-        <li>Theory gives the scaling \(M \propto \log N\); the
-          budget \(5\ln N \approx 19\) is <span
-          class="alert">our rule</span>, set past this knee. The
-          margin is why the hardware run used <span class="alert">19
-          angles at \(N = 50\)</span>.</li>
-      </ul>
-    </div>
-    <div class="col">
-      <img src="assets/cs_false_certificate.png"
-        style="width:88%; display:block; margin:0 auto;">
-      <ul class="small">
-        <li>Corrupted state: coherence 0.8 at \(N - 2\),
-          <span class="alert">none at \(N\)</span>.
-          <span class="bad">Assumed-\(N\) fit</span>: 0.75 at
-          \(M = 3\), still 0.19 at \(M = 30\); in a
-          healthy-population mixture that crosses
-          <span class="bad">\(F > 1/2\)</span>.</li>
-        <li><span class="good">Blind recovery</span>:
-          \(n_{\mathrm{rec}} = N - 2\), zero at \(N\):
-          caught.</li>
-      </ul>
-    </div>
-  </div>
+  <h2>Recovery saturates below the budget</h2>
+  <img src="assets/cs_success_probability.png"
+    style="width:55%; display:block; margin:0 auto;">
+  <ul>
+    <li>\(P(n_{\mathrm{rec}} = N)\) at \(N = 42\), 200
+      trials: <span class="good">saturates by \(M \approx
+      15\)</span>.</li>
+    <li>Theory gives the scaling \(M \propto \log N\); the
+      budget \(5\ln N \approx 19\) is <span
+      class="alert">our rule</span>, set past this knee. The
+      margin is why the hardware run used <span class="alert">19
+      angles at \(N = 50\)</span>.</li>
+  </ul>
   <aside class="notes">
-    Left: budget validation; 5 ln N is a working rule past the knee.
-    Right: leakage decays as 1/sqrt(M); blind recovery returns N-2 in
-    essentially every trial. Analytic emulator, 1000 shots per angle.
+    Budget validation; 5 ln N is a working rule past the knee. The
+    false-certificate companion plot is in the backups.
   </aside>
 </section>
 
@@ -831,8 +765,6 @@
 
 
 
-
-
 <!-- =========================================================== 17 -->
 <section data-anim="term">
   <h2>Run it yourself: metriq-gym</h2>
@@ -874,8 +806,6 @@
     compressed sensing with M = ceil(5 ln N)).
   </aside>
 </section>
-
-
 
 
 
@@ -948,6 +878,10 @@
 
 <!-- =========================================================== 19 -->
 <!-- =========================================================== 20 -->
+
+
+
+
 
 
 
@@ -1622,12 +1556,13 @@ function buildPipe() {
   const m2 = mapper(0, 21, 0, 1.15, 28, 350, 140, 12);
   axisLines(s2, m2, 0, 21, 0, 1.15);
   tickText(s2, m2.x(0), m2.y(0) + 14, '0', 'middle', 10);
+  tickText(s2, m2.x(20), m2.y(0) + 14, '2N', 'middle', 10);
   tickText(s2, m2.x(0) - 3, m2.y(0) + 3, '0', 'end', 10);
   tickText(s2, m2.x(0) - 3, m2.y(1) + 3, '1', 'end', 10);
   el('text', {x: 12, y: 76, 'font-size': 14,
     transform: 'rotate(-90 12 76)', 'text-anchor': 'middle'},
     s2).textContent = 'amplitude';
-  el('text', {x: 348, y: 160, 'text-anchor': 'end',
+  el('text', {x: 288, y: 160, 'text-anchor': 'end',
     'font-size': 12}, s2).textContent = 'frequency';
   const lab = el('text', {x: m2.x(10), y: 160,
     'text-anchor': 'middle', 'font-size': 14}, s2);

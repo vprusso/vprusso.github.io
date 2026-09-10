@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Compressed Sensing for Efficient Fidelity Estimation of GHZ States</title>
+<title>Compressed sensing for efficient fidelity estimation of GHZ states</title>
 <link rel="stylesheet" href="vendor/reveal/reset.css">
 <link rel="stylesheet" href="vendor/reveal/reveal.css">
 <link rel="stylesheet" href="vendor/reveal/theme/white.css">
@@ -121,7 +121,7 @@
   <svg id="title-svg" viewBox="0 0 1100 110"
     style="width:100%; margin-top:1.2em;"></svg>
   <h1 style="font-size:1.35em; margin-top:0.3em;">
-    Compressed Sensing for Efficient Fidelity Estimation of GHZ States
+    Compressed sensing for efficient fidelity estimation of GHZ states
   </h1>
   <p style="border-top:3px solid var(--csorange); padding-top:0.5em;"
      class="small">
@@ -139,6 +139,12 @@
   <p class="small">arXiv:2604.27824</p>
   <p class="footnote center"><a href="https://vprusso.github.io"
     style="color:inherit;"><code>vprusso.github.io</code></a></p>
+  <div style="position:absolute; right:4%; top:56%;
+    text-align:center;">
+    <img src="assets/qr_arxiv.png" style="width:110px;
+      display:block;">
+    <span style="font-size:0.45em; color:#888;">paper</span>
+  </div>
 </section>
 
 <!-- =========================================================== 1b -->
@@ -201,7 +207,7 @@
 
 <!-- =========================================================== 2b -->
 <section>
-  <h2>Fidelity is four matrix elements</h2>
+  <h2>Fidelity as population and coherence</h2>
   <p class="center">
     \[ F(\rho) = \langle \mathrm{GHZ} | \rho | \mathrm{GHZ} \rangle
        = \frac{1}{2}\Bigl(
@@ -279,7 +285,7 @@
 <!-- ============================================================ 4 -->
 <!-- =========================================================== 3c -->
 <section data-anim="circplot">
-  <h2>Every data point is its own circuit</h2>
+  <h2>Measuring population and coherence</h2>
   <p class="center small" style="margin-bottom:0.2em;">
     Average parity follows \(\mathcal{P}(\phi) = C\cos(N\phi +
     \theta)\); the amplitude \(C \ge 0\) and phase \(\theta\)
@@ -287,15 +293,11 @@
   </p>
   <svg id="circplot-svg" viewBox="0 0 1180 480"
     style="width:96%; margin-top:0.4em;"></svg>
-  <p class="small" style="margin-top:0.4em;">One setting is one
-    circuit, run for many shots; the <span class="alert">average</span>
-    of that circuit's &plusmn;1 parities is its
-    <span class="alert">one dot</span>. A different angle is a
-    <span class="alert">different circuit</span>: shots cannot be
-    shared between dots. Resolving <span class="alert">any</span>
-    frequency up to \(N\) blind takes \(M = 2N\) parity angles;
-    with the one \(Z\) circuit, <span class="bad">201 in all</span>
-    at \(N = 100\). The game is how small \(M\) can be.</p>
+  <p class="small" style="margin-top:0.4em;">One setting, one
+    circuit, <span class="alert">one dot</span>; resolving
+    <span class="alert">any</span> frequency blind takes \(2N\)
+    angles, <span class="bad">201 circuits in all</span> at
+    \(N = 100\).</p>
   <aside class="notes">
     Grounding slide: population is one Z-basis circuit; each swept
     angle is compiled and run separately; a dot is that circuit's
@@ -308,7 +310,7 @@
 
 
 <section data-anim="sparse">
-  <h2>The observation: the signal is sparse</h2>
+  <h2>The parity signal is sparse</h2>
   <div class="cols">
     <div class="col center">
       <svg id="sparse-svg" viewBox="0 0 520 200" style="width:100%;"></svg>
@@ -321,17 +323,14 @@
           \(N\): one spike below.</li>
         <li>The bottom panel is the curve's
           <span class="alert">recipe</span>: how much of each
-          candidate frequency it contains. Ours reads 0.9 at
-          frequency \(N\), zero elsewhere:
-          one active frequency, two numbers (its cos and sin
-          amounts), of \(\sim 200\).
-          <span class="alert">Sparse</span> means the recipe is
-          nearly empty.</li>
-        <li>Recovering a sparse signal from few random samples is the
-          textbook compressed sensing problem:
-          <span class="good">\(M \propto \log N\) random
-          angles</span> (orange dots) replace the \(2N\) equally
-          spaced ones.</li>
+          candidate frequency it contains. Ours: 0.9 at \(N\),
+          zero elsewhere. One active frequency, two numbers, of
+          \(\sim 200\): <span class="alert">sparse</span> means
+          the recipe is nearly empty.</li>
+        <li>A nearly empty recipe can be pinned down from
+          <span class="good">far fewer than \(2N\)
+          samples</span>: the orange dots are six random
+          angles.</li>
       </ul>
     </div>
   </div>
@@ -343,7 +342,7 @@
 
 <!-- =========================================================== 4b -->
 <section data-anim="cs">
-  <h2>What compressed sensing is</h2>
+  <h2>Compressed slide on compressed sensing</h2>
   <div class="center">
     <svg id="cs1" viewBox="0 0 1140 175" style="width:96%;"></svg>
   </div>
@@ -384,7 +383,7 @@
 
 <!-- ============================================================ 5 -->
 <section data-anim="alias">
-  <h2>Why random beats regular</h2>
+  <h2>Random sampling avoids aliasing</h2>
   <div class="center">
     <svg id="alias-svg" viewBox="0 0 800 300" style="width:88%;"></svg>
   </div>
@@ -458,7 +457,7 @@
 
 <!-- ============================================================ 6 -->
 <section data-anim="cert">
-  <h2>The frequency doubles as a certificate</h2>
+  <h2>The recovered frequency as a certificate</h2>
   <p class="small">
     The oscillation frequency <span class="alert">is</span> the size of
     the prepared coherence: a weight-\(w\) coherence oscillates at
@@ -498,7 +497,7 @@
 
 <!-- ============================================================ 9 -->
 <section>
-  <h2>Recovery saturates below the budget</h2>
+  <h2>Choosing the measurement budget</h2>
   <img src="assets/cs_success_probability.png"
     style="width:55%; display:block; margin:0 auto;">
   <ul>
@@ -590,7 +589,7 @@
 
 <!-- ========================================================== 11b -->
 <section data-anim="flagck">
-  <h2>What a flag check measures, and what it does not</h2>
+  <h2>Flag checks</h2>
   <div class="cols" style="align-items:center;">
     <div class="col center">
       <svg id="flagck-svg" viewBox="0 0 420 210" style="width:100%;"></svg>
@@ -636,7 +635,7 @@
 
 <!-- ========================================================== 11c -->
 <section data-anim="tree">
-  <h2>One check watches half the tree</h2>
+  <h2>Coverage of a single check</h2>
   <div class="cols">
     <div class="col center" style="flex:1.1;">
       <svg id="tree-svg" viewBox="0 0 560 310" style="width:100%;"></svg>
@@ -684,7 +683,7 @@
 
 <!-- =========================================================== 14 -->
 <section>
-  <h2>The two layers catch different failures</h2>
+  <h2>The complete protocol</h2>
   <div style="display:flex; align-items:flex-start;
     justify-content:center; gap:0.5em; margin:0.8em 0 0.2em;">
     <div style="flex:0 0 20%; text-align:center;">
@@ -740,26 +739,25 @@
 <section>
   <h2>Quantinuum H2-1 hardware, 50 qubits</h2>
   <div class="center">
-    <img src="assets/ghz_analysis_50q_fidphase.png"
-      style="width:74%;">
+    <img src="assets/ghz_analysis_50q_fid.png"
+      style="width:46%; display:block; margin:0 auto;">
   </div>
-  <ul class="small" style="margin-top:0.5em;">
-    <li>\(F_{\mathrm{rot}} = (P + C)/2\) scores against the GHZ
-      state with the measured phase folded in; the standard fidelity
-      pays \(\cos\theta\). Rotated fidelity \(\approx 0.72\)
-      with 4 flags; <span class="good">both point estimates rise
-      with flags</span>.</li>
-    <li><span class="good">19 random angles</span> instead of the
-      blind scan's \(2N = 100\): 5&times; fewer circuits; 1000
-      shots per circuit (cost-limited), hence the wide error
+  <ul>
+    <li><span class="good">\(19\) random angles</span> instead of the
+      blind scan's \(2N = 100\): \(5\times\) fewer circuits;
+      \(1000\) shots per circuit (cost-limited), hence the wide error
       bars.</li>
-    <li>Large phase offset at zero flags: consistent with accumulated
-      coherent calibration error, amplified by
-      \(\theta = \sum_i \epsilon_i\) at \(N = 50\).</li>
+    <li><span class="good">Both fidelity estimates rise as flags are
+      added</span>; rotated fidelity \(\approx 0.72\) with \(4\)
+      flags.</li>
+    <li>\(F_{\mathrm{rot}} = (P + C)/2\) scores against the
+      phase-matched target; the standard fidelity pays
+      \(\cos\theta\) for the measured phase offset.</li>
   </ul>
   <aside class="notes">
     Population and coherence panels live in the paper figure;
     population rises with flags, coherence flat within error bars.
+    Phase-offset panel is in the backups.
   </aside>
 </section>
 
@@ -878,6 +876,8 @@
 
 <!-- =========================================================== 19 -->
 <!-- =========================================================== 20 -->
+
+
 
 
 
@@ -1473,8 +1473,6 @@ function buildSparse() {
   sparse.spikeBase = sm.y(0);
   sparse.dotTop = el('circle', {cx: sm.x(10), cy: sm.y(0), r: 5,
     fill: BLUE, opacity: 0}, sp);
-  el('text', {x: sm.x(10) + 14, y: sm.y(0.9) + 12, 'font-size': 13,
-    fill: '#888'}, sp).textContent = 'the whole curve, one entry';
 }
 function startSparse() {
   const gen = animGen;
@@ -2422,6 +2420,31 @@ function buildCircplot() {
   el('text', {x: 250, y: 330, 'text-anchor': 'middle',
     'font-size': 15}, svg).textContent =
     '\u22ee   one circuit per angle, M in all';
+  // why parity: shots at one angle, GHZ vs coin flip
+  const shotTbl = (x, title, rows, avg) => {
+    el('text', {x: x + 55, y: 362, 'text-anchor': 'middle',
+      'font-size': 13, 'font-weight': 600}, svg).textContent = title;
+    rows.forEach((r, i) => {
+      el('text', {x: x + 30, y: 382 + 17 * i, 'text-anchor': 'middle',
+        'font-size': 13, 'font-family': 'monospace',
+        'letter-spacing': '2px'}, svg).textContent = r[0];
+      el('text', {x: x + 88, y: 382 + 17 * i, 'text-anchor': 'middle',
+        'font-size': 13, 'font-family': 'monospace'},
+        svg).textContent = r[1];
+    });
+    el('text', {x: x + 55, y: 382 + 17 * rows.length + 2,
+      'text-anchor': 'middle', 'font-size': 13,
+      fill: '#444'}, svg).textContent = avg;
+  };
+  shotTbl(105, 'GHZ shots',
+    [['0110', '+1'], ['1111', '+1'], ['1010', '+1'], ['0000', '+1']],
+    'avg = +1');
+  shotTbl(300, 'coin-flip shots',
+    [['0100', '\u22121'], ['0011', '+1'], ['1110', '\u22121'],
+     ['0101', '+1']], 'avg = 0');
+  el('text', {x: 255, y: 478, 'text-anchor': 'middle',
+    'font-size': 12, fill: '#667'}, svg).textContent =
+    'per-shot parity at one angle: the difference is collective';
   // parity curve
   const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 560, 1150, 440, 155);
   axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);

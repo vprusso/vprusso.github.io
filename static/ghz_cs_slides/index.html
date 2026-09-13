@@ -130,11 +130,12 @@
   </p>
   <p class="small">
     Farrokh Labib<sup>1</sup>, David Nicholaeff<sup>2</sup>,
-    <strong>Vincent Russo</strong><sup>1</sup>,
+    <strong>Vincent Russo</strong><sup>1,4</sup>,
     William J. Zeng<sup>1,3</sup><br>
     <span style="color:#666;"><sup>1</sup>Unitary Foundation
     &nbsp; <sup>2</sup>New Mexico Consortium
-    &nbsp; <sup>3</sup>Quantonation</span>
+    &nbsp; <sup>3</sup>Quantonation
+    &nbsp; <sup>4</sup>IonQ</span>
   </p>
   <p class="small">arXiv:2604.27824</p>
   <p class="footnote center"><a href="https://vprusso.github.io"
@@ -293,11 +294,16 @@
   </p>
   <svg id="circplot-svg" viewBox="0 0 1180 480"
     style="width:96%; margin-top:0.4em;"></svg>
-  <p class="small" style="margin-top:0.4em;">One setting, one
-    circuit, <span class="alert">one dot</span>; resolving
+  <p class="small" style="margin-top:0.4em;">Resolving
     <span class="alert">any</span> frequency blind takes \(2N\)
-    angles, <span class="bad">201 circuits in all</span> at
+    angles<sup>1,2</sup>:
+    <span class="bad">201 circuits in all</span> at
     \(N = 100\).</p>
+  <p class="footnote" style="margin-top:0.1em;"><sup>1</sup>Nyquist,
+    &ldquo;Certain topics in telegraph transmission theory,&rdquo;
+    Trans. AIEE 47.2 (1928). &emsp;<sup>2</sup>Shannon,
+    &ldquo;Communication in the presence of noise,&rdquo; Proc. IRE
+    37.1 (1949).</p>
   <aside class="notes">
     Grounding slide: population is one Z-basis circuit; each swept
     angle is compiled and run separately; a dot is that circuit's
@@ -361,8 +367,8 @@
       <span class="alert">measures everything first</span>: fine when
       a measurement is a cheap pixel.</li>
     <li class="fragment" data-fragment-index="0">Compressed sensing
-      pays <span class="good">for the information, not the signal
-      length</span>: few random samples, solve for the big
+      pays <span class="good">for the information rather than the
+      signal length</span>: few random samples, solve for the big
       entries.<sup>1</sup> Ours is the expensive case:
       <span class="alert">each measurement is a quantum
       circuit</span>.</li>
@@ -456,41 +462,7 @@
 
 
 <!-- ============================================================ 6 -->
-<section data-anim="cert">
-  <h2>The recovered frequency as a certificate</h2>
-  <p class="small">
-    The oscillation frequency <span class="alert">is</span> the size of
-    the prepared coherence: a weight-\(w\) coherence oscillates at
-    frequency \(N - 2w\).
-  </p>
-  <div class="center">
-    <svg id="cert-svg" viewBox="0 0 640 220" style="width:75%;"></svg>
-  </div>
-  <ul class="small">
-    <li class="fragment" data-fragment-anim="cert-flip">
-      <span class="bad">Fixed-frequency fit at \(n = N\)</span>: assigns
-      amplitude to a frequency that is not there.</li>
-    <li class="fragment">
-      <span class="good">Blind recovery</span>: returns
-      \(n_{\mathrm{rec}} = N - 2\) and catches the failure.</li>
-  </ul>
-  <p class="center small fragment">
-    <span class="good">\(n_{\mathrm{rec}} = N\): the dominant
-    coherence is the one an \(N\)-qubit GHZ state would
-    have.</span>
-    &emsp;
-    <span class="bad">\(n_{\mathrm{rec}} \neq N\): the
-    failure is caught.</span><br>
-    <span class="footnote">With \(F > 1/2\) this certifies genuine
-    \(N\)-partite entanglement against the phase-optimized target; it
-    does not rule out other errors or smaller competing
-    coherences.</span>
-  </p>
-  <aside class="notes">
-    First fragment animates the bit flip: the spike slides from N to
-    N minus 2 and turns orange.
-  </aside>
-</section>
+
 
 <!-- ============================================================ 7 -->
 
@@ -529,17 +501,20 @@
   <div class="cols">
     <div class="col center">
       <svg id="circ-chain" viewBox="0 0 380 220" style="width:80%;"></svg>
+      <svg id="topo-chain" viewBox="0 0 280 155" style="width:44%;"></svg>
       <svg id="arcs-chain" viewBox="0 0 460 100" style="width:88%;"></svg>
       <div class="small">chain: depth \(N - 1\)
         (7 layers at \(N = 8\))</div>
     </div>
     <div class="col center">
       <svg id="circ-tree" viewBox="0 0 380 220" style="width:80%;"></svg>
+      <svg id="topo-tree" viewBox="0 0 280 155" style="width:44%;"></svg>
       <svg id="arcs-tree" viewBox="0 0 460 100" style="width:88%;"></svg>
       <div class="small">tree: depth \(\log_2 N\)
         (3 layers at \(N = 8\))</div>
     </div>
   </div>
+
   <ul class="small" style="margin-top:0.6em;">
     <li>Same state, same gate count: only the CNOT
       <span class="alert">schedule</span> differs; every layer is an
@@ -567,7 +542,7 @@
           </ul>
         </li>
         <li>Damage depends on <span class="alert">when</span> the
-          fault happens, not how big it was.</li>
+          fault happens rather than how big it is.</li>
       </ul>
       <ul class="small" style="margin-top:0.2em;">
         <li><span class="alert">depth 1</span>: floods the whole
@@ -615,10 +590,6 @@
           superposition survives.</li>
         <li>Flag reads 1: <span class="alert">odd bit-flip
           parity</span> in its region; discard the shot.</li>
-        <li>The missed double flip is a weight-2 error: its
-          coherence sits at \(N - 4\), where <span
-          class="good">blind recovery catches what the flag
-          cannot</span>.</li>
       </ul>
     </div>
   </div>
@@ -639,16 +610,15 @@
   <div class="cols">
     <div class="col center" style="flex:1.1;">
       <svg id="tree-svg" viewBox="0 0 560 310" style="width:100%;"></svg>
-      <svg id="topo-svg" viewBox="0 0 560 160" style="width:82%;"></svg>
     </div>
     <div class="col">
       <ul class="small">
         <li class="fragment" data-fragment-anim="tree-pair">The
           check compares two qubits, so a fault is visible only if
-          it reaches <span class="alert">exactly one</span> of them:
-          true on these paths, not at the split
-          (<span class="alert">both, cancels</span>) or off them
-          (<span class="alert">neither</span>). Coverage counts that
+          it reaches <span class="alert">exactly one</span> of them: on
+          these paths it does; at the split it reaches
+          <span class="alert">both and cancels</span>; off them,
+          <span class="alert">neither</span>. Coverage counts that
           path, a proxy rather than a guarantee.</li>
         <li class="fragment" data-fragment-anim="tree-error">A flip
           on a covered qubit: caught, shot discarded.</li>
@@ -716,7 +686,7 @@
   </div>
   <ul class="small" style="margin-top:0.8em;">
     <li>Flags act <span class="alert">before</span> the measurement,
-      on bit flips in the covered region. The certificate acts
+      on bit flips in the covered region. The frequency check acts
       <span class="alert">after</span>, on whatever survived, by
       checking the size of the coherence that is left.</li>
     <li>Neither is complete: flags are blind to phase errors and to
@@ -724,7 +694,7 @@
       blind
       to noise that <span class="alert">shrinks \(C\) without
       moving weight</span>, which is what \(F\) is for.</li>
-    <li>Flags cost <span class="alert">acceptance, not
+    <li>Flags cost <span class="alert">acceptance rather than
       settings</span>: verification is \(M\) circuits either
       way.</li>
   </ul>
@@ -739,7 +709,7 @@
 <section>
   <h2>Quantinuum H2-1 hardware, 50 qubits</h2>
   <div class="center">
-    <img src="assets/ghz_analysis_50q_fid.png"
+    <img src="assets/ghz_analysis_50q_fid_std.png"
       style="width:46%; display:block; margin:0 auto;">
   </div>
   <ul>
@@ -747,12 +717,9 @@
       blind scan's \(2N = 100\): \(5\times\) fewer circuits;
       \(1000\) shots per circuit (cost-limited), hence the wide error
       bars.</li>
-    <li><span class="good">Both fidelity estimates rise as flags are
-      added</span>; rotated fidelity \(\approx 0.72\) with \(4\)
+    <li><span class="good">Fidelity rises as flags are
+      added</span>: \(0.667 \to 0.708\) with \(4\)
       flags.</li>
-    <li>\(F_{\mathrm{rot}} = (P + C)/2\) scores against the
-      phase-matched target; the standard fidelity pays
-      \(\cos\theta\) for the measured phase offset.</li>
   </ul>
   <aside class="notes">
     Population and coherence panels live in the paper figure;
@@ -828,6 +795,10 @@
         white-space:nowrap;">Paper: arXiv:2604.27824<br>
         Blog: <a href="https://vprusso.github.io/posts/ghz_cs/"
         style="color:inherit;"><code>vprusso.github.io/posts/ghz_cs/</code></a></p>
+      <p style="margin:0.5em 0 0; font-size:0.62em;">
+        <span class="alert">Unitary Foundation is hiring</span><br>
+        <a href="https://unitary.foundation/jobs/mtscs/"
+        style="color:inherit;"><code>unitary.foundation/jobs/mtscs</code></a></p>
     </div>
     <div class="col center">
       <svg id="thx-flag" viewBox="0 0 380 170"
@@ -876,6 +847,8 @@
 
 <!-- =========================================================== 19 -->
 <!-- =========================================================== 20 -->
+
+
 
 
 
@@ -1418,9 +1391,6 @@ function csRow(svgId, label1, label2, dense, arrowLabel, note1, note2) {
 function buildCS() {
   csRow('cs1', 'compression', '(a JPEG)', true, 'transform',
     'keep 3,', 'drop the rest');
-  el('text', {x: 752, y: 14, 'text-anchor': 'middle',
-    'font-size': 14, fill: '#666'},
-    document.getElementById('cs1')).textContent = 'its recipe';
   csRow('cs2', 'compressed', 'sensing', false, 'solve',
     'same 3 numbers,', 'never measured the rest');
 }
@@ -1910,8 +1880,8 @@ function buildSpread(root) {
     'flipped w = <span class="alert">' + w + '</span> of N = 15'
     + ' &nbsp; → &nbsp; frequency N - 2w = <span class="alert">'
     + (15 - 2 * w) + '</span><br>'
-    + '<span class="good">The frequency is a headcount</span>: what '
-    + 'the certificate reads.';
+    + '<span class="good">The frequency is a headcount</span>, and '
+    + 'the recovered n<sub>rec</sub> reads it out.';
 }
 function startSpread() {
   buildSpread(2);
@@ -2149,6 +2119,52 @@ function certFlip(flipped) {
 
 // ===================== slide 11: tree =====================
 const tree = {};
+function buildTopo() {
+  const tc = document.getElementById('topo-chain');
+  if (tc) {
+    tc.innerHTML = '';
+    const gx = i => 95 + 45 * i, gy = j => 12 + 45 * j;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 2; j++) {
+        el('line', {x1: gx(i), y1: gy(j), x2: gx(i), y2: gy(j + 1),
+          stroke: '#ccc', 'stroke-width': 2}, tc);
+        el('line', {x1: gx(j), y1: gy(i), x2: gx(j + 1), y2: gy(i),
+          stroke: '#ccc', 'stroke-width': 2}, tc);
+      }
+    }
+    el('path', {d: 'M' + gx(0) + ',' + gy(2) + 'L' + gx(2) + ','
+      + gy(2) + 'L' + gx(2) + ',' + gy(0), fill: 'none',
+      stroke: ORANGE, 'stroke-width': 3.5,
+      'stroke-dasharray': '7 5'}, tc);
+    for (let i = 0; i < 3; i++)
+      for (let j = 0; j < 3; j++)
+        el('circle', {cx: gx(i), cy: gy(j), r: 5,
+          fill: (i === 0 && j === 2) || (i === 2 && j === 0)
+            ? ORANGE : '#999'}, tc);
+    el('text', {x: 140, y: 145, 'text-anchor': 'middle',
+      'font-size': 14, fill: '#555'}, tc).textContent =
+      'fixed coupling: distant pairs must route';
+  }
+  const tt = document.getElementById('topo-tree');
+  if (tt) {
+    tt.innerHTML = '';
+    const kx = a => 140 + 52 * Math.cos(Math.PI * a / 4);
+    const ky = a => 60 + 52 * Math.sin(Math.PI * a / 4);
+    for (let a = 0; a < 8; a++)
+      for (let b = a + 1; b < 8; b++)
+        el('line', {x1: kx(a), y1: ky(a), x2: kx(b), y2: ky(b),
+          stroke: '#e2e2e2', 'stroke-width': 1.5}, tt);
+    el('line', {x1: kx(1), y1: ky(1), x2: kx(4), y2: ky(4),
+      stroke: BLUE, 'stroke-width': 3.5}, tt);
+    for (let a = 0; a < 8; a++)
+      el('circle', {cx: kx(a), cy: ky(a), r: 5,
+        fill: (a === 1 || a === 4) ? BLUE : '#999'}, tt);
+    el('text', {x: 140, y: 145, 'text-anchor': 'middle',
+      'font-size': 14, fill: '#555'}, tt).textContent =
+      'trapped ions: any pair, directly coupled';
+  }
+}
+
 function buildTree() {
   const svg = document.getElementById('tree-svg');
   svg.innerHTML = '';
@@ -2187,43 +2203,7 @@ function buildTree() {
   tree.pair2Edges = [10, 5, 14, 7];
 
   // topology contrast under the tree
-  const ts = document.getElementById('topo-svg');
-  ts.innerHTML = '';
-  const gx = i => 80 + 45 * i, gy = j => 15 + 45 * j;
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 2; j++) {
-      el('line', {x1: gx(i), y1: gy(j), x2: gx(i), y2: gy(j + 1),
-        stroke: '#ccc', 'stroke-width': 2}, ts);
-      el('line', {x1: gx(j), y1: gy(i), x2: gx(j + 1), y2: gy(i),
-        stroke: '#ccc', 'stroke-width': 2}, ts);
-    }
-  }
-  el('path', {d: 'M' + gx(0) + ',' + gy(2) + 'L' + gx(1) + ',' + gy(2)
-    + 'L' + gx(2) + ',' + gy(2) + 'L' + gx(2) + ',' + gy(1)
-    + 'L' + gx(2) + ',' + gy(0), fill: 'none', stroke: ORANGE,
-    'stroke-width': 3.5, 'stroke-dasharray': '7 5'}, ts);
-  for (let i = 0; i < 3; i++)
-    for (let j = 0; j < 3; j++)
-      el('circle', {cx: gx(i), cy: gy(j), r: 5,
-        fill: (i === 0 && j === 2) || (i === 2 && j === 0)
-          ? ORANGE : '#999'}, ts);
-  el('text', {x: gx(1), y: 140, 'text-anchor': 'middle',
-    'font-size': 14, fill: '#555'}, ts).textContent =
-    'fixed coupling: checks must route';
-  const kx = a => 420 + 55 * Math.cos(Math.PI * a / 4);
-  const ky = a => 60 + 55 * Math.sin(Math.PI * a / 4);
-  for (let a = 0; a < 8; a++)
-    for (let b = a + 1; b < 8; b++)
-      el('line', {x1: kx(a), y1: ky(a), x2: kx(b), y2: ky(b),
-        stroke: '#e2e2e2', 'stroke-width': 1.5}, ts);
-  el('line', {x1: kx(1), y1: ky(1), x2: kx(4), y2: ky(4),
-    stroke: BLUE, 'stroke-width': 3.5}, ts);
-  for (let a = 0; a < 8; a++)
-    el('circle', {cx: kx(a), cy: ky(a), r: 5,
-      fill: (a === 1 || a === 4) ? BLUE : '#999'}, ts);
-  el('text', {x: 420, y: 140, 'text-anchor': 'middle',
-    'font-size': 14, fill: '#555'}, ts).textContent =
-    'trapped ions: any pair, one check';
+
 }
 function treePair(on) {
   if (!tree.nodes) return;
@@ -2442,9 +2422,7 @@ function buildCircplot() {
   shotTbl(300, 'coin-flip shots',
     [['0100', '\u22121'], ['0011', '+1'], ['1110', '\u22121'],
      ['0101', '+1']], 'avg = 0');
-  el('text', {x: 255, y: 478, 'text-anchor': 'middle',
-    'font-size': 12, fill: '#667'}, svg).textContent =
-    'per-shot parity at one angle: the difference is collective';
+
   // parity curve
   const m = mapper(0, 2 * Math.PI, -1.25, 1.25, 560, 1150, 440, 155);
   axisLines(svg, m, 0, 2 * Math.PI, -1.25, 1.25);
@@ -2618,7 +2596,7 @@ const starters = {title: startTitle, osc: startOsc,
   pipe: startPipe,
   demo: startDemo, lasso: buildLasso, freqmove: buildFreqMove,
   cert: buildCert,
-  circ: buildCirc, tree: buildTree, alias: buildAlias,
+  circ: () => { buildCirc(); buildTopo(); }, tree: buildTree, alias: buildAlias,
   see: buildSee,
   circplot: buildCircplot,
   term: startTerm, artrade: startArTrade, thanks: startThanks};

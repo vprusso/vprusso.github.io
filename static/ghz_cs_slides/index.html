@@ -294,14 +294,18 @@
   </p>
   <svg id="circplot-svg" viewBox="0 0 1180 480"
     style="width:96%; margin-top:0.4em;"></svg>
-  <p class="small" style="margin-top:0.4em;">Resolving
+  <p class="small" style="margin-top:0.3em;">\(Z\) counts cannot
+    see the off-diagonals; after the rotation the coherence shows up
+    as an <span class="alert">even/odd bias</span> in the
+    outcomes.</p>
+  <p class="small" style="margin-top:0.2em;">Resolving
     <span class="alert">any</span> frequency blind takes \(2N\)
     angles<sup>1,2</sup>:
     <span class="bad">201 circuits in all</span> at
     \(N = 100\).</p>
   <p class="footnote" style="margin-top:0.1em;"><sup>1</sup>Nyquist,
     &ldquo;Certain topics in telegraph transmission theory,&rdquo;
-    Trans. AIEE 47.2 (1928). &emsp;<sup>2</sup>Shannon,
+    Trans. AIEE 47.2 (1928).<br><sup>2</sup>Shannon,
     &ldquo;Communication in the presence of noise,&rdquo; Proc. IRE
     37.1 (1949).</p>
   <aside class="notes">
@@ -324,19 +328,14 @@
     </div>
     <div class="col">
       <ul class="small" style="margin-top:1.5em;">
-        <li>For an ideal GHZ state, the average-parity curve is a
-          <span class="alert">single cosine</span> at frequency
-          \(N\): one spike below.</li>
-        <li>The bottom panel is the curve's
-          <span class="alert">recipe</span>: how much of each
-          candidate frequency it contains. Ours: 0.9 at \(N\),
-          zero elsewhere. One active frequency, two numbers, of
-          \(\sim 200\): <span class="alert">sparse</span> means
-          the recipe is nearly empty.</li>
-        <li>A nearly empty recipe can be pinned down from
-          <span class="good">far fewer than \(2N\)
-          samples</span>: the orange dots are six random
-          angles.</li>
+        <li>Ideal GHZ parity is a <span class="alert">single
+          cosine</span> at frequency \(N\).</li>
+        <li>Its recipe, the bottom panel, is <span class="alert">zero
+          at every other frequency</span>.</li>
+        <li>Real data is noisy, but still <span class="alert">
+          approximately sparse</span>.</li>
+        <li><span class="good">Compressed sensing exploits that
+          sparsity</span>: far fewer than \(2N\) samples.</li>
       </ul>
     </div>
   </div>
@@ -433,15 +432,18 @@
     </div>
   </div>
   <ul class="small" style="margin-top:0.8em;">
-    <li>Step 2 is the Lasso<sup>1</sup>: Fit all candidate
-      frequencies <span class="alert">together</span>, with an
-      \(L_1\) penalty on the cosine and sine coefficients; weak
-      candidates are driven
+    <li><span class="alert">Lasso for which frequencies, least
+      squares for how big</span>: the penalty that isolates the
+      frequency also shrinks its amplitude, so the refit is
+      unpenalized.</li>
+    <li>The Lasso<sup>1</sup> fits all candidate frequencies
+      <span class="alert">together</span>, with an \(L_1\)
+      penalty; weak candidates are driven
       <span class="alert">exactly to zero</span>.</li>
     <li>Why so few: amplitude and phase absorb the first samples,
       then each further one rules out a constant fraction of the
-      wrong frequencies. \(M \propto \log N\) suffices, and the
-      refit leaves only shot noise.</li>
+      wrong frequencies, so \(M \propto \log N\)
+      suffices.</li>
   </ul>
   <p class="footnote" style="margin-top:0.3em;"><sup>1</sup>Tibshirani,
     Robert. &ldquo;Regression shrinkage and selection via the
@@ -473,14 +475,15 @@
   <img src="assets/cs_success_probability.png"
     style="width:55%; display:block; margin:0 auto;">
   <ul>
-    <li>\(P(n_{\mathrm{rec}} = N)\) at \(N = 42\), 200
-      trials: <span class="good">saturates by \(M \approx
-      15\)</span>.</li>
-    <li>Theory gives the scaling \(M \propto \log N\); the
-      budget \(5\ln N \approx 19\) is <span
-      class="alert">our rule</span>, set past this knee. The
-      margin is why the hardware run used <span class="alert">19
-      angles at \(N = 50\)</span>.</li>
+    <li>Recovery improves rapidly with \(M\), then
+      <span class="good">saturates around \(M \approx 15\)</span>
+      for \(N = 42\).</li>
+    <li><span class="alert">Choose enough random angles to reach the
+      recovery plateau</span>; beyond that, additional angles give
+      diminishing returns.</li>
+    <li>The required budget scales as \(M = O(\log N)\); our rule
+      \(M \approx 5\ln N\) gives <span class="alert">19 angles at
+      \(N = 50\)</span>.</li>
   </ul>
   <aside class="notes">
     Budget validation; 5 ln N is a working rule past the knee. The
@@ -519,8 +522,6 @@
     <li>Same state, same gate count: only the CNOT
       <span class="alert">schedule</span> differs; every layer is an
       opportunity for noise, so shallower wins.</li>
-    <li>A CNOT copies bit flips, so a fault near the root fans out to
-      its whole subtree.</li>
     <li><span class="alert">Shallow preparation trades depth for
       high-weight errors.</span></li>
   </ul>
@@ -685,6 +686,8 @@
     </div>
   </div>
   <ul class="small" style="margin-top:0.8em;">
+    <li><span class="alert">Flags reduce the errors we keep;
+      compressed sensing reduces the measurements we use.</span></li>
     <li>Flags act <span class="alert">before</span> the measurement,
       on bit flips in the covered region. The frequency check acts
       <span class="alert">after</span>, on whatever survived, by
@@ -720,6 +723,8 @@
     <li><span class="good">Fidelity rises as flags are
       added</span>: \(0.667 \to 0.708\) with \(4\)
       flags.</li>
+    <li>More flags cover more of the tree, but each adds gates and
+      costs acceptance, so we stopped at \(4\).</li>
   </ul>
   <aside class="notes">
     Population and coherence panels live in the paper figure;
@@ -2630,6 +2635,22 @@ Reveal.initialize({
   },
   plugins: [RevealNotes],
 });
+
+// Scale a slide down if its content is taller than the 720px box;
+// reveal clips overflow rather than shrinking, and a clipped
+// reference line or bullet is invisible to the room.
+function fitSlide(slide) {
+  if (!slide) return;
+  slide.style.transform = '';
+  slide.style.transformOrigin = 'top center';
+  const box = 720 * (1 - 2 * 0.04);
+  const h = slide.scrollHeight;
+  if (h > box) slide.style.transform = 'scale(' + (box / h).toFixed(4) + ')';
+}
+Reveal.on('ready', e => fitSlide(e.currentSlide));
+Reveal.on('slidechanged', e => fitSlide(e.currentSlide));
+Reveal.on('fragmentshown', () => fitSlide(Reveal.getCurrentSlide()));
+Reveal.on('fragmenthidden', () => fitSlide(Reveal.getCurrentSlide()));
 
 let lastAnim = {slide: null, t: 0};
 function runAnimFor(slide) {

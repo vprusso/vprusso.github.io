@@ -6,6 +6,12 @@ title = "papers"
 
 ---
 
+- ["Sharp bounds for perfect quantum state classification beyond antidistinguishability"](/pdf/sharp_quantum_state_classification.pdf)  
+   *N. Johnston, B. Lovitz, V. Russo, J. Sikora*,   
+   *arXiv:2609.17411, (2026)*.   
+   [PDF](/pdf/sharp_quantum_state_classification.pdf) | 
+   [arXiv](https://arxiv.org/abs/2609.17411) 
+
 - ["PauLie: Fast classification of Pauli dynamical Lie algebras"](/pdf/paulie.pdf)  
    *O. Shaya, K. Golovkin, M. Roy, V. Russo*,   
    *arXiv:2608.30771, (2026)*.   

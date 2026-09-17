@@ -315,7 +315,7 @@ Physics-informed and hardware-aware code design with SAT solvers"](/pdf/sat_qec.
 
 - ["Agentic automation of end-to-end quantum resource estimation for fault-tolerant quantum chemistry"](https://www.qubench.net/main/program-of-qubench)   
    *M. Jack, V. Russo, M. Souffrant, Y. Cao*,    
-   *QuBench 2026, IEEE Quantum Week, (2nd best paper award), (2026)*.
+   *QuBench 2026, IEEE Quantum Week, (2nd best paper award), (2026)*.  
     [Link](https://www.qubench.net/main/program-of-qubench) |
     [PDF](/pdf/agentic_qre.pdf) |
     [Slides](/pdf/agentic_qre_slides.pdf)

@@ -313,6 +313,13 @@ Physics-informed and hardware-aware code design with SAT solvers"](/pdf/sat_qec.
 
 ---
 
+- ["Agentic automation of end-to-end quantum resource estimation for fault-tolerant quantum chemistry"](https://www.qubench.net/main/program-of-qubench)   
+   *M. Jack, V. Russo, M. Souffrant, Y. Cao*,    
+   *QuBench 2026, IEEE Quantum Week, (2nd best paper award), (2026)*.
+    [Link](https://www.qubench.net/main/program-of-qubench) |
+    [PDF](/pdf/agentic_qre.pdf) |
+    [Slides](/pdf/agentic_qre_slides.pdf)
+
 - ["Metriq-data: an open, cross-platform dataset of quantum benchmark results"](https://sites.google.com/view/quantum-software-workshop-2026)   
    *A. Cosentino, C. Li, V. Russo, W. J. Zeng*,    
    *Quantum Software 2.6: Current challenges and headways in quantum software, (2026)*.

@@ -337,23 +337,23 @@ title = "papers"
    *W. J. Zeng, F. Labib, V. Russo*,  
    *American Physical Society (APS) March Meeting, (2025)*.  
 
-- ["Automated Quantum Benchmarking with metriq-gym"](https://summit.aps.org/events/MAR-J16/9)   
+- ["Automated Quantum Benchmarking with metriq-gym"](https://meetings-archive.aps.org/smt/2025/mar-j16/9/)   
    *A. Cosentino, V. Russo, N. Shammah, D. Strano, W. J. Zeng*,  
    *American Physical Society (APS) March Meeting, (2025)*.  
 
-- ["GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations"](http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=284448)  
+- ["GPU MCMC developments: CBMC nonpolar molecules, verlet lists, and architectural optimizations"](https://proceedings.aiche.org/conferences/aiche-annual-meeting/2012/proceeding/paper/178w-gpu-mcmc-developments-cbmc-nonpolar-molecules-verlet-lists-and-architectural-optimizations)  
    *J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,  
    *AIChE (American Institute of Chemical Engineers), (2012)*.  
 
-- ["Optimization of a Lennard-Jones particle Monte Carlo GPU-code"](http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283934)  
+- ["Optimization of a Lennard-Jones particle Monte Carlo GPU-code"](https://proceedings.aiche.org/conferences/aiche-annual-meeting/2012/proceeding/paper/405d-optimization-lennard-jones-particle-monte-carlo-gpucode)  
    *J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,  
    *AIChE (American Institute of Chemical Engineers), (2012)*.  
 
-- ["GPU accelerated configurational bias Monte Carlo simulations of linear alkanes"](http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=283711)  
+- ["GPU accelerated configurational bias Monte Carlo simulations of linear alkanes"](https://proceedings.aiche.org/conferences/aiche-annual-meeting/2012/proceeding/paper/51e-gpu-accelerated-configurational-bias-monte-carlo-simulations-linear-alkanes)  
    *J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,  
    *AIChE (American Institute of Chemical Engineers), (2012)*.  
 
-- ["GPU accelerated Monte Carlo simulations in the Gibbs and canonical ensembles"](http://www3.aiche.org/Proceedings/Abstract.aspx?PaperID=235324)  
+- ["GPU accelerated Monte Carlo simulations in the Gibbs and canonical ensembles"](https://proceedings.aiche.org/conferences/aiche-annual-meeting/2011/proceeding/paper/190aq-accelerating-simulations-gibbs-and-canonical-ensembles-gpus)  
    *J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,  
    *AIChE (American Institute of Chemical Engineers), (2011)*.  
 
@@ -417,7 +417,7 @@ title = "papers"
    [Slides](/pdf/numerical_enlg_slides.pdf) |
    [Software](https://github.com/vprusso/uottawa_enlg)
 
-- ["Solving semidefinite programs in Python"](https://www.youtube.com/watch?v=uAegxiHQOXw)  
+- ["Solving semidefinite programs in Python"](https://www.youtube.com/watch?v=O_qoEZcigBA)  
    *V. Russo*,  
    *Louisiana State University, (2021)*.  
    [Link](https://www.youtube.com/watch?v=O_qoEZcigBA) |
@@ -427,7 +427,7 @@ title = "papers"
    *V. Russo*,  
    *New York City Quantum Computing Meetup, (2020)*.  
    [Link](https://www.youtube.com/watch?v=6R7qSszJwBI) |
-   [Slides](https://vprusso.github.io/toqito_slides/) |
+   [Slides](https://vprusso.github.io/toqito_slides/toqito_quatro/docs/) |
    [Software](https://github.com/vprusso/toqito)
 
 ### Scientific Reports

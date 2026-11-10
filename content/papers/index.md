@@ -357,6 +357,15 @@ title = "papers"
    *J. Mick, E. Hailat, V. Russo, K. Rushaidat, L. Schwiebert, J. Potoff*,  
    *AIChE (American Institute of Chemical Engineers), (2011)*.  
 
+### Other Writing
+
+---
+
+- ["Telling Things Apart: From the Stoic Sage to the Quantum Detector"](https://antigonejournal.com/2026/11/stoicism-scepticism-quantum/)  
+   *V. Russo*,  
+   *Antigone, (2026)*.  
+   [Link](https://antigonejournal.com/2026/11/stoicism-scepticism-quantum/)
+
 ### Press
 
 ---

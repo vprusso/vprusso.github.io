@@ -65,7 +65,8 @@ title = "papers"
 
 - ["Distinguishability of locally diagonal orthogonally invariant quantum states"](/pdf/ldoi.pdf)  
    *N. Johnston, V. Russo*,  
-   *arXiv:2604.12808, (2026)*.  
+   *Quantum 10, 2275, (2026)*.  
+   [Link](https://quantum-journal.org/papers/q-2026-11-18-2275/) |
    [PDF](/pdf/ldoi.pdf) |
    [arXiv](https://arxiv.org/abs/2604.12808) |
    [Software](https://github.com/vprusso/toqito/blob/master/toqito/matrix_props/is_ldoi.py)
